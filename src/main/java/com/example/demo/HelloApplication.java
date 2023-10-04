@@ -38,7 +38,7 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
 //        Connection connection= userDatabaseConnect.connect();
-//        TextToSpeech.processTextToSpeech("Fuck you all");
+        TextToSpeech.processTextToSpeech("Fuck you all");
 //        userDatabaseSQL.createtable(connection);
 //        userDatabaseSQL.insertIntoDict(connection,"name1","pass1",1);
 //        userDatabaseSQL.showAll(connection);

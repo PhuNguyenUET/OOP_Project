@@ -17,7 +17,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.beans.binding.DoubleBinding?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.layout.Pane?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.demo.LoginController"
