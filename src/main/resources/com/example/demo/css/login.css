@@ -1,0 +1,123 @@
+/* Định dạng cho Label */
+
+Label {
+    /*-fx-font-size: 14; *//* Kích thước chữ cho Label *//*
+    -fx-font-weight: bold; *//* Chữ in đậm *//*
+    -fx-text-fill: #0076FF;  Đặt màu chữ (ví dụ: màu xanh) */
+}
+
+.container{
+    -fx-background-color:#FFFFFF;
+}
+
+.welcome{
+    -fx-font-size: 75;
+    -fx-text-fill: #1C1C1C;
+    -fx-font-weight: bold;
+}
+
+.p {
+    -fx-font-size: 16;
+    -fx-text-fill: #1C1C1C;
+    -fx-font-weight: 200;
+}
+
+/* Định dạng cho TextField và PasswordField */
+TextField, PasswordField {
+    -fx-min-width: 150; /* Chiều rộng mặc định */
+    -fx-background-color: #F2F2F2;
+    -fx-padding: 8 0 8 16; /* Đặt màu nền (ví dụ: màu xám) */
+    -fx-font-size: 14;
+    -fx-background-radius: 30px;
+}
+
+/* Định dạng cho Button */
+/*Button {
+    -fx-min-width: 200; *//* Chiều rộng tối thiểu *//*
+    -fx-font-size: 18px; *//* Kích thước chữ cho Button *//*
+    -fx-font-weight:700;
+    -fx-background-color: transparent; *//* Đặt màu nền cho Button (ví dụ: màu xanh lá cây) *//*
+    *//*-fx-text-fill: #5B5656; *//* Đặt màu chữ cho Button (ví dụ: màu trắng) *//*
+    -fx-text-fill: red;
+    -fx-border:none;
+}*/
+
+/* Định dạng cho StackPane (nút OK và nhãn) */
+StackPane {
+    -fx-alignment: center; /* Canh giữa nút và nhãn trong StackPane */
+}
+
+.login {
+    -fx-padding: 28 60 60 60; /* Đặt margin trái là 10 pixel */
+    -fx-pref-width: 100%;
+}
+.active {
+    -fx-text-fill: #000000 !important; /* Đặt màu chữ cho Button (ví dụ: màu trắng) */
+}
+
+.loginBtn {
+        -fx-min-width: 120; /* Chiều rộng tối thiểu */
+        -fx-font-size: 18px; /* Kích thước chữ cho Button */
+        -fx-font-weight:700;
+        -fx-background-color: transparent; /* Đặt màu nền cho Button (ví dụ: màu xanh lá cây) */
+        -fx-text-fill: #5B5656;
+        -fx-border:none;
+}
+
+.text-field-100-percent {
+    -fx-width: 100%;
+    -fx-background-color: #D9D9D9;
+    -fx-padding: 16 0 16 0;
+}
+
+rectangle {
+    -fx-display:none;
+}
+
+.submit{
+    -fx-min-width: 300; /* Chiều rộng tối thiểu */
+    -fx-font-size: 15px; /* Kích thước chữ cho Button */
+    -fx-font-weight:700;
+    -fx-background-color: #1C1C1C; /* Đặt màu nền cho Button (ví dụ: màu xanh lá cây) */
+    -fx-text-fill: #FFFFFF;
+    -fx-border:none;
+    -fx-padding:8;
+    -fx-background-radius: 30px;
+    -fx-translate-y: 20px;
+}
+
+.des {
+    -fx-font-size:48;
+    -fx-font-weight:bold;
+    -fx-text-fill: #5B5656;
+}
+
+.loginIcon{
+    -fx-font-size:8;
+}
+
+/* Đặt CSS style cho FontAwesomeFX */
+.icon {
+    -fx-font-family: "FontAwesome";
+    -fx-font-size: 16px;
+    -fx-fill: #1E3050;
+}
+
+.mes {
+    -fx-padding:16;
+    -fx-background-color: rgba(32,49,92,0.9);
+    -fx-background-radius:8;
+}
+
+.textMessage {
+    -fx-font-family: Roboto;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:18;
+    -fx-font-weight:bold;
+}
+
+.textMessageDes{
+    -fx-font-family: Roboto;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:12;
+}
