@@ -106,7 +106,7 @@ public class LoginController {
             String passValue=password.getText();
             Connection connection=userDatabaseConnect.connect();
             if(submitButton.getText().equals("Login")){
-                if(userDatabaseSQL.check(connection,userValue,passValue)){
+                if(userDatabaseSQL.check(connection,userValue,passValue) && !userValue.equals("") && !passValue.equals("")){
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Successful Login");
@@ -139,7 +139,7 @@ public class LoginController {
                     toastMesTransition.play();
                     pauseTransition.play();
                 }
-                else
+                else if(!userValue.equals("") && !passValue.equals(""))
                 {
                     userDatabaseSQL.insertIntoDict(connection,userValue,passValue,1);
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
@@ -151,7 +151,6 @@ public class LoginController {
                     toastMesTransition.play();
                     pauseTransition.play();
                 }
-<<<<<<< HEAD
                 else
                 {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
@@ -163,9 +162,7 @@ public class LoginController {
                     toastMesTransition.play();
                     pauseTransition.play();
                 }
-=======
->>>>>>> parent of 62a3dc2 (update login rule)
             }
-        } );
+        });
     }
 }
