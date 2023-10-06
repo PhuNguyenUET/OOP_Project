@@ -145,12 +145,26 @@ public class LoginController {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Successful Register");
-                    textMessageDes.setText("You can start your journey in my App");
+                    textMessageDes.setText("You can start your journey in my App!");
                     toastIcon.setImage(image);
                     toastMesTransition.setToX(-28);
                     toastMesTransition.play();
                     pauseTransition.play();
                 }
+<<<<<<< HEAD
+                else
+                {
+                    URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
+                    Image image = new Image(imageUrl.toString());
+                    textMessage.setText("Error Login");
+                    textMessageDes.setText("Invalid username or password!");
+                    toastIcon.setImage(image);
+                    toastMesTransition.setToX(-28);
+                    toastMesTransition.play();
+                    pauseTransition.play();
+                }
+=======
+>>>>>>> parent of 62a3dc2 (update login rule)
             }
         } );
     }
