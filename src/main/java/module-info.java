@@ -10,4 +10,16 @@ module com.example.demo {
 
     opens com.example.demo to javafx.fxml;
     exports com.example.demo;
+
+    opens com.example.demo.frontend.LoginFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.LoginFrontEnd;
+
+    opens com.example.demo.frontend.navBarFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.navBarFrontEnd;
+
+    opens com.example.demo.frontend.libChildFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.libChildFrontEnd;
+
+//    opens com.example.demo.fxml to javafx.fxml;
+//    exports com.example.demo.fxml;
 }

@@ -4,6 +4,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Connect {
+    private static Connect _instance = null;
+
+    private Connect()
+    {
+
+    }
+
+    public static Connect getInstance()
+    {
+        if (_instance==null)
+        {
+            _instance=new Connect();
+
+        }
+        return _instance;
+    }
     private static Connection connection;
     private static String DATABASE_URL = "src/main/resources/database/Dictionary.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
     public static Connection connect() {
