@@ -1,11 +1,11 @@
 package com.example.demo.backend.DictionaryBackend;
 
+import com.example.demo.backend.Common.Word;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class StandardWord {
-    private final String word;
-    private final String definition;
+public class StandardWord extends Word {
     private final String word_type;
     private final String pronunciation;
     private final List<String> examples;
@@ -15,13 +15,6 @@ public class StandardWord {
             return new ArrayList<>();
         }
         return examples;
-    }
-    public String getWord() {
-        return word;
-    }
-
-    public String getDefinition() {
-        return definition;
     }
 
     public String getWord_type() {
@@ -40,36 +33,35 @@ public class StandardWord {
         this.examples = builder.examples;
     }
 
-    public static class WordBuilder {
+    protected static class WordBuilder {
         private String word;
         private String definition;
-
         private String word_type;
         private String pronunciation;
 
         private List<String> examples;
 
-        public WordBuilder(String word, String definition) {
+        protected WordBuilder(String word, String definition) {
             this.word = word;
             this.definition = definition;
         }
 
-        public WordBuilder setWordType(String word_type) {
+        protected WordBuilder setWordType(String word_type) {
             this.word_type = word_type;
             return this;
         }
 
-        public WordBuilder setPronunciation(String pronunciation) {
+        protected WordBuilder setPronunciation(String pronunciation) {
             this.pronunciation = pronunciation;
             return this;
         }
 
-        public WordBuilder setExamples(List<String> examples) {
+        protected WordBuilder setExamples(List<String> examples) {
             this.examples = examples;
             return this;
         }
 
-        public StandardWord build() {
+        protected StandardWord build() {
             return new StandardWord(this);
         }
     }

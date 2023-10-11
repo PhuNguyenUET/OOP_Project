@@ -1,45 +1,59 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
+import java.io.IOException;
+
 public class DictionaryHomeController {
+    SearchBarController searchBarController = new SearchBarController();
     @FXML
-    private Button dictionaryChanger;
+    public Button dictionaryChanger;
 
     @FXML
-    private Button learnersPathChanger;
+    public Button learnersPathChanger;
 
     @FXML
-    private Button translateChanger;
+    public Button translateChanger;
 
     @FXML
-    private Button gameChanger;
+    public Button gameChanger;
 
     @FXML
-    private Button settingsChanger;
+    public Button settingsChanger;
 
     @FXML
-    private ImageView logo;
+    public ImageView logo;
 
     @FXML
-    private TextField searchBar;
+    public TextField searchBar;
 
     @FXML
-    private Button xButton;
+    public Button xButton;
 
     @FXML
-    private Button searchButton;
+    public Button searchButton;
 
     @FXML
-    private Button translateChanger2;
+    public Button translateChanger2;
 
     @FXML
-    private Button settingsChanger2;
+    public Button settingsChanger2;
 
     @FXML
-    private ImageView coffee;
+    public ImageView coffee;
 
+    @FXML
+    protected void clearSearch(ActionEvent event) {
+        searchBarController.clearSearch();
+        searchBar.clear();
+    }
+
+    @FXML
+    protected void goTo (ActionEvent event) throws IOException {
+        searchBarController.searchForWord(event, searchBar.getText());
+    }
 }

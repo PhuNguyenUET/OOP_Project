@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane prefHeight="700.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane prefHeight="700.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController">
    <children>
       <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="809.0" prefWidth="835.0">
          <children>
@@ -30,12 +30,12 @@
                      <HBox.margin>
                         <Insets left="70.0" />
                      </HBox.margin></ImageView>
-                  <TextField prefHeight="49.0" prefWidth="730.0">
+                  <TextField fx:id="searchBar" prefHeight="49.0" prefWidth="730.0">
                      <HBox.margin>
                         <Insets left="80.0" />
                      </HBox.margin></TextField>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="X" />
-                  <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="54.0">
+                  <Button mnemonicParsing="false" onAction="#clearSearch" prefHeight="25.0" prefWidth="26.0" text="X" fx:id="xButton" />
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0">
                      <HBox.margin>
                         <Insets left="50.0" />
                      </HBox.margin></Button>

@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DictionaryDatabase {
+class DictionaryDatabase {
     private static DictionaryDatabase _instance = null;
 
-    protected DictionaryDatabase() {
+    private DictionaryDatabase() {
     }
 
-    public static DictionaryDatabase Instance() {
+    protected static DictionaryDatabase Instance() {
         if (_instance == null) {
             _instance = new DictionaryDatabase();
             connect();
@@ -31,7 +31,7 @@ public class DictionaryDatabase {
         }
     }
 
-    public Connection getConnection() {
+    protected Connection getConnection() {
         return connection;
     }
 }

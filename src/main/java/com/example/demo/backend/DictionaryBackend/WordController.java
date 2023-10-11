@@ -6,12 +6,16 @@ import java.util.List;
 import static java.lang.Character.isLetter;
 
 public class WordController {
-    DictionaryService dictionaryService = new DictionaryService();
+    WordRepository wordRepository = new WordRepository();
+    DictionaryService dictionaryService = new DictionaryService(wordRepository);
 
     public List<String> search (String input) {
         List<String> output = new ArrayList<>();
         int n = input.length();
 
+        if (n == 1) {
+            return output;
+        }
         for (int i = 0; i < n; i++) {
             char c = input.charAt(i);
             if (!isLetter(c) && c != '-' && c != ' ') {
