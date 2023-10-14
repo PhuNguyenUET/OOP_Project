@@ -5,64 +5,57 @@ import com.example.demo.backend.Common.Word;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StandardWord extends Word {
-    private final String word_type;
-    private final String pronunciation;
-    private final List<String> examples;
+public class StandardWord implements Word{
+    private String word;
 
-    public List<String> getExamples() {
-        if (examples == null) {
-            return new ArrayList<>();
-        }
-        return examples;
+    private String pronunciation;
+
+    private List<Explanation> explanations;
+
+    public void setWord(String word) {
+        this.word = word;
     }
 
-    public String getWord_type() {
-        return word_type;
+    public void setPronunciation(String pronunciation) {
+        this.pronunciation = pronunciation;
+    }
+
+    public void setExplanations(List<Explanation> explanations) {
+        this.explanations = explanations;
+    }
+
+    @Override
+    public String getWord() {
+        return word;
+    }
+
+    @Override
+    public List<String> getDefinition() {
+        List<String> definitonList = new ArrayList<>();
+        for (Explanation explanation : explanations) {
+            definitonList.add(explanation.getDefinition());
+        }
+        return definitonList;
     }
 
     public String getPronunciation() {
         return pronunciation;
     }
 
-    private StandardWord(WordBuilder builder) {
-        this.word = builder.word;
-        this.definition = builder.definition;
-        this.word_type = builder.word_type;
-        this.pronunciation = builder.pronunciation;
-        this.examples = builder.examples;
+    public List<Explanation> getExplanations() {
+        return explanations;
     }
 
-    protected static class WordBuilder {
-        private String word;
-        private String definition;
-        private String word_type;
-        private String pronunciation;
-
-        private List<String> examples;
-
-        protected WordBuilder(String word, String definition) {
-            this.word = word;
-            this.definition = definition;
-        }
-
-        protected WordBuilder setWordType(String word_type) {
-            this.word_type = word_type;
-            return this;
-        }
-
-        protected WordBuilder setPronunciation(String pronunciation) {
-            this.pronunciation = pronunciation;
-            return this;
-        }
-
-        protected WordBuilder setExamples(List<String> examples) {
-            this.examples = examples;
-            return this;
-        }
-
-        protected StandardWord build() {
-            return new StandardWord(this);
-        }
+    public StandardWord(String word, String pronunciation) {
+        this.word = word;
+        this.pronunciation = pronunciation;
     }
+
+    public StandardWord(String word, String pronunciation, List<Explanation> explanations) {
+        this.word = word;
+        this.pronunciation = pronunciation;
+        this.explanations = explanations;
+    }
+
+    public StandardWord(){}
 }

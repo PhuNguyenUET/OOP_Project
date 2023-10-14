@@ -1,17 +1,49 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
-public class WordDisplayController {
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class WordDisplayController implements Initializable {
+    @FXML
+    public TextField searchBar;
+    @FXML
+    public Button xButton;
+    @FXML
+    public Button searchButton;
+    @FXML
+    public VBox suggestionBox;
+    @FXML
+    public VBox explanationBox;
+    @FXML
+    public Label wordDisplay;
+    @FXML Label pronunciation;
+
+    @FXML
+    public List<Label> wordList = new ArrayList<>();
     // Observer? Is there a way to notify the system when word changes, so that
     // we don't have to destroy the
     private StandardWord word;
-    private SearchBarController searchBar;
+    private SearchBarController searchBarController;
 
     protected SearchBarController getSearchBar() {
-        return searchBar;
+        return searchBarController;
     }
 
     protected void setSearchBar(SearchBarController searchBar) {
-        this.searchBar = searchBar;
+        this.searchBarController = searchBar;
     }
 
     protected StandardWord getWord() {
@@ -20,5 +52,67 @@ public class WordDisplayController {
 
     protected void setWord(StandardWord word) {
         this.word = word;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        suggestionBox.setVisible(false);
+    }
+
+    public void setContent() {
+        wordDisplay.setText(word.getWord());
+        pronunciation.setText(word.getPronunciation());
+
+        List<Explanation> explanations = word.getExplanations();
+
+        for (Explanation explanation : explanations) {
+            Label wordType = new Label(explanation.getWord_type());
+            Label definition = new Label(explanation.getDefinition());
+            explanationBox.getChildren().add(wordType);
+            explanationBox.getChildren().add(definition);
+            for (String example : explanation.getExamples()) {
+                Label exampleLabel = new Label(example);
+                explanationBox.getChildren().add(exampleLabel);
+            }
+        }
+    }
+
+    @FXML
+    protected void clearSearch(ActionEvent event) {
+        searchBarController.clearSearch();
+        searchBar.clear();
+    }
+
+    @FXML
+    protected void goTo(ActionEvent event) throws IOException {
+        searchBarController.searchForWord(event, searchBar.getText());
+    }
+
+    @FXML
+    protected void showSuggestions() {
+        suggestionBox.getChildren().clear();
+        wordList.clear();
+        searchBarController.setSearchField(searchBar.getText());
+        List<String> suggestedWord = searchBarController.getSimilarWords();
+        for (String s : suggestedWord) {
+            Label label = new Label(s);
+            label.setOnMouseClicked(event ->  {
+                try {
+                    searchBarController.searchForWord(event, label.getText());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            wordList.add(label);
+            suggestionBox.getChildren().add(label);
+        }
+        suggestionBox.setVisible(true);
+    }
+
+    @FXML
+    protected void handleKey (KeyEvent event) throws IOException {
+        if (event.getCode() == KeyCode.ENTER) {
+            searchBarController.searchForWord(event, searchBarController.getSearchField());
+        }
     }
 }

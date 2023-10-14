@@ -1,15 +1,16 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 import java.util.List;
 
 class SearchBarController {
-    void searchForWord (ActionEvent event, String input) throws IOException {
+    void searchForWord (Event event, String input) throws IOException {
         StandardWord word = DictionaryIntegration.Instance().transferTo(input);
-        DictionarySceneChanger.Instance().switchToWordDisplay(event, word);
+        DictionarySceneChanger.Instance().switchToWordDisplay(event, this, word);
     }
 
     private String searchField;
@@ -26,7 +27,7 @@ class SearchBarController {
         searchField = "";
     }
 
-    protected List<String> getSimilarWordsFromDb () {
-        return DictionaryIntegration.Instance().searchSimilar(searchField.toString());
+    protected List<String> getSimilarWords() {
+        return DictionaryIntegration.Instance().searchSimilar(searchField);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.demo.backend.DictionaryBackend;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +15,7 @@ public class WordController {
         List<String> output = new ArrayList<>();
         int n = input.length();
 
-        if (n == 1) {
+        if (n == 0 || n == 1) {
             return output;
         }
         for (int i = 0; i < n; i++) {

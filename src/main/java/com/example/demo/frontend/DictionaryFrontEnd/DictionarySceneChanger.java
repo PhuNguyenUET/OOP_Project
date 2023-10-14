@@ -1,6 +1,7 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -26,7 +27,7 @@ class DictionarySceneChanger {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    protected void switchToHomeScreen(ActionEvent event) throws IOException {
+    protected void switchToHomeScreen(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dictionary_home.fxml"));
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -35,12 +36,16 @@ class DictionarySceneChanger {
         stage.show();
     }
 
-    protected void switchToWordDisplay(ActionEvent event, StandardWord word) throws IOException {
+    protected void switchToWordDisplay(Event event, SearchBarController searchBarController, StandardWord word) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("word_display.fxml"));
         root = loader.load();
 
         WordDisplayController wordDisplayController = loader.getController();
         wordDisplayController.setWord(word);
+
+        wordDisplayController.setSearchBar(searchBarController);
+
+        wordDisplayController.setContent();
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

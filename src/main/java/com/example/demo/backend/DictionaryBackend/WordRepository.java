@@ -14,7 +14,7 @@ class WordRepository {
         try{
             Statement statement = connection.createStatement();
             String query= "SELECT english_word FROM dictionary "
-                    + " WHERE english_word LIKE " + " '" + input + "%' LIMIT 10";
+                    + " WHERE english_word LIKE " + " '" + input + "%' LIMIT 8";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 String english_word=rs.getString("english_word");
@@ -37,9 +37,10 @@ class WordRepository {
                 String word_type=rs.getString("word_type");
                 String pronunciation=rs.getString("pronunciation");
                 String vietnamese_word=rs.getString("vietnamese_meaning");
-                StandardWord word =  new StandardWord.WordBuilder(english_word, vietnamese_word).
-                        setWordType(word_type).setPronunciation(pronunciation).build();
-                return word;
+                List<Explanation> explanations = new ArrayList<>();
+                Explanation ex1 = new Explanation.ExplanationBuilder(vietnamese_word).setWordType(word_type).build();
+                explanations.add(ex1);
+                return new StandardWord(english_word, pronunciation, explanations);
             }
         } catch (SQLException e) {
             e.printStackTrace();

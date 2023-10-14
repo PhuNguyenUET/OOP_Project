@@ -1,13 +1,8 @@
 package com.example.demo.backend.Common;
 
-public abstract class Word {
-    protected String word;
-    protected String definition;
+import java.util.List;
 
-    public String getWord() {
-        return word;
-    }
-    public String getDefinition() {
-        return definition;
-    }
+public interface Word {
+    public String getWord ();
+    public List<String> getDefinition ();
 }
