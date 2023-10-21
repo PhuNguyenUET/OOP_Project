@@ -27,6 +27,9 @@ class DictionaryIntegration {
 
     protected StandardWord transferTo(String input) {
         String stringResponse = backend.transferWord(input);
+        if (stringResponse.isEmpty()) {
+            return null;
+        }
         ObjectMapper mapper = new ObjectMapper();
         StandardWord word = new StandardWord();
         try {

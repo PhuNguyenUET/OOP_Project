@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,6 +14,10 @@
 <?import javafx.scene.shape.Rectangle?>
 
 <StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController">
+   <stylesheets>
+      <URL value="@../../css/searchBar.css" />
+      <URL value="@../../css/dictionaryHome.css" />
+   </stylesheets>
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -29,34 +35,40 @@
                               <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="55.0" prefWidth="62.0" />
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1240.0">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1240.0" styleClass="common">
                            <children>
-                              <ImageView fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets left="70.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="730.0">
+                              <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="730.0" promptText="Search your word here" styleClass="searchBar">
                                  <HBox.margin>
                                     <Insets left="80.0" />
                                  </HBox.margin>
+                                 <padding>
+                                    <Insets left="15.0" />
+                                 </padding>
                               </TextField>
-                              <Button mnemonicParsing="false" onAction="#clearSearch" prefHeight="25.0" prefWidth="26.0" text="X" fx:id="xButton" />
-                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0">
+                              <Button mnemonicParsing="false" onAction="#clearSearch" prefHeight="25.0" prefWidth="26.0" styleClass="xButton" text="X" fx:id="xButton" />
+                              <Button fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0" styleClass="searchButton">
                                  <HBox.margin>
-                                    <Insets left="50.0" />
+                                    <Insets left="20.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
                         </HBox>
-                        <VBox prefHeight="492.0" prefWidth="1164.0">
+                        <VBox prefHeight="510.0" prefWidth="1223.0" styleClass="common">
                            <children>
-                              <Label prefHeight="53.0" prefWidth="310.0" text="Explore more" />
+                              <Label prefHeight="38.0" prefWidth="147.0" styleClass="exploreTag" text="Explore more" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin></Label>
                               <HBox prefHeight="442.0" prefWidth="1123.0" spacing="100.0">
                                  <children>
-                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="697.0" spacing="50.0">
+                                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="697.0" spacing="50.0" styleClass="exploreBox">
                                        <children>
-                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="340.0" prefWidth="400.0">
+                                          <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="340.0" prefWidth="400.0" styleClass="functionBox">
                                              <HBox.margin>
                                                 <Insets left="20.0" top="20.0" />
                                              </HBox.margin>
@@ -71,30 +83,36 @@
                                                       <Insets />
                                                    </VBox.margin>
                                                 </ImageView>
-                                                <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="107.0" text="Translate" />
-                                                <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="108.0" text="Settings" />
+                                                <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="127.0" styleClass="functionButton" text="Translate" />
+                                                <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="127.0" styleClass="functionButton" text="Settings" />
                                              </children>
                                           </VBox>
                                        </children>
                                     </HBox>
-                                    <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="254.0" prefWidth="187.0">
+                                    <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="254.0" prefWidth="187.0" styleClass="functionBox">
                                        <children>
-                                          <ImageView fitHeight="78.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="103.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true" styleClass="buyMeACoffee">
                                              <HBox.margin>
                                                 <Insets top="30.0" />
                                              </HBox.margin>
                                              <VBox.margin>
                                                 <Insets top="30.0" />
                                              </VBox.margin>
+                                             <image>
+                                                <Image url="@../../assets/Buymeacoffee.png" />
+                                             </image>
                                           </ImageView>
-                                          <Label alignment="CENTER" prefHeight="66.0" prefWidth="191.0" text="Buy me a coffee" textAlignment="CENTER">
+                                          <Label alignment="CENTER" prefHeight="66.0" prefWidth="187.0" styleClass="coffeeTag" text="Buy me a coffee" textAlignment="CENTER" wrapText="true">
                                              <VBox.margin>
-                                                <Insets top="42.0" />
+                                                <Insets top="30.0" />
                                              </VBox.margin>
                                           </Label>
                                        </children>
                                     </VBox>
                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
                               </HBox>
                            </children>
                            <VBox.margin>
@@ -108,7 +126,7 @@
                   </VBox>
                </children>
             </StackPane>
-            <VBox fx:id="suggestionBox" layoutX="247.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="727.0" />
+            <VBox fx:id="suggestionBox" layoutX="247.0" layoutY="147.0" prefWidth="727.0" styleClass="searchResultBox" />
          </children>
       </AnchorPane>
    </children>

@@ -1,0 +1,18 @@
+.common {
+    -fx-background-color: #FFFFFF;
+}
+
+.backButton {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 16;
+    -fx-background-color: #158DDA;
+    -fx-text-fill: #FFFFFF;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-background-radius: 50;
+}
+
+.dontKnowLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 18;
+}

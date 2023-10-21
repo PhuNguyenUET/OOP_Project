@@ -36,6 +36,19 @@ class DictionarySceneChanger {
         stage.show();
     }
 
+    protected void switchToWordNotExistScreen(Event event, SearchBarController searchBarController) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("word_not_exist.fxml"));
+        root = loader.load();
+
+        WordNotExistScreenController wordNotExistScreenController = loader.getController();
+        wordNotExistScreenController.setSearchBarController(searchBarController);
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     protected void switchToWordDisplay(Event event, SearchBarController searchBarController, StandardWord word) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("word_display.fxml"));
         root = loader.load();

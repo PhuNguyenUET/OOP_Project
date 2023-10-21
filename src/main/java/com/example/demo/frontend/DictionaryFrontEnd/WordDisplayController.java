@@ -1,11 +1,14 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import com.example.demo.backend.TextToSpeech;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
@@ -29,10 +32,13 @@ public class WordDisplayController implements Initializable {
     public VBox explanationBox;
     @FXML
     public Label wordDisplay;
-    @FXML Label pronunciation;
-
     @FXML
-    public List<Label> wordList = new ArrayList<>();
+    public Label pronunciation;
+
+    URL imageUrl = getClass().getResource("/com/example/demo/assets/search.png");
+    Image searchImg = new Image(imageUrl.toString());
+    ImageView search = new ImageView(searchImg);
+
     // Observer? Is there a way to notify the system when word changes, so that
     // we don't have to destroy the
     private StandardWord word;
@@ -56,7 +62,10 @@ public class WordDisplayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        search.setFitWidth(35);
+        search.setFitHeight(35);
         suggestionBox.setVisible(false);
+        searchButton.setGraphic(search);
     }
 
     public void setContent() {
@@ -67,11 +76,17 @@ public class WordDisplayController implements Initializable {
 
         for (Explanation explanation : explanations) {
             Label wordType = new Label(explanation.getWord_type());
+            wordType.setWrapText(true);
+            wordType.getStyleClass().add("typeLabel");
             Label definition = new Label(explanation.getDefinition());
+            definition.setWrapText(true);
+            definition.getStyleClass().add("definitionLabel");
             explanationBox.getChildren().add(wordType);
             explanationBox.getChildren().add(definition);
             for (String example : explanation.getExamples()) {
                 Label exampleLabel = new Label(example);
+                exampleLabel.setWrapText(true);
+                exampleLabel.getStyleClass().add("exampleLabel");
                 explanationBox.getChildren().add(exampleLabel);
             }
         }
@@ -81,6 +96,7 @@ public class WordDisplayController implements Initializable {
     protected void clearSearch(ActionEvent event) {
         searchBarController.clearSearch();
         searchBar.clear();
+        suggestionBox.setVisible(false);
     }
 
     @FXML
@@ -91,22 +107,9 @@ public class WordDisplayController implements Initializable {
     @FXML
     protected void showSuggestions() {
         suggestionBox.getChildren().clear();
-        wordList.clear();
         searchBarController.setSearchField(searchBar.getText());
-        List<String> suggestedWord = searchBarController.getSimilarWords();
-        for (String s : suggestedWord) {
-            Label label = new Label(s);
-            label.setOnMouseClicked(event ->  {
-                try {
-                    searchBarController.searchForWord(event, label.getText());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            wordList.add(label);
-            suggestionBox.getChildren().add(label);
-        }
         suggestionBox.setVisible(true);
+        suggestionBox.getChildren().addAll(searchBarController.getSuggestion());
     }
 
     @FXML
@@ -114,5 +117,10 @@ public class WordDisplayController implements Initializable {
         if (event.getCode() == KeyCode.ENTER) {
             searchBarController.searchForWord(event, searchBarController.getSearchField());
         }
+    }
+
+    @FXML
+    protected void speakUp() {
+        TextToSpeech.processTextToSpeech(word.getWord());
     }
 }

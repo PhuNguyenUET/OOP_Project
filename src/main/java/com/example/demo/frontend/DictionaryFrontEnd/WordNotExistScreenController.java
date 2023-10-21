@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DictionaryHomeController implements Initializable {
+public class WordNotExistScreenController implements Initializable {
     SearchBarController searchBarController;
 
     @FXML
@@ -33,20 +33,16 @@ public class DictionaryHomeController implements Initializable {
     @FXML
     public VBox suggestionBox;
 
-    @FXML
-    public ImageView logoImage;
-
     URL imageUrl = getClass().getResource("/com/example/demo/assets/search.png");
     Image searchImg = new Image(imageUrl.toString());
     ImageView search = new ImageView(searchImg);
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        search.setFitWidth(35);
-        search.setFitHeight(35);
-        searchBarController = new SearchBarController();
-        suggestionBox.setVisible(false);
-        searchButton.setGraphic(search);
+    public SearchBarController getSearchBarController() {
+        return searchBarController;
+    }
+
+    public void setSearchBarController(SearchBarController searchBarController) {
+        this.searchBarController = searchBarController;
     }
 
     @FXML
@@ -69,11 +65,23 @@ public class DictionaryHomeController implements Initializable {
         suggestionBox.getChildren().addAll(searchBarController.getSuggestion());
     }
 
-
     @FXML
     protected void handleKey (KeyEvent event) throws IOException {
         if (event.getCode() == KeyCode.ENTER) {
             searchBarController.searchForWord(event, searchBarController.getSearchField());
         }
+    }
+
+    @FXML
+    protected void back (ActionEvent event) throws IOException {
+        DictionarySceneChanger.Instance().switchToHomeScreen(event);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        search.setFitWidth(35);
+        search.setFitHeight(35);
+        suggestionBox.setVisible(false);
+        searchButton.setGraphic(search);
     }
 }

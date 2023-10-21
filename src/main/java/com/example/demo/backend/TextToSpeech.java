@@ -1,18 +1,17 @@
-/*
 package com.example.demo.backend;
 
-import com.sun.speech.freetts.Voice;
+/* import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerModeDesc;
+import javax.speech.synthesis.SynthesizerModeDesc; */
 import java.util.Locale;
 
 public class TextToSpeech {
     public static void processTextToSpeech(String inputText)
     {
-        try {
+        /*try {
             // Set property as Kevin Dictionary
             System.setProperty(
                     "freetts.voices",
@@ -48,8 +47,7 @@ public class TextToSpeech {
 
         catch (Exception e) {
             e.printStackTrace();
-        }
+        } */
     }
 }
 
-*/
