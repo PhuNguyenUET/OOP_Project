@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.frontend.LoginComponent;
 
 import com.example.demo.backend.*;
 
@@ -43,7 +43,6 @@ public class LoginController {
     public ImageView toastIcon;
 
     @FXML
-
     private Image toastImg;
 
     @FXML
@@ -133,7 +132,7 @@ public class LoginController {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Error Login");
-                    textMessageDes.setText("Username is Exists. Please use a different username.");
+                    textMessageDes.setText("Username already existed. Please use a different username.");
                     toastIcon.setImage(image);
                     toastMesTransition.setToX(-28);
                     toastMesTransition.play();

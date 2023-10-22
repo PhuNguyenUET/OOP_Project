@@ -1,0 +1,44 @@
+.searchBar {
+    -fx-background-color: #F1F1F0;
+    -fx-text-fill: #3177A4;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 16;
+    -fx-font-weight: lighter;
+    -fx-border-radius: 50;
+    -fx-border-color: #3177A4;
+    -fx-background-radius: 50;
+}
+
+.searchButton {
+    -fx-border-radius: 40;
+    -fx-background-color: #DEF2FF;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-width: 3px;
+    -fx-background-radius: 40;
+}
+
+.xButton {
+    -fx-background-color: transparent;
+    -fx-font-weight: bolder;
+    -fx-font-size: 18;
+    -fx-translate-x: -45;
+}
+
+.searchResultBox {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+}
+
+.searchResultLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-font-style: italic;
+    -fx-min-height: 40;
+    -fx-min-width: 727;
+    -fx-padding: 0 0 0 15;
+}
+
+.searchResultLabelSelected {
+    -fx-underline: true;
+    -fx-background-color: #F1F1F0;
+}

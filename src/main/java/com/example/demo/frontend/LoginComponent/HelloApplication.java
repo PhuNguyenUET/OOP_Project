@@ -1,30 +1,17 @@
-package com.example.demo;
+package com.example.demo.frontend.LoginComponent;
 
-import com.example.demo.backend.Connect;
-import com.example.demo.backend.TextToSpeech;
-import com.example.demo.backend.SQLCommand;
-import com.example.demo.backend.userDatabaseConnect;
-import com.example.demo.backend.userDatabaseSQL;
+//import com.example.demo.backend.TextToSpeech;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
-import java.io.*;
-import com.sun.speech.freetts.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+        import javafx.stage.Stage;
+//import com.sun.speech.freetts.*;
+        import java.io.IOException;
 
-import java.util.Locale;
-import javax.speech.Central;
+/*import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerModeDesc;
+import javax.speech.synthesis.SynthesizerModeDesc;*/
 public class HelloApplication extends Application {
 
     @Override
