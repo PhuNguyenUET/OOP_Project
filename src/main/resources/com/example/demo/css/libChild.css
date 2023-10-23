@@ -1,3 +1,7 @@
+.container {
+    -fx-max-height: 300;
+}
+
 .libContainer {
     -fx-background-color: #FFFFFF;
     -fx-max-width: 420;
@@ -27,6 +31,7 @@
     -fx-padding: 12 12 12 12;
     -fx-min-width: 320;
     -fx-background-radius: 20;
+    -fx-text-fill: #1E1E1E;
 }
 
 .showAllBtn {
@@ -37,4 +42,18 @@
     -fx-font-family: 'Lexend';
     -fx-text-fill: #1E1E1E;
     -fx-font-weight: bolder;
+}
+
+.showAllBtn:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.9;
+}
+
+.textContainer:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.6;
+}
+
+.contentName:hover{
+    -fx-cursor: hand;
 }

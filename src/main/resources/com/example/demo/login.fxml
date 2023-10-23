@@ -51,7 +51,7 @@
             <HBox spacing="10">
                 <ImageView>
                     <image>
-                        <Image url="@./assets/user.png"/>
+                        <Image url="@./assets/user_20.png"/>
                     </image>
                 </ImageView>
                 <Label text="User name:" />

@@ -19,233 +19,281 @@
 <?import javafx.beans.binding.DoubleBinding?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.AnchorPane?>
-<VBox xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.demo.frontend.navBarFrontEnd.navBarController"
-      styleClass="container"
-      spacing="25"
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.frontend.LearnerFrontEnd.LeanerController"
+           translateY="80"
 >
     <stylesheets>
         <URL value="@./css/Leaner.css"/>
     </stylesheets>
-
-    <HBox styleClass="navBar" StackPane.alignment="TOP_LEFT" alignment="CENTER_LEFT">
-        <HBox spacing="20">
-            <VBox alignment="CENTER">
-                <ImageView>
-                    <image>
-                        <Image url="@./assets/menu.png"></Image>
-                    </image>
-                </ImageView>
-            </VBox>
-            <VBox alignment="CENTER">
-                <Button fx:id="Dictionary" text="Dictionary" styleClass="navBarBtn, active"/>
-            </VBox>
-            <VBox alignment="CENTER">
-                <Button fx:id="Learner" text="Leaner's Path" styleClass="navBarBtn"/>
-            </VBox>
-            <VBox alignment="CENTER">
-                <Button fx:id="Translate" text="Translate" styleClass="navBarBtn"/>
-            </VBox>
-            <VBox alignment="CENTER">
-                <Button fx:id="Game" text="Game" styleClass="navBarBtn"/>
-            </VBox>
-            <VBox alignment="CENTER_RIGHT" StackPane.alignment="TOP_RIGHT" translateX="930">
-                <ImageView>
-                    <image>
-                        <Image url="@./assets/user.png"/>
-                    </image>
-                </ImageView>
-            </VBox>
-        </HBox>
-    </HBox>
-    <VBox styleClass="libContainer" translateX="40">
-        <HBox alignment="CENTER">
-            <VBox alignment="CENTER">
-                <Button styleClass="libBtn" text="Your Libarary"></Button>
-            </VBox>
-            <VBox alignment="CENTER" translateY="1">
-                <ImageView>
-                    <image>
-                        <Image url="@./assets/arrow.png"/>
-                    </image>
-                </ImageView>
-            </VBox>
-        </HBox>
-        <!--<Pane visible="false" minHeight="240" minWidth="1000" StackPane.alignment="TOP_LEFT">
-            <VBox styleClass="libContainer">
-            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="contentContainer">
-                <VBox>
-                    <Label styleClass="contentName" text="Sets"/>
+    <VBox styleClass="container"
+          spacing="25">
+        <StackPane styleClass="libContainer" translateX="40">
+            <HBox alignment="CENTER" fx:id="yourLibContain">
+                <VBox alignment="CENTER">
+                    <Button fx:id="yourLib" styleClass="libBtn" text="Your Libarary"></Button>
                 </VBox>
-                <VBox>
-                    <Label styleClass="contentName" text="Folder"/>
-                </VBox>
-                <VBox>
-                    <Label styleClass="contentName" text="Explore"/>
+                <VBox alignment="CENTER" translateY="1">
+                    <ImageView>
+                        <image>
+                            <Image url="@./assets/arrow.png"/>
+                        </image>
+                    </ImageView>
                 </VBox>
             </HBox>
-
-            <VBox spacing="10" alignment="CENTER_LEFT">
-                <Label text="Set Name"/>
-            </VBox>
-
-            <VBox spacing="10" alignment="CENTER_LEFT">
-                <Label text="Set Name"/>
-            </VBox>
-
-            <HBox spacing="10" alignment="CENTER_LEFT">
-                <Button text="View All Folder" />
-            </HBox>
-            </VBox>
-        </Pane>-->
-    </VBox>
-    <Rectangle fx:id="movingRec" width="120" height="2" styleClass="recMove" fill="#E8D8F4" translateY="-110"
-               translateX="48"></Rectangle>
-    <VBox styleClass="rencentWordContainer" alignment="TOP_LEFT" prefHeight="240" maxWidth="1300">
-        <VBox>
-            <Label styleClass="Content" text="Recent Searches"/>
-        </VBox>
-        <HBox alignment="CENTER" spacing="240">
-            <VBox spacing="15" styleClass="wordContainer" translateY="36">
-                <VBox>
-                    <Label styleClass="engWord" text="Word1"/>
-                </VBox>
-                <VBox>
-                    <Label styleClass="type" text="Type"/>
-                </VBox>
-                <HBox spacing="15">
-                    <VBox>
-                        <ImageView>
-                            <image>
-                                <Image url="@./assets/audio.png"/>
-                            </image>
-                        </ImageView>
-                    </VBox>
-                    <VBox>
-                        <Label styleClass="pronunciation" text="Pronunciation"/>
-                    </VBox>
-                </HBox>
-                <VBox>
-                    <Label styleClass="desciption" text="Description"/>
-                </VBox>
-            </VBox>
-            <VBox spacing="15" styleClass="wordContainer" translateY="36">
-                <VBox>
-                    <Label styleClass="engWord" text="Word1"/>
-                </VBox>
-                <VBox>
-                    <Label styleClass="type" text="Type"/>
-                </VBox>
-                <HBox spacing="15">
-                    <VBox>
-                        <ImageView>
-                            <image>
-                                <Image url="@./assets/audio.png"/>
-                            </image>
-                        </ImageView>
-                    </VBox>
-                    <VBox>
-                        <Label styleClass="pronunciation" text="Pronunciation"/>
-                    </VBox>
-                </HBox>
-                <VBox>
-                    <Label styleClass="desciption" text="Description"/>
-                </VBox>
-            </VBox>
-            <VBox spacing="15" styleClass="wordContainer" translateY="36">
-                <VBox>
-                    <Label styleClass="engWord" text="Word1"/>
-                </VBox>
-                <VBox>
-                    <Label styleClass="type" text="Type"/>
-                </VBox>
-                <HBox spacing="15">
-                    <VBox>
-                        <ImageView>
-                            <image>
-                                <Image url="@./assets/audio.png"/>
-                            </image>
-                        </ImageView>
-                    </VBox>
-                    <VBox>
-                        <Label styleClass="pronunciation" text="Pronunciation"/>
-                    </VBox>
-                </HBox>
-                <VBox>
-                    <Label styleClass="desciption" text="Description"/>
-                </VBox>
-            </VBox>
-        </HBox>
-    </VBox>
-
-
-    <HBox alignment="TOP_LEFT" spacing="160" styleClass="layoutConatiner" prefHeight="240" maxWidth="1300"
-          translateY="20">
-        <VBox styleClass="FolderContainer" spacing="30">
+        </StackPane>
+        <VBox styleClass="rencentWordContainer" alignment="TOP_LEFT" prefHeight="240" maxWidth="1300">
             <VBox>
-                <Label styleClass="textHeading" text="Folder Explored"></Label>
+                <Label styleClass="Content" text="Recent Searches"/>
             </VBox>
-            <VBox styleClass="FolderNameContainer" alignment="CENTER" spacing="25">
-                <HBox spacing="20">
-                    <ImageView>
-                        <image>
-                            <Image url="@./assets/folder.png"/>
-                        </image>
-                    </ImageView>
-                    <VBox alignment="CENTER">
-                        <Label styleClass="FolderNameText" text="Folder Name"></Label>
+            <HBox alignment="CENTER" spacing="240">
+                <VBox spacing="15" styleClass="wordContainer" translateY="36">
+                    <VBox>
+                        <Label styleClass="engWord" text="Word1"/>
                     </VBox>
-                </HBox>
-
-                <HBox spacing="20">
-                    <ImageView>
-                        <image>
-                            <Image url="@./assets/folder.png"/>
-                        </image>
-                    </ImageView>
-                    <VBox alignment="CENTER">
-                        <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                    <VBox>
+                        <Label styleClass="type" text="Type"/>
                     </VBox>
-                </HBox>
-
-                <HBox spacing="20">
-                    <ImageView>
-                        <image>
-                            <Image url="@./assets/folder.png"/>
-                        </image>
-                    </ImageView>
-                    <VBox alignment="CENTER">
-                        <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                    <HBox spacing="15">
+                        <VBox>
+                            <ImageView>
+                                <image>
+                                    <Image url="@./assets/audio.png"/>
+                                </image>
+                            </ImageView>
+                        </VBox>
+                        <VBox>
+                            <Label styleClass="pronunciation" text="Pronunciation"/>
+                        </VBox>
+                    </HBox>
+                    <VBox>
+                        <Label styleClass="desciption" text="Description"/>
                     </VBox>
-                </HBox>
-
-                <HBox spacing="20">
-                    <ImageView>
-                        <image>
-                            <Image url="@./assets/folder.png"/>
-                        </image>
-                    </ImageView>
-                    <VBox alignment="CENTER">
-                        <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                </VBox>
+                <VBox spacing="15" styleClass="wordContainer" translateY="36">
+                    <VBox>
+                        <Label styleClass="engWord" text="Word1"/>
                     </VBox>
-                </HBox>
-            </VBox>
+                    <VBox>
+                        <Label styleClass="type" text="Type"/>
+                    </VBox>
+                    <HBox spacing="15">
+                        <VBox>
+                            <ImageView>
+                                <image>
+                                    <Image url="@./assets/audio.png"/>
+                                </image>
+                            </ImageView>
+                        </VBox>
+                        <VBox>
+                            <Label styleClass="pronunciation" text="Pronunciation"/>
+                        </VBox>
+                    </HBox>
+                    <VBox>
+                        <Label styleClass="desciption" text="Description"/>
+                    </VBox>
+                </VBox>
+                <VBox spacing="15" styleClass="wordContainer" translateY="36">
+                    <VBox>
+                        <Label styleClass="engWord" text="Word1"/>
+                    </VBox>
+                    <VBox>
+                        <Label styleClass="type" text="Type"/>
+                    </VBox>
+                    <HBox spacing="15">
+                        <VBox>
+                            <ImageView>
+                                <image>
+                                    <Image url="@./assets/audio.png"/>
+                                </image>
+                            </ImageView>
+                        </VBox>
+                        <VBox>
+                            <Label styleClass="pronunciation" text="Pronunciation"/>
+                        </VBox>
+                    </HBox>
+                    <VBox>
+                        <Label styleClass="desciption" text="Description"/>
+                    </VBox>
+                </VBox>
+            </HBox>
         </VBox>
-        <VBox styleClass="newWordContainer" spacing="30">
-            <VBox styleClass="newWordContainHeading">
-                <Label styleClass="textHeading" text="3 news words today"/>
+
+
+        <HBox alignment="TOP_LEFT" spacing="160" styleClass="layoutConatiner" prefHeight="240" maxWidth="1300"
+              translateY="20">
+            <VBox styleClass="FolderContainer" spacing="30">
+                <VBox>
+                    <Label styleClass="textHeading" text="Folder Explored"></Label>
+                </VBox>
+                <VBox styleClass="FolderNameContainer" alignment="CENTER" spacing="25">
+                    <HBox spacing="20">
+                        <ImageView>
+                            <image>
+                                <Image url="@./assets/folder.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER">
+                            <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="20">
+                        <ImageView>
+                            <image>
+                                <Image url="@./assets/folder.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER">
+                            <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="20">
+                        <ImageView>
+                            <image>
+                                <Image url="@./assets/folder.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER">
+                            <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                        </VBox>
+                    </HBox>
+
+                    <HBox spacing="20">
+                        <ImageView>
+                            <image>
+                                <Image url="@./assets/folder.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox alignment="CENTER">
+                            <Label styleClass="FolderNameText" text="Folder Name"></Label>
+                        </VBox>
+                    </HBox>
+                </VBox>
             </VBox>
-            <VBox styleClass="word">
-                <Label text="Word1"/>
-            </VBox>
-            <VBox styleClass="word">
-                <Label text="Word2"/>
-            </VBox>
-            <VBox styleClass="word">
-                <Label text="Word3"/>
-            </VBox>
+            <StackPane>
+                <VBox styleClass="newWordContainer" spacing="30">
+                    <VBox styleClass="newWordContainHeading">
+                        <Label styleClass="textHeading" text="3 news words today"/>
+                    </VBox>
+                    <StackPane fx:id="Word1Container" styleClass="word">
+                        <Label fx:id="Word1Text" text="Word1" StackPane.alignment="TOP_LEFT"/>
+                    </StackPane>
+                    <StackPane fx:id="Word2Container" styleClass="word">
+                        <Label fx:id="Word2Text" text="Word2" StackPane.alignment="TOP_LEFT"/>
+                    </StackPane>
+                    <StackPane fx:id="Word3Container" styleClass="word">
+                        <Label fx:id="Word3Text" text="Word3" StackPane.alignment="TOP_LEFT"/>
+                    </StackPane>
+                </VBox>
+                <Pane xmlns:fx="http://javafx.com/fxml"
+                      styleClass="container"
+                      managed="false"
+                      visible="false"
+                      StackPane.alignment="BOTTOM_RIGHT"
+                      translateX="240"
+                      translateY="-30"
+                      fx:id="PopUpContainer"
+                >
+                    <stylesheets>
+                        <URL value="@./css/wordPopUp.css"/>
+                    </stylesheets>
+                    <VBox styleClass="popUp" spacing="30">
+                        <VBox spacing="10">
+                            <HBox alignment="TOP_RIGHT" translateY="4" translateX="-4">
+                                <ImageView fx:id="closePopUp">
+                                    <image>
+                                        <Image url="@./assets/close.png"/>
+                                    </image>
+                                </ImageView>
+                            </HBox>
+                            <HBox>
+                                <Rectangle fill="D58CDB" height="2" width="300"/>
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="10" styleClass="wordContain">
+                            <HBox spacing="20">
+                                <VBox alignment="CENTER">
+                                    <Label fx:id="WordPopUp" styleClass="Word" text="WORD"/>
+                                </VBox>
+                                <VBox alignment="CENTER">
+                                    <Label fx:id="TypePopUp" styleClass="Type" text="TYPE"/>
+                                </VBox>
+                            </HBox>
+                            <VBox spacing="20" styleClass="definitionContain">
+                                <HBox spacing="15">
+                                    <VBox>
+                                        <ImageView>
+                                            <image>
+                                                <Image url="@./assets/audio.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </VBox>
+                                    <VBox>
+                                        <Label fx:id="PronunciationPopUp" styleClass="Pronunciation"
+                                               text="Pronunciation"/>
+                                    </VBox>
+                                </HBox>
+                                <VBox>
+                                    <Label fx:id="DefinitionPopUp" styleClass="Definition" text="Definition"/>
+                                </VBox>
+                                <VBox>
+                                    <Label fx:id="ExamplePopUp" styleClass="Example" text="EXAMPLE"/>
+                                </VBox>
+                                <HBox alignment="CENTER">
+                                    <Button fx:id="detailBtn" styleClass="detailBtn"
+                                            text="View Detail >>>"></Button>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </VBox>
+                </Pane>
+            </StackPane>
+        </HBox>
+    </VBox>
+    <Pane
+            styleClass="container"
+            fx:id="paneContainer"
+            managed="false"
+            visible="false"
+            StackPane.alignment="TOP_LEFT"
+            translateX="40"
+            translateY="60"
+    >
+        <stylesheets>
+            <URL value="@./css/libChild.css"/>
+        </stylesheets>
+        <VBox styleClass="libContainer" spacing="20" maxHeight="200">
+            <HBox spacing="120" alignment="CENTER" styleClass="contentContainer">
+                <StackPane>
+                    <Button fx:id="FolderBtn" styleClass="contentName, active" text="Folder"/>
+                    <VBox fx:id="movingAnimation" StackPane.alignment="BOTTOM_LEFT" translateY="22" translateX="0">
+                        <Rectangle fill="#DEF2FF" width="80" height="3"/>
+                    </VBox>
+                </StackPane>
+                <VBox>
+                    <Button fx:id="ListBtn" styleClass="contentName" text="List"/>
+                </VBox>
+            </HBox>
+
+            <HBox alignment="CENTER">
+                <VBox spacing="10" alignment="CENTER_LEFT" styleClass="textContainer">
+                    <Label fx:id="firstName" text="Set Name"/>
+                </VBox>
+            </HBox>
+            <HBox alignment="CENTER">
+                <VBox spacing="10" alignment="CENTER_LEFT" styleClass="textContainer">
+                    <Label fx:id="secondName" text="Set Name"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="showAllBtn" styleClass="showAllBtn" text="View All Folder"/>
+            </HBox>
         </VBox>
-    </HBox>
-
-
-</VBox>
+        <!--<VBox alignment="TOP_LEFT" translateY="-180">
+            <Rectangle fill="red" width="80" height="3" />
+        </VBox>-->
+    </Pane>
+</StackPane>

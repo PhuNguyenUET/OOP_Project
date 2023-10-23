@@ -18,14 +18,17 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.beans.binding.DoubleBinding?>
 <?import javafx.scene.layout.Pane?>
-<VBox xmlns:fx="http://javafx.com/fxml"
+<Pane xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.demo.frontend.libChildFrontEnd.libChildController"
-      styleClass="container" alignment="TOP_LEFT"
+      styleClass="container"
+      fx:id="paneContainer"
+      managed="false"
+      visible="true"
 >
     <stylesheets>
         <URL value="@./css/libChild.css"/>
     </stylesheets>
-    <VBox styleClass="libContainer" spacing="20">
+    <VBox styleClass="libContainer" spacing="20" maxHeight="200">
         <HBox spacing="120" alignment="CENTER" styleClass="contentContainer">
             <StackPane>
                 <Button fx:id="FolderBtn" styleClass="contentName, active" text="Folder"/>
@@ -56,4 +59,4 @@
     <!--<VBox alignment="TOP_LEFT" translateY="-180">
         <Rectangle fill="red" width="80" height="3" />
     </VBox>-->
-</VBox>
+</Pane>

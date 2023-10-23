@@ -1,8 +1,11 @@
 package com.example.demo.frontend.LoginFrontEnd;
 
+import com.example.demo.ScreenManager;
 import com.example.demo.backend.*;
 
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -115,6 +118,13 @@ public class LoginControl {
                     toastMesTransition.setToX(-28);
                     toastMesTransition.play();
                     pauseTransition.play();
+                    Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), event -> {
+                        // Thực hiện hàm bạn muốn sau 0.5 giây ở đây
+                        ScreenManager screenManager=ScreenManager.getInstance();
+                        screenManager.switchToLearner();
+                    }));
+                    timeline.setCycleCount(1);
+                    timeline.play();
                 }
                 else
                 {

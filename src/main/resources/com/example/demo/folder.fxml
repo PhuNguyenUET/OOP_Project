@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import java.net.URL?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.beans.binding.DoubleBinding?>
+<?import javafx.scene.layout.Pane?>
+<?import com.sun.javafx.scene.control.skin.FXVK?>
+<?import javafx.scene.layout.FlowPane?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+    styleClass="test"
+           translateY="90"
+           fx:controller="com.example.demo.frontend.LearnerFrontEnd.FolderController"
+>
+    <stylesheets>
+        <URL value="@./css/folder.css"/>
+    </stylesheets>
+    <VBox>
+    <FlowPane vgap="90" hgap="30" styleClass="container" VBox.vgrow="ALWAYS" >
+        <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">
+            <HBox alignment="CENTER">
+                <Label styleClass="folderName" text="Folder 1"/>
+            </HBox>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">
+            <HBox alignment="CENTER">
+                <Label styleClass="folderName" text="Folder 2"/>
+            </HBox>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">
+            <HBox alignment="CENTER">
+                <Label styleClass="folderName" text="Folder 3"/>
+            </HBox>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">
+            <HBox alignment="CENTER">
+                <Label styleClass="folderName" text="Folder 4"/>
+            </HBox>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">
+            <HBox alignment="CENTER">
+                <Label styleClass="folderName" text="Folder 5"/>
+            </HBox>
+        </VBox>
+        <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">
+            <HBox alignment="CENTER">
+                <Label styleClass="folderName" text="Folder 5"/>
+            </HBox>
+        </VBox>
+    </FlowPane>
+    </VBox>
+    <Button fx:id="backBtn" StackPane.alignment="BOTTOM_LEFT" translateX="32" translateY="-120" text="Go Back" styleClass="backBtn"/>
+            <!--<ImageView>
+                <image>
+                    <Image url="@./assets/arrow_50.png" />
+                </image>
+            </ImageView>-->
+</StackPane>

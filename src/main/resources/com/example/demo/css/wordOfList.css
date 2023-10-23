@@ -1,0 +1,48 @@
+.wordContainer{
+    -fx-padding: 0 0 0 32;
+}
+.engWord {
+    -fx-font-family: 'Lexend';
+    -fx-font-size:16;
+    -fx-text-fill: #000000;
+    -fx-font-weight:bolder;
+}
+
+.type {
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #A92424 ;
+    -fx-font-size: 12;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.pronunciation {
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #1E1E1E ;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.desciption {
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #000000 ;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.btn{
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-border-width: 3;
+    -fx-min-width: 160;
+    -fx-font-size:20;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-background-color: transparent;
+    -fx-padding: 8 12 8 12;
+}
+
+.backBtn:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.9;
+}

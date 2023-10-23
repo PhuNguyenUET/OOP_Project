@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -19,6 +20,8 @@ import java.net.URL;
 import java.sql.Connection;
 
 public class libChildController {
+    @FXML
+    public Pane paneContainer;
     @FXML
     private Button FolderBtn;
 
@@ -46,7 +49,11 @@ public class libChildController {
 
     private Label secondName;
 
+    @FXML
+    private TranslateTransition transition1;
+
     public void initialize() {
+        System.out.println(paneContainer);
         transition = new TranslateTransition(Duration.seconds(0.5),movingAnimation);
 
         double FolderPos=0;
