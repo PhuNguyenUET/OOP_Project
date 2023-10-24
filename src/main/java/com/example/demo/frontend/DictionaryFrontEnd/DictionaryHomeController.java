@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -75,5 +76,10 @@ public class DictionaryHomeController implements Initializable {
         if (event.getCode() == KeyCode.ENTER) {
             searchBarController.searchForWord(event, searchBarController.getSearchField());
         }
+    }
+
+    @FXML
+    protected void clearSuggestion (MouseEvent event) {
+        suggestionBox.setVisible(false);
     }
 }
