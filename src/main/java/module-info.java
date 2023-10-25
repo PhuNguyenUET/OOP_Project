@@ -18,4 +18,7 @@ module com.example.demo{
 
     exports com.example.demo.backend.DictionaryBackend;
     opens com.example.demo.backend.DictionaryBackend to com.fasterxml.jackson.databind;
+
+    exports com.example.demo.frontend.Translator;
+    opens com.example.demo.frontend.Translator to javafx.fxml;
 }
