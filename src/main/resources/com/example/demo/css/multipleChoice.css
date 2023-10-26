@@ -1,0 +1,30 @@
+.choiceButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 3px;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 30;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 30;
+    -fx-font-style: italic;
+}
+
+.common {
+    -fx-background-color: #FFFFFF;
+}
+
+.questionNumber {
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: lighter;
+    -fx-font-size: 25;
+    -fx-background-color: #A3D9FC;
+    -fx-background-radius: 40;
+}
+
+.questionLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 20;
+}
+
+.timerBar > .bar {
+    -fx-background-color: linear-gradient(to right, #A3D9FC, #E8D8F4);
+}
