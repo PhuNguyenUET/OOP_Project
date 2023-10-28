@@ -29,7 +29,7 @@
     <VBox styleClass="container"
           spacing="25">
         <StackPane styleClass="libContainer" translateX="40">
-            <HBox alignment="CENTER" fx:id="yourLibContain">
+            <HBox alignment="CENTER" fx:id="yourLibContain" styleClass="test">
                 <VBox alignment="CENTER">
                     <Button fx:id="yourLib" styleClass="libBtn" text="Your Libarary"></Button>
                 </VBox>
@@ -46,7 +46,7 @@
             <VBox>
                 <Label styleClass="Content" text="Recent Searches"/>
             </VBox>
-            <HBox alignment="CENTER" spacing="240">
+            <HBox fx:id="rencentContainer" alignment="CENTER" spacing="240">
                 <VBox spacing="15" styleClass="wordContainer" translateY="36">
                     <VBox>
                         <Label styleClass="engWord" text="Word1"/>
@@ -67,55 +67,55 @@
                         </VBox>
                     </HBox>
                     <VBox>
-                        <Label styleClass="desciption" text="Description"/>
+                        <Label styleClass="description" text="Description"/>
                     </VBox>
                 </VBox>
-                <VBox spacing="15" styleClass="wordContainer" translateY="36">
-                    <VBox>
-                        <Label styleClass="engWord" text="Word1"/>
-                    </VBox>
-                    <VBox>
-                        <Label styleClass="type" text="Type"/>
-                    </VBox>
-                    <HBox spacing="15">
-                        <VBox>
-                            <ImageView>
-                                <image>
-                                    <Image url="@./assets/audio.png"/>
-                                </image>
-                            </ImageView>
-                        </VBox>
-                        <VBox>
-                            <Label styleClass="pronunciation" text="Pronunciation"/>
-                        </VBox>
-                    </HBox>
-                    <VBox>
-                        <Label styleClass="desciption" text="Description"/>
-                    </VBox>
-                </VBox>
-                <VBox spacing="15" styleClass="wordContainer" translateY="36">
-                    <VBox>
-                        <Label styleClass="engWord" text="Word1"/>
-                    </VBox>
-                    <VBox>
-                        <Label styleClass="type" text="Type"/>
-                    </VBox>
-                    <HBox spacing="15">
-                        <VBox>
-                            <ImageView>
-                                <image>
-                                    <Image url="@./assets/audio.png"/>
-                                </image>
-                            </ImageView>
-                        </VBox>
-                        <VBox>
-                            <Label styleClass="pronunciation" text="Pronunciation"/>
-                        </VBox>
-                    </HBox>
-                    <VBox>
-                        <Label styleClass="desciption" text="Description"/>
-                    </VBox>
-                </VBox>
+<!--                <VBox spacing="15" styleClass="wordContainer" translateY="36">-->
+<!--                    <VBox>-->
+<!--                        <Label styleClass="engWord" text="Word1"/>-->
+<!--                    </VBox>-->
+<!--                    <VBox>-->
+<!--                        <Label styleClass="type" text="Type"/>-->
+<!--                    </VBox>-->
+<!--                    <HBox spacing="15">-->
+<!--                        <VBox>-->
+<!--                            <ImageView>-->
+<!--                                <image>-->
+<!--                                    <Image url="@./assets/audio.png"/>-->
+<!--                                </image>-->
+<!--                            </ImageView>-->
+<!--                        </VBox>-->
+<!--                        <VBox>-->
+<!--                            <Label styleClass="pronunciation" text="Pronunciation"/>-->
+<!--                        </VBox>-->
+<!--                    </HBox>-->
+<!--                    <VBox>-->
+<!--                        <Label styleClass="desciption" text="Description"/>-->
+<!--                    </VBox>-->
+<!--                </VBox>-->
+<!--                <VBox spacing="15" styleClass="wordContainer" translateY="36">-->
+<!--                    <VBox>-->
+<!--                        <Label styleClass="engWord" text="Word1"/>-->
+<!--                    </VBox>-->
+<!--                    <VBox>-->
+<!--                        <Label styleClass="type" text="Type"/>-->
+<!--                    </VBox>-->
+<!--                    <HBox spacing="15">-->
+<!--                        <VBox>-->
+<!--                            <ImageView>-->
+<!--                                <image>-->
+<!--                                    <Image url="@./assets/audio.png"/>-->
+<!--                                </image>-->
+<!--                            </ImageView>-->
+<!--                        </VBox>-->
+<!--                        <VBox>-->
+<!--                            <Label styleClass="pronunciation" text="Pronunciation"/>-->
+<!--                        </VBox>-->
+<!--                    </HBox>-->
+<!--                    <VBox>-->
+<!--                        <Label styleClass="desciption" text="Description"/>-->
+<!--                    </VBox>-->
+<!--                </VBox>-->
             </HBox>
         </VBox>
 
@@ -258,13 +258,13 @@
             managed="false"
             visible="false"
             StackPane.alignment="TOP_LEFT"
-            translateX="40"
+            translateX="20"
             translateY="60"
     >
         <stylesheets>
             <URL value="@./css/libChild.css"/>
         </stylesheets>
-        <VBox styleClass="libContainer" spacing="20" maxHeight="200">
+        <VBox fx:id="libChildContainer" styleClass="libContainer" spacing="20" maxHeight="200">
             <HBox spacing="120" alignment="CENTER" styleClass="contentContainer">
                 <StackPane>
                     <Button fx:id="FolderBtn" styleClass="contentName, active" text="Folder"/>

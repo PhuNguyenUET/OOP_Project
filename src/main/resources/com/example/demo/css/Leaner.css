@@ -51,8 +51,14 @@
 
 .wordContainer {
     -fx-background-color:#DEF2FF;
-    -fx-padding: 16 96 16 16;
+    -fx-padding: 16 0 16 16;
     -fx-background-radius: 8;
+    -fx-min-width: 250;
+}
+
+.wordContainer:hover {
+    -fx-cursor:hand;
+    -fx-opacity: 0.8;
 }
 
 .engWord {
@@ -77,7 +83,7 @@
     -fx-font-weight: bolder;
 }
 
-.desciption {
+.description {
     -fx-font-family: 'Lexend';
     -fx-text-fill: #000000 ;
     -fx-font-style: italic;
@@ -151,3 +157,4 @@
     -fx-text-fill: #474444;
     -fx-font-size: 12;
 }
+

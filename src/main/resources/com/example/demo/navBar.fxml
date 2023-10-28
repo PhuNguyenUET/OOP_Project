@@ -36,10 +36,10 @@
             </ImageView>
             </VBox>
             <VBox alignment="CENTER">
-                <Button fx:id="Dictionary" text="Dictionary" styleClass="navBarBtn, active"/>
+                <Button fx:id="Dictionary" text="Dictionary" styleClass="navBarBtn"/>
             </VBox>
             <VBox alignment="CENTER">
-                <Button fx:id="Learner" text="Leaner's Path" styleClass="navBarBtn"/>
+                <Button fx:id="Learner" text="Leaner's Path" styleClass="navBarBtn, active"/>
             </VBox>
             <VBox alignment="CENTER">
                 <Button fx:id="Translate" text="Translate" styleClass="navBarBtn"/>
@@ -56,6 +56,6 @@
             </VBox>
         </HBox>
     </HBox>
-    <Rectangle fx:id="movingRec" StackPane.alignment="TOP_LEFT" width="120" height="2" styleClass="recMove" fill="#E8D8F4" translateY="48" translateX="48"></Rectangle>
+    <Rectangle fx:id="movingRec" StackPane.alignment="TOP_LEFT" width="120" height="2" styleClass="recMove" fill="#E8D8F4" translateY="48" translateX="178"></Rectangle>
 
 </StackPane>

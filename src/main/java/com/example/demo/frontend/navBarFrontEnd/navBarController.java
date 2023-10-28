@@ -1,5 +1,6 @@
 package com.example.demo.frontend.navBarFrontEnd;
 
+import com.example.demo.ScreenManager;
 import com.example.demo.backend.*;
 
 import javafx.animation.PauseTransition;
@@ -52,10 +53,6 @@ public class navBarController {
 
         double GamePos = TranslatePos + 120;
 
-        System.out.println(Dictionary.getLayoutX());
-        System.out.println(Learner.getLayoutX());
-        System.out.println(Translate.getLayoutX());
-        System.out.println(Game.getLayoutX());
         Dictionary.setOnAction(e -> {
             /*transition.setToX(DictionaryPos);
             transition.play();*/
@@ -67,6 +64,9 @@ public class navBarController {
         Learner.setOnAction(e->{
             movingAnimation(transition,LeanerPos);
             handleActive(Learner);
+
+
+            ScreenManager.getInstance().switchToLearner();
         });
 
         Translate.setOnAction(e->{

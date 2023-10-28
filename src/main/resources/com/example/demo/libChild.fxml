@@ -28,7 +28,7 @@
     <stylesheets>
         <URL value="@./css/libChild.css"/>
     </stylesheets>
-    <VBox styleClass="libContainer" spacing="20" maxHeight="200">
+    <VBox fx:id="libChildContainer" styleClass="libContainer" spacing="20" maxHeight="200">
         <HBox spacing="120" alignment="CENTER" styleClass="contentContainer">
             <StackPane>
                 <Button fx:id="FolderBtn" styleClass="contentName, active" text="Folder"/>

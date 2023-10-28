@@ -1,5 +1,6 @@
 .container {
     -fx-max-height: 300;
+    -fx-background-color:red !important;
 }
 
 .libContainer {
@@ -38,7 +39,7 @@
     -fx-min-width:420;
     -fx-background-color: #6DBFF3;
     -fx-background-radius: 20;
-    -fx-padding: 8;
+    -fx-padding: 8 0 8 0;
     -fx-font-family: 'Lexend';
     -fx-text-fill: #1E1E1E;
     -fx-font-weight: bolder;

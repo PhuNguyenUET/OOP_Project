@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -104,6 +106,13 @@ public class LoginControl {
             toastMesTransition.setToX(360);
             toastMesTransition.play();
         });
+
+        ScreenManager.getInstance().getScene().addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                submitButton.fire();
+            }
+        });
+
         submitButton.setOnAction(e -> {
             String userValue=userName.getText();
             String passValue=password.getText();
@@ -174,5 +183,7 @@ public class LoginControl {
                 }
             }
         });
+
+
     }
 }

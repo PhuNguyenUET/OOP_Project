@@ -6,6 +6,8 @@ module com.example.demo {
     requires cmu.time.awb;
     requires freetts;
     requires jsapi;
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.databind;
 
 
     opens com.example.demo to javafx.fxml;

@@ -1,24 +1,20 @@
 package com.example.demo.frontend.LearnerFrontEnd;
 
 import com.example.demo.ScreenManager;
-import com.example.demo.frontend.LearnerFrontEnd.LeanerController;
+import com.example.demo.backend.TextToSpeech;
 //import com.example.demo.frontend.libChildFrontEnd.libChildController;
-import com.example.demo.frontend.libChildFrontEnd.libChildController;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.layout.*;
 import javafx.util.Duration;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LeanerController {
 
@@ -91,16 +87,22 @@ public class LeanerController {
 
     private Label WordPopUp;
 
+    @FXML
+
+    private VBox libChildContainer;
+
+    @FXML
+    private HBox rencentContainer;
 
     public void initialize() {
         System.out.println(paneContainer);
-        transition1 = new TranslateTransition(Duration.seconds(0.5),movingAnimation);
+        transition1 = new TranslateTransition(Duration.seconds(0.5), movingAnimation);
 
-        double FolderPos=0;
+        double FolderPos = 0;
 
-        double ListPos=178;
+        double ListPos = 178;
 
-        FolderBtn.setOnAction(e->{
+        FolderBtn.setOnAction(e -> {
             transition1.setToX(FolderPos);
             transition1.play();
             FolderBtn.getStyleClass().add("active");
@@ -110,7 +112,7 @@ public class LeanerController {
             secondName.setText("Folder Name");
         });
 
-        ListBtn.setOnAction(e->{
+        ListBtn.setOnAction(e -> {
             transition1.setToX(ListPos);
             transition1.play();
             FolderBtn.getStyleClass().remove("active");
@@ -120,37 +122,40 @@ public class LeanerController {
             secondName.setText("List Name");
         });
 
-        yourLib.setOnAction(e->{
+        yourLib.setOnAction(e -> {
             paneContainer.setVisible(!paneContainer.isVisible());
             paneContainer.toFront();
 
         });
 
-        yourLibContain.setOnMouseClicked(e->{
+        yourLibContain.setOnMouseClicked(e -> {
             paneContainer.setVisible(!paneContainer.isVisible());
             paneContainer.toFront();
         });
 
 
-        Word1Container.setOnMouseClicked(e->{
+        Word1Container.setOnMouseClicked(e -> {
+            e.consume();
             PopUpContainer.setVisible(true);
             System.out.println("Word1 click");
             WordPopUp.setText(Word1Text.getText());
         });
 
-        Word2Container.setOnMouseClicked(e->{
+        Word2Container.setOnMouseClicked(e -> {
+            e.consume();
             PopUpContainer.setVisible(true);
             System.out.println("Word2 click");
             WordPopUp.setText(Word2Text.getText());
         });
 
-        Word3Container.setOnMouseClicked(e->{
+        Word3Container.setOnMouseClicked(e -> {
+            e.consume();
             PopUpContainer.setVisible(true);
             System.out.println("Word3 click");
             WordPopUp.setText(Word3Text.getText());
         });
 
-        closePopUp.setOnMouseClicked(e->{
+        closePopUp.setOnMouseClicked(e -> {
             System.out.println("Close");
             System.out.println(PopUpContainer.isVisible());
             PopUpContainer.setVisible(false);
@@ -158,22 +163,88 @@ public class LeanerController {
         });
 
         showAllBtn.setOnAction(e -> {
-            if(showAllBtn.getText().equals("View All Folder"))
-            {
+            e.consume();
+            if (showAllBtn.getText().equals("View All Folder")) {
                 System.out.println("Change to Folder");
                 ScreenManager.getInstance().switchToFolder();
-//                FXMLLoader folderUI=ScreenManager.getInstance().getFolderUI();
-//                System.out.println(folderUI);
             }
         });
 
-        System.out.println(PopUpContainer.isVisible());
+        ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
+            paneContainer.setVisible(false);
+            PopUpContainer.setVisible(false);
+        });
+
+        PopUpContainer.setOnMouseClicked(e -> {
+            e.consume();
+        });
+
+        libChildContainer.setOnMouseClicked(e -> {
+            e.consume();
+        });
+
+        folderRender();
     }
 
-    public void movingAnimation(TranslateTransition transition,double pos)
-    {
+    public void movingAnimation(TranslateTransition transition, double pos) {
         transition.setToX(pos);
         transition.play();
+    }
+
+    public void recentWordRender()
+    {
+
+    }
+
+    public void folderRender()
+    {
+//            List<UserWord> listWord = new ArrayList<>();
+//            listWord.add(new UserWord("Hello","v","Xin chào","helo"));
+//            listWord.add(new UserWord("Vehicle","n","Phương tiện","helo"));
+//            listWord.add(new UserWord("Morning","n","Buổi sáng","helo"));
+//            for (int i=0;i<2;i++) {
+//                String word = listWord.get(i).getWord();
+//                VBox container = new VBox();
+//                container.setSpacing(15);
+//                container.getStyleClass().add("wordContainer");
+//                container.setTranslateY(36);
+//                VBox engWordContainer = new VBox();
+//                Label engWord = new Label(listWord.get(i).getWord());
+//                engWord.getStyleClass().add("engWord");
+//                engWordContainer.getChildren().add(engWord);
+//                VBox typeContainer = new VBox();
+//                Label type = new Label(listWord.get(i).getType());
+//                type.getStyleClass().add("type");
+//                typeContainer.getChildren().add(type);
+//                HBox audio = new HBox();
+//                audio.setSpacing(15);
+//                VBox imgContainer = new VBox();
+//                String imagePath = "/com/example/demo/assets/audio.png";
+//                URL imageUrl = getClass().getResource(imagePath);
+//                ImageView imageView = new ImageView(new Image(imageUrl.toString()));
+//                imgContainer.getChildren().add(imageView);
+//                VBox pronunContainer = new VBox();
+//                Label pronunciation = new Label(listWord.get(i).getPronunciation());
+//                pronunciation.getStyleClass().add("pronunciation");
+//                pronunContainer.getChildren().add(pronunciation);
+//                audio.getChildren().add(imgContainer);
+//                audio.getChildren().add(pronunContainer);
+//                VBox definitionContainer= new VBox();
+//                Label difinition = new Label(listWord.get(i).getDefinition());
+//                difinition.getStyleClass().add("description");
+//                definitionContainer.getChildren().add(difinition);
+//                container.getChildren().addAll(engWordContainer,typeContainer,audio,definitionContainer);
+//                rencentContainer.getChildren().add(container);
+//
+//                imgContainer.setOnMouseClicked(e->{
+//                    e.consume();
+//                    TextToSpeech.processTextToSpeech(word);
+//                });
+//
+//                container.setOnMouseClicked(e->{
+//                    System.out.println("Chuyen huong");
+//                });
+//            }
     }
 
 }

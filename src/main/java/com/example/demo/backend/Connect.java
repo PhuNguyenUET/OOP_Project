@@ -22,12 +22,12 @@ public class Connect {
     }
     private static Connection connection;
     private static String DATABASE_URL = "src/main/resources/database/Dictionary.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
-    public static Connection connect() {
+    public Connection connect() {
         if (connection == null) {
             try {
 //                Class.forName("org.sqlite.JDBC");
                 connection = DriverManager.getConnection("jdbc:sqlite:" + DATABASE_URL);
-                System.out.println("Connected to SQLite database");
+                System.out.println("Connected to SQLite database" + DATABASE_URL);
             } catch (SQLException e) {
                 System.err.println("Error connecting to SQLite database.");
                 e.printStackTrace();
