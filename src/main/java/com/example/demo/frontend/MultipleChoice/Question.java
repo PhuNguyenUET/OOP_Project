@@ -1,4 +1,4 @@
-package com.example.demo.backend.MultipleChoiceBackend;
+package com.example.demo.frontend.MultipleChoice;
 
 import java.util.List;
 
@@ -6,12 +6,6 @@ public class Question {
     private final String question;
     private final List<String> options;
     private final int correctOption;
-
-    private enum Difficulty {
-        Easy,
-        Medium,
-        Hard
-    }
 
     private Difficulty difficulty;
 
@@ -48,5 +42,9 @@ public class Question {
             case "Medium" -> this.difficulty = Difficulty.Medium;
             case "Hard" -> this.difficulty = Difficulty.Hard;
         }
+    }
+
+    public boolean checkAnswer (int choice) {
+        return choice == correctOption;
     }
 }

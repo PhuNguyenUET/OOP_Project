@@ -25,6 +25,13 @@
     -fx-font-size: 20;
 }
 
+.difficultyTag {
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: lighter;
+    -fx-font-style: italic;
+    -fx-font-size: 16;
+}
+
 .timerBar > .bar {
     -fx-background-color: linear-gradient(to right, #A3D9FC, #E8D8F4);
 }

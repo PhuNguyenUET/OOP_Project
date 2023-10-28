@@ -12,7 +12,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
-      <URL value="@../../css/multipleChoice.css" />
+      <URL value="@../../css/multipleChoiceGame.css" />
    </stylesheets>
    <children>
       <VBox alignment="TOP_CENTER" styleClass="common">
@@ -37,9 +37,14 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </ProgressBar>
+            <Label styleClass="difficultyTag" text="Difficulty: Easy">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
             <Label alignment="CENTER" prefHeight="167.0" prefWidth="1400.0" styleClass="questionLabel" text="This is a dumb question Lol lol lol lol lol" wrapText="true">
                <VBox.margin>
-                  <Insets top="50.0" />
+                  <Insets top="20.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="225.0" prefWidth="1520.0" spacing="60.0">
