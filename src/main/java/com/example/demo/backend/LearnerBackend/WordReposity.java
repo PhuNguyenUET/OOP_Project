@@ -76,6 +76,7 @@ public class WordReposity {
             boolean check = true;
             if (rowsAffected > 0) {
                 System.out.println("Danh sách trong thư mục có folderId = " + listId + " đã bị xóa thành công.");
+                System.out.println("Tổng số từ bị xoá: " + rowsAffected);
             } else {
                 check = false;
                 System.out.println("Không tìm thấy danh sách có trong thư mục có folderId = " + listId + ".");

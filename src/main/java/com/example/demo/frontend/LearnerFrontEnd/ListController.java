@@ -3,6 +3,7 @@ package com.example.demo.frontend.LearnerFrontEnd;
 import com.example.demo.ScreenManager;
 import com.example.demo.backend.LearnerBackend.FolderReposity;
 import com.example.demo.backend.LearnerBackend.ListReposity;
+import com.example.demo.backend.LearnerBackend.WordReposity;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -187,6 +188,7 @@ public class ListController {
 
             deleteImg.setOnMouseClicked(e->{
                 ListReposity.getInstance().removeListWithId(id);
+                WordReposity.getInstance().removeAllListInFolder(id);
                 listContainerRender();
             });
 
