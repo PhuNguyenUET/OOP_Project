@@ -119,9 +119,13 @@ public class GameScreenController implements Initializable {
 
     private void timeOut() {
         option1.setDisable(true);
+        option1.setOpacity(0.5);
         option2.setDisable(true);
+        option2.setOpacity(0.5);
         option3.setDisable(true);
+        option3.setOpacity(0.5);
         option4.setDisable(true);
+        option4.setOpacity(0.5);
         if(game.isOver()) {
             next.setText("Show result");
         }
