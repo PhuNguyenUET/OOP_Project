@@ -3,21 +3,19 @@ package com.example.demo.frontend.MultipleChoice;
 import java.util.List;
 
 public class Game {
-    Difficulty difficulty;
-    List<Question> questions;
-    int score = 0;
-
-    int quesIndex = 0;
-
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
-    }
+    private final Difficulty difficulty;
+    private final List<Question> questions;
+    private int score = 0;
+    private int quesIndex = 0;
 
     public String getDifficulty() {
         return difficulty.name();
     }
 
     public Question getCurrentQuestion() {
+        if (quesIndex >= questions.size()) {
+            return null;
+        }
         return questions.get(quesIndex);
     }
 
@@ -26,15 +24,29 @@ public class Game {
     }
 
     public int getQuesIndex() {
-        return quesIndex;
+        return quesIndex + 1;
     }
 
     public Game(Difficulty difficulty) {
         this.difficulty = difficulty;
-        GameIntegration.Instance().getQuestions(difficulty.name());
+        questions = GameIntegration.Instance().getQuestions(difficulty.name());
     }
 
     public void nextQuestion() {
         quesIndex ++;
+    }
+
+    public boolean checkAnswer(int choice) {
+        boolean check = questions.get(quesIndex).checkAnswer(choice);
+        if(check) score += 10;
+        return check;
+    }
+
+    public int getTotalQuestion() {
+        return questions.size();
+    }
+
+    public boolean isOver() {
+        return quesIndex == questions.size() - 1;
     }
 }

@@ -32,6 +32,29 @@
     -fx-font-size: 16;
 }
 
+.correctAnswer {
+    -fx-background-color: #33cc33;
+    -fx-background-radius: 30;
+}
+
+.wrongAnswer {
+    -fx-background-color: #cc0000;
+    -fx-background-radius: 30;
+}
+
+.nextButton {
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: lighter;
+    -fx-font-size: 17;
+    -fx-background-color: #A3D9FC;
+    -fx-background-radius: 40;
+}
+
+.onHover {
+    -fx-background-color: #F1F1F0;
+    -fx-background-radius: 30;
+}
+
 .timerBar > .bar {
     -fx-background-color: linear-gradient(to right, #A3D9FC, #E8D8F4);
 }

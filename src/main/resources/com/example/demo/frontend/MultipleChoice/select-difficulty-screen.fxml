@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.SelectDifficultyController">
    <stylesheets>
       <URL value="@../../css/multipleChoiceSelectDifficulty.css" />
    </stylesheets>
@@ -30,15 +30,15 @@
                <VBox.margin>
                   <Insets top="150.0" />
                </VBox.margin></Label>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="52.0" prefWidth="396.0" styleClass="difficultyButton" text="Easy">
+            <Button fx:id="easyButton" alignment="CENTER" mnemonicParsing="false" onAction="#easyDifficulty" prefHeight="52.0" prefWidth="396.0" styleClass="difficultyButton" text="Easy">
                <VBox.margin>
                   <Insets top="70.0" />
                </VBox.margin></Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefWidth="396.0" styleClass="difficultyButton" text="Medium">
+            <Button fx:id="mediumButton" alignment="CENTER" mnemonicParsing="false" onAction="#meidumDifficulty" prefWidth="396.0" styleClass="difficultyButton" text="Medium">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin></Button>
-            <Button mnemonicParsing="false" prefWidth="396.0" styleClass="difficultyButton" text="Hard">
+            <Button fx:id="hardButton" mnemonicParsing="false" onAction="#hardDifficulty" prefWidth="396.0" styleClass="difficultyButton" text="Hard">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin></Button>

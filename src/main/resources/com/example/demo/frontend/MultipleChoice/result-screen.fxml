@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.ResultController">
     <stylesheets>
         <URL value="@../../css/multipleChoiceResult.css" />
     </stylesheets>
@@ -26,7 +26,7 @@
                   <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="62.0" />
                </children>
             </HBox>
-            <Label alignment="CENTER" styleClass="scoreLabel" text="Your score is: ">
+            <Label fx:id="scoreTag" alignment="CENTER" styleClass="scoreLabel" text="Your score is: ">
                <VBox.margin>
                   <Insets top="70.0" />
                </VBox.margin></Label>
@@ -34,11 +34,11 @@
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin></Label>
-            <Button mnemonicParsing="false" styleClass="functionButton" text="Replay">
+            <Button mnemonicParsing="false" onAction="#replay" styleClass="functionButton" text="Replay">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin></Button>
-            <Button mnemonicParsing="false" styleClass="functionButton" text="Return to Home">
+            <Button mnemonicParsing="false" onAction="#returnToGameSelect" styleClass="functionButton" text="Return to Home">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin></Button>

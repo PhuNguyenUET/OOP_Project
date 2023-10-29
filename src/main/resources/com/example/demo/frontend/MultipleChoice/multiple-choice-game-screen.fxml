@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.GameScreenController">
    <stylesheets>
       <URL value="@../../css/multipleChoiceGame.css" />
    </stylesheets>
@@ -27,41 +27,57 @@
                   <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="62.0" />
                </children>
             </HBox>
-            <Label alignment="CENTER" prefHeight="55.0" prefWidth="174.0" styleClass="questionNumber" text="Question 1">
+            <Label fx:id="quesNumberLabel" alignment="CENTER" prefHeight="55.0" prefWidth="218.0" styleClass="questionNumber" text="Question 1">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
-            <ProgressBar prefHeight="20.0" prefWidth="1520.0" progress="1.0" styleClass="timerBar">
+            <ProgressBar fx:id="timer" prefHeight="20.0" prefWidth="1520.0" progress="1.0" styleClass="timerBar">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
             </ProgressBar>
-            <Label styleClass="difficultyTag" text="Difficulty: Easy">
+            <VBox>
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefHeight="167.0" prefWidth="1400.0" styleClass="questionLabel" text="This is a dumb question Lol lol lol lol lol" wrapText="true">
+               <children>
+                  <Label fx:id="scoreLabel" styleClass="difficultyTag" text="Score: 0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></Label>
+                  <Label fx:id="difficultyLabel" styleClass="difficultyTag" text="Difficulty: Easy" />
+               </children>
+            </VBox>
+            <Label fx:id="questionLabel" alignment="CENTER" prefHeight="135.0" prefWidth="1400.0" styleClass="questionLabel" text="This is a dumb question Lol lol lol lol lol" wrapText="true">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Label>
             <HBox prefHeight="225.0" prefWidth="1520.0" spacing="60.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="229.0" prefWidth="298.0" styleClass="choiceButton" text="Lol">
+                  <Button fx:id="option1" alignment="CENTER" mnemonicParsing="false" onAction="#button1Handler" onMouseEntered="#onHover1" onMouseExited="#outOfHover" prefHeight="229.0" prefWidth="298.0" styleClass="choiceButton" text="Lol">
                      <HBox.margin>
                         <Insets left="75.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="277.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
-                  <Button mnemonicParsing="false" prefHeight="238.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
-                  <Button mnemonicParsing="false" prefHeight="242.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
+                  <Button fx:id="option2" alignment="CENTER" mnemonicParsing="false" onAction="#button2Handler" onMouseEntered="#onHover2" onMouseExited="#outOfHover" prefHeight="277.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
+                  <Button fx:id="option3" alignment="CENTER" mnemonicParsing="false" onAction="#button3Handler" onMouseEntered="#onHover3" onMouseExited="#outOfHover" prefHeight="238.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
+                  <Button fx:id="option4" alignment="CENTER" mnemonicParsing="false" onAction="#button4Handler" onMouseEntered="#onHover4" onMouseExited="#outOfHover" prefHeight="242.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
                </children>
                <VBox.margin>
                   <Insets top="60.0" />
                </VBox.margin>
             </HBox>
+            <VBox alignment="TOP_RIGHT">
+               <children>
+                  <Button fx:id="next" mnemonicParsing="false" onAction="#nextQuestion" prefHeight="33.0" prefWidth="77.0" styleClass="nextButton" text="Next">
+                     <VBox.margin>
+                        <Insets right="40.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </children>
