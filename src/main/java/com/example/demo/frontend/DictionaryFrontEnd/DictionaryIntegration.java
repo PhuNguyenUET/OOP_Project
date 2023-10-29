@@ -14,8 +14,6 @@ class DictionaryIntegration {
     private DictionaryIntegration() {
     }
 
-    ;
-
     protected static DictionaryIntegration Instance() {
         if (_instance == null) {
             _instance = new DictionaryIntegration();

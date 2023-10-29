@@ -93,7 +93,7 @@ public class WordDisplayController implements Initializable {
     }
 
     @FXML
-    protected void clearSearch(ActionEvent event) {
+    protected void clearSearch() {
         searchBarController.clearSearch();
         searchBar.clear();
         suggestionBox.setVisible(false);

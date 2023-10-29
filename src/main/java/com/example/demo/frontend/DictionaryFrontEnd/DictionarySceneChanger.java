@@ -16,8 +16,6 @@ class DictionarySceneChanger {
     private DictionarySceneChanger() {
     }
 
-    ;
-
     protected static DictionarySceneChanger Instance() {
         if (_instance == null) {
             _instance = new DictionarySceneChanger();
