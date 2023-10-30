@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e9e0449a-bb74-4a55-87d0-a16d7158800f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/FolderReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/FolderReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/ListReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/ListReposity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/WordReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/WordReposity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/libChildFrontEnd/libChildController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/libChildFrontEnd/libChildController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/Learner.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/Learner.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/Leaner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/Leaner.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +123,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java</url>
-          <line>12</line>
+          <line>16</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

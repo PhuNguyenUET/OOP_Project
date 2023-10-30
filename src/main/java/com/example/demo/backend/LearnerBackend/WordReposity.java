@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordReposity {
-    public static WordReposity instance_;
+    private static WordReposity instance_;
 
     private WordReposity() {
     }
@@ -108,5 +108,30 @@ public class WordReposity {
         }
     }
 
+    public String getThreeWordFromList() {
+        try {
+            String query = "SELECT * FROM UserWord Order by id desc limit 3";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
 
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<String> listData = new ArrayList<>();
+
+            while (resultSet.next()) {
+                String word = resultSet.getString("word");
+                String type = resultSet.getString("type");
+                String pronunciation = resultSet.getString("pronunciation");
+                String definition = resultSet.getString("definition");
+                int wordId = resultSet.getInt("id");
+                String wordJson = String.format("{\"id\": %d, \"word\": \"%s\", \"type\": \"%s\", \"pronunciation\": \"%s\", \"definition\": \"%s\"}", wordId, word, type, pronunciation, definition);
+                listData.add(wordJson);
+            }
+            System.out.println("Số dòng: " + listData.size());
+            String res = "[" + String.join(",", listData) + "]";
+            return res;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve words from the list";
+        }
+    }
 }

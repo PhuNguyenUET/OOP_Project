@@ -158,3 +158,13 @@
     -fx-font-size: 12;
 }
 
+.recentFolderContainer:hover {
+    -fx-cursor:hand;
+    -fx-opacity: 0.75
+}
+
+
+.textBody{
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: bolder;
+}

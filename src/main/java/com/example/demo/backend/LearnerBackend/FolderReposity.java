@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FolderReposity {
 
-    public static FolderReposity instance_;
+    private static FolderReposity instance_;
 
     private FolderReposity() {
     }
@@ -25,6 +25,17 @@ public class FolderReposity {
             String insertQuery = "INSERT INTO folder (name) VALUES (?)";
             PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(insertQuery);
             preparedStatement.setString(1, folderName);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addRecentFolder(int folderId) {
+        try {
+            String insertQuery = "INSERT INTO HistoryFolder (folderId) VALUES (?)";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(insertQuery);
+            preparedStatement.setInt(1, folderId);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -58,6 +69,59 @@ public class FolderReposity {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
             String query = "SELECT * FROM folder";
+            ResultSet resultSet = statement.executeQuery(query);
+            List<String> folderList = new ArrayList<>();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String id = resultSet.getString("id");
+                System.out.println(id + " " + name);
+                String folderJson = "{\"name\": \"" + name + "\", \"id\": \"" + id + "\"}";
+                folderList.add(folderJson);
+            }
+            System.out.println("Số dòng: " + folderList.size());
+
+            // Ghép các đối tượng JSON trong danh sách vào một mảng JSON
+            String res = "[" + String.join(",", folderList) + "]";
+            return res;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve folder data";
+        }
+    }
+
+
+    public String getRecentFolder() {
+        try {
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT DISTINCT f.name, f.id\n" +
+                    "FROM folder f\n" +
+                    "JOIN HistoryFolder hf ON hf.folderId = f.id\n" +
+                    "ORDER BY hf.historyId DESC\n" +
+                    "LIMIT 4;\n";
+            ResultSet resultSet = statement.executeQuery(query);
+            List<String> folderList = new ArrayList<>();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                String id = resultSet.getString("id");
+                System.out.println(id + " " + name);
+                String folderJson = "{\"name\": \"" + name + "\", \"id\": \"" + id + "\"}";
+                folderList.add(folderJson);
+            }
+            System.out.println("Số dòng: " + folderList.size());
+
+            // Ghép các đối tượng JSON trong danh sách vào một mảng JSON
+            String res = "[" + String.join(",", folderList) + "]";
+            return res;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve folder data";
+        }
+    }
+
+    public String getTwoFoldersRandom() {
+        try {
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT * FROM folder ORDER BY RANDOM() LIMIT 2";
             ResultSet resultSet = statement.executeQuery(query);
             List<String> folderList = new ArrayList<>();
             while (resultSet.next()) {

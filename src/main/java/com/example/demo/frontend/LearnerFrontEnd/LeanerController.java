@@ -1,10 +1,12 @@
 package com.example.demo.frontend.LearnerFrontEnd;
 
 import com.example.demo.ScreenManager;
+import com.example.demo.backend.LearnerBackend.FolderReposity;
 import com.example.demo.backend.TextToSpeech;
 //import com.example.demo.frontend.libChildFrontEnd.libChildController;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -22,10 +24,6 @@ public class LeanerController {
     public Pane paneContainer;
     @FXML
     private Button FolderBtn;
-
-    @FXML
-
-    private Button ListBtn;
 
     @FXML
 
@@ -56,14 +54,14 @@ public class LeanerController {
     @FXML
     private HBox yourLibContain;
 
-    @FXML
-    private StackPane Word1Container;
-
-    @FXML
-    private StackPane Word2Container;
-
-    @FXML
-    private StackPane Word3Container;
+//    @FXML
+//    private StackPane Word1Container;
+//
+//    @FXML
+//    private StackPane Word2Container;
+//
+//    @FXML
+//    private StackPane Word3Container;
 
     @FXML
     private Label Word1Text;
@@ -88,11 +86,32 @@ public class LeanerController {
     private Label WordPopUp;
 
     @FXML
+    private Label TypePopUp;
+
+    @FXML
+    private Label PronunciationPopUp;
+
+    @FXML
+    private Label DefinitionPopUp;
+
+    @FXML
 
     private VBox libChildContainer;
 
     @FXML
     private HBox rencentContainer;
+
+    @FXML
+    private VBox FolderContainer;
+
+    @FXML
+    private VBox newWordContainer;
+
+    @FXML
+    private VBox PopUpAudio;
+
+    @FXML
+    private VBox twoFolderContainer;
 
     public void initialize() {
         System.out.println(paneContainer);
@@ -102,58 +121,31 @@ public class LeanerController {
 
         double ListPos = 178;
 
-        FolderBtn.setOnAction(e -> {
-            transition1.setToX(FolderPos);
-            transition1.play();
-            FolderBtn.getStyleClass().add("active");
-            ListBtn.getStyleClass().remove("active");
-            showAllBtn.setText("View All Folder");
-            firstName.setText("Folder Name");
-            secondName.setText("Folder Name");
-        });
-
-        ListBtn.setOnAction(e -> {
-            transition1.setToX(ListPos);
-            transition1.play();
-            FolderBtn.getStyleClass().remove("active");
-            ListBtn.getStyleClass().add("active");
-            showAllBtn.setText("View All List");
-            firstName.setText("List Name");
-            secondName.setText("List Name");
-        });
+//        FolderBtn.setOnAction(e -> {
+//            transition1.setToX(FolderPos);
+//            transition1.play();
+//            FolderBtn.getStyleClass().add("active");
+//            ListBtn.getStyleClass().remove("active");
+//            showAllBtn.setText("View All Folder");
+//            firstName.setText("Folder Name");
+//            secondName.setText("Folder Name");
+//        });
 
         yourLib.setOnAction(e -> {
+            e.consume();
             paneContainer.setVisible(!paneContainer.isVisible());
             paneContainer.toFront();
-
+            renderTwoFolder();
         });
 
         yourLibContain.setOnMouseClicked(e -> {
+            e.consume();
             paneContainer.setVisible(!paneContainer.isVisible());
             paneContainer.toFront();
+            System.out.println("Lib Click");
+            renderTwoFolder();
         });
 
-
-        Word1Container.setOnMouseClicked(e -> {
-            e.consume();
-            PopUpContainer.setVisible(true);
-            System.out.println("Word1 click");
-            WordPopUp.setText(Word1Text.getText());
-        });
-
-        Word2Container.setOnMouseClicked(e -> {
-            e.consume();
-            PopUpContainer.setVisible(true);
-            System.out.println("Word2 click");
-            WordPopUp.setText(Word2Text.getText());
-        });
-
-        Word3Container.setOnMouseClicked(e -> {
-            e.consume();
-            PopUpContainer.setVisible(true);
-            System.out.println("Word3 click");
-            WordPopUp.setText(Word3Text.getText());
-        });
 
         closePopUp.setOnMouseClicked(e -> {
             System.out.println("Close");
@@ -183,7 +175,15 @@ public class LeanerController {
             e.consume();
         });
 
-        folderRender();
+        PopUpAudio.setOnMouseClicked(e -> {
+            TextToSpeech.processTextToSpeech(WordPopUp.getText());
+        });
+
+        recentFolderRender();
+
+        newWordRender();
+
+        recentWordRender();
     }
 
     public void movingAnimation(TranslateTransition transition, double pos) {
@@ -191,60 +191,125 @@ public class LeanerController {
         transition.play();
     }
 
-    public void recentWordRender()
-    {
+    public void recentFolderRender() {
+        List<Folder> recentFolder = FolderManager.getIntance().getRecentFolder();
+        FolderContainer.getChildren().clear();
+        for (Folder item : recentFolder) {
+            HBox containerHbox = new HBox();
+            containerHbox.setAlignment(Pos.CENTER_LEFT);
+            containerHbox.setSpacing(20);
+            containerHbox.getStyleClass().add("recentFolderContainer");
+            String imagePath = "/com/example/demo/assets/folder.png";
+            URL imageUrl = getClass().getResource(imagePath);
+            ImageView imageView = new ImageView(new Image(imageUrl.toString()));
+            VBox containerVbox = new VBox();
+            containerVbox.setSpacing(20);
+            Label label = new Label(item.getName());
+            label.getStyleClass().add("FolderNameText");
+            containerVbox.getChildren().add(label);
+            containerHbox.getChildren().addAll(imageView, containerVbox);
+            FolderContainer.getChildren().add(containerHbox);
 
+            containerHbox.setOnMouseClicked(e -> {
+                FolderReposity.getInstance().addRecentFolder(item.getId());
+                ScreenManager.getInstance().switchToList(item.getId());
+            });
+
+        }
     }
 
-    public void folderRender()
-    {
-//            List<UserWord> listWord = new ArrayList<>();
-//            listWord.add(new UserWord("Hello","v","Xin chào","helo"));
-//            listWord.add(new UserWord("Vehicle","n","Phương tiện","helo"));
-//            listWord.add(new UserWord("Morning","n","Buổi sáng","helo"));
-//            for (int i=0;i<2;i++) {
-//                String word = listWord.get(i).getWord();
-//                VBox container = new VBox();
-//                container.setSpacing(15);
-//                container.getStyleClass().add("wordContainer");
-//                container.setTranslateY(36);
-//                VBox engWordContainer = new VBox();
-//                Label engWord = new Label(listWord.get(i).getWord());
-//                engWord.getStyleClass().add("engWord");
-//                engWordContainer.getChildren().add(engWord);
-//                VBox typeContainer = new VBox();
-//                Label type = new Label(listWord.get(i).getType());
-//                type.getStyleClass().add("type");
-//                typeContainer.getChildren().add(type);
-//                HBox audio = new HBox();
-//                audio.setSpacing(15);
-//                VBox imgContainer = new VBox();
-//                String imagePath = "/com/example/demo/assets/audio.png";
-//                URL imageUrl = getClass().getResource(imagePath);
-//                ImageView imageView = new ImageView(new Image(imageUrl.toString()));
-//                imgContainer.getChildren().add(imageView);
-//                VBox pronunContainer = new VBox();
-//                Label pronunciation = new Label(listWord.get(i).getPronunciation());
-//                pronunciation.getStyleClass().add("pronunciation");
-//                pronunContainer.getChildren().add(pronunciation);
-//                audio.getChildren().add(imgContainer);
-//                audio.getChildren().add(pronunContainer);
-//                VBox definitionContainer= new VBox();
-//                Label difinition = new Label(listWord.get(i).getDefinition());
-//                difinition.getStyleClass().add("description");
-//                definitionContainer.getChildren().add(difinition);
-//                container.getChildren().addAll(engWordContainer,typeContainer,audio,definitionContainer);
-//                rencentContainer.getChildren().add(container);
-//
-//                imgContainer.setOnMouseClicked(e->{
-//                    e.consume();
-//                    TextToSpeech.processTextToSpeech(word);
-//                });
-//
-//                container.setOnMouseClicked(e->{
-//                    System.out.println("Chuyen huong");
-//                });
-//            }
+    public void recentWordRender() {
+        List<UserWord> listWord = WordManager.getInstance().getThreeWords();
+        System.out.println("listWord has " + listWord.size() + " words");
+        rencentContainer.getChildren().clear();
+        for (int i = 0; i < 3; i++) {
+            String word = listWord.get(i).getWord();
+            VBox container = new VBox();
+            container.setSpacing(15);
+            container.getStyleClass().add("wordContainer");
+            container.setTranslateY(36);
+            VBox engWordContainer = new VBox();
+            Label engWord = new Label(listWord.get(i).getWord());
+            engWord.getStyleClass().add("engWord");
+            engWordContainer.getChildren().add(engWord);
+            VBox typeContainer = new VBox();
+            Label type = new Label(listWord.get(i).getType());
+            type.getStyleClass().add("type");
+            typeContainer.getChildren().add(type);
+            HBox audio = new HBox();
+            audio.setSpacing(15);
+            VBox imgContainer = new VBox();
+            String imagePath = "/com/example/demo/assets/audio.png";
+            URL imageUrl = getClass().getResource(imagePath);
+            ImageView imageView = new ImageView(new Image(imageUrl.toString()));
+            imgContainer.getChildren().add(imageView);
+            VBox pronunContainer = new VBox();
+            Label pronunciation = new Label(listWord.get(i).getPronunciation());
+            pronunciation.getStyleClass().add("pronunciation");
+            pronunContainer.getChildren().add(pronunciation);
+            audio.getChildren().add(imgContainer);
+            audio.getChildren().add(pronunContainer);
+            VBox definitionContainer = new VBox();
+            Label difinition = new Label(listWord.get(i).getDefinition());
+            difinition.getStyleClass().add("description");
+            definitionContainer.getChildren().add(difinition);
+            container.getChildren().addAll(engWordContainer, typeContainer, audio, definitionContainer);
+            rencentContainer.getChildren().add(container);
+
+            imgContainer.setOnMouseClicked(e -> {
+                e.consume();
+                TextToSpeech.processTextToSpeech(word);
+            });
+
+            container.setOnMouseClicked(e -> {
+                System.out.println("Chuyen huong");
+            });
+        }
     }
 
+    public void newWordRender() {
+        List<UserWord> words = WordManager.getInstance().getThreeWords();
+        newWordContainer.getChildren().clear();
+        for (UserWord word : words) {
+            StackPane containerStack = new StackPane();
+            containerStack.getStyleClass().add("word");
+            Label label = new Label(word.getWord());
+            label.getStyleClass().add("textBody");
+            StackPane.setAlignment(label, Pos.TOP_LEFT);
+            containerStack.getChildren().add(label);
+            newWordContainer.getChildren().add(containerStack);
+            containerStack.setOnMouseClicked(e -> {
+                e.consume();
+                PopUpContainer.setVisible(true);
+                WordPopUp.setText(word.getWord());
+                TypePopUp.setText(word.getType());
+                if (!word.getPronunciation().equals("null"))
+                    PronunciationPopUp.setText(word.getWord());
+                else
+                    PronunciationPopUp.setText("");
+                DefinitionPopUp.setText(word.getDefinition());
+            });
+        }
+    }
+
+    public void renderTwoFolder() {
+        List<Folder> folders = FolderManager.getIntance().getTwoFolderRandom();
+        twoFolderContainer.getChildren().clear();
+        for (Folder folder : folders) {
+            HBox containerHBox = new HBox();
+            containerHBox.setAlignment(Pos.CENTER);
+            VBox containerVBox = new VBox();
+            containerVBox.setSpacing(10);
+            containerVBox.setAlignment(Pos.CENTER_LEFT);
+            containerVBox.getStyleClass().add("textContainer");
+            Label label = new Label(folder.getName());
+            containerVBox.getChildren().add(label);
+            containerHBox.getChildren().add(containerVBox);
+            twoFolderContainer.getChildren().add(containerHBox);
+
+            containerHBox.setOnMouseClicked(e->{
+                ScreenManager.getInstance().switchToList(folder.getId());
+            });
+        }
+    }
 }

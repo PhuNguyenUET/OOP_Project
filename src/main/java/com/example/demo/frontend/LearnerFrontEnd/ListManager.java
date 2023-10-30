@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListManager {
-    public static ListManager instance_;
+    private static ListManager instance_;
 
     private List<ListUser> listOfFolder = new ArrayList<>();
     private ListManager(){}

@@ -27,10 +27,6 @@ public class libChildController {
 
     @FXML
 
-    private Button ListBtn;
-
-    @FXML
-
     private VBox movingAnimation;
 
     @FXML
@@ -64,22 +60,10 @@ public class libChildController {
             transition.setToX(FolderPos);
             transition.play();
             FolderBtn.getStyleClass().add("active");
-            ListBtn.getStyleClass().remove("active");
             showAllBtn.setText("View All Folder");
             firstName.setText("Folder Name");
             secondName.setText("Folder Name");
         });
-
-        ListBtn.setOnAction(e->{
-            transition.setToX(ListPos);
-            transition.play();
-            FolderBtn.getStyleClass().remove("active");
-            ListBtn.getStyleClass().add("active");
-            showAllBtn.setText("View All List");
-            firstName.setText("List Name");
-            secondName.setText("List Name");
-        });
-
 
     }
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListReposity {
-    public static ListReposity instance_;
+    private static ListReposity instance_;
 
     private ListReposity() {
     }

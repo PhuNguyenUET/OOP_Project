@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordManager {
-    public static WordManager instance_;
+    private static WordManager instance_;
 
     private List<ListUser> listOfFolder = new ArrayList<>();
     private WordManager(){}
@@ -33,6 +33,24 @@ public class WordManager {
     public List<UserWord> updateAndGetWordFromList(int listId)
     {
         String jsonInput = WordReposity.getInstance().getAllWordFromList(listId);
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            List<UserWord> userWords = objectMapper.readValue(jsonInput, new TypeReference<List<UserWord>>() {});
+//            System.out.println("ListUser: /n");
+//            for (UserWord user : userWords) {
+//                System.out.println("id: " + user.getId() + ", Word: " + user.getWord() + ", ListId: " + user.getListId());
+//            }
+            return userWords;
+        } catch (IOException e) {
+            e.printStackTrace();
+            List<UserWord> userWords = new ArrayList<>();
+            return userWords;
+        }
+    }
+
+    public List<UserWord> getThreeWords()
+    {
+        String jsonInput = WordReposity.getInstance().getThreeWordFromList();
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<UserWord> userWords = objectMapper.readValue(jsonInput, new TypeReference<List<UserWord>>() {});

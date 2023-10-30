@@ -192,6 +192,7 @@ public class FolderController {
             containerStack.getChildren().addAll(containerVBox, changeContainer);
             folderContainer.getChildren().add(containerStack);
             containerVBox.setOnMouseClicked(e -> {
+                FolderReposity.getInstance().addRecentFolder(item.getId());
                 ScreenManager.getInstance().switchToList(item.getId());
             });
 
