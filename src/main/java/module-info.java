@@ -4,12 +4,10 @@ module com.example.demo{
     requires javafx.web;
     requires java.sql;
     requires com.fasterxml.jackson.databind;
-    /* requires cmu.time.awb;
+    requires cmu.time.awb;
     requires freetts;
     requires jsapi;
     requires com.fasterxml.jackson.core;
-    requires com.fasterxml.jackson.databind;
-    requires jsapi; */
 
 
     exports com.example.demo.frontend.LoginComponent;
