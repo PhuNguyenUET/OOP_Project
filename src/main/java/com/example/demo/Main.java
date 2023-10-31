@@ -10,16 +10,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         ScreenManager.getInstance().setStage(primaryStage);
         primaryStage.setTitle("My JavaFX App");
-        ScreenManager.getInstance().switchToLearner();
+        ScreenManager.getInstance().switchToLogin();
         primaryStage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
-//        List<Folder> folders = FolderManager.getIntance().updateAndGetListFolder();
-//        for (Folder folder : folders)
-//        {
-//            FolderReposity.getInstance().addRecentFolder(folder.getId());
-//        }
     }
 }

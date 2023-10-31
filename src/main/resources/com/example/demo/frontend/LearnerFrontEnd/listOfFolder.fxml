@@ -25,7 +25,7 @@
         translateY="90"
         fx:controller="com.example.demo.frontend.LearnerFrontEnd.ListController">
     <stylesheets>
-        <URL value="@./css/listOfFolder.css"/>
+        <URL value="@../../css/listOfFolder.css"/>
     </stylesheets>
     <VBox styleClass="test" spacing="20">
         <HBox alignment="CENTER">
@@ -73,7 +73,7 @@
           translateY="30" maxHeight="60" maxWidth="60">
         <ImageView styleClass="addImg">
             <image>
-                <Image url="@./assets/add.png"/>
+                <Image url="@../../assets/add.png"/>
             </image>
         </ImageView>
     </HBox>
@@ -88,7 +88,7 @@
           alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="20">
         <ImageView fx:id="toastIcon">
             <image>
-                <Image fx:id="toastImg" url="@./assets/cross.png"/>
+                <Image fx:id="toastImg" url="@../../assets/cross.png"/>
             </image>
         </ImageView>
         <VBox>

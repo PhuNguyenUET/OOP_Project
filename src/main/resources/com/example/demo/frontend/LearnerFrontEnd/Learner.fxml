@@ -24,7 +24,7 @@
            translateY="80"
 >
     <stylesheets>
-        <URL value="@./css/Leaner.css"/>
+        <URL value="@../../css/Leaner.css"/>
     </stylesheets>
     <VBox styleClass="container"
           spacing="25">
@@ -36,7 +36,7 @@
                 <VBox alignment="CENTER" translateY="1">
                     <ImageView>
                         <image>
-                            <Image url="@./assets/arrow.png"/>
+                            <Image url="@../../assets/arrow.png"/>
                         </image>
                     </ImageView>
                 </VBox>
@@ -114,14 +114,14 @@
                       fx:id="PopUpContainer"
                 >
                     <stylesheets>
-                        <URL value="@./css/wordPopUp.css"/>
+                        <URL value="@../../css/wordPopUp.css"/>
                     </stylesheets>
                     <VBox styleClass="popUp" spacing="30">
                         <VBox spacing="10">
                             <HBox alignment="TOP_RIGHT" translateY="4" translateX="-4">
                                 <ImageView fx:id="closePopUp">
                                     <image>
-                                        <Image url="@./assets/close.png"/>
+                                        <Image url="@../../assets/close.png"/>
                                     </image>
                                 </ImageView>
                             </HBox>
@@ -143,7 +143,7 @@
                                     <VBox fx:id="PopUpAudio">
                                         <ImageView>
                                             <image>
-                                                <Image url="@./assets/audio.png"/>
+                                                <Image url="@../../assets/audio.png"/>
                                             </image>
                                         </ImageView>
                                     </VBox>
@@ -176,7 +176,7 @@
             translateY="60"
     >
         <stylesheets>
-            <URL value="@./css/libChild.css"/>
+            <URL value="@../../css/libChild.css"/>
         </stylesheets>
         <VBox fx:id="libChildContainer" styleClass="libContainer" spacing="20" maxHeight="200">
             <HBox spacing="120" alignment="CENTER" styleClass="contentContainer">

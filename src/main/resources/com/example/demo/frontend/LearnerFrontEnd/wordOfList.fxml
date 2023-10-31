@@ -25,10 +25,10 @@
            fx:controller="com.example.demo.frontend.LearnerFrontEnd.WordController"
 >
     <stylesheets>
-        <URL value="@./css/folder.css"/>
+        <URL value="@../../css/folder.css"/>
     </stylesheets>
     <stylesheets>
-        <URL value="@./css/wordOfList.css"/>
+        <URL value="@../../css/wordOfList.css"/>
     </stylesheets>
     <HBox alignment="CENTER" translateY="-30" translateX="750" managed="false">
         <Button fx:id="listBtnName" text="Folder 1" styleClass="btn"/>
@@ -328,7 +328,7 @@
           translateY="-30" maxHeight="40" maxWidth="40">
         <ImageView styleClass="addImg">
             <image>
-                <Image url="@./assets/add.png"/>
+                <Image url="@../../assets/add.png"/>
             </image>
         </ImageView>
     </HBox>
@@ -348,7 +348,7 @@
           alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="-45">
         <ImageView fx:id="toastIcon">
             <image>
-                <Image fx:id="toastImg" url="@./assets/cross.png"/>
+                <Image fx:id="toastImg" url="@../../assets/cross.png"/>
             </image>
         </ImageView>
         <VBox>

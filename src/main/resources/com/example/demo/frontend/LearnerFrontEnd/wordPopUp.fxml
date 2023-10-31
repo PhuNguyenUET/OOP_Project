@@ -23,14 +23,14 @@
            styleClass="container"
 >
     <stylesheets>
-        <URL value="@./css/wordPopUp.css"/>
+        <URL value="@../../css/wordPopUp.css"/>
     </stylesheets>
     <VBox styleClass="popUp" spacing="30">
     <VBox spacing="10">
         <HBox alignment="TOP_RIGHT" translateY="4" translateX="-4">
             <ImageView>
                 <image>
-                    <Image url="@./assets/close.png"/>
+                    <Image url="@../../assets/close.png"/>
                 </image>
             </ImageView>
         </HBox>
@@ -52,7 +52,7 @@
                 <VBox>
                     <ImageView>
                         <image>
-                            <Image url="@./assets/audio.png" />
+                            <Image url="@../../assets/audio.png" />
                         </image>
                     </ImageView>
                 </VBox>

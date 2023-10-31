@@ -26,7 +26,7 @@
            fx:controller="com.example.demo.frontend.LearnerFrontEnd.FolderController"
 >
     <stylesheets>
-        <URL value="@./css/folder.css"/>
+        <URL value="@../../css/folder.css"/>
     </stylesheets>
     <VBox>
         <FlowPane fx:id="folderContainer" vgap="60" hgap="30" styleClass="container" VBox.vgrow="ALWAYS">
@@ -96,7 +96,7 @@
           translateY="-60" maxHeight="40" maxWidth="40">
         <ImageView styleClass="addImg">
             <image>
-                <Image url="@./assets/add.png"/>
+                <Image url="@../../assets/add.png"/>
             </image>
         </ImageView>
     </HBox>
@@ -104,7 +104,7 @@
           alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="-80">
         <ImageView fx:id="toastIcon">
             <image>
-                <Image fx:id="toastImg" url="@./assets/cross.png"/>
+                <Image fx:id="toastImg" url="@../../assets/cross.png"/>
             </image>
         </ImageView>
         <VBox>

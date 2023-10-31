@@ -26,7 +26,7 @@
       visible="true"
 >
     <stylesheets>
-        <URL value="@./css/libChild.css"/>
+        <URL value="@../../css/libChild.css"/>
     </stylesheets>
     <VBox fx:id="libChildContainer" styleClass="libContainer" spacing="20" maxHeight="200">
         <HBox spacing="120" alignment="CENTER" styleClass="contentContainer">
