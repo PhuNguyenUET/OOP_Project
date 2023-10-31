@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.Translator.TranslatorController">
@@ -19,19 +18,7 @@
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="common">
          <children>
-            <HBox maxWidth="-Infinity" prefHeight="60.0" prefWidth="1520.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />
-                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="105.0" text="Translate" />
-                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" />
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="62.0" />
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
+            <fx:include source="../navBarFrontEnd/navBar.fxml" />
             <Label prefHeight="41.0" prefWidth="458.0" styleClass="translatorLabel" text="Translator">
                <VBox.margin>
                   <Insets left="70.0" top="70.0" />
@@ -63,8 +50,11 @@
                                  <content>
                                     <TextArea fx:id="sourceField" maxWidth="-Infinity" minHeight="330.0" minWidth="-Infinity" prefWidth="530.0" promptText="Enter your text here" styleClass="insideComponent" wrapText="true">
                                        <font>
-                                          <Font size="14.0" />
+                                          <Font size="15.0" />
                                        </font>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
                                     </TextArea>
                                  </content>
                               </ScrollPane>
@@ -80,7 +70,7 @@
                         </VBox>
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#changeLanguage" prefHeight="38.0" prefWidth="84.0" styleClass="functionButton" />
+                  <Button fx:id="switchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeLanguage" prefHeight="38.0" prefWidth="84.0" styleClass="functionButton" />
                   <VBox prefHeight="463.0" prefWidth="540.0">
                      <children>
                         <Label fx:id="targetLabel" alignment="CENTER" prefHeight="42.0" prefWidth="116.0" styleClass="languageLabel" text="English">
@@ -95,10 +85,16 @@
                                     <Insets top="15.0" />
                                  </VBox.margin>
                                  <content>
-                                    <Label fx:id="targetField" alignment="TOP_LEFT" maxWidth="-Infinity" minHeight="330.0" minWidth="-Infinity" prefWidth="530.0" styleClass="insideComponent" wrapText="true" />
+                                    <Label fx:id="targetField" alignment="TOP_LEFT" maxWidth="-Infinity" minHeight="330.0" minWidth="-Infinity" prefWidth="530.0" styleClass="insideComponent" wrapText="true">
+                                       <padding>
+                                          <Insets left="15.0" />
+                                       </padding>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Label>
                                  </content>
                               </ScrollPane>
-                              <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="97.0" styleClass="functionButton" text="Copy">
+                              <Button mnemonicParsing="false" onAction="#copy" prefHeight="33.0" prefWidth="97.0" styleClass="functionButton" text="Copy">
                                  <VBox.margin>
                                     <Insets right="20.0" top="7.0" />
                                  </VBox.margin>

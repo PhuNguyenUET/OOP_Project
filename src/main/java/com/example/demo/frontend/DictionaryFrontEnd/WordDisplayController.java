@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -50,6 +51,7 @@ public class WordDisplayController implements Initializable {
 
     protected void setSearchBar(SearchBarController searchBar) {
         this.searchBarController = searchBar;
+        this.searchBar.setText(searchBarController.getSearchField());
     }
 
     protected StandardWord getWord() {
@@ -58,14 +60,6 @@ public class WordDisplayController implements Initializable {
 
     protected void setWord(StandardWord word) {
         this.word = word;
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        search.setFitWidth(35);
-        search.setFitHeight(35);
-        suggestionBox.setVisible(false);
-        searchButton.setGraphic(search);
     }
 
     public void setContent() {
@@ -122,5 +116,18 @@ public class WordDisplayController implements Initializable {
     @FXML
     protected void speakUp() {
         TextToSpeech.processTextToSpeech(word.getWord());
+    }
+
+    @FXML
+    protected void clearSuggestion (MouseEvent event) {
+        suggestionBox.setVisible(false);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        search.setFitWidth(35);
+        search.setFitHeight(35);
+        suggestionBox.setVisible(false);
+        searchButton.setGraphic(search);
     }
 }

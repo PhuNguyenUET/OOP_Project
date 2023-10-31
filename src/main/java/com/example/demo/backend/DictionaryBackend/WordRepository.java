@@ -47,18 +47,6 @@ class WordRepository {
             while (resultSet.next()) {
                 String type = resultSet.getString("type");
                 String explanation = resultSet.getString("explanation");
-                // String q = "SELECT * FROM phrases WHERE word = \'" + word + "\' AND wordExplanation = \'" + explanation +"\'";
-                // ResultSet rs = statement.executeQuery(q);
-                // List<String> phrases = new ArrayList<>();
-                // while (rs.next()) {
-                //     // List<String> phrases = new ArrayList<>();
-                //     String phrase = rs.getString("phrase");
-                //     String phraseExplanation = rs.getString("phraseExplanation");
-                //     phrases.add(phrase + ": " + phraseExplanation);
-                // }
-                // Explanation ex = new Explanation.ExplanationBuilder(explanation).setWordType(type).setExamples(phrases).build();
-                // explanations.add(ex);
-                // System.out.println(type + " " + explanation);
                 types.add(type);
                 explain.add(explanation);
             }
@@ -75,6 +63,9 @@ class WordRepository {
                 
                 Explanation ex = new Explanation.ExplanationBuilder(explain.get(i)).setWordType(types.get(i)).setExamples(phrases).build();
                 explanations.add(ex);
+            }
+            if (word.isEmpty()) {
+                return null;
             }
             return new StandardWord(word, pronunciation, explanations);
         } catch (SQLException e) {

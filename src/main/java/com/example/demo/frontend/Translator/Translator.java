@@ -1,9 +1,13 @@
 package com.example.demo.frontend.Translator;
 
+import com.example.demo.backend.TranslateBackend.GoogleTranslate;
+
+import java.io.IOException;
+
 public class Translator {
     private String sourceText;
     private String targetText;
-    private boolean engToViet = true;
+    private boolean engToViet = false;
 
     public String getSourceText() {
         return sourceText;
@@ -17,8 +21,16 @@ public class Translator {
         return targetText;
     }
 
-    public void translate() {
-        //Get the translation
+    public void translate(){
+        try {
+            if (engToViet) {
+                targetText = GoogleTranslate.translate("en", "vi", sourceText);
+            } else {
+                targetText = GoogleTranslate.translate("vi", "en", sourceText);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean isEngToViet() {
