@@ -1,24 +1,14 @@
 package com.example.demo.frontend.navBarFrontEnd;
 
 import com.example.demo.ScreenManager;
-import com.example.demo.backend.*;
 
-import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import java.net.URL;
-import java.sql.Connection;
-
-public class navBarController {
+public class NavbarController {
     @FXML
     private Button Dictionary;
 

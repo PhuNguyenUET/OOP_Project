@@ -1,16 +1,11 @@
 package com.example.demo;
 
-import com.example.demo.frontend.LearnerFrontEnd.ListController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class ScreenManager {
     private static ScreenManager instance;
@@ -129,7 +124,7 @@ public class ScreenManager {
     public void switchToLearner() {
         try {
             FXMLLoader learner = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/Learner.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane screen = learner.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
@@ -167,7 +162,7 @@ public class ScreenManager {
     public void switchToFolder() {
         try {
             FXMLLoader folder = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/folder.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane screen = folder.load();
             StackPane navBarPane = navBar.load();
 //            root.getChildren().clear();
@@ -183,7 +178,7 @@ public class ScreenManager {
     public void switchToList(String folderName) {
         try {
             FXMLLoader list = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             this.folderName = folderName;
             StackPane screen = list.load();
             StackPane navBarPane = navBar.load();
@@ -197,7 +192,7 @@ public class ScreenManager {
     public void switchToList(int folderId) {
         try {
             FXMLLoader list = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             this.folderId = folderId;
             StackPane screen = list.load();
             StackPane navBarPane = navBar.load();
@@ -211,7 +206,7 @@ public class ScreenManager {
     public void switchToWord(int listId) {
         try {
             FXMLLoader listWord = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/wordOfList.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             this.listId = listId;
             StackPane screen = listWord.load();
             StackPane navBarPane = navBar.load();

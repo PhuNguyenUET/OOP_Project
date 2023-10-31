@@ -19,11 +19,11 @@
 <?import javafx.beans.binding.DoubleBinding?>
 <?import javafx.scene.layout.Pane?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
-           fx:controller="com.example.demo.frontend.navBarFrontEnd.navBarController"
+           fx:controller="com.example.demo.frontend.navBarFrontEnd.NavbarController"
            styleClass="container"
 >
     <stylesheets>
-        <URL value="@./css/navBar.css" />
+        <URL value="@../../css/navBar.css" />
     </stylesheets>
 
     <HBox styleClass="navBar" StackPane.alignment="TOP_LEFT" alignment="CENTER_LEFT">
@@ -31,7 +31,7 @@
             <VBox alignment="CENTER">
             <ImageView>
                 <image>
-                    <Image url="@./assets/menu.png"></Image>
+                    <Image url="@../../assets/menu.png"></Image>
                 </image>
             </ImageView>
             </VBox>
