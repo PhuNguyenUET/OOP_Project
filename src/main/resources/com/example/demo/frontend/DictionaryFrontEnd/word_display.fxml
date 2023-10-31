@@ -23,55 +23,55 @@
    <children>
       <AnchorPane>
          <children>
-            <StackPane prefHeight="700.0" prefWidth="1223.0">
+            <StackPane prefHeight="780.0" prefWidth="1520.0">
                <children>
                   <VBox prefHeight="200.0" prefWidth="100.0" styleClass="common">
                      <children>
-                        <HBox maxWidth="-Infinity" prefHeight="55.0" prefWidth="1237.0">
+                        <HBox maxWidth="-Infinity" prefHeight="60.0" prefWidth="1520.0">
                            <children>
                               <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />
                               <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />
-                              <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="105.0" text="Translate" />
+                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="105.0" text="Translate" />
                               <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" stroke="WHITE" strokeType="INSIDE" width="710.0" />
-                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="55.0" prefWidth="62.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="WHITE" strokeType="INSIDE" width="999.0" />
+                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" />
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="1231.0" styleClass="common">
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1520.0" styleClass="common">
                            <children>
-                              <ImageView fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets left="70.0" />
+                                    <Insets left="160.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="730.0" promptText="Search your word here" styleClass="searchBar">
+                              <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="844.0" promptText="Search your word here" styleClass="searchBar">
                                  <HBox.margin>
-                                    <Insets left="80.0" />
+                                    <Insets left="100.0" />
                                  </HBox.margin>
                                  <padding>
                                     <Insets left="15.0" />
                                  </padding>
                               </TextField>
                               <Button mnemonicParsing="false" onAction="#clearSearch" prefHeight="25.0" prefWidth="26.0" styleClass="xButton" text="X" fx:id="xButton" />
-                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0" styleClass="searchButton">
+                              <Button fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0" styleClass="searchButton">
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
                         </HBox>
-                        <StackPane>
+                        <StackPane prefHeight="585.0" prefWidth="1350.0">
                            <VBox.margin>
                               <Insets left="85.0" right="85.0" />
                            </VBox.margin>
                            <children>
-                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="1061.0">
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="1250.0">
                                  <children>
-                                    <HBox alignment="CENTER_LEFT" prefHeight="121.0" prefWidth="1055.0">
+                                    <HBox alignment="CENTER_LEFT" prefHeight="140.0" prefWidth="1244.0">
                                        <children>
-                                          <VBox prefHeight="121.0" prefWidth="850.0">
+                                          <VBox prefHeight="110.0" prefWidth="1012.0">
                                              <children>
-                                                <Label fx:id="wordDisplay" prefHeight="58.0" prefWidth="824.0" styleClass="wordLabel" text="Word" wrapText="true">
+                                                <Label fx:id="wordDisplay" prefHeight="74.0" prefWidth="984.0" styleClass="wordLabel" text="Word" wrapText="true">
                                                    <padding>
                                                       <Insets left="25.0" />
                                                    </padding>
@@ -81,7 +81,7 @@
                                                 </Label>
                                                 <HBox>
                                                    <children>
-                                                      <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#speakUp" pickOnBounds="true" preserveRatio="true">
+                                                      <ImageView fitHeight="36.0" fitWidth="40.0" onMouseClicked="#speakUp" pickOnBounds="true" preserveRatio="true">
                                                          <HBox.margin>
                                                             <Insets left="25.0" top="5.0" />
                                                          </HBox.margin>
@@ -89,7 +89,7 @@
                                                             <Image url="@../../assets/speaker.png" />
                                                          </image>
                                                       </ImageView>
-                                                      <Label fx:id="pronunciation" prefHeight="30.0" prefWidth="754.0" styleClass="pronunciationLabel" text="/Pronunciation/">
+                                                      <Label fx:id="pronunciation" prefHeight="37.0" prefWidth="910.0" styleClass="pronunciationLabel" text="/Pronunciation/">
                                                          <HBox.margin>
                                                             <Insets left="25.0" top="5.0" />
                                                          </HBox.margin>
@@ -98,7 +98,7 @@
                                                 </HBox>
                                              </children>
                                           </VBox>
-                                          <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="167.0" styleClass="addButton" text="Add to your list" />
+                                          <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="179.0" styleClass="addButton" text="Add to your list" />
                                        </children>
                                        <VBox.margin>
                                           <Insets />
@@ -108,13 +108,13 @@
                                           <String fx:value="insideBox" />
                                        </styleClass>
                                     </HBox>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0c9d9" height="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1045.0">
+                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0c9d9" height="6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1232.0">
                                        <VBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </VBox.margin></Rectangle>
-                                    <ScrollPane prefHeight="340.0" prefWidth="1055.0" styleClass="common">
+                                    <ScrollPane prefHeight="383.0" prefWidth="1244.0" styleClass="common">
                                        <content>
-                                          <VBox fx:id="explanationBox" maxWidth="-Infinity" minHeight="338.0" minWidth="-Infinity" prefWidth="1050.0" styleClass="common" />
+                                          <VBox fx:id="explanationBox" maxWidth="-Infinity" minHeight="335.0" minWidth="-Infinity" prefHeight="381.0" prefWidth="1242.0" styleClass="common" />
                                        </content>
                                     </ScrollPane>
                                  </children>
@@ -129,7 +129,7 @@
                   </VBox>
                </children>
             </StackPane>
-            <VBox fx:id="suggestionBox" layoutX="247.0" layoutY="147.0" prefWidth="727.0" styleClass="searchResultBox" />
+            <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="149.0" prefWidth="844.0" styleClass="searchResultBox" />
          </children>
       </AnchorPane>
    </children>

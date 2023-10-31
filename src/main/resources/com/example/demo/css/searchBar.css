@@ -31,10 +31,10 @@
 
 .searchResultLabel {
     -fx-font-family: 'Lexend';
-    -fx-font-size: 14;
+    -fx-font-size: 16;
     -fx-font-style: italic;
-    -fx-min-height: 40;
-    -fx-min-width: 727;
+    -fx-min-height: 45;
+    -fx-min-width: 844;
     -fx-padding: 0 0 0 15;
 }
 
