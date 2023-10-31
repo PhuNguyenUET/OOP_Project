@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import java.net.URL?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.beans.binding.DoubleBinding?>
+<?import javafx.scene.layout.Pane?>
+<?import com.sun.javafx.scene.control.skin.FXVK?>
+<?import javafx.scene.layout.FlowPane?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           translateY="120"
+           fx:controller="com.example.demo.frontend.LearnerFrontEnd.WordController"
+>
+    <stylesheets>
+        <URL value="@./css/folder.css"/>
+    </stylesheets>
+    <stylesheets>
+        <URL value="@./css/wordOfList.css"/>
+    </stylesheets>
+    <HBox alignment="CENTER" translateY="-30" translateX="750" managed="false">
+        <Button fx:id="listBtnName" text="Folder 1" styleClass="btn"/>
+    </HBox>
+    <VBox translateY="8">
+        <FlowPane fx:id="wordListContainer" vgap="90" hgap="30" styleClass="container" VBox.vgrow="ALWAYS">
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="wordListContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox alignment="CENTER">-->
+            <!--                            <Button fx:id="detailBtn" translateX="-5" styleClass="detailBtn" text="View Detail >>>"></Button>-->
+            <!--                        </HBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+            <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="folderContainer">-->
+            <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
+            <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="engWord" text="Word1"/>-->
+            <!--                        </VBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="type" text="Type"/>-->
+            <!--                        </VBox>-->
+            <!--                        <HBox spacing="15">-->
+            <!--                            <VBox>-->
+            <!--                                <ImageView>-->
+            <!--                                    <image>-->
+            <!--                                        <Image url="@./assets/audio.png"/>-->
+            <!--                                    </image>-->
+            <!--                                </ImageView>-->
+            <!--                            </VBox>-->
+            <!--                            <VBox>-->
+            <!--                                <Label styleClass="pronunciation" text="Pronunciation"/>-->
+            <!--                            </VBox>-->
+            <!--                        </HBox>-->
+            <!--                        <VBox>-->
+            <!--                            <Label styleClass="desciption" text="Description"/>-->
+            <!--                        </VBox>-->
+            <!--                    </VBox>-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+        </FlowPane>
+    </VBox>
+    <HBox fx:id="pageListContainer" prefHeight="60" styleClass="test" alignment="TOP_CENTER" spacing="10"
+          translateY="220">
+        <!--        <VBox alignment="CENTER">-->
+        <!--            <Button styleClass="page, active" text="1"></Button>-->
+        <!--        </VBox>-->
+        <!--        <VBox alignment="CENTER">-->
+        <!--            <Button styleClass="page" text="2"></Button>-->
+        <!--        </VBox>-->
+        <!--        <VBox alignment="CENTER">-->
+        <!--            <Button styleClass="page" text="3"></Button>-->
+        <!--        </VBox>-->
+    </HBox>
+    <Button fx:id="backBtn" StackPane.alignment="BOTTOM_LEFT" translateX="32" translateY="-150" text="Go Back"
+            styleClass="backBtn"/>
+    <HBox fx:id="addBtn" alignment="CENTER" styleClass="addBtn" StackPane.alignment="TOP_RIGHT" translateX="-60"
+          translateY="-30" maxHeight="40" maxWidth="40">
+        <ImageView styleClass="addImg">
+            <image>
+                <Image url="@./assets/add.png"/>
+            </image>
+        </ImageView>
+    </HBox>
+    <VBox visible="false" spacing="25" fx:id="addWordContainer" alignment="CENTER" styleClass="addFolder"
+          StackPane.alignment="TOP_RIGHT" translateX="-48"
+          translateY="20" maxHeight="160" maxWidth="400">
+        <Label styleClass="newFolderText" text="New Word"/>
+        <TextField fx:id="inputFormWord" styleClass="inputForm" promptText="Word"/>
+        <TextField fx:id="inputFormType" styleClass="inputForm" promptText="Type"/>
+        <TextField fx:id="inputFormDefinition" styleClass="inputForm" promptText="Definition"/>
+        <HBox spacing="30" alignment="CENTER">
+            <Button fx:id="addWord" styleClass="addFolderName" text="Add"/>
+            <Button fx:id="usingStandard" styleClass="addFolderName" text="Use Word In Dictionary"/>
+        </HBox>
+    </VBox>
+    <HBox fx:id="toastMes" StackPane.alignment="TOP_RIGHT" styleClass="mes" maxWidth="360" maxHeight="60"
+          alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="-45">
+        <ImageView fx:id="toastIcon">
+            <image>
+                <Image fx:id="toastImg" url="@./assets/cross.png"/>
+            </image>
+        </ImageView>
+        <VBox>
+            <Label fx:id="textMessage" text="Error Login" styleClass="textMessage"></Label>
+            <Label fx:id="textMessageDes" text="You should check your password" styleClass="textMessageDes"></Label>
+        </VBox>
+    </HBox>
+</StackPane>

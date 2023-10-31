@@ -1,53 +1,51 @@
 package com.example.demo.backend;
 
-/* import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
 import javax.speech.Central;
+import javax.speech.EngineException;
 import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerModeDesc; */
+import javax.speech.synthesis.SynthesizerModeDesc;
 import java.util.Locale;
 
 public class TextToSpeech {
-    public static void processTextToSpeech(String inputText)
-    {
-        /*try {
-            // Set property as Kevin Dictionary
+    private static Synthesizer synthesizer;
+
+    public static void initializeSynthesizer() {
+        try {
             System.setProperty(
                     "freetts.voices",
-                    "com.sun.speech.freetts.en.us"
-                            + ".cmu_us_kal.KevinVoiceDirectory");
+                    "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
 
-            // Register Engine
             Central.registerEngineCentral(
-                    "com.sun.speech.freetts"
-                            + ".jsapi.FreeTTSEngineCentral");
+                    "com.sun.speech.freetts.jsapi.FreeTTSEngineCentral");
 
-            // Create a Synthesizer
-            Synthesizer synthesizer
-                    = Central.createSynthesizer(
+            synthesizer = Central.createSynthesizer(
                     new SynthesizerModeDesc(Locale.US));
-
-            // Allocate synthesizer
             synthesizer.allocate();
-
-            // Resume Synthesizer
             synthesizer.resume();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-            // Speaks the given text
-            // until the queue is empty.
-            synthesizer.speakPlainText(
-                    inputText, null);
-            synthesizer.waitEngineState(
-                    Synthesizer.QUEUE_EMPTY);
-
-            // Deallocate the Synthesizer.
-            synthesizer.deallocate();
+    public static void processTextToSpeech(String inputText) {
+        if (synthesizer == null) {
+            initializeSynthesizer();
         }
 
-        catch (Exception e) {
+        try {
+            synthesizer.speakPlainText(inputText, null);
+            synthesizer.waitEngineState(Synthesizer.QUEUE_EMPTY);
+        } catch (Exception e) {
             e.printStackTrace();
-        } */
+        }
+    }
+
+    public static void closeSynthesizer() throws EngineException {
+        if (synthesizer != null) {
+            synthesizer.deallocate();
+        }
     }
 }
-

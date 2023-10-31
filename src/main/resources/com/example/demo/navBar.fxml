@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import java.net.URL?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.beans.binding.DoubleBinding?>
+<?import javafx.scene.layout.Pane?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.frontend.navBarFrontEnd.navBarController"
+           styleClass="container"
+>
+    <stylesheets>
+        <URL value="@./css/navBar.css" />
+    </stylesheets>
+
+    <HBox styleClass="navBar" StackPane.alignment="TOP_LEFT" alignment="CENTER_LEFT">
+        <HBox spacing="20">
+            <VBox alignment="CENTER">
+            <ImageView>
+                <image>
+                    <Image url="@./assets/menu.png"></Image>
+                </image>
+            </ImageView>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Button fx:id="Dictionary" text="Dictionary" styleClass="navBarBtn"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Button fx:id="Learner" text="Leaner's Path" styleClass="navBarBtn, active"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Button fx:id="Translate" text="Translate" styleClass="navBarBtn"/>
+            </VBox>
+            <VBox alignment="CENTER">
+                <Button fx:id="Game" text="Game" styleClass="navBarBtn"/>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT" StackPane.alignment="TOP_RIGHT" translateX="930">
+                <ImageView>
+                    <image>
+                        <Image url="@./assets/user.png"/>
+                    </image>
+                </ImageView>
+            </VBox>
+        </HBox>
+    </HBox>
+    <Rectangle fx:id="movingRec" StackPane.alignment="TOP_LEFT" width="120" height="2" styleClass="recMove" fill="#E8D8F4" translateY="48" translateX="178"></Rectangle>
+
+</StackPane>

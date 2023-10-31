@@ -1,0 +1,60 @@
+.container {
+    -fx-max-height: 300;
+    -fx-background-color:red !important;
+}
+
+.libContainer {
+    -fx-background-color: #FFFFFF;
+    -fx-max-width: 420;
+    -fx-background-radius: 20;
+}
+
+.contentName {
+    -fx-text-fill: #474444;
+    /*-fx-font-size: 16;*/
+    -fx-font-weight: bolder;
+    -fx-border:none;
+    -fx-background-color: transparent;
+}
+
+.active {
+    -fx-text-fill: #000000;
+}
+
+.contentContainer {
+    -fx-background-color: #6DBFF3;
+    -fx-background-radius: 20;
+    -fx-padding: 8;
+}
+
+.textContainer{
+    -fx-background-color: #DEF2FF;
+    -fx-padding: 12 12 12 12;
+    -fx-min-width: 320;
+    -fx-background-radius: 20;
+    -fx-text-fill: #1E1E1E;
+}
+
+.showAllBtn {
+    -fx-min-width:420;
+    -fx-background-color: #6DBFF3;
+    -fx-background-radius: 20;
+    -fx-padding: 8 0 8 0;
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #1E1E1E;
+    -fx-font-weight: bolder;
+}
+
+.showAllBtn:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.9;
+}
+
+.textContainer:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.6;
+}
+
+.contentName:hover{
+    -fx-cursor: hand;
+}
