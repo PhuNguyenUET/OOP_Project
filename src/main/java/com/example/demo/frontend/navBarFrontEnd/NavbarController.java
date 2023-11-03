@@ -48,25 +48,25 @@ public class NavbarController {
             transition.play();*/
             movingAnimation(transition,DictionaryPos);
             handleActive(Dictionary);
-
+            ScreenManager.getInstance().switchToDict();
         });
 
         Learner.setOnAction(e->{
             movingAnimation(transition,LeanerPos);
             handleActive(Learner);
-
-
             ScreenManager.getInstance().switchToLearner();
         });
 
         Translate.setOnAction(e->{
             movingAnimation(transition,TranslatePos);
             handleActive(Translate);
+            ScreenManager.getInstance().switchToTranslate();
         });
 
         Game.setOnAction(e->{
             movingAnimation(transition,GamePos);
             handleActive(Game);
+            ScreenManager.getInstance().switchToGame();
         });
     }
 

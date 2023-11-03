@@ -9,23 +9,23 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.SelectDifficultyController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" translateY="80" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.SelectDifficultyController">
    <stylesheets>
       <URL value="@../../css/multipleChoiceSelectDifficulty.css" />
    </stylesheets>
    <children>
       <VBox alignment="TOP_CENTER">
          <children>
-            <HBox maxWidth="-Infinity" prefHeight="60.0" prefWidth="1520.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />
-                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />
-                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="105.0" text="Translate" />
-                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" />
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="62.0" />
-               </children>
-            </HBox>
+<!--            <HBox maxWidth="-Infinity" prefHeight="60.0" prefWidth="1520.0">-->
+<!--               <children>-->
+<!--                  <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />-->
+<!--                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />-->
+<!--                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="105.0" text="Translate" />-->
+<!--                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />-->
+<!--                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" />-->
+<!--                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="62.0" />-->
+<!--               </children>-->
+<!--            </HBox>-->
             <Label alignment="CENTER" prefHeight="77.0" prefWidth="396.0" styleClass="difficultyLabel" text="Select your difficulty">
                <VBox.margin>
                   <Insets top="150.0" />

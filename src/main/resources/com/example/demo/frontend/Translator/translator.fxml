@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.Translator.TranslatorController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" translateY="60" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.Translator.TranslatorController">
    <stylesheets>
       <URL value="@../../css/translator.css" />
    </stylesheets>
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="common">
          <children>
-            <fx:include source="../navBarFrontEnd/navBar.fxml" />
+<!--            <fx:include source="../navBarFrontEnd/navBar.fxml" />-->
             <Label prefHeight="41.0" prefWidth="458.0" styleClass="translatorLabel" text="Translator">
                <VBox.margin>
                   <Insets left="70.0" top="70.0" />

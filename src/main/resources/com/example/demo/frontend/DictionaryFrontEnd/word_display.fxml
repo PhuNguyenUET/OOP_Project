@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.WordDisplayController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" translateY="60" prefHeight="700.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.WordDisplayController">
    <stylesheets>
       <URL value="@../../css/searchBar.css" />
       <URL value="@../../css/wordDisplay.css" />
@@ -27,7 +27,7 @@
                <children>
                   <VBox onMouseClicked="#clearSuggestion" prefHeight="200.0" prefWidth="100.0" styleClass="common">
                      <children>
-                        <fx:include source="../navBarFrontEnd/navBar.fxml"/>
+<!--                        <fx:include source="../navBarFrontEnd/navBar.fxml"/>-->
                         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1520.0" styleClass="common">
                            <children>
                               <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">

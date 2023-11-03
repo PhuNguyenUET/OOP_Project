@@ -1,5 +1,6 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import com.example.demo.ScreenManager;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -30,12 +31,21 @@ class DictionarySceneChanger {
     protected void switchToHomeScreen(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dictionary_home.fxml"));
         screen = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = stage.getScene();
-        StackPane stackPane = (StackPane) scene.getRoot();
-        stackPane.getChildren().clear();
-        stackPane.getChildren().add(screen);
-        stage.show();
+        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        if(root.getChildren().size()>=2)
+        {
+            root.getChildren().remove(1);
+            root.getChildren().add(screen);
+        }
+        else
+        {
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
+            StackPane navBarPane = navBar.load();
+            root.getChildren().clear();
+            root.getChildren().addAll(navBarPane,screen);
+        }
+        root.getChildren().clear();
+        root.getChildren().add(screen);
     }
 
     protected void switchToWordNotExistScreen(Event event, SearchBarController searchBarController) throws IOException {
@@ -45,12 +55,9 @@ class DictionarySceneChanger {
         WordNotExistScreenController wordNotExistScreenController = loader.getController();
         wordNotExistScreenController.setSearchBarController(searchBarController);
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = stage.getScene();
-        StackPane stackPane = (StackPane) scene.getRoot();
-        stackPane.getChildren().clear();
-        stackPane.getChildren().add(screen);
-        stage.show();
+        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        root.getChildren().remove(1);
+        root.getChildren().add(screen);
     }
 
     protected void switchToWordDisplay(Event event, SearchBarController searchBarController, StandardWord word) throws IOException {
@@ -64,11 +71,8 @@ class DictionarySceneChanger {
 
         wordDisplayController.setContent();
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = stage.getScene();
-        StackPane stackPane = (StackPane) scene.getRoot();
-        stackPane.getChildren().clear();
-        stackPane.getChildren().add(screen);
-        stage.show();
+        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        root.getChildren().remove(1);
+        root.getChildren().add(screen);
     }
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController">
+<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController" translateY="80">
    <stylesheets>
       <URL value="@../../css/searchBar.css" />
       <URL value="@../../css/dictionaryHome.css" />
@@ -24,7 +24,7 @@
                <children>
                   <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#clearSuggestion" prefHeight="809.0" prefWidth="835.0">
                      <children>
-                        <fx:include source="../navBarFrontEnd/navBar.fxml"/>
+<!--                        <fx:include source="../navBarFrontEnd/navBar.fxml"/>-->
                         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1520.0" styleClass="common">
                            <children>
                               <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">

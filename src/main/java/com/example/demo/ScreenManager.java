@@ -145,7 +145,7 @@ public class ScreenManager {
     public void switchToDict() {
         try {
             FXMLLoader dict = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
             StackPane dictScreen = dict.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
@@ -202,18 +202,42 @@ public class ScreenManager {
     }
 
 
-//    public void switchToWordTmp() {
-//        try {
-//            FXMLLoader navBar = new FXMLLoader(getClass().getResource("navBar.fxml"));
-//            FXMLLoader listWord = new FXMLLoader(getClass().getResource("wordOfList.fxml"));
-//            this.listName = "LIST 1";
-//            StackPane navBarPane = navBar.load();
-//            StackPane screen = listWord.load();
-//            root.getChildren().add(navBarPane);
-//            root.getChildren().add(screen);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void switchToGame() {
+        try {
+            FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            StackPane gameScreen = game.load();
+            StackPane navBarPane = navBar.load();
+            if (root.getChildren().size() >= 2) {
+                root.getChildren().remove(1);
+                root.getChildren().add(gameScreen);
+            } else {
+                root.getChildren().clear();
+                root.getChildren().add(navBarPane);
+                root.getChildren().add(gameScreen);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void switchToTranslate() {
+        try {
+            FXMLLoader translate = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/Translator/translator.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            StackPane translateScreen = translate.load();
+            StackPane navBarPane = navBar.load();
+            if (root.getChildren().size() >= 2) {
+                root.getChildren().remove(1);
+                root.getChildren().add(translateScreen);
+            } else {
+                root.getChildren().clear();
+                root.getChildren().add(navBarPane);
+                root.getChildren().add(translateScreen);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
