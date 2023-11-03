@@ -185,8 +185,6 @@ public class ListController {
                 ContainerRight.getChildren().add(containerStack);
             }
             listBtn.setOnAction(e -> {
-//                System.out.println(name);
-//                ScreenManager.getInstance().switchToWord(id);
                 learnerScreenChanger.switchToWord(id);
             });
 
