@@ -35,13 +35,13 @@ public class NavbarController {
     public void initialize() {
         transition = new TranslateTransition(Duration.seconds(0.5), movingRec);
 
-        double DictionaryPos = 48;
+        double DictionaryPos = 58;
 
-        double LeanerPos = DictionaryPos + 130;
+        double LeanerPos = DictionaryPos + 170;
 
-        double TranslatePos = LeanerPos + 126;
+        double TranslatePos = LeanerPos + 170;
 
-        double GamePos = TranslatePos + 120;
+        double GamePos = TranslatePos + 170;
 
         Dictionary.setOnAction(e -> {
             /*transition.setToX(DictionaryPos);

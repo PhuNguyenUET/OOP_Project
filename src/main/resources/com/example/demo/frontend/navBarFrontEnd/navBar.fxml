@@ -39,7 +39,7 @@
                 <Button fx:id="Dictionary" text="Dictionary" styleClass="navBarBtn"/>
             </VBox>
             <VBox alignment="CENTER">
-                <Button fx:id="Learner" text="Leaner's Path" styleClass="navBarBtn, active"/>
+                <Button fx:id="Learner" text="Learner's Path" styleClass="navBarBtn, active"/>
             </VBox>
             <VBox alignment="CENTER">
                 <Button fx:id="Translate" text="Translate" styleClass="navBarBtn"/>
@@ -50,12 +50,12 @@
             <VBox alignment="CENTER_RIGHT" StackPane.alignment="TOP_RIGHT" translateX="930">
                 <ImageView>
                     <image>
-                        <Image url="@./assets/user.png"/>
+                        <Image url="@../../assets/user.png"/>
                     </image>
                 </ImageView>
             </VBox>
         </HBox>
     </HBox>
-    <Rectangle fx:id="movingRec" StackPane.alignment="TOP_LEFT" width="120" height="2" styleClass="recMove" fill="#E8D8F4" translateY="48" translateX="178"></Rectangle>
+    <Rectangle fx:id="movingRec" StackPane.alignment="TOP_LEFT" width="150" height="2" styleClass="recMove" fill="#E8D8F4" translateY="48" translateX="228"></Rectangle>
 
 </StackPane>
