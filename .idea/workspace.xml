@@ -11,16 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e9e0449a-bb74-4a55-87d0-a16d7158800f" name="Changes" comment="merge origin into local">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ScreenManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/DictionarySceneChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/DictionarySceneChanger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/MultipleChoice/GameScreenChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/MultipleChoice/GameScreenChanger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/word_display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/word_display.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/word_not_exist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/word_not_exist.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/MultipleChoice/multiple-choice-game-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/MultipleChoice/multiple-choice-game-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/MultipleChoice/result-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/MultipleChoice/result-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/Translator/translator.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/Translator/translator.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +109,21 @@
       <option name="project" value="LOCAL" />
       <updated>1698974194502</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="merge origin into local">
+      <created>1698977356859</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698977356859</updated>
+    </task>
+    <task id="LOCAL-00003" summary="merge origin into local">
+      <created>1698977422274</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698977422274</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

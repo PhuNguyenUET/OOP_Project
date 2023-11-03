@@ -65,13 +65,14 @@ public class LoginControl {
     private TextField password;
 
     UserBackend userBackend = new UserBackend();
+
     public void initialize() {
         // Tạo TranslateTransition và đặt thời gian di chuyển
         transition = new TranslateTransition(Duration.seconds(0.5), movingRectangle);
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2)); // Đợi 2 giây trước khi thực hiện chuyển tiếp
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
         // Xác định khoảng cách di chuyển
-        double moveDistance= 130;
+        double moveDistance = 130;
         double xPositionLogin = loginButton.getLayoutX();
         double xPositionSign = signUpButton.getLayoutX();
         System.out.println(xPositionLogin);
@@ -109,16 +110,18 @@ public class LoginControl {
 
         ScreenManager.getInstance().getScene().addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.ENTER) {
-                submitButton.fire();
+                if (ScreenManager.getInstance().getRoot().getChildren().size() == 1) {
+                    submitButton.fire();
+                }
             }
         });
 
         submitButton.setOnAction(e -> {
-            String userValue=userName.getText();
-            String passValue=password.getText();
-            Connection connection=userDatabaseConnect.connect();
-            if(submitButton.getText().equals("Login")){
-                if(userDatabaseSQL.check(connection,userValue,passValue) && !userValue.equals("") && !passValue.equals("")){
+            String userValue = userName.getText();
+            String passValue = password.getText();
+            Connection connection = userDatabaseConnect.connect();
+            if (submitButton.getText().equals("Login")) {
+                if (userDatabaseSQL.check(connection, userValue, passValue) && !userValue.equals("") && !passValue.equals("")) {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
                     ScreenManager.getInstance().setUserId(userBackend.getIdByName(userValue));
@@ -131,14 +134,12 @@ public class LoginControl {
                     pauseTransition.play();
                     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), event -> {
                         // Thực hiện hàm bạn muốn sau 0.5 giây ở đây
-                        ScreenManager screenManager=ScreenManager.getInstance();
+                        ScreenManager screenManager = ScreenManager.getInstance();
                         screenManager.switchToLearner();
                     }));
                     timeline.setCycleCount(1);
                     timeline.play();
-                }
-                else
-                {
+                } else {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Error Login");
@@ -148,9 +149,8 @@ public class LoginControl {
                     toastMesTransition.play();
                     pauseTransition.play();
                 }
-            }
-            else {
-                if(userDatabaseSQL.isUsernameExists(connection,userValue)){
+            } else {
+                if (userDatabaseSQL.isUsernameExists(connection, userValue)) {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Error Login");
@@ -159,10 +159,8 @@ public class LoginControl {
                     toastMesTransition.setToX(-28);
                     toastMesTransition.play();
                     pauseTransition.play();
-                }
-                else if(!userValue.equals("") && !passValue.equals(""))
-                {
-                    userDatabaseSQL.insertIntoDict(connection,userValue,passValue,1);
+                } else if (!userValue.equals("") && !passValue.equals("")) {
+                    userDatabaseSQL.insertIntoDict(connection, userValue, passValue, 1);
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Successful Register");
@@ -171,9 +169,7 @@ public class LoginControl {
                     toastMesTransition.setToX(-28);
                     toastMesTransition.play();
                     pauseTransition.play();
-                }
-                else
-                {
+                } else {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Error Login");

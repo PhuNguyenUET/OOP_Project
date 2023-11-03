@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController" translateY="80">
+<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController" translateY="55">
    <stylesheets>
       <URL value="@../../css/searchBar.css" />
       <URL value="@../../css/dictionaryHome.css" />

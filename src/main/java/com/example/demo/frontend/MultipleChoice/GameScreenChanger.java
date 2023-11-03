@@ -1,5 +1,6 @@
 package com.example.demo.frontend.MultipleChoice;
 
+import com.example.demo.ScreenManager;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -30,12 +31,13 @@ public class GameScreenChanger {
     protected void switchToDifficultyScreen(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("select-difficulty-screen.fxml"));
         screen = loader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = stage.getScene();
-        StackPane stackPane = (StackPane) scene.getRoot();
-        stackPane.getChildren().clear();
-        stackPane.getChildren().add(screen);
-        stage.show();
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = stage.getScene();
+
+        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        root.getChildren().remove(1);
+        root.getChildren().add(screen);
+//        stage.show();
     }
 
     protected void switchToGameScreen(Event event, String difficulty) throws IOException {
@@ -45,12 +47,9 @@ public class GameScreenChanger {
         GameScreenController game = loader.getController();
         game.setDifficulty(difficulty);
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = stage.getScene();
-        StackPane stackPane = (StackPane) scene.getRoot();
-        stackPane.getChildren().clear();
-        stackPane.getChildren().add(screen);
-        stage.show();
+        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        root.getChildren().remove(1);
+        root.getChildren().add(screen);
     }
 
     protected void switchToResultScreen(Event event, int score) throws IOException {
@@ -60,11 +59,8 @@ public class GameScreenChanger {
         ResultController resultController = loader.getController();
         resultController.setScore(score);
 
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = stage.getScene();
-        StackPane stackPane = (StackPane) scene.getRoot();
-        stackPane.getChildren().clear();
-        stackPane.getChildren().add(screen);
-        stage.show();
+        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        root.getChildren().remove(1);
+        root.getChildren().add(screen);
     }
 }
