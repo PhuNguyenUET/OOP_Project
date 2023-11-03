@@ -12,9 +12,6 @@ module com.example.demo{
     requires java.desktop;
 
 
-    exports com.example.demo.frontend.LoginComponent;
-    opens com.example.demo.frontend.LoginComponent to javafx.fxml;
-
     exports com.example.demo.frontend.DictionaryFrontEnd;
     opens com.example.demo.frontend.DictionaryFrontEnd to javafx.fxml, com.fasterxml.jackson.databind;
 

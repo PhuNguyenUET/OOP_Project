@@ -145,7 +145,7 @@ public class ScreenManager {
     public void switchToDict() {
         try {
             FXMLLoader dict = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane dictScreen = dict.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
@@ -205,7 +205,7 @@ public class ScreenManager {
     public void switchToGame() {
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane gameScreen = game.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
@@ -224,7 +224,7 @@ public class ScreenManager {
     public void switchToTranslate() {
         try {
             FXMLLoader translate = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/Translator/translator.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/NavbarFrontEnd/navBar.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane translateScreen = translate.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {

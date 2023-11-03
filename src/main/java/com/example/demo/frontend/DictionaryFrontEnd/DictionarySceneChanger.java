@@ -25,27 +25,19 @@ class DictionarySceneChanger {
         }
         return _instance;
     }
+
     private Stage stage;
     private Scene scene;
     private StackPane screen;
+
     protected void switchToHomeScreen(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dictionary_home.fxml"));
         screen = loader.load();
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
-        if(root.getChildren().size()>=2)
-        {
-            root.getChildren().remove(1);
-            root.getChildren().add(screen);
-        }
-        else
-        {
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane navBarPane = navBar.load();
-            root.getChildren().clear();
-            root.getChildren().addAll(navBarPane,screen);
-        }
-        root.getChildren().clear();
+
+        root.getChildren().remove(1);
         root.getChildren().add(screen);
+
     }
 
     protected void switchToWordNotExistScreen(Event event, SearchBarController searchBarController) throws IOException {
