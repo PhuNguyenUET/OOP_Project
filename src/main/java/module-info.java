@@ -8,6 +8,8 @@ module com.example.demo{
     requires freetts;
     requires jsapi;
     requires com.fasterxml.jackson.core;
+    requires java.datatransfer;
+    requires java.desktop;
 
 
     exports com.example.demo.frontend.LoginComponent;
@@ -40,6 +42,4 @@ module com.example.demo{
     opens com.example.demo.frontend.LearnerFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.LearnerFrontEnd ;
 
-//    opens com.example.demo.fxml to javafx.fxml;
-//    exports com.example.demo.fxml;
 }

@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
 <StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.DictionaryHomeController">
    <stylesheets>
@@ -25,16 +24,7 @@
                <children>
                   <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#clearSuggestion" prefHeight="809.0" prefWidth="835.0">
                      <children>
-                        <HBox maxWidth="-Infinity" prefHeight="60.0" prefWidth="1520.0">
-                           <children>
-                              <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />
-                              <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />
-                              <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="105.0" text="Translate" />
-                              <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="WHITE" strokeType="INSIDE" width="999.0" />
-                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" />
-                           </children>
-                        </HBox>
+                        <fx:include source="../navBarFrontEnd/navBar.fxml"/>
                         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1520.0" styleClass="common">
                            <children>
                               <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
