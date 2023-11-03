@@ -64,35 +64,8 @@ public class ScreenManager {
         return scene;
     }
 
-    //    FXMLLoader login;
-//
-//    FXMLLoader learner;
-//
-//    FXMLLoader navBar;
-//
-//    FXMLLoader folderUI;
-//
-//    public FXMLLoader getLogin() {
-//        return login;
-//    }
-//
-//    public FXMLLoader getLearner() {
-//        return learner;
-//    }
-//
-//    public FXMLLoader getNavBar() {
-//        return navBar;
-//    }
-//
-//    public FXMLLoader getFolderUI() {
-//        return folderUI;
-//    }
     private ScreenManager() {
-//        learner = new FXMLLoader(getClass().getResource("Learner.fxml"));
-//        login = new FXMLLoader(getClass().getResource("login.fxml"));
         root = new StackPane();
-//        navBar = new FXMLLoader(getClass().getResource("navBar.fxml"));
-//        folderUI = new FXMLLoader(getClass().getResource("folder.fxml"));
     }
 
     public static ScreenManager getInstance() {
@@ -106,9 +79,6 @@ public class ScreenManager {
         this.stage = stage;
         scene = new Scene(root, 1520, 780);
         stage.setScene(scene);
-//        stage.setMinWidth(1536);
-//        stage.setMinHeight(800);
-//        stage.setMaximized(true);
         stage.setResizable(false);
     }
 
@@ -200,20 +170,4 @@ public class ScreenManager {
             e.printStackTrace();
         }
     }
-
-
-//    public void switchToWordTmp() {
-//        try {
-//            FXMLLoader navBar = new FXMLLoader(getClass().getResource("navBar.fxml"));
-//            FXMLLoader listWord = new FXMLLoader(getClass().getResource("wordOfList.fxml"));
-//            this.listName = "LIST 1";
-//            StackPane navBarPane = navBar.load();
-//            StackPane screen = listWord.load();
-//            root.getChildren().add(navBarPane);
-//            root.getChildren().add(screen);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }

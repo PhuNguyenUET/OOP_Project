@@ -36,10 +36,6 @@ public class ListManager {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<ListUser> userList = objectMapper.readValue(jsonInput, new TypeReference<List<ListUser>>() {});
-//            System.out.println("ListUser: /n");
-//            for (ListUser user : userList) {
-//                System.out.println("ListId: " + user.getId() + ", Name: " + user.getName());
-//            }
             return userList;
         } catch (IOException e) {
             e.printStackTrace();

@@ -96,11 +96,11 @@ public class userDatabaseSQL {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 int count = resultSet.getInt(1);
-                return count > 0; // Trả về true nếu tên người dùng tồn tại, ngược lại trả về false.
+                return count > 0;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false; // Nếu có lỗi xảy ra hoặc không tìm thấy tên người dùng, trả về false.
+        return false;
     }
 }

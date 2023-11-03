@@ -71,7 +71,6 @@ public class LoginControl {
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2)); // Đợi 2 giây trước khi thực hiện chuyển tiếp
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
         // Xác định khoảng cách di chuyển
-//        double moveDistance = signUpButton.getLayoutX() - loginButton.getLayoutX();
         double moveDistance= 130;
         double xPositionLogin = loginButton.getLayoutX();
         double xPositionSign = signUpButton.getLayoutX();

@@ -54,10 +54,6 @@ public class WordManager {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<UserWord> userWords = objectMapper.readValue(jsonInput, new TypeReference<List<UserWord>>() {});
-//            System.out.println("ListUser: /n");
-//            for (UserWord user : userWords) {
-//                System.out.println("id: " + user.getId() + ", Word: " + user.getWord() + ", ListId: " + user.getListId());
-//            }
             return userWords;
         } catch (IOException e) {
             e.printStackTrace();
