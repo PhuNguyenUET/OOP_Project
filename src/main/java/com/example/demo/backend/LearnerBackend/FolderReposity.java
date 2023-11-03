@@ -1,5 +1,6 @@
 package com.example.demo.backend.LearnerBackend;
 
+import com.example.demo.ScreenManager;
 import com.example.demo.backend.Connect;
 
 import java.sql.*;
@@ -22,9 +23,10 @@ public class FolderReposity {
 
     public void addNewFolder(String folderName) {
         try {
-            String insertQuery = "INSERT INTO folder (name) VALUES (?)";
+            String insertQuery = "INSERT INTO folder (name,userId) VALUES (?,?)";
             PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(insertQuery);
             preparedStatement.setString(1, folderName);
+            preparedStatement.setInt(2, ScreenManager.getInstance().getUserId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -42,10 +44,10 @@ public class FolderReposity {
         }
     }
 
-    public String getAllFolder() {
+    public String getAllFolder(int userId) {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT * FROM folder";
+            String query = "SELECT * FROM folder where userId = " + userId;
             ResultSet resultSet = statement.executeQuery(query);
             String res = "[";
             int cnt = 0;
@@ -65,10 +67,10 @@ public class FolderReposity {
         }
     }
 
-    public String getAllFolderTest() {
+    public String getAllFolderTest(int userId) {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT * FROM folder";
+            String query = "SELECT * FROM folder where userId = " + userId;
             ResultSet resultSet = statement.executeQuery(query);
             List<String> folderList = new ArrayList<>();
             while (resultSet.next()) {
@@ -90,12 +92,13 @@ public class FolderReposity {
     }
 
 
-    public String getRecentFolder() {
+    public String getRecentFolder(int userId) {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
             String query = "SELECT DISTINCT f.name, f.id\n" +
                     "FROM folder f\n" +
                     "JOIN HistoryFolder hf ON hf.folderId = f.id\n" +
+                    "where f.userId = " + userId + "\n" +
                     "ORDER BY hf.historyId DESC\n" +
                     "LIMIT 4;\n";
             ResultSet resultSet = statement.executeQuery(query);
@@ -118,10 +121,10 @@ public class FolderReposity {
         }
     }
 
-    public String getTwoFoldersRandom() {
+    public String getTwoFoldersRandom(int userId) {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT * FROM folder ORDER BY RANDOM() LIMIT 2";
+            String query = "SELECT * FROM folder where userId= " + userId + " ORDER BY RANDOM() LIMIT 2";
             ResultSet resultSet = statement.executeQuery(query);
             List<String> folderList = new ArrayList<>();
             while (resultSet.next()) {

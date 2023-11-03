@@ -12,11 +12,19 @@ public class ScreenManager {
     private Stage stage;
     private StackPane root;
 
-    private String folderName;
-
     private int folderId;
 
     private int listId;
+
+    private int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 
     public int getListId() {
         return listId;
@@ -34,9 +42,6 @@ public class ScreenManager {
         this.folderId = folderId;
     }
 
-    public String getFolderName() {
-        return folderName;
-    }
 
     private String listName;
 
@@ -44,9 +49,6 @@ public class ScreenManager {
         return listName;
     }
 
-    public void setFolderName(String folderName) {
-        this.folderName = folderName;
-    }
 
     private Scene scene;
 
@@ -165,30 +167,12 @@ public class ScreenManager {
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane screen = folder.load();
             StackPane navBarPane = navBar.load();
-//            root.getChildren().clear();
-//            root.getChildren().add(navBarPane);
             root.getChildren().remove(1);
             root.getChildren().add(screen);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
-    public void switchToList(String folderName) {
-        try {
-            FXMLLoader list = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            this.folderName = folderName;
-            StackPane screen = list.load();
-            StackPane navBarPane = navBar.load();
-            root.getChildren().remove(1);
-            root.getChildren().add(screen);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void switchToList(int folderId) {
         try {
             FXMLLoader list = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml"));

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.demo.ScreenManager;
 import com.example.demo.backend.LearnerBackend.FolderReposity;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -33,17 +34,17 @@ public class FolderManager {
     }
 
     public List<Folder> updateAndGetListFolder() {
-        String inputJSon = FolderReposity.getInstance().getAllFolderTest();
+        String inputJSon = FolderReposity.getInstance().getAllFolderTest(ScreenManager.getInstance().getUserId());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<Folder> userFolderList = objectMapper.readValue(inputJSon, new TypeReference<List<Folder>>() {
             });
 
-//            for (Folder user : userFolderList) {
-//                System.out.println("FolderId: " + user.getId() + ", Name: " + user.getName());
-//            }
-//
-//            System.out.println("update Folder");
+            for (Folder user : userFolderList) {
+                System.out.println("FolderId: " + user.getId() + ", Name: " + user.getName());
+            }
+
+            System.out.println("update Folder");
             return userFolderList;
         } catch (IOException e) {
             e.printStackTrace();
@@ -54,16 +55,16 @@ public class FolderManager {
 
     public List<Folder> getRecentFolder()
     {
-        String recentFolderJson = FolderReposity.getInstance().getRecentFolder();
+        String recentFolderJson = FolderReposity.getInstance().getRecentFolder(ScreenManager.getInstance().getUserId());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<Folder> userFolderList = objectMapper.readValue(recentFolderJson, new TypeReference<List<Folder>>() {
             });
-//            for (Folder user : userFolderList) {
-//                System.out.println("FolderId: " + user.getId() + ", Name: " + user.getName());
-//            }
-//
-//            System.out.println("update Folder");
+            for (Folder user : userFolderList) {
+                System.out.println("FolderId: " + user.getId() + ", Name: " + user.getName());
+            }
+
+            System.out.println("update Folder");
             return userFolderList;
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,16 +75,16 @@ public class FolderManager {
 
     public List<Folder> getTwoFolderRandom()
     {
-        String recentFolderJson = FolderReposity.getInstance().getTwoFoldersRandom();
+        String recentFolderJson = FolderReposity.getInstance().getTwoFoldersRandom(ScreenManager.getInstance().getUserId());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<Folder> userFolderList = objectMapper.readValue(recentFolderJson, new TypeReference<List<Folder>>() {
             });
-//            for (Folder user : userFolderList) {
-//                System.out.println("FolderId: " + user.getId() + ", Name: " + user.getName());
-//            }
-//
-//            System.out.println("update Folder");
+            for (Folder user : userFolderList) {
+                System.out.println("FolderId: " + user.getId() + ", Name: " + user.getName());
+            }
+
+            System.out.println("update Folder");
             return userFolderList;
         } catch (IOException e) {
             e.printStackTrace();

@@ -220,9 +220,10 @@ public class LeanerController {
 
     public void recentWordRender() {
         List<UserWord> listWord = WordManager.getInstance().getThreeWords();
+        int n=listWord.size();
         System.out.println("listWord has " + listWord.size() + " words");
         rencentContainer.getChildren().clear();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < n; i++) {
             String word = listWord.get(i).getWord();
             VBox container = new VBox();
             container.setSpacing(15);

@@ -74,6 +74,8 @@ public class FolderController {
 
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
+    private LearnerScreenChanger leanerScreenChanger = new LearnerScreenChanger();
+
     public void initialize() {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
@@ -193,7 +195,8 @@ public class FolderController {
             folderContainer.getChildren().add(containerStack);
             containerVBox.setOnMouseClicked(e -> {
                 FolderReposity.getInstance().addRecentFolder(item.getId());
-                ScreenManager.getInstance().switchToList(item.getId());
+//                ScreenManager.getInstance().switchToList(item.getId());
+                leanerScreenChanger.switchToList(item.getId());
             });
 
             deleteImg.setOnMouseClicked(e -> {

@@ -84,13 +84,17 @@ public class WordController {
     @FXML
     private Label textMessageDes;
 
+    @FXML
+    private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
+
     public void initialize() {
         System.out.println(ScreenManager.getInstance().getListName());
 
         listBtnName.setText(ListReposity.getInstance().getListName(ScreenManager.getInstance().getListId()));
 
         backBtn.setOnAction(e -> {
-            ScreenManager.getInstance().switchToList(ScreenManager.getInstance().getFolderName());
+//            ScreenManager.getInstance().switchToList(ScreenManager.getInstance().getFolderId());
+            learnerScreenChanger.switchToList(ScreenManager.getInstance().getFolderId());
         });
 
         addBtn.setOnMouseClicked(e -> {

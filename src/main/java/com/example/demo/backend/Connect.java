@@ -21,7 +21,7 @@ public class Connect {
         return _instance;
     }
     private static Connection connection;
-    private static String DATABASE_URL = "src/main/resources/database/Dictionary.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
+    private static String DATABASE_URL = "src/main/resources/database/userInfor.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
     public Connection connect() {
         if (connection == null) {
             try {

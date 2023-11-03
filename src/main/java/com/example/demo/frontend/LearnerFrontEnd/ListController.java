@@ -74,6 +74,9 @@ public class ListController {
 
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
+    @FXML
+    private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
+
     public void initialize() {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
 
@@ -183,7 +186,8 @@ public class ListController {
             }
             listBtn.setOnAction(e -> {
 //                System.out.println(name);
-                ScreenManager.getInstance().switchToWord(id);
+//                ScreenManager.getInstance().switchToWord(id);
+                learnerScreenChanger.switchToWord(id);
             });
 
             deleteImg.setOnMouseClicked(e->{

@@ -3,6 +3,7 @@ package com.example.demo.frontend.LoginFrontEnd;
 import com.example.demo.ScreenManager;
 import com.example.demo.backend.*;
 
+import com.example.demo.backend.LearnerBackend.UserBackend;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
@@ -63,7 +64,7 @@ public class LoginControl {
     @FXML
     private TextField password;
 
-
+    UserBackend userBackend = new UserBackend();
     public void initialize() {
         // Tạo TranslateTransition và đặt thời gian di chuyển
         transition = new TranslateTransition(Duration.seconds(0.5), movingRectangle);
@@ -121,6 +122,8 @@ public class LoginControl {
                 if(userDatabaseSQL.check(connection,userValue,passValue) && !userValue.equals("") && !passValue.equals("")){
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
+                    ScreenManager.getInstance().setUserId(userBackend.getIdByName(userValue));
+                    System.out.println("userId hiện tại là: " + ScreenManager.getInstance().getUserId());
                     textMessage.setText("Successful Login");
                     textMessageDes.setText("Password and Username are correct.");
                     toastIcon.setImage(image);
