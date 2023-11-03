@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.WordNotExistScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" translateY="60" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.WordNotExistScreenController">
    <stylesheets>
       <URL value="@../../css/searchBar.css" />
       <URL value="@../../css/wordNotExist.css" />
@@ -67,7 +67,7 @@
                   </VBox>
                </children>
             </StackPane>
-            <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="149.0" prefWidth="844.0" styleClass="searchResultBox" />
+            <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="93.0" prefWidth="844.0" styleClass="searchResultBox" />
          </children>
       </AnchorPane>
    </children>
