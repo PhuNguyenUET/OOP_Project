@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,40 +25,46 @@ public class GameScreenChanger {
     }
     private Stage stage;
     private Scene scene;
-    private Parent root;
+    private StackPane screen;
 
     protected void switchToDifficultyScreen(Event event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("select-difficulty-screen.fxml"));
-        root = loader.load();
+        screen = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        scene = stage.getScene();
+        StackPane stackPane = (StackPane) scene.getRoot();
+        stackPane.getChildren().clear();
+        stackPane.getChildren().add(screen);
         stage.show();
     }
 
     protected void switchToGameScreen(Event event, String difficulty) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("multiple-choice-game-screen.fxml"));
-        root = loader.load();
+        screen = loader.load();
 
         GameScreenController game = loader.getController();
         game.setDifficulty(difficulty);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        scene = stage.getScene();
+        StackPane stackPane = (StackPane) scene.getRoot();
+        stackPane.getChildren().clear();
+        stackPane.getChildren().add(screen);
         stage.show();
     }
 
     protected void switchToResultScreen(Event event, int score) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("result-screen.fxml"));
-        root = loader.load();
+        screen = loader.load();
 
         ResultController resultController = loader.getController();
         resultController.setScore(score);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        scene = stage.getScene();
+        StackPane stackPane = (StackPane) scene.getRoot();
+        stackPane.getChildren().clear();
+        stackPane.getChildren().add(screen);
         stage.show();
     }
 }

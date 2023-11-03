@@ -1,5 +1,8 @@
 package com.example.demo.backend.DictionaryBackend;
 
+import com.example.demo.backend.TranslateBackend.GoogleTranslate;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,6 +50,9 @@ class WordRepository {
             while (resultSet.next()) {
                 String type = resultSet.getString("type");
                 String explanation = resultSet.getString("explanation");
+                if (explanation.isEmpty()) {
+                    explanation = GoogleTranslate.translate("en", "vi", word);
+                }
                 types.add(type);
                 explain.add(explanation);
             }
@@ -68,7 +74,7 @@ class WordRepository {
                 return null;
             }
             return new StandardWord(word, pronunciation, explanations);
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
         return null;
