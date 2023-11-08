@@ -1,11 +1,11 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
-import com.example.demo.backend.Common.Word;
+import com.example.demo.frontend.Common.Word;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StandardWord implements Word{
+public class StandardWord implements Word {
     private String word;
 
     private String pronunciation;

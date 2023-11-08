@@ -33,7 +33,7 @@ class WordRepository {
     protected StandardWord searchForWord(Connection connection, String input) {
         try{
             Statement statement = connection.createStatement();
-            String query = "SELECT * FROM words WHERE word = \'" + input + "\'";
+            String query = "SELECT * FROM words WHERE word = '" + input + "'";
             ResultSet resultSet = statement.executeQuery(query);
             String word = "";
             String pronunciation = "";
@@ -45,7 +45,7 @@ class WordRepository {
                 pronunciation = resultSet.getString("pronunciation");
             }
             
-            query = "SELECT * FROM explanation WHERE word = \'" + input + "\'";
+            query = "SELECT * FROM explanation WHERE word = '" + input + "'";
             resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 String type = resultSet.getString("type");
@@ -58,7 +58,7 @@ class WordRepository {
             }
 
             for (int i = 0; i < explain.size(); i++) {
-                query = "SELECT * FROM phrases WHERE word = \'" + word + "\' AND wordExplanation = \'" + explain.get(i) +"\'";
+                query = "SELECT * FROM phrases WHERE word = '" + word + "' AND wordExplanation = '" + explain.get(i) +"'";
                 resultSet = statement.executeQuery(query);
                 List<String> phrases = new ArrayList<>();
                 while (resultSet.next()) {
@@ -78,5 +78,136 @@ class WordRepository {
             e.printStackTrace();
         }
         return null;
+    }
+
+    protected boolean checkWordExist(Connection connection, String word) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT word FROM words "
+                    + " WHERE word = " + " '" + word + "'";
+            ResultSet rs = statement.executeQuery(query);
+            return rs.isBeforeFirst();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    protected List<StandardWord> getRandomThreeWords (Connection connection) {
+        List<StandardWord> res = new ArrayList<>();
+        try{
+            Statement statement = connection.createStatement();
+            String query= "SELECT * FROM words " +
+                    "ORDER BY RAND() " +
+                    "LIMIT 3;";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                String english_word=rs.getString("word");
+                res.add(searchForWord(connection, english_word));
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    protected List<StandardWord> getRecentSearches (Connection connection) {
+        List<StandardWord> res = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT w.wordID, w.word as word" +
+                    "FROM recent_searches rs, words w" +
+                    "WHERE rs.wordID = w.wordID " +
+                    "ORDER BY rs.searchID DESC " +
+                    "LIMIT 4;";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                String english_word=rs.getString("word");
+                res.add(searchForWord(connection, english_word));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    protected void updateRecentSearches (Connection connection, String word) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "INSERT INTO recent_searches (wordID) values " +
+                    "((SELECT wordID FROM words WHERE word = '" + word + "'));";
+            statement.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected int getRecentSearchesCount (Connection connection) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT COUNT(*) as total FROM recent_searches;";
+            ResultSet rs = statement.executeQuery(query);
+            return rs.getInt("total");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    protected void cleanRecentSearches (Connection connection) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "DELETE FROM recent_searches WHERE searchID = " +
+                    "(SELECT MIN(searchID) FROM recent_searches);";
+            statement.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected List<StandardWord> getWordAtDay (Connection connection, String date) {
+        List<StandardWord> res = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT w.word as word" +
+                    "FROM words w, daily d " +
+                    "WHERE d.day = '" + date + "' AND " +
+                    "(d.wordID1 = w.wordID OR d.wordID2 = w.wordID OR d.wordID3 = w.wordID);";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                String english_word=rs.getString("word");
+                res.add(searchForWord(connection, english_word));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
+    protected void updateWordToday (Connection connection, String date,
+                                    String word1, String word2, String word3) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "INSERT INTO daily (day, wordID1, wordID2, wordID3) values " +
+                    "(" + date + ", (SELECT wordID FROM words WHERE word = '" + word1 + "')," +
+                    " (SELECT wordID FROM words WHERE word = '" + word2 + "')," +
+                    " (SELECT wordID FROM words WHERE word = '" + word3 + "'));";
+            statement.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected String getMostRecentDailyVisit (Connection connection) {
+        try {
+            Statement statement = connection.createStatement();
+            String query = "SELECT day FROM daily WHERE dayID = (SELECT MAX(dayID) FROM daily);";
+            ResultSet rs = statement.executeQuery(query);
+            return rs.getString("day");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }

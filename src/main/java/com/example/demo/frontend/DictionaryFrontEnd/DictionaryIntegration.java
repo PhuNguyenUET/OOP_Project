@@ -2,6 +2,7 @@ package com.example.demo.frontend.DictionaryFrontEnd;
 
 import com.example.demo.backend.DictionaryBackend.WordController;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
@@ -40,5 +41,41 @@ class DictionaryIntegration {
 
     protected List<String> searchSimilar(String input) {
         return backend.search(input);
+    }
+
+    protected List<StandardWord> getDailyNewWords() {
+        String stringResponse = backend.getDailyNewWords();
+
+        ObjectMapper mapper = new ObjectMapper();
+        List<StandardWord> lst = new ArrayList<>();
+        try {
+            lst = mapper.readValue(
+                    stringResponse, new TypeReference<List<StandardWord>>() { });
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return lst;
+    }
+
+    protected List<StandardWord> getRecentSearches() {
+        String stringResponse = backend.getRecentSearches();
+
+        ObjectMapper mapper = new ObjectMapper();
+        List<StandardWord> lst = new ArrayList<>();
+        try {
+            lst = mapper.readValue(
+                    stringResponse, new TypeReference<List<StandardWord>>() { });
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return lst;
+    }
+
+    protected void updateRecentSearches(String word) {
+        backend.updateRecentSearches(word);
+    }
+
+    protected boolean checkWordExist(String word) {
+        return backend.checkWordExist(word);
     }
 }

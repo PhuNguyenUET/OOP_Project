@@ -37,6 +37,14 @@ public class DictionaryHomeController implements Initializable {
     @FXML
     public ImageView logoImage;
 
+    @FXML
+    public VBox listOfLists;
+
+    @FXML
+    public Button translateButton;
+    @FXML
+    public Button settingsButton;
+
     URL imageUrl = getClass().getResource("/com/example/demo/assets/search.png");
     Image searchImg = new Image(imageUrl.toString());
     ImageView search = new ImageView(searchImg);

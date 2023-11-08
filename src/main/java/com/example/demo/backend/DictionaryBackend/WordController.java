@@ -40,4 +40,29 @@ public class WordController {
 
         return dictionaryService.transferWord(input);
     }
+
+    public String getDailyNewWords() {
+        return dictionaryService.getDailyNewWords();
+    }
+
+    public String getRecentSearches() {
+        return dictionaryService.getRecentSearches();
+    }
+
+    public void updateRecentSearches(String word) {
+        dictionaryService.updateRecentSearches(word);
+    }
+
+    public boolean checkWordExist(String word) {
+        int n = word.length();
+
+        for (int i = 0; i < n; i++) {
+            char c = word.charAt(i);
+            if (!isLetter(c) && c != '-' && c != ' ') {
+                return false;
+            }
+        }
+
+        return dictionaryService.checkWordExist(word);
+    }
 }

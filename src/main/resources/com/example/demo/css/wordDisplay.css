@@ -61,3 +61,16 @@
     -fx-font-weight: lighter;
     -fx-padding: 10 0 0 40;
 }
+
+.selectPopUp {
+    -fx-border-width: 3px;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #FFFFFF;
+}
+
+.popUpWindow {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+}

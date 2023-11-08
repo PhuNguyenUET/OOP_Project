@@ -2,10 +2,12 @@ package com.example.demo.frontend.DictionaryFrontEnd;
 
 import com.example.demo.backend.TextToSpeech;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -35,6 +37,12 @@ public class WordDisplayController implements Initializable {
     public Label wordDisplay;
     @FXML
     public Label pronunciation;
+    @FXML
+    public ScrollPane popUpAddWindow;
+    @FXML
+    public Label addSelection;
+    @FXML
+    public VBox selectionList;
 
     URL imageUrl = getClass().getResource("/com/example/demo/assets/search.png");
     Image searchImg = new Image(imageUrl.toString());
@@ -119,8 +127,14 @@ public class WordDisplayController implements Initializable {
     }
 
     @FXML
-    protected void clearSuggestion (MouseEvent event) {
+    protected void clearPopups (MouseEvent event) {
         suggestionBox.setVisible(false);
+        popUpAddWindow.setVisible(false);
+    }
+
+    @FXML
+    protected void addToYourList (Event event) {
+        popUpAddWindow.setVisible(true);
     }
 
     @Override
@@ -128,6 +142,7 @@ public class WordDisplayController implements Initializable {
         search.setFitWidth(35);
         search.setFitHeight(35);
         suggestionBox.setVisible(false);
+        popUpAddWindow.setVisible(false);
         searchButton.setGraphic(search);
     }
 }
