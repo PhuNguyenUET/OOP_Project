@@ -1,7 +1,6 @@
 package com.example.demo.backend.LearnerBackend;
 
 import com.example.demo.ScreenManager;
-import com.example.demo.backend.Connect;
 
 import java.sql.*;
 import java.util.ArrayList;
