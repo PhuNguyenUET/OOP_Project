@@ -1,7 +1,5 @@
 package com.example.demo.backend.DictionaryBackend;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 import java.util.ArrayList;
 import java.util.List;
 

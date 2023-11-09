@@ -26,7 +26,7 @@
          <children>
             <StackPane prefHeight="780.0" prefWidth="1520.0">
                <children>
-                  <VBox onMouseClicked="#clearPopups" prefHeight="200.0" prefWidth="100.0" styleClass="common">
+                  <VBox onMouseClicked="#clearPopups" prefHeight="200.0" prefWidth="100.0">
                      <children>
 <!--                        <fx:include source="../navBarFrontEnd/navBar.fxml"/>-->
                         <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1520.0" styleClass="common">
@@ -104,9 +104,9 @@
                                        <VBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </VBox.margin></Rectangle>
-                                    <ScrollPane prefHeight="383.0" prefWidth="1244.0" styleClass="common">
+                                    <ScrollPane prefHeight="383.0" prefWidth="1224.0" styleClass="common">
                                        <content>
-                                          <VBox fx:id="explanationBox" maxWidth="-Infinity" minHeight="381.0" minWidth="-Infinity" prefWidth="1242.0" styleClass="common" />
+                                          <VBox fx:id="explanationBox" minHeight="381.0" prefWidth="1223.0" styleClass="common" />
                                        </content>
                                     </ScrollPane>
                                  </children>
@@ -118,6 +118,10 @@
                            </children>
                         </StackPane>
                      </children>
+                     <styleClass>
+                        <String fx:value="common" />
+                        <String fx:value="insideBox" />
+                     </styleClass>
                   </VBox>
                </children>
             </StackPane>

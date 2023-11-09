@@ -2,6 +2,8 @@
     -fx-background-color: #FFFFFF;
 }
 
+.scroll-pane > .viewport  { -fx-background-color: #FFFFFF; }
+
 .languageLabel {
     -fx-font-family: 'Lexend';
     -fx-font-size: 14;

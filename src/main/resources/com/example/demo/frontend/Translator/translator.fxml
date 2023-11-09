@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" translateY="60" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.Translator.TranslatorController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" translateY="60" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.Translator.TranslatorController">
    <stylesheets>
       <URL value="@../../css/translator.css" />
    </stylesheets>
@@ -85,7 +85,7 @@
                                     <Insets top="15.0" />
                                  </VBox.margin>
                                  <content>
-                                    <Label fx:id="targetField" alignment="TOP_LEFT" maxWidth="-Infinity" minHeight="330.0" minWidth="-Infinity" prefWidth="530.0" styleClass="insideComponent" wrapText="true">
+                                    <Label fx:id="targetField" alignment="TOP_LEFT" maxWidth="-Infinity" minHeight="330.0" minWidth="-Infinity" prefWidth="512.0" styleClass="insideComponent" wrapText="true">
                                        <padding>
                                           <Insets left="15.0" />
                                        </padding>
