@@ -42,6 +42,11 @@
     -fx-background-radius: 30;
 }
 
+.correctAnswerDisplay {
+    -fx-background-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-background-radius: 30;
+}
+
 .nextButton {
     -fx-font-family: 'Lexend';
     -fx-font-weight: lighter;

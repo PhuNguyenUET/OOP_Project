@@ -3,9 +3,9 @@ package com.example.demo.frontend.MultipleChoice;
 import java.util.List;
 
 public class Question {
-    private final String question;
-    private final List<String> options;
-    private final int correctOption;
+    private String question;
+    private List<String> options;
+    private int correctOption;
 
     private Difficulty difficulty;
 
@@ -32,6 +32,8 @@ public class Question {
     public int getCorrectOption() {
         return correctOption;
     }
+
+    public Question(){}
 
     public Question(String question, List<String> options, int correctOption, String difficulty) {
         this.question = question;

@@ -39,6 +39,24 @@ class DictionaryIntegration {
         return word;
     }
 
+    protected StandardWord getSimplifiedWord(String input) {
+        String stringResponse = backend.transferWord(input);
+        if (stringResponse.isEmpty()) {
+            return null;
+        }
+        ObjectMapper mapper = new ObjectMapper();
+        StandardWord word = new StandardWord();
+        try {
+            word = mapper.readValue(stringResponse, StandardWord.class);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        Explanation res = word.getExplanations().get(0);
+        word.getExplanations().clear();
+        word.getExplanations().add(res);
+        return word;
+    }
+
     protected List<String> searchSimilar(String input) {
         return backend.search(input);
     }

@@ -15,6 +15,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -39,6 +40,8 @@ public class GameScreenController implements Initializable {
     Button next;
     @FXML
     ProgressBar timer;
+
+    List<Button> buttonList = new ArrayList<>();
 
     int currentChoice;
     private Difficulty difficulty;
@@ -102,6 +105,16 @@ public class GameScreenController implements Initializable {
         new Thread(sleeper).start();
     }
 
+    private void showAnswer() {
+        int correct = game.getCorrectAnswer();
+        for (int i = 0; i < buttonList.size(); i++) {
+            if (i + 1 == correct) {
+                buttonList.get(i).getStyleClass().add("correctAnswerDisplay");
+                buttonList.get(i).setOpacity(0.5);
+            }
+        }
+    }
+
     private void checkAnswer(Button button) {
         boolean check = game.checkAnswer(currentChoice);
         scoreLabel.setText("Score: " + game.getScore());
@@ -109,6 +122,7 @@ public class GameScreenController implements Initializable {
             button.getStyleClass().add("correctAnswer");
         } else {
             button.getStyleClass().add("wrongAnswer");
+            showAnswer();
         }
         if(game.isOver()) {
             next.setText("Show result");
@@ -118,14 +132,11 @@ public class GameScreenController implements Initializable {
     }
 
     private void timeOut() {
-        option1.setDisable(true);
-        option1.setOpacity(0.5);
-        option2.setDisable(true);
-        option2.setOpacity(0.5);
-        option3.setDisable(true);
-        option3.setOpacity(0.5);
-        option4.setDisable(true);
-        option4.setOpacity(0.5);
+        for (Button b : buttonList) {
+            b.setDisable(true);
+            b.setOpacity(0.5);
+        }
+        showAnswer();
         if(game.isOver()) {
             next.setText("Show result");
         }
@@ -143,14 +154,11 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button1Handler() {
         currentChoice = 1;
-        option1.setDisable(true);
+        for (Button b : buttonList) {
+            b.setDisable(true);
+            b.setOpacity(0.5);
+        }
         option1.setOpacity(1);
-        option2.setDisable(true);
-        option2.setOpacity(0.5);
-        option3.setDisable(true);
-        option3.setOpacity(0.5);
-        option4.setDisable(true);
-        option4.setOpacity(0.5);
         timeline.stop();
         delay(500, () -> checkAnswer(option1));
     }
@@ -158,14 +166,11 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button2Handler(Event event) {
         currentChoice = 2;
-        option1.setDisable(true);
-        option1.setOpacity(0.5);
-        option2.setDisable(true);
+        for (Button b : buttonList) {
+            b.setDisable(true);
+            b.setOpacity(0.5);
+        }
         option2.setOpacity(1);
-        option3.setDisable(true);
-        option3.setOpacity(0.5);
-        option4.setDisable(true);
-        option4.setOpacity(0.5);
         timeline.stop();
         delay(500, () -> checkAnswer(option2));
     }
@@ -173,14 +178,11 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button3Handler(Event event) {
         currentChoice = 3;
-        option1.setDisable(true);
-        option1.setOpacity(0.5);
-        option2.setDisable(true);
-        option2.setOpacity(0.5);
-        option3.setDisable(true);
+        for (Button b : buttonList) {
+            b.setDisable(true);
+            b.setOpacity(0.5);
+        }
         option3.setOpacity(1);
-        option4.setDisable(true);
-        option4.setOpacity(0.5);
         timeline.stop();
         delay(500, () -> checkAnswer(option3));
     }
@@ -188,13 +190,10 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button4Handler(Event event) {
         currentChoice = 4;
-        option1.setDisable(true);
-        option1.setOpacity(0.5);
-        option2.setDisable(true);
-        option2.setOpacity(0.5);
-        option3.setDisable(true);
-        option3.setOpacity(0.5);
-        option4.setDisable(true);
+        for (Button b : buttonList) {
+            b.setDisable(true);
+            b.setOpacity(0.5);
+        }
         option4.setOpacity(1);
         timeline.stop();
         delay(500, () -> checkAnswer(option4));
@@ -209,10 +208,9 @@ public class GameScreenController implements Initializable {
                 e.printStackTrace();
             }
         }
-        resetDefaultButton(option1);
-        resetDefaultButton(option2);
-        resetDefaultButton(option3);
-        resetDefaultButton(option4);
+        for (Button b : buttonList) {
+            resetDefaultButton(b);
+        }
         game.nextQuestion();
         showQuestion();
         next.setDisable(true);
@@ -241,15 +239,18 @@ public class GameScreenController implements Initializable {
 
     @FXML
     public void outOfHover(Event event) {
-        option1.getStyleClass().remove("onHover");
-        option2.getStyleClass().remove("onHover");
-        option3.getStyleClass().remove("onHover");
-        option4.getStyleClass().remove("onHover");
+        for (Button b : buttonList) {
+            b.getStyleClass().remove("onHover");
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         next.setVisible(false);
         next.setDisable(true);
+        buttonList.add(option1);
+        buttonList.add(option2);
+        buttonList.add(option3);
+        buttonList.add(option4);
     }
 }

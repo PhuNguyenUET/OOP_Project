@@ -14,7 +14,7 @@ class GameRepository {
             Statement statement = connection.createStatement();
             String query = "SELECT * FROM " + difficulty.toLowerCase() + " ORDER BY RANDOM() LIMIT 10";
             ResultSet rs = statement.executeQuery(query);
-            if (rs.next()) {
+            while (rs.next()) {
                 //Get question
                 String question = rs.getString("question");
 

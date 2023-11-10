@@ -42,6 +42,10 @@ public class Game {
         return check;
     }
 
+    public int getCorrectAnswer() {
+        return questions.get(quesIndex).getCorrectOption();
+    }
+
     public int getTotalQuestion() {
         return questions.size();
     }
