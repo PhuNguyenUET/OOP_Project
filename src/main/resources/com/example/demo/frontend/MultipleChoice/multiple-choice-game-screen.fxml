@@ -8,9 +8,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" translateY="80" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.GameScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" translateY="80" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.GameScreenController">
    <stylesheets>
       <URL value="@../../css/multipleChoiceGame.css" />
    </stylesheets>
@@ -59,14 +58,14 @@
             </Label>
             <HBox prefHeight="225.0" prefWidth="1520.0" spacing="60.0">
                <children>
-                  <Button fx:id="option1" alignment="CENTER" mnemonicParsing="false" onAction="#button1Handler" onMouseEntered="#onHover1" onMouseExited="#outOfHover" prefHeight="229.0" prefWidth="298.0" styleClass="choiceButton" text="Lol">
+                  <Button fx:id="option1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#button1Handler" onMouseEntered="#onHover1" onMouseExited="#outOfHover" prefHeight="229.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets left="75.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="option2" alignment="CENTER" mnemonicParsing="false" onAction="#button2Handler" onMouseEntered="#onHover2" onMouseExited="#outOfHover" prefHeight="277.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
-                  <Button fx:id="option3" alignment="CENTER" mnemonicParsing="false" onAction="#button3Handler" onMouseEntered="#onHover3" onMouseExited="#outOfHover" prefHeight="238.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
-                  <Button fx:id="option4" alignment="CENTER" mnemonicParsing="false" onAction="#button4Handler" onMouseEntered="#onHover4" onMouseExited="#outOfHover" prefHeight="242.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" />
+                  <Button fx:id="option2" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#button2Handler" onMouseEntered="#onHover2" onMouseExited="#outOfHover" prefHeight="277.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="option3" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#button3Handler" onMouseEntered="#onHover3" onMouseExited="#outOfHover" prefHeight="238.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="option4" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#button4Handler" onMouseEntered="#onHover4" onMouseExited="#outOfHover" prefHeight="242.0" prefWidth="298.0" styleClass="choiceButton" text="Lol" textAlignment="CENTER" wrapText="true" />
                </children>
                <VBox.margin>
                   <Insets top="60.0" />

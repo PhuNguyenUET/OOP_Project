@@ -26,6 +26,6 @@ public class ConnectComponentDict extends DictFuncToLearner {
 
     @Override
     public Word getDetails(String word) {
-        return DictionaryIntegration.Instance().transferTo(word);
+        return DictionaryIntegration.Instance().getSimplifiedWord(word);
     }
 }

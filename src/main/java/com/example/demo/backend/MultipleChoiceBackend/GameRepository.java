@@ -12,14 +12,29 @@ class GameRepository {
         List<Question> questions = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String query = "";
+            String query = "SELECT * FROM " + difficulty.toLowerCase() + " ORDER BY RANDOM() LIMIT 10";
             ResultSet rs = statement.executeQuery(query);
-            if (rs.next()) {
-                String question = rs.getString("");
+            while (rs.next()) {
+                //Get question
+                String question = rs.getString("question");
+
+                //Get options
                 List<String> options = new ArrayList<>();
-                int rightOption = rs.getInt("");
-                String dif = rs.getString("");
-                Question ques = new Question(question, options, rightOption, dif);
+                options.add(rs.getString("A"));
+                options.add(rs.getString("B"));
+                options.add(rs.getString("C"));
+                options.add(rs.getString("D"));
+
+                //Get answer to question
+                String ans = rs.getString("answer");
+                int rightOption = 0;
+                switch (ans) {
+                    case "A" -> rightOption = 1;
+                    case "B" -> rightOption = 2;
+                    case "C" -> rightOption = 3;
+                    case "D" -> rightOption = 4;
+                }
+                Question ques = new Question(question, options, rightOption, difficulty);
                 questions.add(ques);
             }
         } catch (SQLException e) {

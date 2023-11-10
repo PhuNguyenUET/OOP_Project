@@ -98,7 +98,7 @@ class WordRepository {
         try{
             Statement statement = connection.createStatement();
             String query= "SELECT * FROM words " +
-                    "ORDER BY RAND() " +
+                    "ORDER BY RANDOM() " +
                     "LIMIT 3;";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
@@ -116,8 +116,8 @@ class WordRepository {
         List<StandardWord> res = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT w.wordID, w.word as word" +
-                    "FROM recent_searches rs, words w" +
+            String query = "SELECT w.wordID, w.word as word " +
+                    "FROM recent_searches rs, words w " +
                     "WHERE rs.wordID = w.wordID " +
                     "ORDER BY rs.searchID DESC " +
                     "LIMIT 4;";
@@ -137,7 +137,7 @@ class WordRepository {
             Statement statement = connection.createStatement();
             String query = "INSERT INTO recent_searches (wordID) values " +
                     "((SELECT wordID FROM words WHERE word = '" + word + "'));";
-            statement.executeQuery(query);
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -160,7 +160,7 @@ class WordRepository {
             Statement statement = connection.createStatement();
             String query = "DELETE FROM recent_searches WHERE searchID = " +
                     "(SELECT MIN(searchID) FROM recent_searches);";
-            statement.executeQuery(query);
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -193,7 +193,7 @@ class WordRepository {
                     "(" + date + ", (SELECT wordID FROM words WHERE word = '" + word1 + "')," +
                     " (SELECT wordID FROM words WHERE word = '" + word2 + "')," +
                     " (SELECT wordID FROM words WHERE word = '" + word3 + "'));";
-            statement.executeQuery(query);
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

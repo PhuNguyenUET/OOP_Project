@@ -1,5 +1,6 @@
 package com.example.demo.frontend.Translator;
 
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -46,9 +47,17 @@ public class TranslatorController implements Initializable {
     }
     @FXML
     public void translate() {
-        translator.setSourceText(sourceField.getText());
-        translator.translate();
-        targetField.setText(translator.getTargetText());
+        targetField.setText("Waiting for response...");
+        Task<Void> translateThread = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                translator.setSourceText(sourceField.getText());
+                translator.translate();
+                return null;
+            }
+        };
+        translateThread.setOnSucceeded(event -> targetField.setText(translator.getTargetText()));
+        new Thread(translateThread).start();
     }
 
     @FXML

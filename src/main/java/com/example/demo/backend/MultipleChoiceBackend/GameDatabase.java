@@ -19,7 +19,7 @@ class GameDatabase {
     }
 
     private static Connection connection;
-    private static final String DATABASE_URL = "src/main/resources/database/Multiplechoice.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
+    private static final String DATABASE_URL = "src/main/resources/database/multiplechoice.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
 
     private static void connect() {
         try {
