@@ -32,6 +32,7 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
     public List<String> getAllLists(String folder)
     {
         int folderId = FolderReposity.getInstance().getFolderId(folder);
+        System.out.println(folder + " " + folderId);
         String respon = ListReposity.getInstance().getAllListsForDict(folderId);
         String[] lists = respon.split(" ");
         List<String> res = new ArrayList<>();

@@ -1,11 +1,15 @@
 package com.example.demo.frontend.LearnerFrontEnd;
 
 import com.example.demo.ScreenManager;
+import com.example.demo.backend.LearnerBackend.ConnectComponentLearner;
 import com.example.demo.backend.LearnerBackend.FolderManager;
 import com.example.demo.backend.LearnerBackend.FolderReposity;
 import com.example.demo.backend.LearnerBackend.WordManager;
 import com.example.demo.backend.TextToSpeech;
 //import com.example.demo.frontend.libChildFrontEnd.libChildController;
+import com.example.demo.frontend.Common.DictFuncToLearner;
+import com.example.demo.frontend.Common.Word;
+import com.example.demo.frontend.DictionaryFrontEnd.ConnectComponentDict;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -114,6 +118,8 @@ public class LeanerController {
     @FXML
     private VBox twoFolderContainer;
 
+    private DictFuncToLearner dictFuncToLearner = new ConnectComponentDict();
+
     public void initialize() {
         System.out.println(paneContainer);
         transition1 = new TranslateTransition(Duration.seconds(0.5), movingAnimation);
@@ -220,7 +226,7 @@ public class LeanerController {
     }
 
     public void recentWordRender() {
-        List<UserWord> listWord = WordManager.getInstance().getThreeWords();
+        List<Word> listWord = dictFuncToLearner.getRecentSearches();
         int n=listWord.size();
         System.out.println("listWord has " + listWord.size() + " words");
         rencentContainer.getChildren().clear();
@@ -252,7 +258,7 @@ public class LeanerController {
             audio.getChildren().add(imgContainer);
             audio.getChildren().add(pronunContainer);
             VBox definitionContainer = new VBox();
-            Label difinition = new Label(listWord.get(i).getDefinition());
+            Label difinition = new Label(listWord.get(i).getDefinition().get(0));
             difinition.getStyleClass().add("description");
             definitionContainer.getChildren().add(difinition);
             container.getChildren().addAll(engWordContainer, typeContainer, audio, definitionContainer);
@@ -270,9 +276,9 @@ public class LeanerController {
     }
 
     public void newWordRender() {
-        List<UserWord> words = WordManager.getInstance().getThreeWords();
+        List<Word> words = dictFuncToLearner.getDailyNewWords();
         newWordContainer.getChildren().clear();
-        for (UserWord word : words) {
+        for (Word word : words) {
             StackPane containerStack = new StackPane();
             containerStack.getStyleClass().add("word");
             Label label = new Label(word.getWord());
@@ -289,7 +295,7 @@ public class LeanerController {
                     PronunciationPopUp.setText(word.getWord());
                 else
                     PronunciationPopUp.setText("");
-                DefinitionPopUp.setText(word.getDefinition());
+                DefinitionPopUp.setText(word.getDefinition().get(0));
             });
         }
     }

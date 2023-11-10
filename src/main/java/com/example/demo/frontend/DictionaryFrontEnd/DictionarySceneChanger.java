@@ -63,7 +63,10 @@ class DictionarySceneChanger {
 
         wordDisplayController.setContent();
 
+        DictionaryIntegration.Instance().updateRecentSearches(word.getWord());
+
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+
         root.getChildren().remove(1);
         root.getChildren().add(screen);
     }

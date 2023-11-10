@@ -5,6 +5,8 @@ import com.example.demo.backend.LearnerBackend.FolderReposity;
 import com.example.demo.backend.LearnerBackend.ListManager;
 import com.example.demo.backend.LearnerBackend.ListReposity;
 import com.example.demo.backend.LearnerBackend.WordReposity;
+import com.example.demo.frontend.Common.DictFuncToLearner;
+import com.example.demo.frontend.DictionaryFrontEnd.ConnectComponentDict;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -77,7 +79,6 @@ public class ListController {
 
     @FXML
     private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
-
     public void initialize() {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
 

@@ -201,11 +201,11 @@ public class FolderReposity {
         }
     }
 
-    public int getFolderId(String name) {
+    public int getFolderId(String folderName) {
         try {
             int result = -1;
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT id FROM folder where name=" + name;
+            String query = "SELECT id FROM folder where name=" + "'" + folderName + "'";
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 result = resultSet.getInt("id");

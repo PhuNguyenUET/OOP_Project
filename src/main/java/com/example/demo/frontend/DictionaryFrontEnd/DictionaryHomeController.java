@@ -1,5 +1,7 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import com.example.demo.backend.LearnerBackend.ConnectComponentLearner;
+import com.example.demo.frontend.Common.LearnerFuncToDict;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -22,6 +24,7 @@ import java.util.ResourceBundle;
 public class DictionaryHomeController implements Initializable {
     SearchBarController searchBarController;
 
+    private LearnerFuncToDict learnerFuncToDict = new ConnectComponentLearner();
     @FXML
     public TextField searchBar;
 
