@@ -241,7 +241,7 @@ public class LeanerController {
             engWord.getStyleClass().add("engWord");
             engWordContainer.getChildren().add(engWord);
             VBox typeContainer = new VBox();
-            Label type = new Label(listWord.get(i).getType());
+            Label type = new Label(listWord.get(i).getType().get(0));
             type.getStyleClass().add("type");
             typeContainer.getChildren().add(type);
             HBox audio = new HBox();
@@ -290,7 +290,7 @@ public class LeanerController {
                 e.consume();
                 PopUpContainer.setVisible(true);
                 WordPopUp.setText(word.getWord());
-                TypePopUp.setText(word.getType());
+                TypePopUp.setText(word.getType().get(0));
                 if (!word.getPronunciation().equals("null"))
                     PronunciationPopUp.setText(word.getWord());
                 else

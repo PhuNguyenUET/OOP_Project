@@ -1,6 +1,9 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import com.example.demo.ScreenManager;
+import com.example.demo.backend.LearnerBackend.ConnectComponentLearner;
 import com.example.demo.backend.TextToSpeech;
+import com.example.demo.frontend.Common.LearnerFuncToDict;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -23,6 +26,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class WordDisplayController implements Initializable {
+
+    private LearnerFuncToDict lf = new ConnectComponentLearner();
+
+    private List<Label> folders = new ArrayList<>();
+
+    private List<Label> lists = new ArrayList<>();
+
     @FXML
     public TextField searchBar;
     @FXML
@@ -38,7 +48,7 @@ public class WordDisplayController implements Initializable {
     @FXML
     public Label pronunciation;
     @FXML
-    public ScrollPane popUpAddWindow;
+    public VBox popUpAddWindow;
     @FXML
     public Label addSelection;
     @FXML
@@ -129,12 +139,51 @@ public class WordDisplayController implements Initializable {
     @FXML
     protected void clearPopups (MouseEvent event) {
         suggestionBox.setVisible(false);
+        popUpAddWindow.setDisable(true);
         popUpAddWindow.setVisible(false);
     }
 
     @FXML
-    protected void addToYourList (Event event) {
+    protected void addToYourList (Event event)
+    {
+        addSelection.setText("Select your folder");
+        displayAllFolders();
+        popUpAddWindow.setDisable(false);
         popUpAddWindow.setVisible(true);
+    }
+
+    private void displayAllFolders() {
+        folders.clear();
+        selectionList.getChildren().clear();
+        List<String> f = lf.getAllFolders(ScreenManager.getInstance().getUserId());
+        for (int i = 0; i < f.size(); i++) {
+            Label temp = new Label(f.get(i));
+            temp.getStyleClass().add("selectLabel");
+            temp.setOnMouseClicked(event -> {
+                addSelection.setText("Select your list");
+                displayAllLists(temp.getText());
+            });
+            folders.add(temp);
+            selectionList.getChildren().add(temp);
+        }
+    }
+
+    private void displayAllLists(String folder) {
+        lists.clear();
+        selectionList.getChildren().clear();
+        List<String> f = lf.getAllLists(folder);
+        System.out.println("Fuck this shit:" + f.size());
+        for (int i = 0; i < f.size(); i++) {
+            Label temp = new Label(f.get(i));
+            temp.getStyleClass().add("selectLabel");
+            temp.setOnMouseClicked(event -> {
+                popUpAddWindow.setDisable(true);
+                popUpAddWindow.setVisible(false);
+                lf.addToList(folder, temp.getText(), word);
+            });
+            folders.add(temp);
+            selectionList.getChildren().add(temp);
+        }
     }
 
     @Override
@@ -142,6 +191,7 @@ public class WordDisplayController implements Initializable {
         search.setFitWidth(35);
         search.setFitHeight(35);
         suggestionBox.setVisible(false);
+        popUpAddWindow.setDisable(true);
         popUpAddWindow.setVisible(false);
         searchButton.setGraphic(search);
     }

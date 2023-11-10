@@ -69,7 +69,7 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
         int listId = ListReposity.getInstance().getListId(list,folderId);
         System.out.println("List id cần add : " + listId);
         String englishWord = word.getWord();
-        String type =word.getType();
+        String type =word.getType().get(0);
         String definition = word.getDefinition().get(0);
         String pronunciation = word.getPronunciation();
         WordReposity.getInstance().addNewList(englishWord,type,definition,listId);

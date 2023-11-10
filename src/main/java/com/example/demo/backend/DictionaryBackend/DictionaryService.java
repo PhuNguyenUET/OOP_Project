@@ -39,6 +39,8 @@ class DictionaryService {
     protected String getDailyNewWords() {
         String today = LocalDate.now().toString();
         List<StandardWord> lst;
+        System.out.println(today);
+        System.out.println(wordRepository.getMostRecentDailyVisit(connection));
         if (today.equals(wordRepository.getMostRecentDailyVisit(connection))) {
             lst = wordRepository.getWordAtDay(connection, today);
         } else {
@@ -73,7 +75,7 @@ class DictionaryService {
             return;
         }
         wordRepository.updateRecentSearches(connection, word);
-        if (wordRepository.getRecentSearchesCount(connection) >= 10) {
+        if (wordRepository.getRecentSearchesCount(connection) >= 500) {
             wordRepository.cleanRecentSearches(connection);
         }
     }

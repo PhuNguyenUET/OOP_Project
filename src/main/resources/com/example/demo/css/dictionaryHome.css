@@ -14,6 +14,18 @@
     -fx-border-radius: 20;
 }
 
+.folderLabel {
+    -fx-font-family: 'Lexend';
+     -fx-font-size: 17;
+     -fx-font-weight: bolder;
+     -fx-background-color: #FFFFFF;
+     -fx-text-alignment: center;
+     -fx-alignment: center;
+     -fx-background-radius: 50;
+     -fx-pref-width: 370;
+     -fx-pref-height: 40;
+}
+
 .common {
     -fx-background-color: #FFFFFF;
 }
