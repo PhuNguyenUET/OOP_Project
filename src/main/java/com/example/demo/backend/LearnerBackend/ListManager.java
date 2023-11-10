@@ -1,6 +1,6 @@
-package com.example.demo.frontend.LearnerFrontEnd;
+package com.example.demo.backend.LearnerBackend;
 
-import com.example.demo.backend.LearnerBackend.ListReposity;
+import com.example.demo.frontend.LearnerFrontEnd.ListUser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -12,11 +12,12 @@ public class ListManager {
     private static ListManager instance_;
 
     private List<ListUser> listOfFolder = new ArrayList<>();
-    private ListManager(){}
 
-    public static ListManager getInstance(){
-        if (instance_ == null)
-        {
+    private ListManager() {
+    }
+
+    public static ListManager getInstance() {
+        if (instance_ == null) {
             instance_ = new ListManager();
         }
         return instance_;
@@ -30,12 +31,12 @@ public class ListManager {
         this.listOfFolder = listOfFolder;
     }
 
-    public List<ListUser> updateAndGetAllListOfFolder(int folderId)
-    {
+    public List<ListUser> updateAndGetAllListOfFolder(int folderId) {
         String jsonInput = ListReposity.getInstance().getAllListFromFolderTest(folderId);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            List<ListUser> userList = objectMapper.readValue(jsonInput, new TypeReference<List<ListUser>>() {});
+            List<ListUser> userList = objectMapper.readValue(jsonInput, new TypeReference<List<ListUser>>() {
+            });
             return userList;
         } catch (IOException e) {
             e.printStackTrace();
@@ -44,4 +45,13 @@ public class ListManager {
         }
     }
 
+    public List<String> getAllListForDict(int folderId) {
+        String lists = ListReposity.getInstance().getAllListsForDict(folderId);
+        String[] respon = lists.split(" ");
+        List<String> res = new ArrayList<>();
+        for (String s : respon) {
+            res.add(s);
+        }
+        return res;
+    }
 }

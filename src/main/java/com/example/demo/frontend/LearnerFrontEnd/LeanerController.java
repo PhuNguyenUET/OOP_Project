@@ -1,7 +1,9 @@
 package com.example.demo.frontend.LearnerFrontEnd;
 
 import com.example.demo.ScreenManager;
+import com.example.demo.backend.LearnerBackend.FolderManager;
 import com.example.demo.backend.LearnerBackend.FolderReposity;
+import com.example.demo.backend.LearnerBackend.WordManager;
 import com.example.demo.backend.TextToSpeech;
 //import com.example.demo.frontend.libChildFrontEnd.libChildController;
 import javafx.animation.TranslateTransition;
@@ -15,7 +17,6 @@ import javafx.scene.layout.*;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 public class LeanerController {

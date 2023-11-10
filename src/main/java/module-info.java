@@ -19,6 +19,8 @@ module com.example.demo{
     exports com.example.demo.backend.DictionaryBackend;
     opens com.example.demo.backend.DictionaryBackend to com.fasterxml.jackson.databind;
 
+    exports com.example.demo.backend.LearnerBackend;
+
     exports com.example.demo.frontend.MultipleChoice;
     opens com.example.demo.frontend.MultipleChoice to com.fasterxml.jackson.databind, javafx.fxml;
 
@@ -38,5 +40,6 @@ module com.example.demo{
 
     opens com.example.demo.frontend.LearnerFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.LearnerFrontEnd ;
+    opens com.example.demo.backend.LearnerBackend to com.fasterxml.jackson.databind, javafx.fxml;
 
 }

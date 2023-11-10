@@ -178,4 +178,42 @@ public class ListReposity {
             return "";
         }
     }
+
+    public int getListId(String listName) {
+        try {
+            int result = -1;
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT id FROM UserList where name=" + listName;
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                result = resultSet.getInt("id");
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    public String getAllListsForDict(int folderId){
+        try {
+            String query = "SELECT * FROM UserList WHERE folderId = ?";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
+            preparedStatement.setInt(1, folderId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            StringBuilder res = new StringBuilder();
+            while (resultSet.next()) {
+                int ListId = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                System.out.print(name + " ");
+                res.append(name).append(" ");
+            }
+            return res.toString();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve lists from the folder";
+        }
+    }
+
+
 }

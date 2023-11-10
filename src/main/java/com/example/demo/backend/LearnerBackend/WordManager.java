@@ -1,6 +1,7 @@
-package com.example.demo.frontend.LearnerFrontEnd;
+package com.example.demo.backend.LearnerBackend;
 
-import com.example.demo.backend.LearnerBackend.WordReposity;
+import com.example.demo.frontend.LearnerFrontEnd.ListUser;
+import com.example.demo.frontend.LearnerFrontEnd.UserWord;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -61,4 +62,6 @@ public class WordManager {
             return userWords;
         }
     }
+
+
 }

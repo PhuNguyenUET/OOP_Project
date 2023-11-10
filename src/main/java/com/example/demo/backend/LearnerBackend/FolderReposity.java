@@ -201,6 +201,22 @@ public class FolderReposity {
         }
     }
 
+    public int getFolderId(String name) {
+        try {
+            int result = -1;
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT id FROM folder where name=" + name;
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()) {
+                result = resultSet.getInt("id");
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
     public boolean canToAddFolder() {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
@@ -243,4 +259,46 @@ public class FolderReposity {
         }
     }
 
+    public String getRecentFoldersForDict(int userId)
+    {
+        try {
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT DISTINCT f.name, f.id\n" +
+                    "FROM folder f\n" +
+                    "JOIN HistoryFolder hf ON hf.folderId = f.id\n" +
+                    "where f.userId = " + userId + "\n" +
+                    "ORDER BY hf.historyId DESC\n" +
+                    "LIMIT 4;\n";
+            ResultSet resultSet = statement.executeQuery(query);
+            StringBuilder res = new StringBuilder();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                System.out.print(name + " ");
+                res.append(name).append(" ");
+            }
+            return res.toString();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve folder data";
+        }
+    }
+
+    public String getAllFoldersForDict(int userId)
+    {
+        try {
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT * FROM folder where userId = " + userId;
+            ResultSet resultSet = statement.executeQuery(query);
+            StringBuilder res = new StringBuilder();
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                System.out.println(name + " ");
+                res.append(name).append(" ");
+            }
+            return res.toString();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve folder data";
+        }
+    }
 }
