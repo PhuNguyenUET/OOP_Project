@@ -11,7 +11,13 @@ import java.util.List;
 public class ConnectComponentLearner extends LearnerFuncToDict{
     @Override
     public List<String>  getRecentFolders(int userId){
+        String respon = FolderReposity.getInstance().getRecentFoldersForDict(userId);
+        String[] folders = respon.split(" ");
         List<String>res = new ArrayList<>();
+        for (String folder : folders)
+        {
+            res.add(folder);
+        }
         return res;
     }
 
