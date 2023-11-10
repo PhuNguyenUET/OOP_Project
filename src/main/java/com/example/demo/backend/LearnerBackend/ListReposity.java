@@ -183,7 +183,7 @@ public class ListReposity {
         try {
             int result = -1;
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT id FROM UserList where name=" + listName + " and folderId = " + folderId;;
+            String query = "SELECT id FROM UserList where name=" + "'" + listName + "'" + " and folderId = " + folderId;;
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 result = resultSet.getInt("id");
