@@ -58,7 +58,7 @@
                                  <children>
                                     <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="481.0" prefWidth="899.0" spacing="50.0" styleClass="exploreBox">
                                        <children>
-                                          <VBox fx:id="listOfLists" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="424.0" prefWidth="577.0" spacing="50.0" styleClass="functionBox">
+                                          <VBox fx:id="listOfLists" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="424.0" prefWidth="577.0" spacing="45.0" styleClass="functionBox">
                                              <HBox.margin>
                                                 <Insets left="20.0" top="20.0" />
                                              </HBox.margin>
