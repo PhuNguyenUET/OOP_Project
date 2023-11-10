@@ -126,9 +126,9 @@
                </children>
             </StackPane>
             <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="93.0" prefWidth="844.0" styleClass="searchResultBox" />
-            <ScrollPane fx:id="popUpAddWindow" layoutX="1066.0" layoutY="245.0" prefHeight="244.0" prefWidth="344.0" styleClass="popUpWindow">
+            <ScrollPane fx:id="popUpAddWindow" layoutX="1066.0" layoutY="245.0" prefHeight="304.0" prefWidth="354.0" styleClass="popUpWindow">
                <content>
-                  <VBox fx:id="selectionList" alignment="TOP_CENTER" minHeight="242.0" prefWidth="342.0" styleClass="selectPopUp">
+                  <VBox alignment="TOP_CENTER" styleClass="selectPopUp">
                      <children>
                         <Label fx:id="addSelection" text="Select your folder">
                            <font>
@@ -138,7 +138,9 @@
                               <Insets bottom="15.0" top="15.0" />
                            </VBox.margin>
                         </Label>
-                     </children></VBox>
+                        <VBox fx:id="selectionList" alignment="TOP_CENTER" minHeight="242.0" prefWidth="342.0" styleClass="insideBox" />
+                     </children>
+                  </VBox>
                </content>
             </ScrollPane>
          </children>

@@ -1,5 +1,6 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import com.example.demo.ScreenManager;
 import com.example.demo.backend.LearnerBackend.ConnectComponentLearner;
 import com.example.demo.frontend.Common.LearnerFuncToDict;
 import javafx.event.ActionEvent;
@@ -22,9 +23,13 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class DictionaryHomeController implements Initializable {
+
+    private LearnerFuncToDict lf = new ConnectComponentLearner();
+
+    List <Label> folders = new ArrayList<>();
+
     SearchBarController searchBarController;
 
-    private LearnerFuncToDict learnerFuncToDict = new ConnectComponentLearner();
     @FXML
     public TextField searchBar;
 
@@ -59,6 +64,9 @@ public class DictionaryHomeController implements Initializable {
         searchBarController = new SearchBarController();
         suggestionBox.setVisible(false);
         searchButton.setGraphic(search);
+        List<String> f = lf.getRecentFolders(ScreenManager.getInstance().getUserId());
+        System.out.println(f.size());
+        updateRecentFolders(f);
     }
 
     @FXML
@@ -92,5 +100,17 @@ public class DictionaryHomeController implements Initializable {
     @FXML
     protected void clearSuggestion (MouseEvent event) {
         suggestionBox.setVisible(false);
+    }
+
+    private void updateRecentFolders(List<String> f) {
+        //folders.clear();
+        //listOfLists.getChildren().clear();
+        System.out.println(f.size());
+        for (int i = 0; i < f.size(); i++) {
+            Label temp = new Label(f.get(i));
+            folders.add(temp);
+            listOfLists.getChildren().add(temp);
+        }
+        System.out.println(folders.size());
     }
 }
