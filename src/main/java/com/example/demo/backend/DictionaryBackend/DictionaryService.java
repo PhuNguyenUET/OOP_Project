@@ -73,7 +73,7 @@ class DictionaryService {
             return;
         }
         wordRepository.updateRecentSearches(connection, word);
-        if (wordRepository.getRecentSearchesCount(connection) >= 10) {
+        if (wordRepository.getRecentSearchesCount(connection) >= 500) {
             wordRepository.cleanRecentSearches(connection);
         }
     }

@@ -116,7 +116,7 @@ class WordRepository {
         List<StandardWord> res = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT w.wordID, w.word as word " +
+            String query = "SELECT DISTINCT w.wordID, w.word as word " +
                     "FROM recent_searches rs, words w " +
                     "WHERE rs.wordID = w.wordID " +
                     "ORDER BY rs.searchID DESC " +
