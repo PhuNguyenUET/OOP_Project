@@ -12,6 +12,10 @@ public class StandardWord implements Word {
 
     private List<Explanation> explanations;
 
+    public String getType()
+    {
+        return "";
+    }
     public void setWord(String word) {
         this.word = word;
     }

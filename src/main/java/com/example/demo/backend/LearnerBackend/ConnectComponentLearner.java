@@ -45,8 +45,12 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
     @Override
     public void addToList(String folder, String list, Word word){
         int folderId = FolderReposity.getInstance().getFolderId(folder);
-        int listId = ListReposity.getInstance().getListId(list);
+        int listId = ListReposity.getInstance().getListId(list,folderId);
         String englishWord = word.getWord();
+        String type =word.getType();
+        String definition = word.getDefinition().get(0);
+        String pronunciation = word.getPronunciation();
+        WordReposity.getInstance().addNewList(englishWord,type,definition,listId);
     }
 
 }
