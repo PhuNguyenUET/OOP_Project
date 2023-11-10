@@ -120,7 +120,7 @@ class WordRepository {
                     "FROM recent_searches rs, words w " +
                     "WHERE rs.wordID = w.wordID " +
                     "ORDER BY rs.searchID DESC " +
-                    "LIMIT 4;";
+                    "LIMIT 3;";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
                 String english_word=rs.getString("word");

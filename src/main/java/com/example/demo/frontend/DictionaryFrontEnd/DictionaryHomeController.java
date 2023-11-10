@@ -103,11 +103,12 @@ public class DictionaryHomeController implements Initializable {
     }
 
     private void updateRecentFolders(List<String> f) {
-        //folders.clear();
-        //listOfLists.getChildren().clear();
+        folders.clear();
+        listOfLists.getChildren().clear();
         System.out.println(f.size());
         for (int i = 0; i < f.size(); i++) {
             Label temp = new Label(f.get(i));
+            temp.getStyleClass().add("folderLabel");
             folders.add(temp);
             listOfLists.getChildren().add(temp);
         }

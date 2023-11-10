@@ -48,7 +48,7 @@ public class WordDisplayController implements Initializable {
     @FXML
     public Label pronunciation;
     @FXML
-    public ScrollPane popUpAddWindow;
+    public VBox popUpAddWindow;
     @FXML
     public Label addSelection;
     @FXML
@@ -156,9 +156,9 @@ public class WordDisplayController implements Initializable {
         folders.clear();
         selectionList.getChildren().clear();
         List<String> f = lf.getAllFolders(ScreenManager.getInstance().getUserId());
-        System.out.println(f.size());
         for (int i = 0; i < f.size(); i++) {
             Label temp = new Label(f.get(i));
+            temp.getStyleClass().add("selectLabel");
             temp.setOnMouseClicked(event -> {
                 addSelection.setText("Select your list");
                 displayAllLists(temp.getText());
@@ -166,16 +166,16 @@ public class WordDisplayController implements Initializable {
             folders.add(temp);
             selectionList.getChildren().add(temp);
         }
-        System.out.println(folders.size());
     }
 
     private void displayAllLists(String folder) {
         lists.clear();
         selectionList.getChildren().clear();
         List<String> f = lf.getAllLists(folder);
-        System.out.println(f.size());
+        System.out.println("Fuck this shit:" + f.size());
         for (int i = 0; i < f.size(); i++) {
             Label temp = new Label(f.get(i));
+            temp.getStyleClass().add("selectLabel");
             temp.setOnMouseClicked(event -> {
                 popUpAddWindow.setDisable(true);
                 popUpAddWindow.setVisible(false);
@@ -184,7 +184,6 @@ public class WordDisplayController implements Initializable {
             folders.add(temp);
             selectionList.getChildren().add(temp);
         }
-        System.out.println(folders.size());
     }
 
     @Override

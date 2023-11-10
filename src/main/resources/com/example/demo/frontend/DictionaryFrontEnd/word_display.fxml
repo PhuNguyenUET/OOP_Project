@@ -126,23 +126,27 @@
                </children>
             </StackPane>
             <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="93.0" prefWidth="844.0" styleClass="searchResultBox" />
-            <ScrollPane fx:id="popUpAddWindow" layoutX="1066.0" layoutY="245.0" prefHeight="304.0" prefWidth="354.0" styleClass="popUpWindow">
-               <content>
-                  <VBox alignment="TOP_CENTER" styleClass="selectPopUp">
-                     <children>
-                        <Label fx:id="addSelection" text="Select your folder">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="15.0" top="15.0" />
-                           </VBox.margin>
-                        </Label>
-                        <VBox fx:id="selectionList" alignment="TOP_CENTER" minHeight="242.0" prefWidth="342.0" styleClass="insideBox" />
-                     </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
+            <VBox fx:id="popUpAddWindow" alignment="TOP_CENTER" layoutX="1066.0" layoutY="245.0" prefHeight="360.0" prefWidth="360.0" styleClass="selectPopUp">
+               <children>
+                  <Label fx:id="addSelection" text="Select your folder">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane prefHeight="285.0" prefWidth="354.0" styleClass="popUpWindow">
+                     <content>
+                        <VBox fx:id="selectionList" alignment="TOP_CENTER" minHeight="242.0" prefHeight="283.0" prefWidth="337.0" spacing="20.0" styleClass="insideBox">
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </children>

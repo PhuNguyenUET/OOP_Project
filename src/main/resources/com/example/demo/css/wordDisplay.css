@@ -2,7 +2,10 @@
     -fx-background-color: #FFFFFF;
 }
 
-.scroll-pane > .viewport  { -fx-background-color: #FFFFFF; }
+.scroll-pane > .viewport  {
+    -fx-background-color: #FFFFFF;
+    -background-radius: 20;
+}
 
 .wordLabel {
     -fx-font-family: 'Lexend';
@@ -45,6 +48,8 @@
      -fx-text-alignment: center;
      -fx-alignment: center;
      -fx-background-radius: 50;
+     -fx-pref-width: 263;
+     -fx-pref-height: 40;
 }
 
 .wordBox {
