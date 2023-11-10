@@ -31,6 +31,13 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
         {
             res.add(list);
         }
+        if(res.size()==1)
+        {
+            if(res.get(0).equals(""))
+            {
+                res.remove(0);
+            }
+        }
         return res;
     }
 
@@ -46,6 +53,13 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
         {
             res.add(list);
         }
+        if(res.size()==1)
+        {
+            if(res.get(0).equals(""))
+            {
+                res.remove(0);
+            }
+        }
         return res;
     }
 
@@ -53,6 +67,7 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
     public void addToList(String folder, String list, Word word){
         int folderId = FolderReposity.getInstance().getFolderId(folder);
         int listId = ListReposity.getInstance().getListId(list,folderId);
+        System.out.println("List id cần add : " + listId);
         String englishWord = word.getWord();
         String type =word.getType();
         String definition = word.getDefinition().get(0);
