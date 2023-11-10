@@ -170,7 +170,7 @@ class WordRepository {
         List<StandardWord> res = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT w.word as word" +
+            String query = "SELECT w.word as word " +
                     "FROM words w, daily d " +
                     "WHERE d.day = '" + date + "' AND " +
                     "(d.wordID1 = w.wordID OR d.wordID2 = w.wordID OR d.wordID3 = w.wordID);";
@@ -190,7 +190,7 @@ class WordRepository {
         try {
             Statement statement = connection.createStatement();
             String query = "INSERT INTO daily (day, wordID1, wordID2, wordID3) values " +
-                    "(" + date + ", (SELECT wordID FROM words WHERE word = '" + word1 + "')," +
+                    "('" + date + "', (SELECT wordID FROM words WHERE word = '" + word1 + "')," +
                     " (SELECT wordID FROM words WHERE word = '" + word2 + "')," +
                     " (SELECT wordID FROM words WHERE word = '" + word3 + "'));";
             statement.executeUpdate(query);
