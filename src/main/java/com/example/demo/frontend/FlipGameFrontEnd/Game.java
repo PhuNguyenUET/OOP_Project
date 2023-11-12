@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Game {
-    private int sizeOfGame = 0;
+    private int sizeOfGame = 40;
     private Player Player1;
     private Player Player2;
 
@@ -25,7 +25,7 @@ public class Game {
 
     public Game(String topic,String name1,String name2)
     {
-        sizeOfGame = 0;
+        sizeOfGame = 40;
         list = flipGameService.getImageFromTopic(topic);
         System.out.println("Ten topic hioen tai la:" + topic);
         System.out.println("So anh co trong topic nay la: " + list.size());

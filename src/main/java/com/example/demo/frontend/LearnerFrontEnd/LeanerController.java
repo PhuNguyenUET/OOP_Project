@@ -10,6 +10,7 @@ import com.example.demo.backend.TextToSpeech;
 import com.example.demo.frontend.Common.DictFuncToLearner;
 import com.example.demo.frontend.Common.Word;
 import com.example.demo.frontend.DictionaryFrontEnd.ConnectComponentDict;
+import com.example.demo.frontend.DictionaryFrontEnd.StandardWord;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -118,6 +119,19 @@ public class LeanerController {
     @FXML
     private VBox twoFolderContainer;
 
+    @FXML
+    private Button detailBtn;
+
+    private Word wordDetail;
+
+    public Word getWordDetail() {
+        return wordDetail;
+    }
+
+    public void setWordDetail(Word wordDetail) {
+        this.wordDetail = wordDetail;
+    }
+
     private DictFuncToLearner dictFuncToLearner = new ConnectComponentDict();
 
     private FolderReposity folderReposity = new FolderReposity();
@@ -195,6 +209,11 @@ public class LeanerController {
         newWordRender();
 
         recentWordRender();
+
+        detailBtn.setOnAction(e->{
+            ScreenManager.getInstance().switchToWordDisplay((StandardWord)getWordDetail());
+            ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getDictionary());
+        });
     }
 
     public void movingAnimation(TranslateTransition transition, double pos) {
@@ -235,6 +254,7 @@ public class LeanerController {
         System.out.println("listWord has " + listWord.size() + " words");
         rencentContainer.getChildren().clear();
         for (int i = 0; i < n; i++) {
+            int index = i;
             String word = listWord.get(i).getWord();
             VBox container = new VBox();
             container.setSpacing(15);
@@ -274,7 +294,8 @@ public class LeanerController {
             });
 
             container.setOnMouseClicked(e -> {
-
+                ScreenManager.getInstance().switchToWordDisplay((StandardWord)listWord.get(index));
+                ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getDictionary());
                 System.out.println("Chuyen huong");
             });
         }
@@ -301,6 +322,7 @@ public class LeanerController {
                 else
                     PronunciationPopUp.setText("");
                 DefinitionPopUp.setText(word.getDefinition().get(0));
+                setWordDetail(word);
             });
         }
     }

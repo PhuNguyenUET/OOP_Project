@@ -8,6 +8,7 @@ import com.example.demo.backend.TextToSpeech;
 import com.example.demo.frontend.Common.DictFuncToLearner;
 import com.example.demo.frontend.Common.Word;
 import com.example.demo.frontend.DictionaryFrontEnd.ConnectComponentDict;
+import com.example.demo.frontend.DictionaryFrontEnd.StandardWord;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
@@ -224,6 +225,7 @@ public class WordController {
         }
         wordListContainer.getChildren().clear();
         for (int i = page * 10; i < size; i++) {
+            int index = i;
             int id = listWord.get(i).getId();
             StackPane containerStack = new StackPane();
             VBox container = new VBox();
@@ -285,7 +287,15 @@ public class WordController {
             wordListContainer.getChildren().add(containerStack);
 
             detailBtn.setOnAction(e -> {
-
+                if(!dictFuncToLearner.isWordInDict(listWord.get(index).getWord())){
+                    messageRender("Can not find this word", "This word does not exist in the dictionary");
+                }
+                else
+                {
+                    Word tmpWord = dictFuncToLearner.getDetails(listWord.get(index).getWord());
+                    ScreenManager.getInstance().switchToWordDisplay((StandardWord)tmpWord);
+                    ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getDictionary());
+                }
             });
 
             imgContainer.setOnMouseClicked(e -> {
