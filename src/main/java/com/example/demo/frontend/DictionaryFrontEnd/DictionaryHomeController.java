@@ -70,6 +70,11 @@ public class DictionaryHomeController implements Initializable {
         List<String> f = lf.getRecentFolders(ScreenManager.getInstance().getUserId());
         System.out.println(f.size());
         updateRecentFolders(f);
+
+        translateButton.setOnAction(e->{
+            ScreenManager.getInstance().switchToTranslate();
+            ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getTranslate());
+        });
     }
 
     @FXML

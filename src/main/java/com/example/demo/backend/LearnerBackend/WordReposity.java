@@ -28,6 +28,26 @@ public class WordReposity {
         }
     }
 
+    public boolean addNewList(String word, String type, String definition, String pronunciation, int listId) {
+        try {
+            if (word.equals("") || definition.equals("")) {
+                return false;
+            }
+            String insertQuery = "INSERT INTO UserWord (word,type,definition,listId,pronunciation) VALUES (?,?,?,?,?)";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(insertQuery);
+            preparedStatement.setString(1, word);
+            preparedStatement.setString(2, type);
+            preparedStatement.setString(3, definition);
+            preparedStatement.setInt(4, listId);
+            preparedStatement.setString(5, pronunciation);
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public String getAllWordFromList(int listId) {
         try {
             String query = "SELECT * FROM UserWord WHERE listId = ?";

@@ -69,7 +69,6 @@ public class NavbarController {
 
     double GamePos = TranslatePos + 170;
     public void initialize() {
-        transition = new TranslateTransition(Duration.seconds(0.5), movingRec);
 
         Dictionary.setOnAction(e -> {
             /*transition.setToX(DictionaryPos);
@@ -99,6 +98,7 @@ public class NavbarController {
     }
 
     public void movingAnimation(TranslateTransition transition, double pos) {
+        transition = new TranslateTransition(Duration.seconds(0.5), movingRec);
         transition.setToX(pos);
         transition.play();
     }

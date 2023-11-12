@@ -10,17 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="add3ca6e-ed48-4264-92a2-4a1c1c25b0dc" name="Changes" comment="merge">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_17_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_17_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_linux_17_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_17_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_linux_17_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_linux_17_0_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/FlipGameFrontEnd/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/FlipGameFrontEnd/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/WordReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/WordReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/DictionaryHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/DictionaryHomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/Leaner.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/Leaner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/dictionaryHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/dictionaryHome.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/userInfor.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/userInfor.db" afterDir="false" />
     </list>
@@ -193,7 +189,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java</url>
-          <line>225</line>
+          <line>244</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

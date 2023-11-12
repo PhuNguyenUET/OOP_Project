@@ -24,6 +24,13 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
         {
             res.add(folder);
         }
+        if(res.size()==1)
+        {
+            if(res.get(0).equals(""))
+            {
+                res.remove(0);
+            }
+        }
         return res;
     }
 

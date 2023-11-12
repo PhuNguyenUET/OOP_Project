@@ -125,7 +125,7 @@ public class WordController {
         });
 
         addWord.setOnMouseClicked(e -> {
-            if (!wordReposity.addNewList(inputFormWord.getText().trim(), inputFormType.getText().trim(), inputFormDefinition.getText().trim(), ScreenManager.getInstance().getListId())) {
+            if (!wordReposity.addNewList(inputFormWord.getText().trim(), inputFormType.getText().trim(), inputFormDefinition.getText().trim(),"", ScreenManager.getInstance().getListId())) {
                 toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
@@ -154,7 +154,7 @@ public class WordController {
             System.out.println("Tu can them trong thu vien la" + engWord + " " + dictFuncToLearner.isWordInDict(engWord));
             if (dictFuncToLearner.isWordInDict(engWord)) {
                 Word word = dictFuncToLearner.getDetails(engWord);
-                wordReposity.addNewList(word.getWord(), word.getType().get(0), word.getDefinition().get(0), ScreenManager.getInstance().getListId());
+                wordReposity.addNewList(word.getWord(), word.getType().get(0), word.getDefinition().get(0),word.getPronunciation(), ScreenManager.getInstance().getListId());
                 wordRender(ScreenManager.getInstance().getListId());
             } else {
                 messageRender("Can not add this word", "Please enter a word that does not contain capital letters");
@@ -258,7 +258,11 @@ public class WordController {
             ImageView imageView = new ImageView(new Image(imageUrl.toString()));
             imgContainer.getChildren().add(imageView);
             VBox pronunConatiner = new VBox();
-            Label pronun = new Label(listWord.get(i).getPronunciation());
+            Label pronun = new Label("");
+            if(!listWord.get(i).getPronunciation().equals("null"))
+            {
+                pronun = new Label(listWord.get(i).getPronunciation());
+            }
             pronun.getStyleClass().add("pronunciation");
             pronunConatiner.getChildren().add(pronun);
             audio.getChildren().add(imgContainer);

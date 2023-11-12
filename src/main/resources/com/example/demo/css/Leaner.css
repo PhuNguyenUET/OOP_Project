@@ -107,6 +107,17 @@
     -fx-min-width: 724;
 }
 
+.detailBtn:hover{
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+    -fx-text-fill: rgba(0,0,0,0.8);
+}
+
+.word:hover{
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
 .textHeading {
     -fx-font-family: 'Lexend';
     -fx-font-size: 18;
