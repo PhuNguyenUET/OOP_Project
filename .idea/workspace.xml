@@ -10,21 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53bf42af-5df2-4842-8a86-37a7ccfd9530" name="Changes" comment="merge local">
-      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/DictionaryBackend/DictionaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/DictionaryBackend/DictionaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/DictionaryBackend/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/DictionaryBackend/WordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/ConnectComponentLearner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/ConnectComponentLearner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/Common/LearnerFuncToDict.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/Common/LearnerFuncToDict.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/Common/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/Common/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/DictionaryHomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/DictionaryHomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/StandardWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/StandardWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/WordDisplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/DictionaryFrontEnd/WordDisplayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/dictionaryHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/dictionaryHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/wordDisplay.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/wordDisplay.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/word_display.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/DictionaryFrontEnd/word_display.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/userInfor.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/userInfor.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +46,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;phunh/Translate&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2551724&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "phunh/Translate",
+    "last_opened_file_path": "C:/Users/laptop/Desktop/OOP_Project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2551724"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\laptop\Desktop\OOP_Project\target\classes\com\example\demo\fxml" />
@@ -105,7 +93,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e9e0449a-bb74-4a55-87d0-a16d7158800f" name="Changes" comment="" />
+      <changelist id="53bf42af-5df2-4842-8a86-37a7ccfd9530" name="Changes" comment="merge local" />
       <created>1696402340699</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
