@@ -44,4 +44,6 @@ module com.example.demo{
     opens com.example.demo.frontend.LearnerFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.LearnerFrontEnd ;
 
+    opens com.example.demo.frontend.FlipGameFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.FlipGameFrontEnd;
 }

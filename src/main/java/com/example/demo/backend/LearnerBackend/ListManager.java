@@ -13,6 +13,8 @@ public class ListManager {
 
     private List<ListUser> listOfFolder = new ArrayList<>();
 
+    private ListReposity listReposity = new ListReposity();
+
     private ListManager() {
     }
 
@@ -32,7 +34,7 @@ public class ListManager {
     }
 
     public List<ListUser> updateAndGetAllListOfFolder(int folderId) {
-        String jsonInput = ListReposity.getInstance().getAllListFromFolderTest(folderId);
+        String jsonInput = listReposity.getAllListFromFolderTest(folderId);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<ListUser> userList = objectMapper.readValue(jsonInput, new TypeReference<List<ListUser>>() {
@@ -45,13 +47,5 @@ public class ListManager {
         }
     }
 
-    public List<String> getAllListForDict(int folderId) {
-        String lists = ListReposity.getInstance().getAllListsForDict(folderId);
-        String[] respon = lists.split(" ");
-        List<String> res = new ArrayList<>();
-        for (String s : respon) {
-            res.add(s);
-        }
-        return res;
-    }
+
 }

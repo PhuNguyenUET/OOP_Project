@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -77,6 +78,10 @@ public class FolderController {
 
     private LearnerScreenChanger leanerScreenChanger = new LearnerScreenChanger();
 
+    private FolderReposity folderReposity = new FolderReposity();
+
+    private ListReposity listReposity = new ListReposity();
+
     public void initialize() {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
@@ -98,9 +103,18 @@ public class FolderController {
         });
 
         addFolderName.setOnAction(e -> {
-            if (FolderReposity.getInstance().canToAddFolder() && !inputForm.getText().equals("")) {
-                FolderReposity.getInstance().addNewFolder(inputForm.getText().trim());
+            if (folderReposity.canToAddFolder(ScreenManager.getInstance().getUserId()) && !inputForm.getText().equals("") && !folderReposity.folderIsExist(ScreenManager.getInstance().getUserId(), inputForm.getText().trim())) {
+                folderReposity.addNewFolder(inputForm.getText().trim());
                 folderContainerRender();
+            } else if (folderReposity.folderIsExist(ScreenManager.getInstance().getUserId(), inputForm.getText().trim())) {
+                URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
+                Image image = new Image(imageUrl.toString());
+                textMessage.setText("Folder is exist");
+                textMessageDes.setText("Please enter a different name.");
+                toastIcon.setImage(image);
+                toastMesTransition.setToX(-28);
+                toastMesTransition.play();
+                pauseTransition.play();
             } else if (!inputForm.getText().equals("")) {
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
@@ -134,6 +148,12 @@ public class FolderController {
         addFolder.setOnMouseClicked(e -> {
             e.consume();
             inputForm.requestFocus();
+        });
+
+        inputForm.setOnKeyPressed(e -> {
+            if (e.getCode().equals(KeyCode.ENTER)) {
+                addFolderName.fire();
+            }
         });
 
 
@@ -195,14 +215,14 @@ public class FolderController {
             containerStack.getChildren().addAll(containerVBox, changeContainer);
             folderContainer.getChildren().add(containerStack);
             containerVBox.setOnMouseClicked(e -> {
-                FolderReposity.getInstance().addRecentFolder(item.getId());
+                folderReposity.addRecentFolder(item.getId());
                 leanerScreenChanger.switchToList(item.getId());
             });
 
             deleteImg.setOnMouseClicked(e -> {
                 e.consume();
-                FolderReposity.getInstance().removeFolder(item.getId());
-                ListReposity.getInstance().removeAllListInFolder(item.getId());
+                folderReposity.removeFolder(item.getId());
+                listReposity.removeAllListInFolder(item.getId());
                 folderContainerRender();
             });
 
@@ -216,7 +236,7 @@ public class FolderController {
             });
 
             changeBtn.setOnAction(e -> {
-                if (!FolderReposity.getInstance().changeFolderName(item.getId(), changeTextField.getText().trim())) {
+                if (!folderReposity.changeFolderName(item.getId(), changeTextField.getText().trim())) {
                     toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
                     URL imgUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imgUrl.toString());

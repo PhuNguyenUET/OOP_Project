@@ -1,6 +1,9 @@
 package com.example.demo.backend.LearnerBackend;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +13,8 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FolderManager {
+
+    private FolderReposity folderReposity = new FolderReposity();
     private static FolderManager instance_;
 
     private FolderManager() {
@@ -34,7 +39,7 @@ public class FolderManager {
     }
 
     public List<Folder> updateAndGetListFolder() {
-        String inputJSon = FolderReposity.getInstance().getAllFolderTest(ScreenManager.getInstance().getUserId());
+        String inputJSon = folderReposity.getAllFolderTest(ScreenManager.getInstance().getUserId());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<Folder> userFolderList = objectMapper.readValue(inputJSon, new TypeReference<List<Folder>>() {
@@ -55,7 +60,7 @@ public class FolderManager {
 
     public List<Folder> getRecentFolder()
     {
-        String recentFolderJson = FolderReposity.getInstance().getRecentFolder(ScreenManager.getInstance().getUserId());
+        String recentFolderJson = folderReposity.getRecentFolder(ScreenManager.getInstance().getUserId());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<Folder> userFolderList = objectMapper.readValue(recentFolderJson, new TypeReference<List<Folder>>() {
@@ -75,7 +80,7 @@ public class FolderManager {
 
     public List<Folder> getTwoFolderRandom()
     {
-        String recentFolderJson = FolderReposity.getInstance().getTwoFoldersRandom(ScreenManager.getInstance().getUserId());
+        String recentFolderJson = folderReposity.getTwoFoldersRandom(ScreenManager.getInstance().getUserId());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<Folder> userFolderList = objectMapper.readValue(recentFolderJson, new TypeReference<List<Folder>>() {
@@ -92,6 +97,5 @@ public class FolderManager {
             return tmp;
         }
     }
-
 
 }

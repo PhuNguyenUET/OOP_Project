@@ -7,17 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordReposity {
-    private static WordReposity instance_;
-
-    private WordReposity() {
-    }
-
-    public static WordReposity getInstance() {
-        if (instance_ == null) {
-            instance_ = new WordReposity();
-        }
-        return instance_;
-    }
+    public WordReposity() {}
 
     public boolean addNewList(String word, String type, String definition, int listId) {
         try {

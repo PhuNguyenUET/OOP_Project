@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.frontend.FlipGameFrontEnd.PlayerInfoController"
+           translateY="60"
+            >
+    <stylesheets>
+        <URL value="@../../css/PlayerInfo.css"/>
+    </stylesheets>
+    <stylesheets>
+        <URL value="@../../css/ToastMes.css"/>
+    </stylesheets>
+    <VBox styleClass="container" spacing="40" alignment="CENTER" StackPane.alignment="CENTER">
+        <HBox alignment="CENTER">
+            <Label styleClass="description" text="Creating Player Name"></Label>
+        </HBox>
+        <HBox alignment="CENTER">
+            <TextField fx:id="player1Input" styleClass="textInput" promptText="Player1 name" />
+        </HBox>
+        <HBox alignment="CENTER">
+            <TextField fx:id="player2Input" styleClass="textInput" promptText="Player2 name" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="80">
+            <Button fx:id="btn1" styleClass="submitBtn" text="Play"></Button>
+            <Button fx:id="btn2" styleClass="submitBtn" text="Back"></Button>
+        </HBox>
+    </VBox>
+    <HBox fx:id="toastMes" StackPane.alignment="TOP_RIGHT" styleClass="mes" maxWidth="360" maxHeight="60" alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="16">
+        <ImageView fx:id="toastIcon">
+            <image>
+                <Image fx:id="toastImg" url="@../../assets/cross.png"/>
+            </image>
+        </ImageView>
+        <VBox >
+            <Label fx:id="textMessage" text="Error Login" styleClass="textMessage"></Label>
+            <Label fx:id="textMessageDes" text="You should check your password" styleClass="textMessageDes"></Label>
+        </VBox>
+    </HBox>
+</StackPane>

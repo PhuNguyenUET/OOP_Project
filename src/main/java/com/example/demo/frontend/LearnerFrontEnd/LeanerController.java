@@ -120,6 +120,10 @@ public class LeanerController {
 
     private DictFuncToLearner dictFuncToLearner = new ConnectComponentDict();
 
+    private FolderReposity folderReposity = new FolderReposity();
+
+    private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
+
     public void initialize() {
         System.out.println(paneContainer);
         transition1 = new TranslateTransition(Duration.seconds(0.5), movingAnimation);
@@ -165,7 +169,7 @@ public class LeanerController {
             e.consume();
             if (showAllBtn.getText().equals("View All Folder")) {
                 System.out.println("Change to Folder");
-                ScreenManager.getInstance().switchToFolder();
+                learnerScreenChanger.switchToFolder();
             }
         });
 
@@ -218,8 +222,8 @@ public class LeanerController {
             FolderContainer.getChildren().add(containerHbox);
 
             containerHbox.setOnMouseClicked(e -> {
-                FolderReposity.getInstance().addRecentFolder(item.getId());
-                ScreenManager.getInstance().switchToList(item.getId());
+                folderReposity.addRecentFolder(item.getId());
+                learnerScreenChanger.switchToList(item.getId());
             });
 
         }
@@ -270,6 +274,7 @@ public class LeanerController {
             });
 
             container.setOnMouseClicked(e -> {
+
                 System.out.println("Chuyen huong");
             });
         }
@@ -316,7 +321,7 @@ public class LeanerController {
             twoFolderContainer.getChildren().add(containerHBox);
 
             containerHBox.setOnMouseClicked(e->{
-                ScreenManager.getInstance().switchToList(folder.getId());
+                learnerScreenChanger.switchToList(folder.getId());
             });
         }
     }

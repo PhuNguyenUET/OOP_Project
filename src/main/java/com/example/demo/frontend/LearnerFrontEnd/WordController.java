@@ -5,6 +5,9 @@ import com.example.demo.backend.LearnerBackend.ListReposity;
 import com.example.demo.backend.LearnerBackend.WordManager;
 import com.example.demo.backend.LearnerBackend.WordReposity;
 import com.example.demo.backend.TextToSpeech;
+import com.example.demo.frontend.Common.DictFuncToLearner;
+import com.example.demo.frontend.Common.Word;
+import com.example.demo.frontend.DictionaryFrontEnd.ConnectComponentDict;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
@@ -85,10 +88,16 @@ public class WordController {
     @FXML
     private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
 
+    private ListReposity listReposity = new ListReposity();
+
+    private WordReposity wordReposity = new WordReposity();
+
+    private DictFuncToLearner dictFuncToLearner = new ConnectComponentDict();
+
     public void initialize() {
         System.out.println(ScreenManager.getInstance().getListName());
 
-        listBtnName.setText(ListReposity.getInstance().getListName(ScreenManager.getInstance().getListId()));
+        listBtnName.setText(listReposity.getListName(ScreenManager.getInstance().getListId()));
 
         backBtn.setOnAction(e -> {
 //            ScreenManager.getInstance().switchToList(ScreenManager.getInstance().getFolderId());
@@ -105,7 +114,7 @@ public class WordController {
             addWordContainer.setVisible(false);
         });
 
-        addWordContainer.setOnMouseClicked(e->{
+        addWordContainer.setOnMouseClicked(e -> {
             e.consume();
         });
 
@@ -115,7 +124,7 @@ public class WordController {
         });
 
         addWord.setOnMouseClicked(e -> {
-            if (!WordReposity.getInstance().addNewList(inputFormWord.getText().trim(), inputFormType.getText().trim(), inputFormDefinition.getText().trim(), ScreenManager.getInstance().getListId())) {
+            if (!wordReposity.addNewList(inputFormWord.getText().trim(), inputFormType.getText().trim(), inputFormDefinition.getText().trim(), ScreenManager.getInstance().getListId())) {
                 toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
@@ -139,6 +148,19 @@ public class WordController {
             addWordContainer.setVisible(false);
         });
 
+        usingStandard.setOnAction(e -> {
+            String engWord = inputFormWord.getText().trim();
+            System.out.println("Tu can them trong thu vien la" + engWord + " " + dictFuncToLearner.isWordInDict(engWord));
+            if (dictFuncToLearner.isWordInDict(engWord)) {
+                Word word = dictFuncToLearner.getDetails(engWord);
+                wordReposity.addNewList(word.getWord(), word.getType().get(0), word.getDefinition().get(0), ScreenManager.getInstance().getListId());
+                wordRender(ScreenManager.getInstance().getListId());
+            } else {
+                messageRender("Can not add this word", "Please enter a word that does not contain capital letters");
+            }
+            addWordContainer.setVisible(false);
+        });
+
         wordListContainer.toFront();
 
         wordRender(ScreenManager.getInstance().getListId());
@@ -153,7 +175,7 @@ public class WordController {
         } else {
             cnt_page = n / 10 + 1;
         }
-        if (curPage >= cnt_page && curPage!=0) {
+        if (curPage >= cnt_page && curPage != 0) {
             curPage = curPage - 1;
         }
         wordRenderInPage(curPage, listId);
@@ -271,9 +293,21 @@ public class WordController {
             });
 
             imageViewDelete.setOnMouseClicked(e -> {
-                WordReposity.getInstance().removeWordWithId(id);
+                wordReposity.removeWordWithId(id);
                 wordRender(ScreenManager.getInstance().getListId());
             });
         }
+    }
+
+    public void messageRender(String textMessageInput,String textMessageDesInput) {
+        toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
+        URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
+        Image image = new Image(imageUrl.toString());
+        textMessage.setText(textMessageInput);
+        textMessageDes.setText(textMessageDesInput);
+        toastIcon.setImage(image);
+        toastMesTransition.setToX(-28);
+        toastMesTransition.play();
+        pauseTransition.play();
     }
 }

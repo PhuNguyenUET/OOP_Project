@@ -26,6 +26,11 @@
      -fx-pref-height: 40;
 }
 
+.folderLabel:hover{
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
 .common {
     -fx-background-color: #FFFFFF;
 }
@@ -57,3 +62,5 @@
 .buyMeACoffee {
     -fx-image-radius: 50;
 }
+
+

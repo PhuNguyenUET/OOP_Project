@@ -8,16 +8,9 @@ import java.util.List;
 
 public class FolderReposity {
 
-    private static FolderReposity instance_;
+    public FolderReposity()
+    {
 
-    private FolderReposity() {
-    }
-
-    public static FolderReposity getInstance() {
-        if (instance_ == null) {
-            instance_ = new FolderReposity();
-        }
-        return instance_;
     }
 
     public void addNewFolder(String folderName) {
@@ -217,17 +210,35 @@ public class FolderReposity {
         }
     }
 
-    public boolean canToAddFolder() {
+    public boolean canToAddFolder(int userId) {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT * FROM folder";
+            String query = "SELECT * FROM folder where userId = " + userId;
             ResultSet resultSet = statement.executeQuery(query);
-            String res = "[";
             int cnt = 0;
             while (resultSet.next()) {
                 cnt++;
             }
             if (cnt < 10) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean folderIsExist(int userId, String folderName) {
+        try {
+            Statement statement = Connect.getInstance().connect().createStatement();
+            String query = "SELECT * FROM folder where userId = " + userId +" and name = '" + folderName + "'";
+            ResultSet resultSet = statement.executeQuery(query);
+            int cnt = 0;
+            while (resultSet.next()) {
+                cnt++;
+            }
+            if (cnt > 0) {
                 return true;
             }
             return false;

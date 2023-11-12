@@ -1,12 +1,10 @@
 package com.example.demo.frontend.LearnerFrontEnd;
 
 import com.example.demo.ScreenManager;
-import com.example.demo.backend.LearnerBackend.FolderReposity;
-import com.example.demo.backend.LearnerBackend.ListManager;
-import com.example.demo.backend.LearnerBackend.ListReposity;
-import com.example.demo.backend.LearnerBackend.WordReposity;
+import com.example.demo.backend.LearnerBackend.*;
 import com.example.demo.frontend.Common.DictFuncToLearner;
 import com.example.demo.frontend.DictionaryFrontEnd.ConnectComponentDict;
+import javafx.animation.KeyValue;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -16,12 +14,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.security.Key;
 import java.util.List;
 
 public class ListController {
@@ -77,6 +77,11 @@ public class ListController {
 
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
+    private FolderReposity folderReposity = new FolderReposity();
+
+    private ListReposity listReposity = new ListReposity();
+
+    private WordReposity wordReposity = new WordReposity();
     @FXML
     private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
     public void initialize() {
@@ -86,7 +91,7 @@ public class ListController {
             ScreenManager.getInstance().switchToFolder();
         });
 
-        folderBtn.setText(FolderReposity.getInstance().getFolderName(ScreenManager.getInstance().getFolderId()));
+        folderBtn.setText(folderReposity.getFolderName(ScreenManager.getInstance().getFolderId()));
 
         listContainerRender();
 
@@ -110,10 +115,21 @@ public class ListController {
         });
 
         addFolderName.setOnAction(e -> {
-            if (ListReposity.getInstance().canAddNewListIntoFolder(ScreenManager.getInstance().getFolderId()) && !inputForm.getText().equals("")) {
-                ListReposity.getInstance().addNewList(inputForm.getText().trim(), ScreenManager.getInstance().getFolderId());
+            if (listReposity.canAddNewListIntoFolder(ScreenManager.getInstance().getFolderId()) && !inputForm.getText().equals("") && !listReposity.listIsExist(ScreenManager.getInstance().getFolderId(), inputForm.getText().trim())) {
+                listReposity.addNewList(inputForm.getText().trim(), ScreenManager.getInstance().getFolderId());
                 listContainerRender();
-            } else if (!inputForm.getText().equals("")) {
+            }
+            else if(listReposity.listIsExist(ScreenManager.getInstance().getFolderId(), inputForm.getText().trim())){
+                URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
+                Image image = new Image(imageUrl.toString());
+                textMessage.setText("List is exists");
+                textMessageDes.setText("Please enter a different name.");
+                toastIcon.setImage(image);
+                toastMesTransition.setToX(-28);
+                toastMesTransition.play();
+                pauseTransition.play();
+            }
+            else if (!inputForm.getText().equals("")) {
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
                 textMessage.setText("Limit List");
@@ -133,6 +149,12 @@ public class ListController {
                 pauseTransition.play();
             }
             addFolder.setVisible(false);
+        });
+
+        inputForm.setOnKeyPressed(e -> {
+            if (e.getCode().equals(KeyCode.ENTER)) {
+                addFolderName.fire();
+            }
         });
     }
 
@@ -191,8 +213,8 @@ public class ListController {
             });
 
             deleteImg.setOnMouseClicked(e->{
-                ListReposity.getInstance().removeListWithId(id);
-                WordReposity.getInstance().removeAllListInFolder(id);
+                listReposity.removeListWithId(id);
+                wordReposity.removeAllListInFolder(id);
                 listContainerRender();
             });
 
@@ -208,7 +230,7 @@ public class ListController {
             System.out.println(id);
             changeBtn.setOnAction(e->{
                 System.out.println(changeTextField.getText() + " " + id);
-                if(!ListReposity.getInstance().changeListName(id, changeTextField.getText().trim())){
+                if(!listReposity.changeListName(id, changeTextField.getText().trim())){
                     toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
                     URL imgUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imgUrl.toString());

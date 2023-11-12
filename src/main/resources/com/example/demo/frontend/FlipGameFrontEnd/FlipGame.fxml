@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.frontend.FlipGameFrontEnd.FlipGameController"
+           translateY="25"
+>
+    <stylesheets>
+        <URL value="@../../css/FlipGame.css"/>
+    </stylesheets>
+    <VBox spacing="15" alignment="CENTER" fx:id="GameContainer">
+        <!--        <HBox alignment="CENTER" spacing="15">-->
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+        <!--        </HBox>-->
+        <!--        <HBox alignment="CENTER" spacing="15">-->
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+        <!--        </HBox>-->
+        <!--        <HBox alignment="CENTER" spacing="15">-->
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+        <!--        </HBox>-->
+        <!--        <HBox alignment="CENTER" spacing="15">-->
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+        <!--        </HBox>-->
+        <!--        <HBox alignment="CENTER" spacing="15">-->
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+
+        <!--            <StackPane>-->
+        <!--                <VBox>-->
+        <!--                    <ImageView>-->
+        <!--                        <image>-->
+        <!--                            <Image url="@./assets/space.png"/>-->
+        <!--                        </image>-->
+        <!--                    </ImageView>-->
+        <!--                </VBox>-->
+        <!--            </StackPane>-->
+        <!--        </HBox>-->
+    </VBox>
+    <VBox alignment="CENTER" spacing="20" fx:id="score1" translateX="10" StackPane.alignment="CENTER_LEFT" styleClass="test" prefWidth="200" prefHeight="120" maxWidth="200" maxHeight="120">
+<!--        <HBox >-->
+<!--            <Label text="Name1" styleClass="playerName"></Label>-->
+<!--        </HBox>-->
+<!--        <HBox>-->
+<!--            <Label text="10" styleClass="score"></Label>-->
+<!--        </HBox>-->
+    </VBox>
+
+    <VBox alignment="CENTER" spacing="20" translateX="-10" fx:id="score2" StackPane.alignment="CENTER_RIGHT" styleClass="test" prefWidth="200" prefHeight="120" maxWidth="200" maxHeight="120">
+<!--        <HBox>-->
+<!--            <Label text="Name2" styleClass="playerName"></Label>-->
+<!--        </HBox>-->
+<!--        <HBox>-->
+<!--            <Label text="10" styleClass="score"></Label>-->
+<!--        </HBox>-->
+    </VBox>
+
+    <VBox fx:id="resultContainer" styleClass="resultContainer" spacing="40" alignment="CENTER" StackPane.alignment="TOP_CENTER" prefWidth="600" maxWidth="600" minWidth="600" prefHeight="240" minHeight="240" maxHeight="240" translateY="-300">
+        <HBox alignment="CENTER">
+            <Label fx:id="textResult" styleClass="textResult" text="Chúc mừng bạn là người thắng cuộc"></Label>
+        </HBox>
+        <HBox alignment="CENTER" spacing="60">
+            <Button fx:id="playAgainBtn" styleClass="btn" text="PlayAgain"></Button>
+            <Button fx:id="gameHomeBtn" styleClass="btn" text="Game Home"></Button>
+        </HBox>
+    </VBox>
+</StackPane>

@@ -9,9 +9,15 @@ import java.util.List;
 
 
 public class ConnectComponentLearner extends LearnerFuncToDict{
+
+    FolderReposity folderReposity = new FolderReposity();
+
+    ListReposity listReposity = new ListReposity();
+
+    WordReposity wordReposity = new WordReposity();
     @Override
     public List<String>  getRecentFolders(int userId){
-        String respon = FolderReposity.getInstance().getRecentFoldersForDict(userId);
+        String respon = folderReposity.getRecentFoldersForDict(userId);
         String[] folders = respon.split(" ");
         List<String>res = new ArrayList<>();
         for (String folder : folders)
@@ -24,7 +30,7 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
     @Override
     public List<String> getAllFolders(int userId)
     {
-        String respone = FolderReposity.getInstance().getAllFoldersForDict(userId);
+        String respone = folderReposity.getAllFoldersForDict(userId);
         String[] lists = respone.split(" ");
         List<String> res = new ArrayList<>();
         for (String list : lists)
@@ -44,9 +50,9 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
     @Override
     public List<String> getAllLists(String folder)
     {
-        int folderId = FolderReposity.getInstance().getFolderId(folder);
+        int folderId = folderReposity.getFolderId(folder);
         System.out.println(folder + " " + folderId);
-        String respon = ListReposity.getInstance().getAllListsForDict(folderId);
+        String respon = listReposity.getAllListsForDict(folderId);
         String[] lists = respon.split(" ");
         List<String> res = new ArrayList<>();
         for (String list : lists)
@@ -65,14 +71,25 @@ public class ConnectComponentLearner extends LearnerFuncToDict{
 
     @Override
     public void addToList(String folder, String list, Word word){
-        int folderId = FolderReposity.getInstance().getFolderId(folder);
-        int listId = ListReposity.getInstance().getListId(list,folderId);
+        int folderId = folderReposity.getFolderId(folder);
+        int listId = listReposity.getListId(list,folderId);
         System.out.println("List id cần add : " + listId);
         String englishWord = word.getWord();
         String type =word.getType().get(0);
         String definition = word.getDefinition().get(0);
         String pronunciation = word.getPronunciation();
-        WordReposity.getInstance().addNewList(englishWord,type,definition,listId);
+        wordReposity.addNewList(englishWord,type,definition,listId);
     }
 
+    @Override
+    public int getFolderId(String folderName) {
+        return folderReposity.getFolderId(folderName);
+    }
+
+    @Override
+    public void updateRecentFolder(String folderName)
+    {
+        int folderId = getFolderId(folderName);
+        folderReposity.addRecentFolder(folderId);
+    }
 }

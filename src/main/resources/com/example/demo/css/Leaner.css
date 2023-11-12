@@ -53,6 +53,7 @@
     -fx-background-color:#DEF2FF;
     -fx-padding: 16 0 16 16;
     -fx-background-radius: 8;
+    -fx-max-width: 250;
     -fx-min-width: 250;
 }
 

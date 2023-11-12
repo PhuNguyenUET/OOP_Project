@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.frontend.navBarFrontEnd.NavbarController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -12,6 +13,16 @@ public class ScreenManager {
     private Stage stage;
     private StackPane root;
 
+    private NavbarController navbarController;
+
+    public void setNavbarController(FXMLLoader loader) {
+        this.navbarController = loader.getController();
+    }
+
+    public NavbarController getNavbarController()
+    {
+        return this.navbarController;
+    }
     private int folderId;
 
     private int listId;
@@ -136,6 +147,7 @@ public class ScreenManager {
                 root.getChildren().clear();
                 root.getChildren().add(navBarPane);
                 root.getChildren().add(screen);
+                setNavbarController(navBar);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -155,6 +167,7 @@ public class ScreenManager {
                 root.getChildren().clear();
                 root.getChildren().add(navBarPane);
                 root.getChildren().add(dictScreen);
+                setNavbarController(navBar);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -204,7 +217,7 @@ public class ScreenManager {
 
     public void switchToGame() {
         try {
-            FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml"));
+            FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectGame.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane gameScreen = game.load();
             StackPane navBarPane = navBar.load();
@@ -215,6 +228,7 @@ public class ScreenManager {
                 root.getChildren().clear();
                 root.getChildren().add(navBarPane);
                 root.getChildren().add(gameScreen);
+                setNavbarController(navBar);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -234,10 +248,29 @@ public class ScreenManager {
                 root.getChildren().clear();
                 root.getChildren().add(navBarPane);
                 root.getChildren().add(translateScreen);
+                setNavbarController(navBar);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public void switchToFlipGame() {
+        try {
+            FXMLLoader learner = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectGame.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
+            StackPane screen = learner.load();
+            StackPane navBarPane = navBar.load();
+            if (root.getChildren().size() >= 2) {
+                root.getChildren().remove(1);
+                root.getChildren().add(screen);
+            } else {
+                root.getChildren().clear();
+                root.getChildren().add(navBarPane);
+                root.getChildren().add(screen);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -5,18 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListReposity {
-    private static ListReposity instance_;
 
-    private ListReposity() {
-    }
-
-    public static ListReposity getInstance() {
-        if (instance_ == null) {
-            instance_ = new ListReposity();
-        }
-        return instance_;
-    }
-
+    public ListReposity(){}
     public void addNewList(String listName, int id) {
         try {
             String insertQuery = "INSERT INTO UserList (name,folderId) VALUES (?,?)";
@@ -129,6 +119,29 @@ public class ListReposity {
                 cnt = resultSet.getInt("count");
             }
             if (cnt < 10) {
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean listIsExist(int folderId, String listName) {
+        try {
+            String query = "SELECT Count(*) AS count FROM UserList WHERE folderId = ? AND name = ?" ;
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
+            preparedStatement.setInt(1, folderId);
+            preparedStatement.setString(2,listName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            int cnt = 0;
+
+            if (resultSet.next()) {
+                cnt = resultSet.getInt("count");
+            }
+            if (cnt > 0) {
                 return true;
             }
             return false;

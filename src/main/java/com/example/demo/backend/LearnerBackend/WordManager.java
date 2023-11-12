@@ -15,6 +15,8 @@ public class WordManager {
     private List<ListUser> listOfFolder = new ArrayList<>();
     private WordManager(){}
 
+    private WordReposity wordReposity = new WordReposity();
+
     public static WordManager getInstance(){
         if (instance_ == null)
         {
@@ -33,7 +35,7 @@ public class WordManager {
 
     public List<UserWord> updateAndGetWordFromList(int listId)
     {
-        String jsonInput = WordReposity.getInstance().getAllWordFromList(listId);
+        String jsonInput = wordReposity.getAllWordFromList(listId);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<UserWord> userWords = objectMapper.readValue(jsonInput, new TypeReference<List<UserWord>>() {});
@@ -51,7 +53,7 @@ public class WordManager {
 
     public List<UserWord> getThreeWords()
     {
-        String jsonInput = WordReposity.getInstance().getThreeWordFromList();
+        String jsonInput = wordReposity.getThreeWordFromList();
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             List<UserWord> userWords = objectMapper.readValue(jsonInput, new TypeReference<List<UserWord>>() {});
