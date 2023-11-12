@@ -138,7 +138,7 @@
                   </Label>
                   <ScrollPane prefHeight="285.0" prefWidth="354.0" styleClass="popUpWindow">
                      <content>
-                        <VBox fx:id="selectionList" alignment="TOP_CENTER" minHeight="242.0" prefHeight="283.0" prefWidth="337.0" spacing="20.0" styleClass="insideBox">
+                        <VBox fx:id="selectionList" alignment="TOP_CENTER" minHeight="283.0" prefWidth="337.0" spacing="20.0" styleClass="insideBox">
                            <padding>
                               <Insets left="10.0" right="10.0" top="10.0" />
                            </padding>
