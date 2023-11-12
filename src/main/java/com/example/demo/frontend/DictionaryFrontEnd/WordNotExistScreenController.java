@@ -76,7 +76,7 @@ public class WordNotExistScreenController implements Initializable {
 
     @FXML
     protected void back (ActionEvent event) throws IOException {
-        DictionarySceneChanger.Instance().switchToHomeScreen(event);
+        DictionarySceneChanger.Instance().switchToHomeScreen();
     }
 
     @FXML

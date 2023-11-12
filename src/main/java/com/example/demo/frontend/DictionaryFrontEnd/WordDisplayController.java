@@ -172,7 +172,6 @@ public class WordDisplayController implements Initializable {
         lists.clear();
         selectionList.getChildren().clear();
         List<String> f = lf.getAllLists(folder);
-        System.out.println("Fuck this shit:" + f.size());
         for (int i = 0; i < f.size(); i++) {
             Label temp = new Label(f.get(i));
             temp.getStyleClass().add("selectLabel");

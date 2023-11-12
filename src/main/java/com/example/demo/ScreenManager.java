@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.frontend.DictionaryFrontEnd.SearchBarController;
+import com.example.demo.frontend.DictionaryFrontEnd.StandardWord;
+import com.example.demo.frontend.DictionaryFrontEnd.DictionarySceneChanger;
 import com.example.demo.frontend.navBarFrontEnd.NavbarController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -74,36 +77,8 @@ public class ScreenManager {
     public Scene getScene() {
         return scene;
     }
-
-    //    FXMLLoader login;
-//
-//    FXMLLoader learner;
-//
-//    FXMLLoader navBar;
-//
-//    FXMLLoader folderUI;
-//
-//    public FXMLLoader getLogin() {
-//        return login;
-//    }
-//
-//    public FXMLLoader getLearner() {
-//        return learner;
-//    }
-//
-//    public FXMLLoader getNavBar() {
-//        return navBar;
-//    }
-//
-//    public FXMLLoader getFolderUI() {
-//        return folderUI;
-//    }
     private ScreenManager() {
-//        learner = new FXMLLoader(getClass().getResource("Learner.fxml"));
-//        login = new FXMLLoader(getClass().getResource("login.fxml"));
         root = new StackPane();
-//        navBar = new FXMLLoader(getClass().getResource("navBar.fxml"));
-//        folderUI = new FXMLLoader(getClass().getResource("folder.fxml"));
     }
 
     public static ScreenManager getInstance() {
@@ -117,9 +92,6 @@ public class ScreenManager {
         this.stage = stage;
         scene = new Scene(root, 1520, 780);
         stage.setScene(scene);
-//        stage.setMinWidth(1536);
-//        stage.setMinHeight(800);
-//        stage.setMaximized(true);
         stage.setResizable(false);
     }
 
@@ -273,4 +245,14 @@ public class ScreenManager {
             e.printStackTrace();
         }
     }
+
+    public void switchToWordDisplay(StandardWord word) {
+        try {
+            switchToDict();
+            DictionarySceneChanger.Instance().switchToWordDisplay(new SearchBarController(), word);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

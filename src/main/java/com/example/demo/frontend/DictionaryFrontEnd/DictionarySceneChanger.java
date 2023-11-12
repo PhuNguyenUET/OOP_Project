@@ -13,13 +13,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Stack;
 
-class DictionarySceneChanger {
+public class DictionarySceneChanger {
     private static DictionarySceneChanger _instance = null;
 
     private DictionarySceneChanger() {
     }
 
-    protected static DictionarySceneChanger Instance() {
+    public static DictionarySceneChanger Instance() {
         if (_instance == null) {
             _instance = new DictionarySceneChanger();
         }
@@ -30,29 +30,29 @@ class DictionarySceneChanger {
     private Scene scene;
     private StackPane screen;
 
-    protected void switchToHomeScreen(Event event) throws IOException {
+    protected void switchToHomeScreen() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("dictionary_home.fxml"));
         screen = loader.load();
-        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        StackPane root = ScreenManager.getInstance().getRoot();
 
         root.getChildren().remove(1);
         root.getChildren().add(screen);
 
     }
 
-    protected void switchToWordNotExistScreen(Event event, SearchBarController searchBarController) throws IOException {
+    protected void switchToWordNotExistScreen(SearchBarController searchBarController) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("word_not_exist.fxml"));
         screen = loader.load();
 
         WordNotExistScreenController wordNotExistScreenController = loader.getController();
         wordNotExistScreenController.setSearchBarController(searchBarController);
 
-        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        StackPane root = ScreenManager.getInstance().getRoot();
         root.getChildren().remove(1);
         root.getChildren().add(screen);
     }
 
-    protected void switchToWordDisplay(Event event, SearchBarController searchBarController, StandardWord word) throws IOException {
+    public void switchToWordDisplay(SearchBarController searchBarController, StandardWord word) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("word_display.fxml"));
         screen = loader.load();
 
@@ -65,7 +65,7 @@ class DictionarySceneChanger {
 
         DictionaryIntegration.Instance().updateRecentSearches(word.getWord());
 
-        StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
+        StackPane root = ScreenManager.getInstance().getRoot();
 
         root.getChildren().remove(1);
         root.getChildren().add(screen);
