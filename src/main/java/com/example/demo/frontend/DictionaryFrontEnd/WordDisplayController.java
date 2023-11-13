@@ -8,10 +8,9 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.geometry.Orientation;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -53,6 +52,10 @@ public class WordDisplayController implements Initializable {
     public Label addSelection;
     @FXML
     public VBox selectionList;
+    @FXML
+    public ScrollPane definitonScrollPane;
+    @FXML
+    public ScrollPane addScrollPane;
 
     URL imageUrl = getClass().getResource("/com/example/demo/assets/search.png");
     Image searchImg = new Image(imageUrl.toString());
@@ -152,6 +155,49 @@ public class WordDisplayController implements Initializable {
         popUpAddWindow.setVisible(true);
     }
 
+    @FXML
+    protected void showScrollBarDef() {
+        showScrollBar(definitonScrollPane);
+    }
+
+    @FXML
+    protected void hideScrollBarDef() {
+        hideScrollBar(definitonScrollPane);
+    }
+
+    @FXML
+    protected void showScrollBarAdd() {
+        showScrollBar(addScrollPane);
+    }
+
+    @FXML
+    protected void hideScrollBarAdd() {
+        hideScrollBar(addScrollPane);
+    }
+
+    private void showScrollBar (ScrollPane sp) {
+        for (Node node : sp.lookupAll(".scroll-bar")) {
+            if (node instanceof ScrollBar) {
+                ScrollBar scrollBar = (ScrollBar) node;
+                if (scrollBar.getOrientation() == Orientation.VERTICAL) {
+                    scrollBar.setVisible(true);
+                }
+
+            }
+        }
+    }
+    private void hideScrollBar (ScrollPane sp) {
+        for (Node node : sp.lookupAll(".scroll-bar")) {
+            if (node instanceof ScrollBar) {
+                ScrollBar scrollBar = (ScrollBar) node;
+                if (scrollBar.getOrientation() == Orientation.VERTICAL) {
+                    scrollBar.setVisible(false);
+                }
+
+            }
+        }
+    }
+
     private void displayAllFolders() {
         folders.clear();
         selectionList.getChildren().clear();
@@ -193,5 +239,7 @@ public class WordDisplayController implements Initializable {
         popUpAddWindow.setDisable(true);
         popUpAddWindow.setVisible(false);
         searchButton.setGraphic(search);
+        hideScrollBarAdd();
+        hideScrollBarDef();
     }
 }

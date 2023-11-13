@@ -189,35 +189,5 @@ public class FlipGameReposity {
     public static void main(String[] args) {
         FlipGameReposity flipGameReposity = new FlipGameReposity();
         System.out.println(flipGameReposity.getAllFolderName());
-//        flipGameReposity.deleteImage("space");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/anteater.png","anteater","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/anglerfish.png","anglerfish","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/camel.png","camel","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/crocodile.png","crocodile","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/chameleon.png","chameleon","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/dinosaur.png","dinosaur","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/dragonfly.png","dragonfly","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/duck.png","swan","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/flamingo.png","flamingo","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/grasshopper.png","grasshopper","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/lizard.png","lizard","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/narwhal.png","narwhal","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/ostrich.png","ostrich","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/owl.png","owl","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/panda.png","panda","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/porcupine.png","porcupine","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/raccoon.png","raccoon","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/rhino.png","rhino","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/squirrel.png","squirrel","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/stingray.png","stingray","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/toucan.png","toucan","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/turtle.png","turtle","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/animal/warlus.png","warlus","animal");
-//        flipGameReposity.saveImage("C:/Users/laptop/Desktop/OOP_Project - Copy (2) - Copy/src/main/resources/com/example/demo/assets/fish.png","fish");
-//        FlipGameService flipGameService = new FlipGameService();
-//        List<ImgOfGame> list = flipGameService.getImageFromTopic("animal");
-//        for (ImgOfGame item : list) {
-//            System.out.println(item.getName());
-//        }
     }
 }

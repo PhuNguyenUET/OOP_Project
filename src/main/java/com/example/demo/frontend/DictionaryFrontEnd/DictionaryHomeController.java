@@ -5,6 +5,7 @@ import com.example.demo.backend.LearnerBackend.ConnectComponentLearner;
 import com.example.demo.frontend.Common.LearnerFuncToDict;
 import com.example.demo.frontend.navBarFrontEnd.NavbarController;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -103,6 +104,11 @@ public class DictionaryHomeController implements Initializable {
         if (event.getCode() == KeyCode.ENTER) {
             searchBarController.searchForWord(event, searchBarController.getSearchField());
         }
+    }
+
+    @FXML
+    protected void changeScreenToTranslate(Event event) {
+        ScreenManager.getInstance().switchToTranslate();
     }
 
     @FXML

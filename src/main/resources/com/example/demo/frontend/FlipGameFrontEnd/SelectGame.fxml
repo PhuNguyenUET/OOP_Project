@@ -17,7 +17,7 @@
     </stylesheets>
     <VBox styleClass="conatiner" spacing="80">
         <HBox styleClass="description" alignment="CENTER">
-            <Label styleClass="description" text="PLEASE CHOOSE ONE GAME THAT YOU WANT TO PLAY"></Label>
+            <Label styleClass="description" text="PLEASE PICK YOUR NEXT SUFFERING"></Label>
         </HBox>
         <HBox spacing="120" alignment="CENTER">
             <VBox fx:id="choice1" spacing="10" styleClass="choiceContainer" alignment="CENTER" minHeight="450" minWidth="450" >

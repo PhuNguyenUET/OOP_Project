@@ -1,8 +1,10 @@
 package com.example.demo.frontend.MultipleChoice;
 
+import com.example.demo.ScreenManager;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -26,7 +28,7 @@ public class ResultController {
     }
 
     @FXML
-    public void returnToGameSelect(Event event) {
-
+    public void changeToGameHome(MouseEvent event) {
+        ScreenManager.getInstance().switchToGame();
     }
 }

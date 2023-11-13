@@ -314,12 +314,6 @@ public class FlipGameController {
     }
 
     private void handleFlipBack(StackPane stackPane, int index, int check, int runningValue) {
-//        if (isAnimationRunning[runningValue]) {
-//            // Nếu animation đang chạy, không thực hiện gì cả
-//            return;
-//        }
-//
-//        isAnimationRunning[runningValue] = true;
 
         RotateTransition rotateFrontTransition = new RotateTransition(Duration.seconds(0.75), stackPane);
         RotateTransition rotateBackTransition = new RotateTransition(Duration.seconds(0.75), stackPane);
@@ -332,7 +326,6 @@ public class FlipGameController {
             isFrontShowing[index] = !isFrontShowing[index];
             if (!isFrontShowing[index]) {
                 // Chuyển về mặt sau
-//                ImageView imageView = (ImageView) stackPane.getChildren().get(0);
                 VBox imageViewConatainer = (VBox) stackPane.getChildren().get(0);
                 ImageView imageView = (ImageView) imageViewConatainer.getChildren().get(0);
                 imageView.setImage(new Image(getClass().getResource("/com/example/demo/assets/space.png").toString()));

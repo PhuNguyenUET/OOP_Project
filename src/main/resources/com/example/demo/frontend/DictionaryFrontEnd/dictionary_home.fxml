@@ -76,7 +76,7 @@
                                                       <Insets />
                                                    </VBox.margin>
                                                 </ImageView>
-                                                <Button fx:id="translateButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Translate" />
+                                                <Button fx:id="translateButton" mnemonicParsing="false" onAction="#changeScreenToTranslate" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Translate" />
                                                 <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Settings" />
                                              </children>
                                           </VBox>
