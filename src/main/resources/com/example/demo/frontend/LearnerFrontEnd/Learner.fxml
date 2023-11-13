@@ -31,7 +31,7 @@
         <StackPane styleClass="libContainer" translateX="40">
             <HBox alignment="CENTER" fx:id="yourLibContain" styleClass="test">
                 <VBox alignment="CENTER">
-                    <Button fx:id="yourLib" styleClass="libBtn" text="Your Libarary"></Button>
+                    <Button fx:id="yourLib" styleClass="libBtn" text="Your Library"></Button>
                 </VBox>
                 <VBox alignment="CENTER" translateY="1">
                     <ImageView>

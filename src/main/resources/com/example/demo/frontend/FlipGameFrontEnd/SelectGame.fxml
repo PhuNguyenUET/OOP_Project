@@ -17,7 +17,7 @@
     </stylesheets>
     <VBox styleClass="conatiner" spacing="80">
         <HBox styleClass="description" alignment="CENTER">
-            <Label styleClass="description" text="PLEASE CHOSE ONE GAME THAT YOU WANT TO PLAY"></Label>
+            <Label styleClass="description" text="PLEASE CHOOSE ONE GAME THAT YOU WANT TO PLAY"></Label>
         </HBox>
         <HBox spacing="120" alignment="CENTER">
             <VBox fx:id="choice1" spacing="10" styleClass="choiceContainer" alignment="CENTER" minHeight="450" minWidth="450" >
@@ -25,7 +25,7 @@
                 <Label styleClass="text" text="( 1 player )"></Label>
             </VBox>
             <VBox fx:id="choice2" spacing="10" styleClass="choiceContainer" alignment="CENTER" minHeight="450" minWidth="450" >
-                <Label styleClass="text" text="Memory challange"></Label>
+                <Label styleClass="text" text="Memory challenge"></Label>
                 <Label styleClass="text" text="( 2 players )"></Label>
             </VBox>
         </HBox>
