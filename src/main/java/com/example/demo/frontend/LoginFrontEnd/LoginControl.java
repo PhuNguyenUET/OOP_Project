@@ -119,7 +119,7 @@ public class LoginControl {
         submitButton.setOnAction(e -> {
             String userValue = userName.getText();
             String passValue = password.getText();
-            Connection connection = userDatabaseConnect.connect();
+            Connection connection = userDatabaseConnect.getInstance().connect();
             if (submitButton.getText().equals("Login")) {
                 if (userDatabaseSQL.check(connection, userValue, passValue) && !userValue.equals("") && !passValue.equals("")) {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");

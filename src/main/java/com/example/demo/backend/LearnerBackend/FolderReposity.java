@@ -116,7 +116,7 @@ public class FolderReposity {
     public String getTwoFoldersRandom(int userId) {
         try {
             Statement statement = Connect.getInstance().connect().createStatement();
-            String query = "SELECT * FROM folder where userId= " + userId + " ORDER BY RANDOM() LIMIT 2";
+            String query = "SELECT * FROM folder WHERE userId = " + userId + " ORDER BY RAND() LIMIT 2;";
             ResultSet resultSet = statement.executeQuery(query);
             List<String> folderList = new ArrayList<>();
             while (resultSet.next()) {
