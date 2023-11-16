@@ -10,7 +10,7 @@ public class FunctionRepository {
     public boolean isPasswordCorrect(Connection connection, int userID, String password) {
         try{
             Statement statement = connection.createStatement();
-            String query= "SELECT password WHERE id = '" + userID + "';";
+            String query= "SELECT password FROM information WHERE id = " + userID;
             ResultSet rs = statement.executeQuery(query);
             String pass = "";
             if (rs.next()){
@@ -27,7 +27,7 @@ public class FunctionRepository {
     public boolean containsUsername(Connection connection, String username) {
         try{
             Statement statement = connection.createStatement();
-            String query= "SELECT id WHERE username = '" + username + "';";
+            String query= "SELECT id FROM information WHERE username = '" + username + "';";
             ResultSet rs = statement.executeQuery(query);
             int id = -1;
             if (rs.next()){
@@ -44,7 +44,7 @@ public class FunctionRepository {
     public void updatePassword(Connection connection, int userID, String newPassword) {
         try {
             Statement statement = connection.createStatement();
-            String query = "UPDATE information SET password = '" + newPassword + "' WHERE id = '" + userID + "'";
+            String query = "UPDATE information SET password = '" + newPassword + "' WHERE id = " + userID;
             statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,7 +54,7 @@ public class FunctionRepository {
     public String getName(Connection connection, int id) {
         try{
             Statement statement = connection.createStatement();
-            String query= "SELECT name WHERE id = '" + id + "'";
+            String query= "SELECT name FROM information WHERE id = " + id;
             ResultSet rs = statement.executeQuery(query);
             String name = "";
             if (rs.next()){
@@ -71,7 +71,7 @@ public class FunctionRepository {
     public String getUserName(Connection connection, int id) {
         try{
             Statement statement = connection.createStatement();
-            String query= "SELECT username WHERE id = '" + id + "'";
+            String query= "SELECT username FROM information WHERE id = " + id;
             ResultSet rs = statement.executeQuery(query);
             String username = "";
             if (rs.next()){
@@ -88,11 +88,11 @@ public class FunctionRepository {
     public int getProfileID(Connection connection, int userID) {
         try{
             Statement statement = connection.createStatement();
-            String query= "SELECT profilePictureId WHERE id = '" + userID + "'";
+            String query= "SELECT profilePictureId FROM information WHERE id = " + userID;
             ResultSet rs = statement.executeQuery(query);
             int picID = -1;
             if (rs.next()){
-                picID = rs.getInt("id");
+                picID = rs.getInt("profilePictureId");
             }
             return picID;
         }
@@ -105,7 +105,7 @@ public class FunctionRepository {
     public void updateUsername(Connection connection, int userID, String newUserName) {
         try {
             Statement statement = connection.createStatement();
-            String query = "UPDATE information SET username = '" + newUserName + "' WHERE id = '" + userID + "'";
+            String query = "UPDATE information SET username = '" + newUserName + "' WHERE id = " + userID;
             statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -115,7 +115,7 @@ public class FunctionRepository {
     public void updateName(Connection connection, int userID, String newName) {
         try {
             Statement statement = connection.createStatement();
-            String query = "UPDATE information SET name = '" + newName + "' WHERE id = '" + userID + "'";
+            String query = "UPDATE information SET name = '" + newName + "' WHERE id = " + userID;
             statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -125,7 +125,7 @@ public class FunctionRepository {
     public void updateProfilePicture(Connection connection, int userID, int profilePictureID) {
         try {
             Statement statement = connection.createStatement();
-            String query = "UPDATE information SET profilePictureId = '" + profilePictureID + "' WHERE id = '" + userID + "'";
+            String query = "UPDATE information SET profilePictureId = '" + profilePictureID + "' WHERE id = " + userID;
             statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();

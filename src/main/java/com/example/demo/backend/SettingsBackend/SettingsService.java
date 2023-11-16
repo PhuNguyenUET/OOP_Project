@@ -13,10 +13,7 @@ public class SettingsService {
         this.functionRepository = functionRepository;
     }
 
-    public String updateProfilePictureID(int userID, int profilePictureID, String password) {
-        if (!functionRepository.isPasswordCorrect(connection, userID, password)) {
-            return "Wrong password.";
-        }
+    public String updateProfilePictureID(int userID, int profilePictureID) {
         int oldPicID = functionRepository.getProfileID(connection, userID);
         if (oldPicID == profilePictureID) {
             return "No changes detected.";
@@ -63,5 +60,13 @@ public class SettingsService {
         }
         functionRepository.updatePassword(connection, userID, newPassword);
         return "Password updated successfully";
+    }
+
+    public int getProfileID(int userID) {
+        return functionRepository.getProfileID(connection, userID);
+    }
+
+    public String getName(int userID) {
+        return functionRepository.getName(connection, userID);
     }
 }
