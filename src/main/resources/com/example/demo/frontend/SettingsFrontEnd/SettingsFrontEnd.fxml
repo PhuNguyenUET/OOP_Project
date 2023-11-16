@@ -10,7 +10,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import java.net.URL?>
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.SettingsFrontEnd.SettingsTabController">
+   <stylesheets>
+      <URL value="@../../css/settingsTab.css" />
+   </stylesheets>
    <children>
       <ScrollPane>
          <StackPane.margin>
