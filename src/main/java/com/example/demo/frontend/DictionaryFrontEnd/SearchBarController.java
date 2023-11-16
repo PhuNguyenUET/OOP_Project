@@ -20,7 +20,7 @@ public class SearchBarController {
         }
     }
 
-    private String searchField;
+    private String searchField = "";
 
     protected String getSearchField() {
         return searchField;

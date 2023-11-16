@@ -90,3 +90,8 @@
     -fx-background-color: transparent;
     -fx-background-radius: 20;
 }
+
+.button:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}

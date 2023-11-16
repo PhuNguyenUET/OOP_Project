@@ -85,9 +85,7 @@ public class GameScreenController implements Initializable {
         option4.setText(options.get(3));
         timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(timer.progressProperty(), 1)),
-                new KeyFrame(Duration.seconds(waitTime), e-> {
-                    timeOut();
-                }, new KeyValue(timer.progressProperty(), 0))
+                new KeyFrame(Duration.seconds(waitTime), e-> timeOut(), new KeyValue(timer.progressProperty(), 0))
         );
         timeline.play();
     }
@@ -97,7 +95,9 @@ public class GameScreenController implements Initializable {
             @Override
             protected Void call() throws Exception {
                 try { Thread.sleep(millis); }
-                catch (InterruptedException e) { }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 return null;
             }
         };

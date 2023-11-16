@@ -58,6 +58,7 @@
 .onHover {
     -fx-background-color: #F1F1F0;
     -fx-background-radius: 30;
+    -fx-cursor: hand;
 }
 
 .timerBar > .bar {

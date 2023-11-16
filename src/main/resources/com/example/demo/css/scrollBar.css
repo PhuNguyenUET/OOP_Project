@@ -51,4 +51,5 @@
     -fx-background-color :derive(#4D4C4F,10.0%);
     -fx-background-insets : 2.0, 0.0, 0.0;
     -fx-background-radius : 2.0em;
+    -fx-cursor: hand;
 }

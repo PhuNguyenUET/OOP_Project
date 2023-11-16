@@ -180,9 +180,10 @@ public class WordDisplayController implements Initializable {
             if (node instanceof ScrollBar) {
                 ScrollBar scrollBar = (ScrollBar) node;
                 if (scrollBar.getOrientation() == Orientation.VERTICAL) {
-                    scrollBar.setVisible(true);
+                    if (explanationBox.getHeight() > definitonScrollPane.getHeight()) {
+                        scrollBar.setVisible(true);
+                    }
                 }
-
             }
         }
     }

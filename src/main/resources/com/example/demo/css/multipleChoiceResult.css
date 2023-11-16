@@ -21,3 +21,9 @@
     -fx-font-size: 20;
     -fx-font-style: italic;
 }
+
+.button:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #e6e6e6;
+    -fx-background-radius: 30;
+}

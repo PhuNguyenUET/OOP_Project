@@ -42,3 +42,8 @@
     -fx-underline: true;
     -fx-background-color: #F1F1F0;
 }
+
+.button:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}

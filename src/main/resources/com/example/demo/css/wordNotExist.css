@@ -16,3 +16,8 @@
     -fx-font-family: 'Lexend';
     -fx-font-size: 24;
 }
+
+.button:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}

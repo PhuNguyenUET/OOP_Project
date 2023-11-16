@@ -68,4 +68,10 @@
     -fx-image-radius: 50;
 }
 
+.button:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}
+
+
 
