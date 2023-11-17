@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.SettingsFrontEnd.SettingsTabController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1520.0" translateY="54.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.SettingsFrontEnd.SettingsTabController">
    <stylesheets>
       <URL value="@../../css/settingsTab.css" />
       <URL value="@../../css/scrollBar.css" />
@@ -252,7 +252,7 @@
             </VBox>
          </content>
       </ScrollPane>
-      <HBox fx:id="messagePane" alignment="CENTER_LEFT" maxHeight="60" maxWidth="360" spacing="20" styleClass="mes" translateX="360.0" translateY="16.0" StackPane.alignment="TOP_RIGHT">
+      <HBox fx:id="messagePane" alignment="CENTER_LEFT" maxHeight="60" maxWidth="380.0" spacing="20" styleClass="mes" translateX="380.0" translateY="16.0" StackPane.alignment="TOP_RIGHT">
          <children>
             <ImageView fx:id="checkImage">
                <image>

@@ -3,8 +3,10 @@ package com.example.demo;
 import com.example.demo.frontend.DictionaryFrontEnd.SearchBarController;
 import com.example.demo.frontend.DictionaryFrontEnd.StandardWord;
 import com.example.demo.frontend.DictionaryFrontEnd.DictionarySceneChanger;
+import com.example.demo.frontend.SettingsFrontEnd.SettingsTabController;
 import com.example.demo.frontend.navBarFrontEnd.NavbarController;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -79,6 +81,7 @@ public class ScreenManager {
     }
     private ScreenManager() {
         root = new StackPane();
+        root.setAlignment(Pos.TOP_CENTER);
     }
 
     public static ScreenManager getInstance() {
@@ -113,12 +116,11 @@ public class ScreenManager {
             StackPane screen = learner.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
-                root.getChildren().remove(1);
-                root.getChildren().add(screen);
+                root.getChildren().set(0, screen);
             } else {
                 root.getChildren().clear();
-                root.getChildren().add(navBarPane);
                 root.getChildren().add(screen);
+                root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
         } catch (IOException e) {
@@ -133,12 +135,11 @@ public class ScreenManager {
             StackPane dictScreen = dict.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
-                root.getChildren().remove(1);
-                root.getChildren().add(dictScreen);
+                root.getChildren().set(0, dictScreen);
             } else {
                 root.getChildren().clear();
-                root.getChildren().add(navBarPane);
                 root.getChildren().add(dictScreen);
+                root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
         } catch (IOException e) {
@@ -152,8 +153,7 @@ public class ScreenManager {
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane screen = folder.load();
             StackPane navBarPane = navBar.load();
-            root.getChildren().remove(1);
-            root.getChildren().add(screen);
+            root.getChildren().set(0, screen);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -165,8 +165,7 @@ public class ScreenManager {
             this.folderId = folderId;
             StackPane screen = list.load();
             StackPane navBarPane = navBar.load();
-            root.getChildren().remove(1);
-            root.getChildren().add(screen);
+            root.getChildren().set(0, screen);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -179,8 +178,7 @@ public class ScreenManager {
             this.listId = listId;
             StackPane screen = listWord.load();
             StackPane navBarPane = navBar.load();
-            root.getChildren().remove(1);
-            root.getChildren().add(screen);
+            root.getChildren().set(0, screen);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -194,12 +192,11 @@ public class ScreenManager {
             StackPane gameScreen = game.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
-                root.getChildren().remove(1);
-                root.getChildren().add(gameScreen);
+                root.getChildren().set(0, gameScreen);
             } else {
                 root.getChildren().clear();
-                root.getChildren().add(navBarPane);
                 root.getChildren().add(gameScreen);
+                root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
         } catch (IOException e) {
@@ -214,12 +211,11 @@ public class ScreenManager {
             StackPane translateScreen = translate.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
-                root.getChildren().remove(1);
-                root.getChildren().add(translateScreen);
+                root.getChildren().set(0, translateScreen);
             } else {
                 root.getChildren().clear();
-                root.getChildren().add(navBarPane);
                 root.getChildren().add(translateScreen);
+                root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
         } catch (IOException e) {
@@ -234,12 +230,11 @@ public class ScreenManager {
             StackPane screen = learner.load();
             StackPane navBarPane = navBar.load();
             if (root.getChildren().size() >= 2) {
-                root.getChildren().remove(1);
-                root.getChildren().add(screen);
+                root.getChildren().set(0, screen);
             } else {
                 root.getChildren().clear();
-                root.getChildren().add(navBarPane);
                 root.getChildren().add(screen);
+                root.getChildren().add(navBarPane);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -255,4 +250,26 @@ public class ScreenManager {
         }
     }
 
+    public void switchToSettings() {
+        try {
+            FXMLLoader settings = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/SettingsFrontEnd/SettingsFrontEnd.fxml"));
+            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
+            StackPane settingsScreen = settings.load();
+            StackPane navBarPane = navBar.load();
+            if (root.getChildren().size() >= 2) {
+                root.getChildren().set(0, settingsScreen);
+                SettingsTabController stc = settings.getController();
+                stc.setNavbarController(navbarController);
+            } else {
+                root.getChildren().clear();
+                root.getChildren().add(settingsScreen);
+                root.getChildren().add(navBarPane);
+                setNavbarController(navBar);
+                SettingsTabController stc = settings.getController();
+                stc.setNavbarController(navbarController);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

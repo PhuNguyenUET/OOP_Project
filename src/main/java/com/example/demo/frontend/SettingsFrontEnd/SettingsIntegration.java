@@ -8,7 +8,7 @@ public class SettingsIntegration {
     private SettingsIntegration() {
     }
 
-    protected static SettingsIntegration Instance() {
+    public static SettingsIntegration Instance() {
         if (_instance == null) {
             _instance = new SettingsIntegration();
         }
@@ -38,5 +38,9 @@ public class SettingsIntegration {
 
     public String getName(int userID) {
         return backend.getName(userID);
+    }
+
+    public String getImageURL(int userID) {
+        return "/com/example/demo/assets/ProfilePicture/profile" + getProfileID(userID) + ".jpg";
     }
 }

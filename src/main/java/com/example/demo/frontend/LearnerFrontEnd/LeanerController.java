@@ -188,6 +188,7 @@ public class LeanerController {
         });
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow(e);
             paneContainer.setVisible(false);
             PopUpContainer.setVisible(false);
         });
