@@ -43,12 +43,12 @@ public class WordController {
         return dictionaryService.getDailyNewWords();
     }
 
-    public String getRecentSearches() {
-        return dictionaryService.getRecentSearches();
+    public String getRecentSearches(int userID) {
+        return dictionaryService.getRecentSearches(userID);
     }
 
-    public void updateRecentSearches(String word) {
-        dictionaryService.updateRecentSearches(word);
+    public void updateRecentSearches(String word, int userID) {
+        dictionaryService.updateRecentSearches(word, userID);
     }
 
     public boolean checkWordExist(String word) {

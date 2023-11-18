@@ -112,7 +112,7 @@ public class WordController {
         });
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
-            ScreenManager.getInstance().getNavbarController().resetPopupWindow(e);
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow();
             addWordContainer.setVisible(false);
         });
 

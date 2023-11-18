@@ -102,7 +102,7 @@ public class ListController {
         });
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
-            ScreenManager.getInstance().getNavbarController().resetPopupWindow(e);
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow();
             addFolder.setVisible(false);
             if (visibleChangeContainer != null) {
                 visibleChangeContainer.setVisible(false);

@@ -139,7 +139,7 @@ public class FolderController {
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
             addFolder.setVisible(false);
-            ScreenManager.getInstance().getNavbarController().resetPopupWindow(e);
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow();
             if (visibleChangeContainer != null) {
                 visibleChangeContainer.setVisible(false);
                 visibleChangeContainer = null;

@@ -112,14 +112,15 @@ class WordRepository {
         return res;
     }
 
-    protected List<StandardWord> getRecentSearches (Connection connection) {
+    protected List<StandardWord> getRecentSearches (Connection connection, int userID) {
         List<StandardWord> res = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
             String query = "SELECT DISTINCT w.wordID, w.word as word " +
                     "FROM recent_searches rs, words w " +
                     "WHERE rs.wordID = w.wordID " +
-                    "ORDER BY rs.searchID DESC " +
+                    "AND rs.userID = " + userID +
+                    " ORDER BY rs.searchID DESC " +
                     "LIMIT 3;";
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()){
@@ -132,21 +133,21 @@ class WordRepository {
         return res;
     }
 
-    protected void updateRecentSearches (Connection connection, String word) {
+    protected void updateRecentSearches (Connection connection, String word, int userID) {
         try {
             Statement statement = connection.createStatement();
-            String query = "INSERT INTO recent_searches (wordID) values " +
-                    "((SELECT wordID FROM words WHERE word = '" + word + "'));";
+            String query = "INSERT INTO recent_searches (wordID, userID) values " +
+                    "((SELECT wordID FROM words WHERE word = '" + word + "'), " + userID + ");";
             statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    protected int getRecentSearchesCount (Connection connection) {
+    protected int getRecentSearchesCount (Connection connection, int userID) {
         try {
             Statement statement = connection.createStatement();
-            String query = "SELECT COUNT(*) as total FROM recent_searches;";
+            String query = "SELECT COUNT(*) as total FROM recent_searches GROUP BY userID;";
             ResultSet rs = statement.executeQuery(query);
             return rs.getInt("total");
         } catch (SQLException e) {
@@ -155,11 +156,11 @@ class WordRepository {
         return 0;
     }
 
-    protected void cleanRecentSearches (Connection connection) {
+    protected void cleanRecentSearches (Connection connection, int userID) {
         try {
             Statement statement = connection.createStatement();
             String query = "DELETE FROM recent_searches WHERE searchID = " +
-                    "(SELECT MIN(searchID) FROM recent_searches);";
+                    "(SELECT MIN(searchID) FROM recent_searches) AND userID =" + userID + ";";
             statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();

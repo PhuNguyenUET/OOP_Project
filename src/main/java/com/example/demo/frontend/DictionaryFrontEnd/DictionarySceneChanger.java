@@ -35,9 +35,8 @@ public class DictionarySceneChanger {
         screen = loader.load();
         StackPane root = ScreenManager.getInstance().getRoot();
 
-        root.getChildren().remove(1);
-        root.getChildren().add(screen);
-
+        root.getChildren().set(0, screen);
+        ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 
     protected void switchToWordNotExistScreen(SearchBarController searchBarController) throws IOException {
@@ -48,8 +47,8 @@ public class DictionarySceneChanger {
         wordNotExistScreenController.setSearchBarController(searchBarController);
 
         StackPane root = ScreenManager.getInstance().getRoot();
-        root.getChildren().remove(1);
-        root.getChildren().add(screen);
+        root.getChildren().set(0, screen);
+        ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 
     public void switchToWordDisplay(SearchBarController searchBarController, StandardWord word) throws IOException {
@@ -63,11 +62,11 @@ public class DictionarySceneChanger {
 
         wordDisplayController.setContent();
 
-        DictionaryIntegration.Instance().updateRecentSearches(word.getWord());
+        DictionaryIntegration.Instance().updateRecentSearches(word.getWord(), ScreenManager.getInstance().getUserId());
 
         StackPane root = ScreenManager.getInstance().getRoot();
 
-        root.getChildren().remove(1);
-        root.getChildren().add(screen);
+        root.getChildren().set(0, screen);
+        ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 }

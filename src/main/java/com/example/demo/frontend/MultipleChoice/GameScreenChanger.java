@@ -35,8 +35,8 @@ public class GameScreenChanger {
 //        scene = stage.getScene();
 
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
-        root.getChildren().remove(1);
-        root.getChildren().add(screen);
+        root.getChildren().set(0, screen);
+        ScreenManager.getInstance().getNavbarController().resetPopupWindow();
 //        stage.show();
     }
 
@@ -48,8 +48,8 @@ public class GameScreenChanger {
         game.setDifficulty(difficulty);
 
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
-        root.getChildren().remove(1);
-        root.getChildren().add(screen);
+        root.getChildren().set(0, screen);
+        ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 
     protected void switchToResultScreen(Event event, int score) throws IOException {
@@ -60,7 +60,7 @@ public class GameScreenChanger {
         resultController.setScore(score);
 
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
-        root.getChildren().remove(1);
-        root.getChildren().add(screen);
+        root.getChildren().set(0, screen);
+        ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 }

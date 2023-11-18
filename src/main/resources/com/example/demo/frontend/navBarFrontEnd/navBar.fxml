@@ -21,8 +21,8 @@
          <children>
             <StackPane styleClass="container">
             
-                <HBox alignment="CENTER_LEFT" styleClass="navBar" StackPane.alignment="TOP_LEFT">
-                    <HBox spacing="20">
+                <HBox alignment="CENTER_LEFT" prefWidth="757.0" styleClass="navBar" StackPane.alignment="TOP_LEFT">
+                    <HBox prefWidth="733.0" spacing="20">
                         <VBox alignment="CENTER">
                         <ImageView>
                             <image>
@@ -48,7 +48,7 @@
                 <Rectangle fx:id="movingRec" fill="#E8D8F4" height="2" styleClass="recMove" translateX="228" translateY="48" width="150" StackPane.alignment="TOP_LEFT" />
             
             </StackPane>
-            <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0" prefWidth="766.0" styleClass="navBar">
+            <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0" prefWidth="767.0" styleClass="navBar">
                <children>
                   <Circle fx:id="profileButton" fill="WHITE" onMouseClicked="#displayPopUpWindow" radius="26.0" stroke="BLACK" strokeType="INSIDE" styleClass="profileBtn" />
                </children>
@@ -61,10 +61,13 @@
                <children>
                   <Circle fx:id="profilePictureDisplay" fill="WHITE" radius="26.0" stroke="BLACK" strokeType="INSIDE">
                      <HBox.margin>
-                        <Insets left="30.0" />
+                        <Insets left="20.0" />
                      </HBox.margin>
                   </Circle>
-                  <Label fx:id="welcomeLabel" prefHeight="54.0" prefWidth="210.0" styleClass="welcomeLabel" text="Welcome" />
+                  <Label fx:id="welcomeLabel" prefHeight="54.0" prefWidth="210.0" styleClass="welcomeLabel" text="Welcome" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Label>
                </children></HBox>
             <HBox fx:id="profileChange" alignment="CENTER" prefHeight="61.0" prefWidth="302.0" styleClass="functionBox">
                <children>

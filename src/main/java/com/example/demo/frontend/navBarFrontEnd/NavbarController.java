@@ -99,24 +99,28 @@ public class NavbarController implements Initializable {
         Dictionary.setOnAction(e -> {
             handleActive(Dictionary);
             ScreenManager.getInstance().switchToDict();
+            movingRec.setVisible(true);
         });
 
         Learner.setOnAction(e -> {
 //            movingAnimation(transition, LeanerPos);
             handleActive(Learner);
             ScreenManager.getInstance().switchToLearner();
+            movingRec.setVisible(true);
         });
 
         Translate.setOnAction(e -> {
 //            movingAnimation(transition, TranslatePos);
             handleActive(Translate);
             ScreenManager.getInstance().switchToTranslate();
+            movingRec.setVisible(true);
         });
 
         Game.setOnAction(e -> {
 //            movingAnimation(transition, GamePos);
             handleActive(Game);
             ScreenManager.getInstance().switchToGame();
+            movingRec.setVisible(true);
         });
     }
 
@@ -140,7 +144,7 @@ public class NavbarController implements Initializable {
         profilePictureDisplay.setFill(pattern);
     }
 
-    public void resetPopupWindow(MouseEvent event) {
+    public void resetPopupWindow() {
         popUpWindow.setVisible(false);
         popUpWindow.setDisable(true);
     }
@@ -202,6 +206,7 @@ public class NavbarController implements Initializable {
 
     @FXML
     public void changeToSettings() {
+        movingRec.setVisible(false);
         ScreenManager.getInstance().switchToSettings();
     }
 

@@ -113,8 +113,8 @@ public class ScreenManager {
         try {
             FXMLLoader learner = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/Learner.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane screen = learner.load();
             StackPane navBarPane = navBar.load();
+            StackPane screen = learner.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, screen);
             } else {
@@ -123,6 +123,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -132,8 +133,8 @@ public class ScreenManager {
         try {
             FXMLLoader dict = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane dictScreen = dict.load();
             StackPane navBarPane = navBar.load();
+            StackPane dictScreen = dict.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, dictScreen);
             } else {
@@ -142,6 +143,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -150,10 +152,9 @@ public class ScreenManager {
     public void switchToFolder() {
         try {
             FXMLLoader folder = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/folder.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane screen = folder.load();
-            StackPane navBarPane = navBar.load();
             root.getChildren().set(0, screen);
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -161,11 +162,10 @@ public class ScreenManager {
     public void switchToList(int folderId) {
         try {
             FXMLLoader list = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             this.folderId = folderId;
             StackPane screen = list.load();
-            StackPane navBarPane = navBar.load();
             root.getChildren().set(0, screen);
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -174,11 +174,10 @@ public class ScreenManager {
     public void switchToWord(int listId) {
         try {
             FXMLLoader listWord = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/wordOfList.fxml"));
-            FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             this.listId = listId;
             StackPane screen = listWord.load();
-            StackPane navBarPane = navBar.load();
             root.getChildren().set(0, screen);
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -189,8 +188,8 @@ public class ScreenManager {
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectGame.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane gameScreen = game.load();
             StackPane navBarPane = navBar.load();
+            StackPane gameScreen = game.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, gameScreen);
             } else {
@@ -199,6 +198,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -208,8 +208,8 @@ public class ScreenManager {
         try {
             FXMLLoader translate = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/Translator/translator.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane translateScreen = translate.load();
             StackPane navBarPane = navBar.load();
+            StackPane translateScreen = translate.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, translateScreen);
             } else {
@@ -218,6 +218,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -227,8 +228,8 @@ public class ScreenManager {
         try {
             FXMLLoader learner = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectGame.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane screen = learner.load();
             StackPane navBarPane = navBar.load();
+            StackPane screen = learner.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, screen);
             } else {
@@ -236,6 +237,7 @@ public class ScreenManager {
                 root.getChildren().add(screen);
                 root.getChildren().add(navBarPane);
             }
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -245,6 +247,7 @@ public class ScreenManager {
         try {
             switchToDict();
             DictionarySceneChanger.Instance().switchToWordDisplay(new SearchBarController(), word);
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -254,8 +257,8 @@ public class ScreenManager {
         try {
             FXMLLoader settings = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/SettingsFrontEnd/SettingsFrontEnd.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane settingsScreen = settings.load();
             StackPane navBarPane = navBar.load();
+            StackPane settingsScreen = settings.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, settingsScreen);
                 SettingsTabController stc = settings.getController();
@@ -268,6 +271,7 @@ public class ScreenManager {
                 SettingsTabController stc = settings.getController();
                 stc.setNavbarController(navbarController);
             }
+            navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
