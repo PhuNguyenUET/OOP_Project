@@ -31,6 +31,9 @@
                                  <HBox.margin>
                                     <Insets left="160.0" />
                                  </HBox.margin>
+                                 <image>
+                                    <Image url="@../../assets/logo3.png" />
+                                 </image>
                               </ImageView>
                               <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="844.0" promptText="Search your word here" styleClass="searchBar">
                                  <HBox.margin>
