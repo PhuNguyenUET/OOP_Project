@@ -1,5 +1,6 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
+import com.example.demo.ScreenManager;
 import com.example.demo.frontend.Common.DictFuncToLearner;
 import com.example.demo.frontend.Common.Word;
 
@@ -15,7 +16,7 @@ public class ConnectComponentDict extends DictFuncToLearner {
 
     @Override
     public List<Word> getRecentSearches() {
-        List<StandardWord> lst = DictionaryIntegration.Instance().getRecentSearches();
+        List<StandardWord> lst = DictionaryIntegration.Instance().getRecentSearches(ScreenManager.getInstance().getUserId());
         return new ArrayList<>(lst);
     }
 

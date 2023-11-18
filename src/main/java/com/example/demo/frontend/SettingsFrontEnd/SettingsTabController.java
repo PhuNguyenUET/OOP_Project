@@ -1,6 +1,7 @@
 package com.example.demo.frontend.SettingsFrontEnd;
 
 import com.example.demo.ScreenManager;
+import com.example.demo.frontend.navBarFrontEnd.NavbarController;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.Event;
@@ -66,7 +67,13 @@ public class SettingsTabController implements Initializable {
     private PauseTransition pauseTransition;
     List<ImageView> profilePictures = new ArrayList<>();
 
+    NavbarController navbarController;
+
     int currentProfileId = -1;
+
+    public void setNavbarController(NavbarController navbarController) {
+        this.navbarController = navbarController;
+    }
 
     private void displayMessagePane (boolean successful, String message, String messageDes) {
         URL imageUrl = null;
@@ -110,6 +117,7 @@ public class SettingsTabController implements Initializable {
         String result = SettingsIntegration.Instance().updateProfilePictureID(ScreenManager.getInstance().getUserId(),
                 currentProfileId);
         if (result.equals("Profile Picture updated successfully")) {
+            navbarController.updateProfileImage();
             displayMessagePane(true, "Success", result);
         } else {
             displayMessagePane(false, "Failed", result);
@@ -156,12 +164,16 @@ public class SettingsTabController implements Initializable {
         pauseTransition = new PauseTransition(Duration.seconds(2));
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), messagePane);
         pauseTransition.setOnFinished(e -> {
-            toastMesTransition.setToX(360);
+            toastMesTransition.setToX(380);
             toastMesTransition.play();
         });
         nameDescription.setText("You are currently refered to as: "
                 + SettingsIntegration.Instance().getName(ScreenManager.getInstance().getUserId()));
         currentProfileId = SettingsIntegration.Instance().getProfileID(ScreenManager.getInstance().getUserId());
+        String imgUrl = "/com/example/demo/assets/ProfilePicture/profile" + currentProfileId + ".jpg";
+        URL imageUrl = getClass().getResource(imgUrl);
+        Image image = new Image(imageUrl.toString());
+        currentProfilePicture.setImage(image);
         initializePictures();
         for(int i = 0; i <= 10; i++) {
             firstRow.getChildren().add(profilePictures.get(i));

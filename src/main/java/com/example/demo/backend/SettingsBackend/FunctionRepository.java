@@ -60,6 +60,9 @@ public class FunctionRepository {
             if (rs.next()){
                 name = rs.getString("name");
             }
+            if (name == null) {
+                return "User";
+            }
             return name;
         }
         catch (SQLException e) {

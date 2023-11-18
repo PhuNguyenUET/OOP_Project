@@ -112,6 +112,11 @@ public class DictionaryHomeController implements Initializable {
     }
 
     @FXML
+    protected void changeScreenToSettings(Event event) {
+        ScreenManager.getInstance().switchToSettings();
+    }
+
+    @FXML
     protected void clearSuggestion(MouseEvent event) {
         suggestionBox.setVisible(false);
     }
