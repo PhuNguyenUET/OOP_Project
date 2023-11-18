@@ -29,11 +29,9 @@ public class FunctionRepository {
             Statement statement = connection.createStatement();
             String query= "SELECT id FROM information WHERE username = '" + username + "';";
             ResultSet rs = statement.executeQuery(query);
-            int id = -1;
-            if (rs.next()){
-                id = rs.getInt("id");
+            if (rs.isBeforeFirst() ) {
+                return true;
             }
-            return id == -1;
         }
         catch (SQLException e) {
             e.printStackTrace();
