@@ -1,0 +1,20 @@
+television
+refrigerator
+air conditioner
+fan
+microwave
+oven
+toaster
+blender
+mixer
+cooker
+speaker
+washing machine
+bulb
+heater
+computer
+keyboard
+mouse
+remote
+laptop
+headphone
