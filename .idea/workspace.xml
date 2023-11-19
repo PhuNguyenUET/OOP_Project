@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="add3ca6e-ed48-4264-92a2-4a1c1c25b0dc" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/DictionaryBackend/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/DictionaryBackend/WordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

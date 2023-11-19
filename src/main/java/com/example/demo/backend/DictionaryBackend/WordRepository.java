@@ -119,7 +119,7 @@ class WordRepository {
             String query = "SELECT DISTINCT w.wordID, w.word as word " +
                     "FROM recent_searches rs, words w " +
                     "WHERE rs.wordID = w.wordID " +
-                    "AND rs.userID = " + userID +
+                    "AND rs.userID = " + userID  +
                     " ORDER BY rs.searchID DESC " +
                     "LIMIT 3;";
             ResultSet rs = statement.executeQuery(query);

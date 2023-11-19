@@ -125,7 +125,7 @@ public class NavbarController implements Initializable {
     }
 
     public void movingAnimation(TranslateTransition transition, double pos) {
-        transition = new TranslateTransition(Duration.seconds(0.5), movingRec);
+        transition = new TranslateTransition(Duration.seconds(0.75), movingRec);
         transition.setToX(pos);
         transition.play();
     }
