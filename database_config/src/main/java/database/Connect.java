@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Connect {
     private static Connection connection;
-    private static final String DATABASE_URL = "database_config\\resources\\dictionary.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
+    private static final String DATABASE_URL = "src\\main\\resources\\dictionary.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
     public static Connection connect() {
         if (connection == null) {
             try {
