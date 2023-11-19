@@ -13,6 +13,7 @@ import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -20,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 
@@ -86,7 +88,7 @@ public class WordController {
     @FXML
     private Label textMessageDes;
 
-    @FXML
+    private VBox visibleChangeContainer = null;
     private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
 
     private ListReposity listReposity = new ListReposity();
@@ -113,6 +115,10 @@ public class WordController {
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
             addWordContainer.setVisible(false);
+            if (visibleChangeContainer != null) {
+                visibleChangeContainer.setVisible(false);
+                visibleChangeContainer = null;
+            }
         });
 
         addWordContainer.setOnMouseClicked(e -> {
@@ -125,7 +131,7 @@ public class WordController {
         });
 
         addWord.setOnMouseClicked(e -> {
-            if (!wordReposity.addNewList(inputFormWord.getText().trim(), inputFormType.getText().trim(), inputFormDefinition.getText().trim(),"", ScreenManager.getInstance().getListId())) {
+            if (!wordReposity.addNewList(inputFormWord.getText().trim(), inputFormType.getText().trim(), inputFormDefinition.getText().trim(), "", ScreenManager.getInstance().getListId())) {
                 toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
@@ -152,9 +158,9 @@ public class WordController {
         usingStandard.setOnAction(e -> {
             String engWord = inputFormWord.getText().trim();
             System.out.println("Tu can them trong thu vien la" + engWord + " " + dictFuncToLearner.isWordInDict(engWord));
-            if (dictFuncToLearner.isWordInDict(engWord)) {
+            if (dictFuncToLearner.isWordInDict(engWord) && !wordReposity.wordIsExist(inputFormWord.getText().trim(), ScreenManager.getInstance().getListId())) {
                 Word word = dictFuncToLearner.getDetails(engWord);
-                wordReposity.addNewList(word.getWord(), word.getType().get(0), word.getDefinition().get(0),word.getPronunciation(), ScreenManager.getInstance().getListId());
+                wordReposity.addNewList(word.getWord(), word.getType().get(0), word.getDefinition().get(0), word.getPronunciation(), ScreenManager.getInstance().getListId());
                 wordRender(ScreenManager.getInstance().getListId());
             } else {
                 messageRender("Can not add this word", "Please enter a word that does not contain capital letters");
@@ -259,8 +265,7 @@ public class WordController {
             imgContainer.getChildren().add(imageView);
             VBox pronunConatiner = new VBox();
             Label pronun = new Label("");
-            if(!listWord.get(i).getPronunciation().equals("null"))
-            {
+            if (!listWord.get(i).getPronunciation().equals("null")) {
                 pronun = new Label(listWord.get(i).getPronunciation());
             }
             pronun.getStyleClass().add("pronunciation");
@@ -287,17 +292,99 @@ public class WordController {
             imageViewDelete.setTranslateY(-8);
             imageViewDelete.getStyleClass().add("deleteImg");
             StackPane.setAlignment(imageViewDelete, Pos.BOTTOM_RIGHT);
-            containerStack.getChildren().addAll(container, imageViewDelete);
+
+            String editPath = "/com/example/demo/assets/edit_20.png";
+            URL editUrl = getClass().getResource(editPath);
+            ImageView imageViewEdit = new ImageView(new Image(editUrl.toString()));
+            imageViewEdit.setTranslateX(-8);
+            imageViewEdit.setTranslateY(8);
+            imageViewEdit.getStyleClass().add("edit");
+            StackPane.setAlignment(imageViewEdit, Pos.TOP_RIGHT);
+
+            VBox changeContainer = new VBox();
+            changeContainer.setVisible(false);
+            changeContainer.setAlignment(Pos.CENTER);
+            changeContainer.getStyleClass().add("addFolder");
+            StackPane.setAlignment(changeContainer, Pos.TOP_RIGHT);
+            changeContainer.setTranslateY(-60);
+            changeContainer.setSpacing(15);
+            changeContainer.setMaxHeight(240);
+            changeContainer.setMinHeight(240);
+            changeContainer.setPrefHeight(240);
+            changeContainer.setMaxWidth(240);
+            changeContainer.setPrefWidth(240);
+            changeContainer.setMinWidth(240);
+            Label label = new Label("Change this word");
+            label.getStyleClass().add("newFolderText");
+            TextField wordInput = new TextField();
+            wordInput.setPromptText("Word");
+            wordInput.getStyleClass().add("inputForm");
+            TextField typeInput = new TextField();
+            typeInput.setPromptText("Type");
+            typeInput.getStyleClass().add("inputForm");
+            TextField definitionInput = new TextField();
+            definitionInput.setPromptText("Definition");
+            definitionInput.getStyleClass().add("inputForm");
+            wordInput.setText(listWord.get(index).getWord());
+            typeInput.setText(listWord.get(index).getType());
+            definitionInput.setText(listWord.get(index).getDefinition());
+
+            HBox buttonContainer = new HBox();
+            buttonContainer.setAlignment(Pos.CENTER);
+            Button changeBtn = new Button("Change");
+            changeBtn.getStyleClass().add("addFolderName");
+            buttonContainer.getChildren().add(changeBtn);
+
+            changeContainer.getChildren().addAll(wordInput, typeInput, definitionInput, buttonContainer);
+
+            containerStack.getChildren().addAll(container, imageViewDelete, imageViewEdit, changeContainer);
             wordListContainer.getChildren().add(containerStack);
 
-            detailBtn.setOnAction(e -> {
-                if(!dictFuncToLearner.isWordInDict(listWord.get(index).getWord())){
-                    messageRender("Can not find this word", "This word does not exist in the dictionary");
+            imageViewEdit.setOnMouseClicked(e -> {
+                e.consume();
+                if (visibleChangeContainer != null) {
+                    visibleChangeContainer.setVisible(false);
                 }
-                else
-                {
+                changeContainer.setVisible(true);
+                visibleChangeContainer = changeContainer;
+                wordInput.requestFocus();
+            });
+
+            changeBtn.setOnAction(e -> {
+                String newWord = wordInput.getText();
+                String newType = typeInput.getText();
+                String newDefinition = definitionInput.getText();
+                if (wordReposity.updateWord(newWord, newType, newDefinition, id)) {
+                    wordRender(ScreenManager.getInstance().getListId());
+                } else {
+                    messageRender("Invalid", "Please enter another value!");
+                }
+            });
+
+            definitionInput.setOnKeyPressed(e->{
+                if (e.getCode() == KeyCode.ENTER) {
+                    changeBtn.fire();
+                }
+            });
+
+            wordInput.setOnKeyPressed(e->{
+                if (e.getCode() == KeyCode.ENTER) {
+                    changeBtn.fire();
+                }
+            });
+
+            typeInput.setOnKeyPressed(e->{
+                if (e.getCode() == KeyCode.ENTER) {
+                    changeBtn.fire();
+                }
+            });
+
+            detailBtn.setOnAction(e -> {
+                if (!dictFuncToLearner.isWordInDict(listWord.get(index).getWord())) {
+                    messageRender("Can not find this word", "This word does not exist in the dictionary");
+                } else {
                     Word tmpWord = dictFuncToLearner.getDetails(listWord.get(index).getWord());
-                    ScreenManager.getInstance().switchToWordDisplay((StandardWord)tmpWord);
+                    ScreenManager.getInstance().switchToWordDisplay((StandardWord) tmpWord);
                     ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getDictionary());
                 }
             });
@@ -313,7 +400,7 @@ public class WordController {
         }
     }
 
-    public void messageRender(String textMessageInput,String textMessageDesInput) {
+    public void messageRender(String textMessageInput, String textMessageDesInput) {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
         URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
         Image image = new Image(imageUrl.toString());

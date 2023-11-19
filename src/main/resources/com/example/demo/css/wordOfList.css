@@ -115,3 +115,8 @@
     -fx-opacity:0.8;
     -fx-cursor:hand;
 }
+
+.edit:hover {
+    -fx-opacity:0.8;
+    -fx-cursor:hand;
+}

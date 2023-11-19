@@ -1,5 +1,6 @@
 package com.example.demo.backend.LearnerBackend;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordReposity {
-    public WordReposity() {}
+    public WordReposity() {
+    }
 
     public boolean addNewList(String word, String type, String definition, int listId) {
         try {
@@ -28,11 +30,57 @@ public class WordReposity {
         }
     }
 
+    public boolean updateWord(String word, String type, String definition, int id) {
+        if (word.isEmpty() || type.isEmpty() || definition.isEmpty()) {
+            return false;
+        }
+
+        String updateQuery = "UPDATE UserWord SET word=?, type=?, definition=? WHERE id=?";
+
+        try {
+            Connection connection = Connect.getInstance().connect();
+            PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+            preparedStatement.setString(1, word);
+            preparedStatement.setString(2, type);
+            preparedStatement.setString(3, definition);
+            preparedStatement.setInt(4, id);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    public int getIdFromWord(String word, int listId) {
+        try {
+            String insertQuery = "Select id from UserWord where word = ? and listId = ?";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(insertQuery);
+            preparedStatement.setString(1, word);
+            preparedStatement.setInt(2, listId);
+
+            int res = preparedStatement.executeUpdate();
+
+            return res;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
     public boolean addNewList(String word, String type, String definition, String pronunciation, int listId) {
         try {
             if (word.equals("") || definition.equals("")) {
                 return false;
             }
+//            if (wordIsExist(word,listId))
+//            {
+//                return false;
+//            }
             String insertQuery = "INSERT INTO UserWord (word,type,definition,listId,pronunciation) VALUES (?,?,?,?,?)";
             PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(insertQuery);
             preparedStatement.setString(1, word);
@@ -48,6 +96,25 @@ public class WordReposity {
         }
     }
 
+    public boolean wordIsExist(String word, int listId) {
+        try {
+            String selectQuery = "SELECT count(*) AS count FROM UserWord WHERE word = ? AND listId = ?";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(selectQuery);
+            preparedStatement.setString(1, word);
+            preparedStatement.setInt(2, listId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
+
+            int count = resultSet.getInt("count");
+
+            return count > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
     public String getAllWordFromList(int listId) {
         try {
             String query = "SELECT * FROM UserWord WHERE listId = ?";
