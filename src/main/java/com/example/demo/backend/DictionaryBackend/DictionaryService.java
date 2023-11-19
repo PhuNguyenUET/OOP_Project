@@ -58,25 +58,25 @@ class DictionaryService {
         return res;
     }
 
-    protected String getRecentSearches() {
+    protected String getRecentSearches(int userID) {
         ObjectMapper mapper = new ObjectMapper();
         String res = "";
 
         try {
-            res = mapper.writeValueAsString(wordRepository.getRecentSearches(connection));
+            res = mapper.writeValueAsString(wordRepository.getRecentSearches(connection, userID));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
         return res;
     }
 
-    protected void updateRecentSearches(String word) {
+    protected void updateRecentSearches(String word, int userID) {
         if (!wordRepository.checkWordExist(connection, word)) {
             return;
         }
-        wordRepository.updateRecentSearches(connection, word);
-        if (wordRepository.getRecentSearchesCount(connection) >= 500) {
-            wordRepository.cleanRecentSearches(connection);
+        wordRepository.updateRecentSearches(connection, word, userID);
+        if (wordRepository.getRecentSearchesCount(connection, userID) >= 50) {
+            wordRepository.cleanRecentSearches(connection, userID);
         }
     }
 

@@ -55,8 +55,7 @@ public class GameScreenChanger {
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml"));
             StackPane gameScreen = game.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(gameScreen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,8 +66,7 @@ public class GameScreenChanger {
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/InfoOfPlayer.fxml"));
             StackPane gameScreen = game.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(gameScreen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -80,8 +78,7 @@ public class GameScreenChanger {
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectTopic.fxml"));
             StackPane gameScreen = game.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(gameScreen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -93,8 +90,7 @@ public class GameScreenChanger {
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/FlipGame.fxml"));
             StackPane gameScreen = game.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(gameScreen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
 
         } catch (IOException e) {
             e.printStackTrace();

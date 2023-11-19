@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="726.0" prefWidth="1520.0" translateY="54.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.SettingsFrontEnd.SettingsTabController">
+   <stylesheets>
+      <URL value="@../../css/settingsTab.css" />
+      <URL value="@../../css/scrollBar.css" />
+   </stylesheets>
+   <children>
+      <ScrollPane styleClass="common">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <content>
+            <VBox alignment="TOP_CENTER" prefHeight="788.0" prefWidth="1508.0" spacing="30.0" styleClass="external">
+               <children>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="1383.0" styleClass="componentBox">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="155.0" prefWidth="181.0" styleClass="insideBox">
+                           <children>
+                              <ImageView fx:id="currentProfilePicture" fitHeight="119.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/ProfilePicture/profile0.jpg" />
+                                 </image></ImageView>
+                              <Label styleClass="explanationTag" text="Profile Picture">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="206.0" prefWidth="1206.0" styleClass="insideBox">
+                           <children>
+                              <HBox fx:id="firstRow" alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="1164.0" spacing="40.0">
+                                 <VBox.margin>
+                                    <Insets left="45.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox fx:id="secondRow" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="77.0" prefWidth="1164.0" spacing="40.0">
+                                 <VBox.margin>
+                                    <Insets left="45.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <Button fx:id="profileSaveButton" mnemonicParsing="false" onAction="#saveProfilePicture" text="Save">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="1383.0" styleClass="componentBox">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="0.0" prefWidth="181.0" styleClass="insideBox">
+                           <children>
+                              <ImageView fitHeight="107.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/pen.png" />
+                                 </image></ImageView>
+                              <Label styleClass="explanationTag" text="Change your name" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="165.0" prefWidth="1192.0" styleClass="insideBox">
+                           <children>
+                              <Label styleClass="explanationTag" text="Update your name" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="nameDescription" styleClass="descriptionTag" text="You are currently refered to as: ">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label styleClass="enterTag" text="New name: ">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="newNameTextField" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label styleClass="enterTag" text="Password: ">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <PasswordField fx:id="newNamePassword" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Button fx:id="nameSaveButton" mnemonicParsing="false" onAction="#saveName" text="Save">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="79.0" layoutY="246.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="1383.0" styleClass="componentBox">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="0.0" prefWidth="181.0">
+                           <children>
+                              <ImageView fitHeight="97.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/userlogo.png" />
+                                 </image></ImageView>
+                              <Label styleClass="explanationTag" text="Change your Username" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="165.0" prefWidth="1192.0">
+                           <children>
+                              <Label styleClass="explanationTag" text="Update your Username" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label styleClass="enterTag" text="New username:">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="newUsernameTextField" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label styleClass="enterTag" text="Password: ">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <PasswordField fx:id="newUsernamePassword" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Button fx:id="usernameSaveButton" mnemonicParsing="false" onAction="#saveUserName" text="Save">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="64.0" layoutY="537.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="268.0" prefWidth="1383.0" styleClass="componentBox">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="0.0" prefWidth="181.0">
+                           <children>
+                              <ImageView fitHeight="97.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/change-password.png" />
+                                 </image></ImageView>
+                              <Label styleClass="explanationTag" text="Change your Password" wrapText="true">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="165.0" prefWidth="1192.0">
+                           <children>
+                              <Label styleClass="explanationTag" text="Update your Password">
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label styleClass="enterTag" text="Old password:">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <PasswordField fx:id="oldPassword" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Label styleClass="enterTag" text="New password:">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <PasswordField fx:id="newPassword" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Label styleClass="enterTag" text="Confirm password:">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <PasswordField fx:id="confirmNewPassword" maxWidth="-Infinity" prefWidth="1069.0">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </PasswordField>
+                              <Button fx:id="passwordSaveButton" mnemonicParsing="false" onAction="#savePassword" text="Save">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="45.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <HBox fx:id="messagePane" alignment="CENTER_LEFT" maxHeight="60" maxWidth="380.0" spacing="20" styleClass="mes" translateX="380.0" translateY="16.0" StackPane.alignment="TOP_RIGHT">
+         <children>
+            <ImageView fx:id="checkImage">
+               <image>
+                  <Image fx:id="toastImg" url="@../../assets/cross.png" />
+               </image>
+            </ImageView>
+            <VBox>
+               <children>
+                  <Label fx:id="errorMessage" styleClass="textMessage" text="Error" />
+                  <Label fx:id="errorDescription" styleClass="textMessageDes" text="Error message" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</StackPane>

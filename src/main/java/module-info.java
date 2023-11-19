@@ -46,4 +46,7 @@ module com.example.demo{
 
     opens com.example.demo.frontend.FlipGameFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.FlipGameFrontEnd;
+
+    opens com.example.demo.frontend.SettingsFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.SettingsFrontEnd;
 }

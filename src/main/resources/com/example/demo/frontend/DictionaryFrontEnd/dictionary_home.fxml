@@ -31,6 +31,9 @@
                                  <HBox.margin>
                                     <Insets left="160.0" />
                                  </HBox.margin>
+                                 <image>
+                                    <Image url="@../../assets/logo3.png" />
+                                 </image>
                               </ImageView>
                               <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="844.0" promptText="Search your word here" styleClass="searchBar">
                                  <HBox.margin>
@@ -75,9 +78,12 @@
                                                    <VBox.margin>
                                                       <Insets />
                                                    </VBox.margin>
+                                                   <image>
+                                                      <Image url="@../../assets/book-page-flip.gif" />
+                                                   </image>
                                                 </ImageView>
                                                 <Button fx:id="translateButton" mnemonicParsing="false" onAction="#changeScreenToTranslate" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Translate" />
-                                                <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Settings" />
+                                                <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#changeScreenToSettings" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Settings" />
                                              </children>
                                           </VBox>
                                        </children>
