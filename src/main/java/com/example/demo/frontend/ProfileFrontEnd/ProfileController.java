@@ -88,10 +88,6 @@ public class ProfileController {
     double rec4Height = 0;
 
     public void initialize() {
-//        System.out.println("Hình 1 có chiều cao là: " + rec1.getHeight());
-//        System.out.println("Hình 2 có chiều cao là: " + rec2.getHeight());
-//        System.out.println("Hình 3 có chiều cao là: " + rec3.getHeight());
-//        System.out.println("Hình 4 có chiều cao là: " + rec4.getHeight());
         list = profileRepo.getRecentTimeUsage(ScreenManager.getInstance().getUserId());
 
         LocalDate currentDate = LocalDate.now();
@@ -128,18 +124,15 @@ public class ProfileController {
             text1.setText(timeUsages.get(0).getDate());
             rec1Height = timeUsages.get(0).getTime();
         }
-        if (timeUsages.size() >= 2)
-        {
+        if (timeUsages.size() >= 2) {
             text2.setText(timeUsages.get(1).getDate());
             rec2Height = timeUsages.get(1).getTime();
         }
-        if (timeUsages.size() >= 3)
-        {
+        if (timeUsages.size() >= 3) {
             text3.setText(timeUsages.get(2).getDate());
             rec3Height = timeUsages.get(1).getTime();
         }
-        if (timeUsages.size() >= 4)
-        {
+        if (timeUsages.size() >= 4) {
             text4.setText(timeUsages.get(3).getDate());
             rec4Height = timeUsages.get(1).getTime();
         }
@@ -151,29 +144,24 @@ public class ProfileController {
         KeyValue keyValue1 = new KeyValue(rect1.heightProperty(), rec1Height);
         parallelTransition.getChildren().add(new Timeline(new KeyFrame(Duration.seconds(durationTime), keyValue1)));
 
-        // Tạo animation cho rect2
         KeyValue keyValue2 = new KeyValue(rect2.heightProperty(), rec2Height);
         parallelTransition.getChildren().add(new Timeline(new KeyFrame(Duration.seconds(durationTime), keyValue2)));
 
-        // Tạo animation cho rect3
         KeyValue keyValue3 = new KeyValue(rect3.heightProperty(), rec3Height);
         parallelTransition.getChildren().add(new Timeline(new KeyFrame(Duration.seconds(durationTime), keyValue3)));
 
-        // Tạo animation cho rect4
         KeyValue keyValue4 = new KeyValue(rect4.heightProperty(), rec4Height);
         parallelTransition.getChildren().add(new Timeline(new KeyFrame(Duration.seconds(durationTime), keyValue4)));
-        // Bắt đầu animation
+
         parallelTransition.play();
     }
 
     public static void main(String[] args) {
         LocalDate currentDate = LocalDate.now();
 
-        // Lấy tháng hiện tại
         Month currentMonth = currentDate.getMonth();
 
         int currentYaer = currentDate.getYear();
-        // In ra tên tháng
         System.out.println("Tháng hiện tại là: " + currentMonth);
         System.out.println("Năm hiện tại là: " + currentYaer);
         System.out.println(currentDate.getDayOfMonth());
@@ -240,10 +228,9 @@ public class ProfileController {
 
 
     private String getDayOfWeek(LocalDate date) {
-        // Lấy thứ của ngày
+
         DayOfWeek dayOfWeek = date.getDayOfWeek();
 
-        // Định dạng thứ thành chuỗi và trả về
         return dayOfWeek.getDisplayName(TextStyle.FULL, Locale.getDefault());
     }
 }
