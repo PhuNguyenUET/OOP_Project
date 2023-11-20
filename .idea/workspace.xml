@@ -11,15 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="add3ca6e-ed48-4264-92a2-4a1c1c25b0dc" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ScreenManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/UserBackend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/UserBackend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/userDatabaseSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/userDatabaseSQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/wordOfList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/wordOfList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

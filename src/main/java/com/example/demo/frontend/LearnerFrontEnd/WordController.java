@@ -100,8 +100,8 @@ public class WordController {
     public void initialize() {
         System.out.println(ScreenManager.getInstance().getListName());
 
-        listBtnName.setText(listReposity.getListName(ScreenManager.getInstance().getListId()));
         listBtnName.setWrapText(true);
+        listBtnName.setText(listReposity.getListName(ScreenManager.getInstance().getListId()));
 
         backBtn.setOnAction(e -> {
 //            ScreenManager.getInstance().switchToList(ScreenManager.getInstance().getFolderId());

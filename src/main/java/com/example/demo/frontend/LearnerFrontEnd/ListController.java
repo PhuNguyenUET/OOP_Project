@@ -189,13 +189,13 @@ public class ListController {
             HBox changeContainer = new HBox();
             changeContainer.setVisible(false);
             changeContainer.setAlignment(Pos.CENTER);
-            changeContainer.setSpacing(20);
+            changeContainer.setSpacing(30);
             changeContainer.getStyleClass().add("addFolder");
             StackPane.setAlignment(changeContainer, Pos.CENTER_LEFT);
             changeContainer.setTranslateX(-120);
             changeContainer.setTranslateY(0);
             changeContainer.setMaxHeight(90);
-            changeContainer.setMaxWidth(300);
+            changeContainer.setMaxWidth(400);
             TextField changeTextField = new TextField();
             changeTextField.getStyleClass().add("inputForm");
             changeTextField.setPromptText("Folder Name");
