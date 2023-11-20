@@ -24,7 +24,7 @@ public class Main {
         GetPhraseList.getPhrseList(connection);
 
         CreateMultipleChoice.createQuestionList(connection, "easy");
-        CreateMultipleChoice.createQuestionList(connection, "easy");
-        CreateMultipleChoice.createQuestionList(connection, "easy");
+        CreateMultipleChoice.createQuestionList(connection, "medium");
+        CreateMultipleChoice.createQuestionList(connection, "hard");
     }
 }
