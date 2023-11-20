@@ -1,8 +1,10 @@
 package com.example.demo.frontend.MultipleChoice;
 
+import com.example.demo.frontend.Common.GameFunction;
+
 import java.util.List;
 
-public class Game {
+public class Game extends GameFunction {
     private final Difficulty difficulty;
     private final List<Question> questions;
     private int score = 0;
@@ -50,7 +52,7 @@ public class Game {
         return questions.size();
     }
 
-    public boolean isOver() {
+    public boolean isFinished() {
         return quesIndex == questions.size() - 1;
     }
 }
