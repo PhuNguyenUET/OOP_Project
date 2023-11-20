@@ -22,5 +22,9 @@ public class Main {
         GetWordList.getWordList(connection);
         GetExplanationList.getExplanationList(connection);
         GetPhraseList.getPhrseList(connection);
+
+        CreateMultipleChoice.createQuestionList(connection, "easy");
+        CreateMultipleChoice.createQuestionList(connection, "easy");
+        CreateMultipleChoice.createQuestionList(connection, "easy");
     }
 }
