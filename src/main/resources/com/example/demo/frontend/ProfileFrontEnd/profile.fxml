@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import java.net.URL?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.frontend.ProfileFrontEnd.ProfileController"
+           translateY="55">
+    <stylesheets>
+        <URL value="@../../css/profile.css"/>
+    </stylesheets>
+    <HBox>
+        <VBox styleClass="profileContainer" alignment="TOP_CENTER" spacing="20">
+            <VBox alignment="CENTER" spacing="10">
+                <HBox alignment="CENTER" maxWidth="180" minHeight="180" styleClass="avatarContainer">
+                    <ImageView>
+                        <image>
+                            <Image url="@../../assets/space.png"></Image>
+                        </image>
+                    </ImageView>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Label fx:id="userName" styleClass="nameContainer" text="NAME"></Label>
+                </HBox>
+            </VBox>
+            <VBox spacing="10" styleClass="calenderContainer">
+                <HBox alignment="CENTER_LEFT">
+                    <Label styleClass="calenderText" text="Calendar"></Label>
+                </HBox>
+                <HBox spacing="30" alignment="CENTER_LEFT">
+                    <VBox alignment="CENTER_LEFT">
+                        <Label styleClass="calenderContent" text="Year"></Label>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="valueContainer">
+                        <Label fx:id="currentYear" styleClass="valueText" text=""></Label>
+                    </VBox>
+                </HBox>
+                <HBox spacing="22" alignment="CENTER_LEFT">
+                    <VBox alignment="CENTER_LEFT">
+                        <Label styleClass="calenderContent" text="Month"></Label>
+                    </VBox>
+                    <VBox alignment="CENTER" styleClass="valueContainer">
+                        <Label fx:id="currentMonth" styleClass="valueText" text=""></Label>
+                    </VBox>
+                </HBox>
+                <VBox alignment="TOP_CENTER" styleClass="dateContainer" spacing="10" VBox.vgrow="ALWAYS">
+                    <HBox alignment="CENTER">
+                        <Label fx:id="currentMonthAndYear" styleClass="dateHeading" text=""></Label>
+                    </HBox>
+                    <HBox alignment="CENTER" spacing="15">
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Mon"></Label>
+                        </VBox>
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Tus"></Label>
+                        </VBox>
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Wed"></Label>
+                        </VBox>
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Thu"></Label>
+                        </VBox>
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Fri"></Label>
+                        </VBox>
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Sat"></Label>
+                        </VBox>
+                        <VBox styleClass="dayContainer" alignment="CENTER">
+                            <Label styleClass="dateText" text="Sun"></Label>
+                        </VBox>
+                    </HBox>
+                    <HBox alignment="TOP_CENTER">
+                        <GridPane fx:id="dayRender" alignment="TOP_LEFT" hgap="15" vgap="10">
+                            <!--                            <VBox styleClass="numberOfDateContainer, negative" GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="1"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="3" GridPane.rowIndex="0" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="2" GridPane.columnIndex="3" GridPane.rowIndex="0"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="4" GridPane.rowIndex="0" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="3"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="5" GridPane.rowIndex="0" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="4" GridPane.columnIndex="5" GridPane.rowIndex="0"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, negative" GridPane.columnIndex="6" GridPane.rowIndex="0" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="5"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="0" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="6"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="7"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="2" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="8"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, negative" GridPane.columnIndex="3" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="9"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="4" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="10"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="5" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="11"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, negative" GridPane.columnIndex="5" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="12"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, negative" GridPane.columnIndex="6" GridPane.rowIndex="1" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="13"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="14"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="15"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer, active" GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="16"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="17"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="18"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="19"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="6" GridPane.rowIndex="2" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="20"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="21"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="22"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="2" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="22"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="3" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="23"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="4" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="24"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="5" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="25"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="6" GridPane.rowIndex="3" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="26"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="0" GridPane.rowIndex="4" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="27"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="28"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="2" GridPane.rowIndex="4" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="29"/>-->
+                            <!--                            </VBox>-->
+                            <!--                            <VBox styleClass="numberOfDateContainer" GridPane.columnIndex="3" GridPane.rowIndex="4" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="30"/>-->
+                            <!--                            </VBox>-->
+                            <!--&lt;!&ndash;                            <VBox styleClass="numberOfDateContainer, negative" GridPane.columnIndex="0" GridPane.rowIndex="5" alignment="CENTER">-->
+                            <!--                                <Label styleClass="numberOfText" text="31"/>-->
+                            <!--                            </VBox>&ndash;&gt;-->
+                        </GridPane>
+                    </HBox>
+                </VBox>
+            </VBox>
+        </VBox>
+        <VBox alignment="TOP_CENTER" spacing="90" styleClass="testRight" HBox.hgrow="ALWAYS">
+            <VBox translateY="30" spacing="15" styleClass="wordLearntContainer" alignment="CENTER" prefWidth="200"
+                  prefHeight="200" maxHeight="200" maxWidth="250" minHeight="200" minWidth="200">
+                <HBox alignment="CENTER">
+                    <Label styleClass="wordLearntHeading" text="STREAK"></Label>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Label fx:id="streak" styleClass="numberOfWordLearnt" text="365"></Label>
+                </HBox>
+            </VBox>
+            <VBox styleClass="barChartContainer" prefHeight="600" prefWidth="800" maxHeight="300" maxWidth="600"
+                  alignment="BOTTOM_CENTER" spacing="60">
+                <VBox alignment="CENTER">
+                    <Label styleClass="heading" text="Overview"></Label>
+                    <Label styleClass="content" text="Time of use in the last 4 days"/>
+                </VBox>
+                <HBox prefHeight="240" maxHeight="240" minHeight="240" alignment="BOTTOM_CENTER" spacing="45"
+                      styleClass="test">
+                    <StackPane alignment="BOTTOM_CENTER">
+                        <VBox alignment="BOTTOM_CENTER" spacing="15">
+                            <Rectangle fx:id="rec1" width="40" height="0" styleClass="rec1" arcWidth="10.0"
+                                       arcHeight="10.0"/>
+                            <Label fx:id="text1" styleClass="category" text=" Ngày 1"/>
+                        </VBox>
+                    </StackPane>
+                    <StackPane alignment="BOTTOM_CENTER">
+                        <VBox alignment="BOTTOM_CENTER" spacing="15">
+                            <Rectangle fx:id="rec2" width="40" height="0" styleClass="rec2" arcWidth="10.0"
+                                       arcHeight="10.0"/>
+                            <Label fx:id="text2" styleClass="category" text=" Ngày 2"/>
+                        </VBox>
+                    </StackPane>
+                    <StackPane alignment="BOTTOM_CENTER">
+                        <VBox alignment="BOTTOM_CENTER" spacing="15">
+                            <Rectangle fx:id="rec3" width="40" height="0" styleClass="rec3" arcWidth="10.0"
+                                       arcHeight="10.0"/>
+                            <Label fx:id="text3" styleClass="category" text=" Ngày 3 "/>
+                        </VBox>
+                    </StackPane>
+                    <StackPane alignment="BOTTOM_CENTER">
+                        <VBox alignment="BOTTOM_CENTER" spacing="15">
+                            <Rectangle fx:id="rec4" width="40" height="0" styleClass="rec4" arcWidth="10.0"
+                                       arcHeight="10.0"/>
+                            <Label fx:id="text4" styleClass="category" text=" Ngày 4"/>
+                        </VBox>
+                    </StackPane>
+                </HBox>
+            </VBox>
+        </VBox>
+    </HBox>
+</StackPane>

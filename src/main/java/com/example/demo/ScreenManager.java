@@ -12,6 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class ScreenManager {
     private static ScreenManager instance;
@@ -33,6 +34,26 @@ public class ScreenManager {
     private int listId;
 
     private int userId;
+
+    private long loginTime = 0;
+
+    private LocalDate loginDate;
+
+    public LocalDate getLoginDate() {
+        return loginDate;
+    }
+
+    public void setLoginDate(LocalDate loginDate) {
+        this.loginDate = loginDate;
+    }
+
+    public long getLoginTime() {
+        return loginTime;
+    }
+
+    public void setLoginTime(long loginTime) {
+        this.loginTime = loginTime;
+    }
 
     public int getUserId() {
         return userId;
@@ -224,18 +245,19 @@ public class ScreenManager {
         }
     }
 
-    public void switchToFlipGame() {
+    public void switchToProfile() {
         try {
-            FXMLLoader learner = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectGame.fxml"));
+            FXMLLoader dict = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/ProfileFrontEnd/profile.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane navBarPane = navBar.load();
-            StackPane screen = learner.load();
+            StackPane dictScreen = dict.load();
             if (root.getChildren().size() >= 2) {
-                root.getChildren().set(0, screen);
+                root.getChildren().set(0, dictScreen);
             } else {
                 root.getChildren().clear();
-                root.getChildren().add(screen);
+                root.getChildren().add(dictScreen);
                 root.getChildren().add(navBarPane);
+                setNavbarController(navBar);
             }
             navbarController.resetPopupWindow();
         } catch (IOException e) {

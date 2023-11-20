@@ -92,6 +92,7 @@ public class ListController {
         });
 
         folderBtn.setText(folderReposity.getFolderName(ScreenManager.getInstance().getFolderId()));
+        folderBtn.setWrapText(true);
 
         listContainerRender();
 

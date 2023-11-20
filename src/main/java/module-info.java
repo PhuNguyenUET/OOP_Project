@@ -49,4 +49,7 @@ module com.example.demo{
 
     opens com.example.demo.frontend.SettingsFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.SettingsFrontEnd;
+
+    opens com.example.demo.frontend.ProfileFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.ProfileFrontEnd;
 }

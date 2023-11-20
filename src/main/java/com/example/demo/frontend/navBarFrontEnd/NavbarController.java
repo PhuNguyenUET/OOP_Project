@@ -2,6 +2,8 @@ package com.example.demo.frontend.navBarFrontEnd;
 
 import com.example.demo.ScreenManager;
 
+import com.example.demo.backend.ProfileBackend.ProfileConection;
+import com.example.demo.backend.ProfileBackend.ProfileRepo;
 import com.example.demo.frontend.SettingsFrontEnd.SettingsIntegration;
 import javafx.animation.TranslateTransition;
 import javafx.event.Event;
@@ -94,6 +96,8 @@ public class NavbarController implements Initializable {
     double TranslatePos = LeanerPos + 170;
 
     double GamePos = TranslatePos + 170;
+
+    ProfileRepo profileRepo = new ProfileRepo();
     public void initialize() {
 
         Dictionary.setOnAction(e -> {
@@ -121,6 +125,11 @@ public class NavbarController implements Initializable {
             handleActive(Game);
             ScreenManager.getInstance().switchToGame();
             movingRec.setVisible(true);
+        });
+
+        profileChange.setOnMouseClicked(e->{
+            ScreenManager.getInstance().switchToProfile();
+            movingRec.setVisible(false);
         });
     }
 
@@ -212,9 +221,11 @@ public class NavbarController implements Initializable {
 
     @FXML
     public void loggingOut() {
+        long timeUsage = System.currentTimeMillis() - ScreenManager.getInstance().getLoginTime();
+        double timeHour = timeUsage * 1.0 / (60*1000*1.0);
+        profileRepo.insertToSession(timeHour,ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
         ScreenManager.getInstance().switchToLogin();
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initialize();

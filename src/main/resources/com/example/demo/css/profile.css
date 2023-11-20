@@ -1,0 +1,192 @@
+/* styles.css */
+.axis-x {
+    -fx-tick-label-fill: #2ecc71;
+    -fx-tick-mark-fill: #2ecc71;
+}
+
+.axis-y {
+    -fx-tick-label-fill: #3498db;
+    -fx-tick-mark-fill: #3498db;
+    -fx-tick-unit: 5; /* Đơn vị giữa các vạch chính */
+    -fx-minor-tick-visible: false; /* Ẩn vạch phân cách đơn vị */
+}
+
+/* styles.css */
+.chart-bar {
+    -fx-bar-fill: #3498db; /* Màu của các cột */
+    -fx-background-insets: 0 1 0 1; /* Khoảng trắng giữa các cột */
+    -fx-bar-width: 10; /* Chiều rộng của các cột */
+}
+
+/*
+.test{
+    -fx-background-color: red;
+}
+*/
+
+.rec1{
+    -fx-fill: rgba(234, 51, 75, 0.8);
+}
+
+.rec2{
+    -fx-fill: rgba(174, 89, 220, 0.8);
+}
+
+.rec3{
+    -fx-fill: rgba(87, 190, 181, 0.8);
+}
+
+.rec4{
+    -fx-fill: rgba(48, 112, 245, 0.8);
+    -fx-border-radius: 5px;
+}
+
+.heading{
+    -fx-font-size: 18;
+    -fx-font-weight: bolder;
+    -fx-text-fill: #000000;
+}
+
+.content{
+    -fx-font-size: 12;
+    -fx-text-fill: #ACACAC;
+}
+
+.barChartContainer{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-padding: 12 0 16 0;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-border-width: 5px;
+}
+
+.category{
+    -fx-text-fill: #4F4F4F;
+    -fx-font-weight: bolder;
+    -fx-font-size: 14;
+}
+
+.wordLearntContainer{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+    -fx-padding: 16 16 16 16;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-border-width: 5px;
+}
+
+.wordLearntHeading{
+    -fx-font-size: 20;
+    -fx-font-weight: bolder;
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #3177A4;
+}
+
+.numberOfWordLearnt{
+    -fx-font-size: 72;
+    -fx-font-weight: bolder;
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #1FA7FE;
+}
+
+.profileContainer{
+    -fx-background-color: #DEF2FF;
+    -fx-padding: 16 32 16 32;
+    -fx-min-width: 400;
+}
+
+.avatarContainer{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100%;
+}
+
+.nameContainer{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 24;
+    -fx-font-weight: bolder;
+    -fx-text-fill: #0A456B;
+}
+
+.calenderText{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 22;
+    -fx-font-weight: 700;
+    -fx-text-fill: #474444;
+}
+
+.calenderContent{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-text-fill: #474444;
+    -fx-padding: 6 0 6 0;
+}
+
+.calenderContainer{
+
+}
+
+.valueContainer{
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 6 8 6 8;
+    -fx-background-radius: 20;
+}
+
+.valueText{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0F5F92;
+}
+
+.dateContainer{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-padding: 8 0 8 0;
+}
+
+.dayContainer{
+    -fx-background-color: transparent;
+    -fx-min-width:25;
+    -fx-min-height:25;
+}
+
+.numberOfDateContainer{
+    -fx-background-color: #D5E0E7;
+    -fx-min-width:25;
+    -fx-min-height:25;
+    -fx-background-radius:100%;
+}
+
+.numberOfText{
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: bolder;
+
+}
+
+.dateHeading{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 20;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0069AC;
+}
+
+.dateText{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 12;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0F5F92;
+}
+
+.active{
+    -fx-background-color: #B7EFAC !important;
+}
+
+.negative{
+    -fx-background-color: #F8BABA !important;
+}
+
+.testRight{
+    -fx-background-color: #FFFFFF;
+}

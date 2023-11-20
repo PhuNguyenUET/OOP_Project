@@ -101,6 +101,7 @@ public class WordController {
         System.out.println(ScreenManager.getInstance().getListName());
 
         listBtnName.setText(listReposity.getListName(ScreenManager.getInstance().getListId()));
+        listBtnName.setWrapText(true);
 
         backBtn.setOnAction(e -> {
 //            ScreenManager.getInstance().switchToList(ScreenManager.getInstance().getFolderId());
