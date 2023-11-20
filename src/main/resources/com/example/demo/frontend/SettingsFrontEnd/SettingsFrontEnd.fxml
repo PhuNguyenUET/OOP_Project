@@ -107,7 +107,7 @@
                                     <Insets top="30.0" />
                                  </VBox.margin>
                               </Label>
-                              <PasswordField fx:id="newNamePassword" maxWidth="-Infinity" prefWidth="1069.0">
+                              <PasswordField fx:id="newNamePassword" maxWidth="-Infinity" onKeyPressed="#saveNameKeyEvent" prefWidth="1069.0">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
@@ -164,7 +164,7 @@
                                     <Insets top="30.0" />
                                  </VBox.margin>
                               </Label>
-                              <PasswordField fx:id="newUsernamePassword" maxWidth="-Infinity" prefWidth="1069.0">
+                              <PasswordField fx:id="newUsernamePassword" maxWidth="-Infinity" onKeyPressed="#saveUsernameKeyEvent" prefWidth="1069.0">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>
@@ -228,7 +228,7 @@
                                     <Insets top="30.0" />
                                  </VBox.margin>
                               </Label>
-                              <PasswordField fx:id="confirmNewPassword" maxWidth="-Infinity" prefWidth="1069.0">
+                              <PasswordField fx:id="confirmNewPassword" maxWidth="-Infinity" onKeyPressed="#savePasswordKeyEvent" prefWidth="1069.0">
                                  <VBox.margin>
                                     <Insets top="10.0" />
                                  </VBox.margin>

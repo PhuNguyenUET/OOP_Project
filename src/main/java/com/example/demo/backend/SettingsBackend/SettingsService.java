@@ -27,6 +27,9 @@ public class SettingsService {
         if (!functionRepository.isPasswordCorrect(connection, userID, password)) {
             return "Wrong password.";
         }
+        if (newName.length() > 10) {
+            return "Name cannot be longer than 10 character";
+        }
         String oldName = functionRepository.getName(connection, userID);
         if(oldName.equals(newName)) {
             return "No changes detected.";

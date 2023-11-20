@@ -13,9 +13,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.util.Duration;
-
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -108,6 +110,7 @@ public class SettingsTabController implements Initializable {
             img.setFitWidth(64);
             int finalI = i;
             img.setOnMouseClicked(event -> onProfilePictureClicked(finalI));
+            img.getStyleClass().add("avatarChoice");
             profilePictures.add(img);
         }
     }
@@ -132,8 +135,30 @@ public class SettingsTabController implements Initializable {
             nameDescription.setText("You are currently refered to as: "
                     + SettingsIntegration.Instance().getName(ScreenManager.getInstance().getUserId()));
             displayMessagePane(true, "Success", result);
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow();
         } else {
             displayMessagePane(false, "Failed", result);
+        }
+    }
+
+    @FXML
+    public void saveNameKeyEvent(KeyEvent event) {
+        if(event.getCode() == KeyCode.ENTER) {
+            nameSaveButton.fire();
+        }
+    }
+
+    @FXML
+    public void saveUsernameKeyEvent(KeyEvent event) {
+        if(event.getCode() == KeyCode.ENTER) {
+            usernameSaveButton.fire();
+        }
+    }
+
+    @FXML
+    public void savePasswordKeyEvent(KeyEvent event) {
+        if(event.getCode() == KeyCode.ENTER) {
+            passwordSaveButton.fire();
         }
     }
 
