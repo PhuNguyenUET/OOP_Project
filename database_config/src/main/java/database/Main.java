@@ -1,30 +1,26 @@
 package database;
 
-import database.DictionaryManagement;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.List;
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Connection connection = Connect.connect();
+        Connection dicConnection = ConnectDictionary.connect();
+        Connection mulConnection = ConnectMultipleChoice.connect();
+        Connection imgConnection = ConnectImageList.connect();
         
-        GetWordList.getWordList(connection);
-        GetExplanationList.getExplanationList(connection);
-        GetPhraseList.getPhrseList(connection);
+        GetWordList.getWordList(dicConnection);
+        GetExplanationList.getExplanationList(dicConnection);
+        GetPhraseList.getPhraseList(dicConnection);
 
-        CreateMultipleChoice.createQuestionList(connection, "easy");
-        CreateMultipleChoice.createQuestionList(connection, "medium");
-        CreateMultipleChoice.createQuestionList(connection, "hard");
+        CreateMultipleChoice.createQuestionList(mulConnection, "easy");
+        CreateMultipleChoice.createQuestionList(mulConnection, "medium");
+        CreateMultipleChoice.createQuestionList(mulConnection, "hard");
+
+        CreateImageList.createImageList(imgConnection, "vehicle", 0);
+        CreateImageList.createImageList(imgConnection, "food", 20);
+        CreateImageList.createImageList(imgConnection, "animal", 40);
+        CreateImageList.createImageList(imgConnection, "furniture", 60);
+        CreateImageList.createImageList(imgConnection, "electronic device", 80);
+        CreateImageList.createImageList(imgConnection, "sport", 100);
     }
 }

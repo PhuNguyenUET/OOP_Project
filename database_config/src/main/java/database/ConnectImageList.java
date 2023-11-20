@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connect {
+public class ConnectImageList {
     private static Connection connection;
-    private static final String DATABASE_URL = "src\\main\\resources\\dictionary.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
+    private static final String DATABASE_URL = "src\\main\\resources\\FlipGame.db"; // Thay thế bằng đường dẫn tới tệp cơ sở dữ liệu của bạn.
     public static Connection connect() {
         if (connection == null) {
             try {
