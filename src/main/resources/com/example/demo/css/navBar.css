@@ -55,3 +55,13 @@
      -fx-text-alignment: center;
      -fx-alignment: center;
 }
+
+.functionChoice:hover {
+    -fx-background-color: #e6e6e6;
+    -fx-cursor: hand;
+}
+
+.profileBtn:hover {
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}
