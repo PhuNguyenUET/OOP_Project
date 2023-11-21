@@ -141,20 +141,8 @@ public class FolderReposity {
     {
         String res = "";
         try {
-            String query = "SELECT f.name " +
-                    "FROM folder f " +
-                    "JOIN HistoryFolder h ON h.folderId = f.id " +
-                    "WHERE h.historyId = ( " +
-                    "    SELECT MAX(historyId) " +
-                    "    FROM HistoryFolder " +
-                    "    WHERE folderId IN ( " +
-                    "        SELECT id " +
-                    "        FROM folder " +
-                    "        WHERE userId = ? " +
-                    "    ) " +
-                    ")";
+            String query = "SELECT f.name FROM folder f JOIN HistoryFolder h ON h.folderId = f.id  WHERE h.historyId = ( SELECT MAX(historyId) FROM HistoryFolder WHERE folderId IN ( SELECT id FROM folder WHERE userId = " + userId + " ))";
             PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
-            preparedStatement.setInt(1,userId);
             ResultSet resultSet = preparedStatement.executeQuery(query);
             while (resultSet.next()) {
                 res = resultSet.getString("name");
