@@ -13,8 +13,7 @@ public class LearnerScreenChanger {
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
             StackPane screen = folder.load();
             StackPane navBarPane = navBar.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(screen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, screen);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,8 +26,7 @@ public class LearnerScreenChanger {
             ScreenManager.getInstance().setFolderId(folderId);
             StackPane screen = list.load();
             StackPane navBarPane = navBar.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(screen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, screen);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,8 +39,7 @@ public class LearnerScreenChanger {
             ScreenManager.getInstance().setListId(listId);
             StackPane screen = listWord.load();
             StackPane navBarPane = navBar.load();
-            ScreenManager.getInstance().getRoot().getChildren().remove(1);
-            ScreenManager.getInstance().getRoot().getChildren().add(screen);
+            ScreenManager.getInstance().getRoot().getChildren().set(0, screen);
         } catch (IOException e) {
             e.printStackTrace();
         }

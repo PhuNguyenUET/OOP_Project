@@ -4,6 +4,7 @@ import com.example.demo.ScreenManager;
 import com.example.demo.backend.*;
 
 import com.example.demo.backend.LearnerBackend.UserBackend;
+import com.example.demo.backend.ProfileBackend.ProfileRepo;
 import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
@@ -17,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
@@ -64,7 +66,12 @@ public class LoginControl {
     @FXML
     private TextField password;
 
+    @FXML
+    private StackPane login;
+
     UserBackend userBackend = new UserBackend();
+
+    ProfileRepo profileRepo = new ProfileRepo();
 
     public void initialize() {
         // Tạo TranslateTransition và đặt thời gian di chuyển
@@ -108,7 +115,7 @@ public class LoginControl {
             toastMesTransition.play();
         });
 
-        ScreenManager.getInstance().getScene().addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+        password.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 if (ScreenManager.getInstance().getRoot().getChildren().size() == 1) {
                     submitButton.fire();
@@ -121,11 +128,21 @@ public class LoginControl {
             String passValue = password.getText();
             Connection connection = userDatabaseConnect.getInstance().connect();
             if (submitButton.getText().equals("Login")) {
-                if (userDatabaseSQL.check(connection, userValue, passValue) && !userValue.equals("") && !passValue.equals("")) {
+                if (userBackend.check(connection, userValue, passValue) && !userValue.equals("") && !passValue.equals("")) {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
                     ScreenManager.getInstance().setUserId(userBackend.getIdByName(userValue));
+                    ScreenManager.getInstance().setLoginTime(System.currentTimeMillis());
+                    ScreenManager.getInstance().setLoginDate(java.time.LocalDate.now());
                     System.out.println("userId hiện tại là: " + ScreenManager.getInstance().getUserId());
+                    if (!profileRepo.checkDateIsExist(java.time.LocalDate.now(), ScreenManager.getInstance().getUserId())) {
+                        if (userBackend.checkYesterdayLogin(connection, ScreenManager.getInstance().getUserId())) {
+                            int lastStreak = userBackend.getStreak(connection, ScreenManager.getInstance().getUserId());
+                            userBackend.updateStreak(connection, lastStreak + 1, ScreenManager.getInstance().getUserId());
+                        } else {
+                            userBackend.updateStreak(connection, 1, ScreenManager.getInstance().getUserId());
+                        }
+                    }
                     textMessage.setText("Successful Login");
                     textMessageDes.setText("Password and Username are correct.");
                     toastIcon.setImage(image);
@@ -150,7 +167,7 @@ public class LoginControl {
                     pauseTransition.play();
                 }
             } else {
-                if (userDatabaseSQL.isUsernameExists(connection, userValue)) {
+                if (userBackend.isUsernameExists(connection, userValue)) {
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imageUrl.toString());
                     textMessage.setText("Error Login");
@@ -160,9 +177,10 @@ public class LoginControl {
                     toastMesTransition.play();
                     pauseTransition.play();
                 } else if (!userValue.equals("") && !passValue.equals("")) {
-                    userDatabaseSQL.insertIntoDict(connection, userValue, passValue, 1);
+                    userBackend.insertIntoInformation(connection, userValue, passValue, 1);
                     URL imageUrl = getClass().getResource("/com/example/demo/assets/check.png");
                     Image image = new Image(imageUrl.toString());
+                    userBackend.insertIntoStreak(connection, 0, userBackend.getIdByName(userValue));
                     textMessage.setText("Successful Register");
                     textMessageDes.setText("You can start your journey in my App!");
                     toastIcon.setImage(image);

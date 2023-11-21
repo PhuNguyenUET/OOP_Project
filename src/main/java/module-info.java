@@ -10,6 +10,7 @@ module com.example.demo{
     requires com.fasterxml.jackson.core;
     requires java.datatransfer;
     requires java.desktop;
+    requires javafx.media;
 
 
     exports com.example.demo.frontend.DictionaryFrontEnd;
@@ -46,4 +47,13 @@ module com.example.demo{
 
     opens com.example.demo.frontend.FlipGameFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.FlipGameFrontEnd;
+
+    opens com.example.demo.frontend.SettingsFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.SettingsFrontEnd;
+
+    opens com.example.demo.frontend.ProfileFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.ProfileFrontEnd;
+
+    opens com.example.demo.frontend.CanvasFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.CanvasFrontEnd;
 }

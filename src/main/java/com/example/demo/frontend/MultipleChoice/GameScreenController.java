@@ -110,7 +110,7 @@ public class GameScreenController implements Initializable {
         for (int i = 0; i < buttonList.size(); i++) {
             if (i + 1 == correct) {
                 buttonList.get(i).getStyleClass().add("correctAnswerDisplay");
-                buttonList.get(i).setOpacity(0.5);
+                buttonList.get(i).setOpacity(1);
             }
         }
     }
@@ -124,7 +124,7 @@ public class GameScreenController implements Initializable {
             button.getStyleClass().add("wrongAnswer");
             showAnswer();
         }
-        if(game.isOver()) {
+        if(game.isFinished()) {
             next.setText("Show result");
         }
         next.setVisible(true);
@@ -137,7 +137,7 @@ public class GameScreenController implements Initializable {
             b.setOpacity(0.5);
         }
         showAnswer();
-        if(game.isOver()) {
+        if(game.isFinished()) {
             next.setText("Show result");
         }
         next.setVisible(true);
@@ -201,7 +201,7 @@ public class GameScreenController implements Initializable {
 
     @FXML
     public void nextQuestion(Event event) {
-        if(game.isOver()) {
+        if(game.isFinished()) {
             try {
                 GameScreenChanger.Instance().switchToResultScreen(event, game.getScore());
             } catch (IOException e) {

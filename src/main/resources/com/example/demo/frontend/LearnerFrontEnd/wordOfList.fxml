@@ -30,11 +30,11 @@
     <stylesheets>
         <URL value="@../../css/wordOfList.css"/>
     </stylesheets>
-    <HBox alignment="CENTER" translateY="-30" translateX="750" managed="false">
+    <HBox alignment="CENTER" translateY="-20" translateX="750" managed="false">
         <Button fx:id="listBtnName" text="Folder 1" styleClass="btn"/>
     </HBox>
     <VBox translateY="8">
-        <FlowPane fx:id="wordListContainer" vgap="90" hgap="30" styleClass="container" VBox.vgrow="ALWAYS">
+        <FlowPane fx:id="wordListContainer" vgap="60" hgap="30" styleClass="container" VBox.vgrow="ALWAYS" translateY="15">
             <!--            <VBox alignment="CENTER" prefWidth="240" prefHeight="240" styleClass="wordListContainer">-->
             <!--                <HBox alignment="CENTER" VBox.vgrow="ALWAYS">-->
             <!--                    <VBox spacing="15" styleClass="wordContainer" HBox.hgrow="ALWAYS" alignment="CENTER">-->

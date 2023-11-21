@@ -34,7 +34,7 @@
     -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
     -fx-border-radius: 20;
     -fx-border-width: 3;
-    -fx-min-width: 160;
+    -fx-min-width: 300;
     -fx-font-size:20;
     -fx-font-weight: bold;
     -fx-text-fill: #000000;
@@ -112,6 +112,11 @@
 }
 
 .deleteImg:hover {
+    -fx-opacity:0.8;
+    -fx-cursor:hand;
+}
+
+.edit:hover {
     -fx-opacity:0.8;
     -fx-cursor:hand;
 }

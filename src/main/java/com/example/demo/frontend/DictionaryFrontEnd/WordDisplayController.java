@@ -194,7 +194,6 @@ public class WordDisplayController implements Initializable {
                 if (scrollBar.getOrientation() == Orientation.VERTICAL) {
                     scrollBar.setVisible(false);
                 }
-
             }
         }
     }
@@ -213,6 +212,7 @@ public class WordDisplayController implements Initializable {
             folders.add(temp);
             selectionList.getChildren().add(temp);
         }
+        hideScrollBarAdd();
     }
 
     private void displayAllLists(String folder) {
@@ -230,6 +230,7 @@ public class WordDisplayController implements Initializable {
             folders.add(temp);
             selectionList.getChildren().add(temp);
         }
+        hideScrollBarAdd();
     }
 
     @Override

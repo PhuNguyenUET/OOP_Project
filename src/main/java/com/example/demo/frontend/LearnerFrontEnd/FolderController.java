@@ -8,9 +8,7 @@ import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -22,6 +20,7 @@ import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 
 public class FolderController {
     @FXML
@@ -139,6 +138,7 @@ public class FolderController {
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
             addFolder.setVisible(false);
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow();
             if (visibleChangeContainer != null) {
                 visibleChangeContainer.setVisible(false);
                 visibleChangeContainer = null;
@@ -221,9 +221,20 @@ public class FolderController {
 
             deleteImg.setOnMouseClicked(e -> {
                 e.consume();
-                folderReposity.removeFolder(item.getId());
-                listReposity.removeAllListInFolder(item.getId());
-                folderContainerRender();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation Dialog");
+                alert.setContentText("Do you want to proceed?");
+
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    folderReposity.removeFolder(item.getId());
+                    listReposity.removeAllListInFolder(item.getId());
+                    folderContainerRender();
+                }
+//                folderReposity.removeFolder(item.getId());
+//                listReposity.removeAllListInFolder(item.getId());
+//                folderContainerRender();
             });
 
             editImg.setOnMouseClicked(e -> {

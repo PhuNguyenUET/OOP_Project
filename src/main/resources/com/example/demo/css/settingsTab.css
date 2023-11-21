@@ -1,0 +1,91 @@
+.common {
+    -fx-background-color: #FFFFFF;
+}
+
+.external {
+    -fx-background-color: #DEF2FF;
+}
+
+.insideBox {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+}
+
+.mes {
+    -fx-padding:16;
+    -fx-background-color: rgba(32,49,92,0.9);
+    -fx-background-radius:8;
+}
+
+.textMessage {
+    -fx-font-family: Roboto;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:18;
+    -fx-font-weight:bold;
+}
+
+.textMessageDes{
+    -fx-font-family: Roboto;
+    -fx-text-fill:#FFFFFF;
+    -fx-font-size:12;
+}
+
+.button {
+    -fx-background-color: #A3D9FC;
+    -fx-background-radius: 50;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-font-weight: lighter;
+    -fx-padding: 5 13 5 13;
+}
+
+.explanationTag {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 15;
+    -fx-font-weight: bolder;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.descriptionTag {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 13;
+    -fx-font-style: italic;
+}
+
+.componentBox {
+    -fx-border-width: 3px;
+    -fx-background-radius: 20;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+}
+
+.enterTag {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 13;
+    -fx-font-style: italic;
+}
+
+.text-field {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-background-radius: 30px;
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.text-field:focused {
+    -fx-background-color: #3333cc, #e6e6e6, #e6e6e6;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.button:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}
+
+.avatarChoice: hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}

@@ -1,12 +1,13 @@
 package com.example.demo.frontend.FlipGameFrontEnd;
 
 import com.example.demo.backend.FlipGameBackend.FlipGameService;
+import com.example.demo.frontend.Common.GameFunction;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Game {
+public class Game extends GameFunction {
     private int sizeOfGame = 40;
     private Player Player1;
     private Player Player2;
@@ -58,7 +59,7 @@ public class Game {
         Player2 = player2;
     }
 
-    boolean isFinished()
+    public boolean isFinished()
     {
         if(sizeOfGame <= 0)
         {

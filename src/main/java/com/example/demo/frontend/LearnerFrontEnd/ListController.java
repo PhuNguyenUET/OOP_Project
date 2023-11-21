@@ -9,9 +9,7 @@ import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -23,6 +21,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.security.Key;
 import java.util.List;
+import java.util.Optional;
 
 public class ListController {
     @FXML
@@ -92,6 +91,7 @@ public class ListController {
         });
 
         folderBtn.setText(folderReposity.getFolderName(ScreenManager.getInstance().getFolderId()));
+        folderBtn.setWrapText(true);
 
         listContainerRender();
 
@@ -102,6 +102,7 @@ public class ListController {
         });
 
         ScreenManager.getInstance().getScene().setOnMouseClicked(e -> {
+            ScreenManager.getInstance().getNavbarController().resetPopupWindow();
             addFolder.setVisible(false);
             if (visibleChangeContainer != null) {
                 visibleChangeContainer.setVisible(false);
@@ -187,13 +188,13 @@ public class ListController {
             HBox changeContainer = new HBox();
             changeContainer.setVisible(false);
             changeContainer.setAlignment(Pos.CENTER);
-            changeContainer.setSpacing(20);
+            changeContainer.setSpacing(30);
             changeContainer.getStyleClass().add("addFolder");
             StackPane.setAlignment(changeContainer, Pos.CENTER_LEFT);
             changeContainer.setTranslateX(-120);
             changeContainer.setTranslateY(0);
             changeContainer.setMaxHeight(90);
-            changeContainer.setMaxWidth(300);
+            changeContainer.setMaxWidth(400);
             TextField changeTextField = new TextField();
             changeTextField.getStyleClass().add("inputForm");
             changeTextField.setPromptText("Folder Name");
@@ -213,9 +214,20 @@ public class ListController {
             });
 
             deleteImg.setOnMouseClicked(e->{
-                listReposity.removeListWithId(id);
-                wordReposity.removeAllListInFolder(id);
-                listContainerRender();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation Dialog");
+                alert.setContentText("Do you want to proceed?");
+
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    listReposity.removeListWithId(id);
+                    wordReposity.removeAllListInFolder(id);
+                    listContainerRender();
+                }
+//                listReposity.removeListWithId(id);
+//                wordReposity.removeAllListInFolder(id);
+//                listContainerRender();
             });
 
             editImg.setOnMouseClicked(e -> {

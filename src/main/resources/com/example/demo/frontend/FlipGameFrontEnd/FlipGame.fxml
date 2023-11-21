@@ -12,7 +12,8 @@
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:controller="com.example.demo.frontend.FlipGameFrontEnd.FlipGameController"
-           translateY="25"
+           translateY="45"
+           styleClass="testStackPane"
 >
     <stylesheets>
         <URL value="@../../css/FlipGame.css"/>
@@ -442,7 +443,7 @@
 <!--        </HBox>-->
     </VBox>
 
-    <VBox fx:id="resultContainer" styleClass="resultContainer" spacing="40" alignment="CENTER" StackPane.alignment="TOP_CENTER" prefWidth="600" maxWidth="600" minWidth="600" prefHeight="240" minHeight="240" maxHeight="240" translateY="-300">
+    <VBox fx:id="resultContainer" styleClass="resultContainer" spacing="40" alignment="CENTER" StackPane.alignment="TOP_CENTER" prefWidth="600" maxWidth="600" minWidth="600" prefHeight="240" minHeight="240" maxHeight="240" translateY="1000">
         <HBox alignment="CENTER">
             <Label fx:id="textResult" styleClass="textResult" text="Chúc mừng bạn là người thắng cuộc"></Label>
         </HBox>

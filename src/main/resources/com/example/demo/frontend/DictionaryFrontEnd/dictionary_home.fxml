@@ -31,6 +31,9 @@
                                  <HBox.margin>
                                     <Insets left="160.0" />
                                  </HBox.margin>
+                                 <image>
+                                    <Image url="@../../assets/logo3.png" />
+                                 </image>
                               </ImageView>
                               <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="844.0" promptText="Search your word here" styleClass="searchBar">
                                  <HBox.margin>
@@ -75,16 +78,19 @@
                                                    <VBox.margin>
                                                       <Insets />
                                                    </VBox.margin>
+                                                   <image>
+                                                      <Image url="@../../assets/book-page-flip.gif" />
+                                                   </image>
                                                 </ImageView>
                                                 <Button fx:id="translateButton" mnemonicParsing="false" onAction="#changeScreenToTranslate" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Translate" />
-                                                <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Settings" />
+                                                <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#changeScreenToSettings" prefHeight="43.0" prefWidth="161.0" styleClass="functionButton" text="Settings" />
                                              </children>
                                           </VBox>
                                        </children>
                                     </HBox>
-                                    <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="287.0" prefWidth="218.0" styleClass="functionBox">
+                                    <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="306.0" prefWidth="218.0" styleClass="functionBox">
                                        <children>
-                                          <ImageView fitHeight="130.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" styleClass="buyMeACoffee">
+                                          <ImageView fitHeight="162.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true" styleClass="buyMeACoffee">
                                              <HBox.margin>
                                                 <Insets top="30.0" />
                                              </HBox.margin>
@@ -92,12 +98,12 @@
                                                 <Insets top="30.0" />
                                              </VBox.margin>
                                              <image>
-                                                <Image url="@../../assets/Buymeacoffee.png" />
+                                                <Image url="@../../assets/cat-christmas.gif" />
                                              </image>
                                           </ImageView>
-                                          <Label alignment="CENTER" prefHeight="80.0" prefWidth="187.0" styleClass="coffeeTag" text="Buy me a coffee" textAlignment="CENTER" wrapText="true">
+                                          <Label alignment="CENTER" prefHeight="80.0" prefWidth="187.0" styleClass="coffeeTag" text="Merry Christmas" textAlignment="CENTER" wrapText="true">
                                              <VBox.margin>
-                                                <Insets top="30.0" />
+                                                <Insets top="15.0" />
                                              </VBox.margin>
                                           </Label>
                                        </children>
@@ -122,5 +128,10 @@
             <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="93.0" prefWidth="844.0" styleClass="searchResultBox" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="63.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" rotate="31.0" translateX="-533.0" translateY="-340.0">
+         <image>
+            <Image url="@../../assets/christmas-hat.png" />
+         </image>
+      </ImageView>
    </children>
 </StackPane>

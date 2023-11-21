@@ -64,3 +64,7 @@
 .timerBar > .bar {
     -fx-background-color: linear-gradient(to right, #A3D9FC, #E8D8F4);
 }
+
+.button:hover{
+    -fx-cursor: hand;
+}

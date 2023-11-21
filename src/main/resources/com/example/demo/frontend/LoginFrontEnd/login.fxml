@@ -19,91 +19,93 @@
 <?import javafx.beans.binding.DoubleBinding?>
 <?import javafx.scene.layout.Pane?>
 <StackPane xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.demo.frontend.LoginFrontEnd.LoginControl"
-      styleClass="container"
+           fx:controller="com.example.demo.frontend.LoginFrontEnd.LoginControl"
+           styleClass="container"
+           fx:id="login"
 >
     <stylesheets>
-        <URL value="@../../css/login.css" />
+        <URL value="@../../css/login.css"/>
     </stylesheets>
-<!--
-    <padding>
-        <Insets bottom="20.0" left="40.0" right="40.0" top="40.0"/>
-    </padding>
--->
+    <!--
+        <padding>
+            <Insets bottom="20.0" left="40.0" right="40.0" top="40.0"/>
+        </padding>
+    -->
     <HBox>
-    <VBox spacing="10" styleClass="login" HBox.hgrow="ALWAYS" alignment="CENTER">
-<!--        <padding>-->
-<!--            <Insets top="10" right="20" bottom="30" left="40" />-->
-<!--        </padding>-->
-        <VBox styleClass="login" spacing="18">
-            <VBox alignment="CENTER" spacing="10">
-                <Label text="WELCOME" styleClass="welcome">
-                </Label>
-                <Label text="We are glad to see you back with us" styleClass="p"/>
+        <VBox spacing="10" styleClass="login" HBox.hgrow="ALWAYS" alignment="CENTER">
+            <!--        <padding>-->
+            <!--            <Insets top="10" right="20" bottom="30" left="40" />-->
+            <!--        </padding>-->
+            <VBox styleClass="login" spacing="18">
+                <VBox alignment="CENTER" spacing="10">
+                    <Label text="WELCOME" styleClass="welcome">
+                    </Label>
+                    <Label text="We are glad to see you back with us" styleClass="p"/>
+                </VBox>
+                <VBox spacing="5" alignment="CENTER">
+                    <HBox spacing="10" alignment="CENTER">
+                        <Button fx:id="signUpButton" text="Register" styleClass="loginBtn"/>
+                        <Button fx:id="loginButton" text="Login" styleClass="loginBtn, active"/>
+                    </HBox>
+                    <Rectangle fx:id="movingRectangle" width="120" height="3" fill="#D58CDB" translateX="60"/>
+                </VBox>
+                <HBox spacing="10">
+                    <ImageView>
+                        <image>
+                            <Image url="@../../assets/user_20.png"/>
+                        </image>
+                    </ImageView>
+                    <Label text="User name:"/>
+                </HBox>
+                <TextField fx:id="userName" promptText="User name"/>
+                <HBox spacing="10">
+                    <ImageView>
+                        <image>
+                            <Image url="@../../assets/padlock.png"/>
+                        </image>
+                    </ImageView>
+                    <Label text="Password:"/>
+                </HBox>
+                <PasswordField fx:id="password" promptText="Enter Password"/>
+                <HBox alignment="BASELINE_CENTER">
+                    <Button fx:id="submitButton" text="Login" styleClass="submit" HBox.hgrow="ALWAYS"/>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Label text="If you don't have account. Please Register">
+                        <padding>
+                            <Insets top="20" right="20" bottom="10" left="20"/>
+                        </padding>
+                    </Label>
+                </HBox>
             </VBox>
-            <VBox spacing="5" alignment="CENTER">
-            <HBox spacing="10" alignment="CENTER">
-                <Button fx:id="signUpButton" text="Register" styleClass="loginBtn"/>
-                <Button fx:id="loginButton" text="Login" styleClass="loginBtn, active"/>
-            </HBox>
-                <Rectangle fx:id="movingRectangle" width="120" height="3" fill="#D58CDB" translateX="60"/>
-            </VBox>
-            <HBox spacing="10">
-                <ImageView>
-                    <image>
-                        <Image url="@../../assets/user_20.png"/>
-                    </image>
-                </ImageView>
-                <Label text="User name:" />
-            </HBox>
-            <TextField fx:id="userName" promptText="User name"/>
-            <HBox spacing="10">
-                <ImageView>
-                    <image>
-                        <Image url="@../../assets/padlock.png" />
-                    </image>
-                </ImageView>
-                <Label text="Password:" />
-            </HBox>
-            <PasswordField fx:id="password" promptText="Enter Password"/>
-            <HBox alignment="BASELINE_CENTER">
-                <Button fx:id="submitButton" text="Login" styleClass="submit" HBox.hgrow="ALWAYS"/>
-            </HBox>
-            <HBox alignment="CENTER">
-                <Label text="If you don't have account. Please Register">
-                    <padding>
-                        <Insets top="20" right="20" bottom="10" left="20" />
-                    </padding>
-                </Label>
-            </HBox>
         </VBox>
-    </VBox>
 
-<!--    <HBox spacing="10">-->
-<!--        <Button text="Lưu" />-->
-<!--        <Button text="Hủy" />-->
-<!--    </HBox>-->
+        <!--    <HBox spacing="10">-->
+        <!--        <Button text="Lưu" />-->
+        <!--        <Button text="Hủy" />-->
+        <!--    </HBox>-->
 
-<!--    <StackPane>-->
-<!--        <Button text="OK" />-->
-<!--        <Label text="Nhấn nút OK" />-->
-<!--    </StackPane>-->
-    <VBox HBox.hgrow="ALWAYS" alignment="CENTER" styleClass="desWrapper">
+        <!--    <StackPane>-->
+        <!--        <Button text="OK" />-->
+        <!--        <Label text="Nhấn nút OK" />-->
+        <!--    </StackPane>-->
+        <VBox HBox.hgrow="ALWAYS" alignment="CENTER" styleClass="desWrapper">
             <ImageView preserveRatio="true">
                 <image>
-                    <Image url="@../../assets/Rectangle 4.png" />
+                    <Image url="@../../assets/Rectangle 4.png"/>
                 </image>
             </ImageView>
-    </VBox>
+        </VBox>
     </HBox>
 
-    <HBox fx:id="toastMes" StackPane.alignment="TOP_RIGHT" styleClass="mes" maxWidth="360" maxHeight="60" alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="16">
+    <HBox fx:id="toastMes" StackPane.alignment="TOP_RIGHT" styleClass="mes" maxWidth="360" maxHeight="60"
+          alignment="CENTER_LEFT" spacing="20" translateX="360" translateY="16">
         <ImageView fx:id="toastIcon">
             <image>
                 <Image fx:id="toastImg" url="@../../assets/cross.png"/>
             </image>
         </ImageView>
-        <VBox >
+        <VBox>
             <Label fx:id="textMessage" text="Error Login" styleClass="textMessage"></Label>
             <Label fx:id="textMessageDes" text="You should check your password" styleClass="textMessageDes"></Label>
         </VBox>

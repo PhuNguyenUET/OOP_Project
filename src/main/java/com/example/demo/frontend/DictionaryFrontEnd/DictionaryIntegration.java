@@ -75,8 +75,8 @@ class DictionaryIntegration {
         return lst;
     }
 
-    protected List<StandardWord> getRecentSearches() {
-        String stringResponse = backend.getRecentSearches();
+    protected List<StandardWord> getRecentSearches(int userID) {
+        String stringResponse = backend.getRecentSearches(userID);
 
         ObjectMapper mapper = new ObjectMapper();
         List<StandardWord> lst = new ArrayList<>();
@@ -89,8 +89,8 @@ class DictionaryIntegration {
         return lst;
     }
 
-    protected void updateRecentSearches(String word) {
-        backend.updateRecentSearches(word);
+    protected void updateRecentSearches(String word, int userID) {
+        backend.updateRecentSearches(word, userID);
     }
 
     protected boolean checkWordExist(String word) {
