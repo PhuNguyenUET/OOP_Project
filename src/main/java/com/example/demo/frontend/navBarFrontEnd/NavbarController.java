@@ -5,6 +5,7 @@ import com.example.demo.ScreenManager;
 
 import com.example.demo.backend.ProfileBackend.ProfileConection;
 import com.example.demo.backend.ProfileBackend.ProfileRepo;
+import com.example.demo.frontend.Common.MusicManager;
 import com.example.demo.frontend.SettingsFrontEnd.SettingsIntegration;
 import javafx.animation.AnimationTimer;
 import javafx.animation.TranslateTransition;
@@ -114,12 +115,14 @@ public class NavbarController implements Initializable {
 
     public void initialize() {
         Dictionary.setOnAction(e -> {
+            MusicManager.getInstance().playIf("/com/example/demo/music/song.mp3");
             handleActive(Dictionary);
             ScreenManager.getInstance().switchToDict();
             movingRec.setVisible(true);
         });
 
         Learner.setOnAction(e -> {
+            MusicManager.getInstance().playIf("/com/example/demo/music/song.mp3");
 //            movingAnimation(transition, LeanerPos);
             handleActive(Learner);
             ScreenManager.getInstance().switchToLearner();
@@ -127,6 +130,8 @@ public class NavbarController implements Initializable {
         });
 
         Translate.setOnAction(e -> {
+            MusicManager.getInstance().playIf("/com/example/demo/music/song.mp3");
+
 //            movingAnimation(transition, TranslatePos);
             handleActive(Translate);
             ScreenManager.getInstance().switchToTranslate();
@@ -134,6 +139,8 @@ public class NavbarController implements Initializable {
         });
 
         Game.setOnAction(e -> {
+            MusicManager.getInstance().playIf("/com/example/demo/music/song.mp3");
+
 //            movingAnimation(transition, GamePos);
             handleActive(Game);
             ScreenManager.getInstance().switchToGame();

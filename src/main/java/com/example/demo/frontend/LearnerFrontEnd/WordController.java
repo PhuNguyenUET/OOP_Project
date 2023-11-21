@@ -16,9 +16,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -27,6 +25,7 @@ import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 
 public class WordController {
 
@@ -404,8 +403,18 @@ public class WordController {
             });
 
             imageViewDelete.setOnMouseClicked(e -> {
-                wordReposity.removeWordWithId(id);
-                wordRender(ScreenManager.getInstance().getListId());
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation Dialog");
+                alert.setContentText("Do you want to proceed?");
+
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    wordReposity.removeWordWithId(id);
+                    wordRender(ScreenManager.getInstance().getListId());
+                }
+//                wordReposity.removeWordWithId(id);
+//                wordRender(ScreenManager.getInstance().getListId());
             });
         }
     }

@@ -9,9 +9,7 @@ import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -23,6 +21,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.security.Key;
 import java.util.List;
+import java.util.Optional;
 
 public class ListController {
     @FXML
@@ -215,9 +214,20 @@ public class ListController {
             });
 
             deleteImg.setOnMouseClicked(e->{
-                listReposity.removeListWithId(id);
-                wordReposity.removeAllListInFolder(id);
-                listContainerRender();
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmation Dialog");
+                alert.setContentText("Do you want to proceed?");
+
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    listReposity.removeListWithId(id);
+                    wordReposity.removeAllListInFolder(id);
+                    listContainerRender();
+                }
+//                listReposity.removeListWithId(id);
+//                wordReposity.removeAllListInFolder(id);
+//                listContainerRender();
             });
 
             editImg.setOnMouseClicked(e -> {

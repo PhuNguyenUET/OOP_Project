@@ -1,6 +1,7 @@
 package com.example.demo.frontend.FlipGameFrontEnd;
 
 import com.example.demo.ScreenManager;
+import com.example.demo.frontend.Common.MusicManager;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.StackPane;
 
@@ -52,6 +53,7 @@ public class GameScreenChanger {
     }
 
     public void switchToGame1() {
+        MusicManager.getInstance().playIf("/com/example/demo/music/song2.mp3");
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml"));
             StackPane gameScreen = game.load();
@@ -63,6 +65,7 @@ public class GameScreenChanger {
     }
 
     public void switchToGame2() {
+        MusicManager.getInstance().playIf("/com/example/demo/music/song2.mp3");
         try {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/InfoOfPlayer.fxml"));
             StackPane gameScreen = game.load();

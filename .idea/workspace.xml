@@ -11,15 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="add3ca6e-ed48-4264-92a2-4a1c1c25b0dc" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/ScreenManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/ScreenManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/FlipGameFrontEnd/GameScreenChanger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/FlipGameFrontEnd/GameScreenChanger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/ProfileFrontEnd/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/ProfileFrontEnd/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/navBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LoginFrontEnd/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LoginFrontEnd/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/navBarFrontEnd/navBar.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/navBarFrontEnd/navBar.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/ProfileFrontEnd/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/ProfileFrontEnd/profile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "last_directory_selection": "C:/Users/laptop/Desktop/OOP_Project/src/main/java/com/example/demo/frontend/CanvasFrontEnd",
-    "last_opened_file_path": "C:/Users/laptop/Desktop/update/OOP_Project",
+    "last_opened_file_path": "C:/Users/laptop/Desktop/OOP_Project/src/main/resources/com/example/demo/music",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2551724"
@@ -71,11 +73,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\laptop\Desktop\OOP_Project\src\main\resources\com\example\demo\music" />
       <recent name="C:\Users\laptop\Desktop\OOP_Project\src\main\resources\com\example\demo\assets" />
       <recent name="C:\Users\laptop\Desktop\OOP_Project\src\main\resources\com\example\demo\css" />
       <recent name="C:\Users\laptop\Desktop\OOP_Project\target\classes\com\example\demo\fxml" />
       <recent name="C:\Users\laptop\Desktop\OOP_Project\src\main\resources\com\example\demo\fxml" />
-      <recent name="C:\Users\laptop\Desktop\OOP_Project\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\laptop\Desktop\update\OOP_Project\src\main\resources\com\example\demo\assets" />
@@ -194,7 +196,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java</url>
-          <line>28</line>
+          <line>32</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -204,5 +206,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/app$HelloApplication.ic" NAME="HelloApplication Coverage Results" MODIFIED="1700553973789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.*</FILTER>
+    </SUITE>
   </component>
 </project>

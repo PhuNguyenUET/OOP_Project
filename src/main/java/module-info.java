@@ -10,6 +10,7 @@ module com.example.demo{
     requires com.fasterxml.jackson.core;
     requires java.datatransfer;
     requires java.desktop;
+    requires javafx.media;
 
 
     exports com.example.demo.frontend.DictionaryFrontEnd;

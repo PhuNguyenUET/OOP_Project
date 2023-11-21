@@ -59,6 +59,18 @@ public class ProfileController {
     private Label text4;
 
     @FXML
+    private Label data1;
+
+    @FXML
+    private Label data2;
+
+    @FXML
+    private Label data3;
+
+    @FXML
+    private Label data4;
+
+    @FXML
     private GridPane dayRender;
 
     @FXML
@@ -136,18 +148,22 @@ public class ProfileController {
         if (timeUsages.size() >= 1) {
             text1.setText(timeUsages.get(0).getDate());
             rec1Height = timeUsages.get(0).getTime();
+            data1.setText((long)rec1Height + " m");
         }
         if (timeUsages.size() >= 2) {
             text2.setText(timeUsages.get(1).getDate());
             rec2Height = timeUsages.get(1).getTime();
+            data2.setText((long)rec2Height + " m");
         }
         if (timeUsages.size() >= 3) {
             text3.setText(timeUsages.get(2).getDate());
             rec3Height = timeUsages.get(2).getTime();
+            data3.setText((long)rec3Height + " m");
         }
         if (timeUsages.size() >= 4) {
             text4.setText(timeUsages.get(3).getDate());
             rec4Height = timeUsages.get(3).getTime();
+            data4.setText((long)rec4Height + " m");
         }
     }
 
