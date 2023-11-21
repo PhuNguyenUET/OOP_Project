@@ -1,0 +1,32 @@
+.dialogWrapper{
+    -fx-background-color: rgba(0,0,0,0.6);
+
+}
+
+.dialogContainer {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 16;
+    -fx-background-radius:10;
+}
+
+.dialogBtn{
+    -fx-background-color: #4DA5DD;
+    -fx-min-width: 120;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 12;
+    -fx-font-weight: bolder;
+    -fx-background-radius:20
+}
+
+.dialogText{
+    -fx-text-fill: #000000;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 16;
+    -fx-font-weight: bolder;
+}
+
+.dialogBtn:hover {
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}

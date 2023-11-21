@@ -137,6 +137,70 @@ public class FolderReposity {
         }
     }
 
+    public String getLastRecentFolderName(int userId)
+    {
+        String res = "";
+        try {
+            String query = "SELECT f.name " +
+                    "FROM folder f " +
+                    "JOIN HistoryFolder h ON h.folderId = f.id " +
+                    "WHERE h.historyId = ( " +
+                    "    SELECT MAX(historyId) " +
+                    "    FROM HistoryFolder " +
+                    "    WHERE folderId IN ( " +
+                    "        SELECT id " +
+                    "        FROM folder " +
+                    "        WHERE userId = ? " +
+                    "    ) " +
+                    ")";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
+            preparedStatement.setInt(1,userId);
+            ResultSet resultSet = preparedStatement.executeQuery(query);
+            while (resultSet.next()) {
+                res = resultSet.getString("name");
+            }
+            return res;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "Error: Unable to retrieve folder data";
+        }
+    }
+
+
+    public void removeRecentFolde(int userId)
+    {
+        try {
+            String deleteQuery = "DELETE h1 " +
+                    "FROM HistoryFolder h1 " +
+                    "JOIN folder f ON h1.folderId = f.id " +
+                    "LEFT JOIN ( " +
+                    "    SELECT h2.historyId " +
+                    "    FROM HistoryFolder h2 " +
+                    "    JOIN folder f2 ON f2.id = h2.folderId " +
+                    "    WHERE f2.userId = ? " +
+                    "    ORDER BY h2.historyId DESC " +
+                    "    LIMIT 4 " +
+                    ") AS subquery ON h1.historyId = subquery.historyId " +
+                    "WHERE f.userId = ? AND subquery.historyId IS NULL";
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(deleteQuery);
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setInt(2, userId);
+            int cnt = preparedStatement.executeUpdate();
+            if(cnt>0)
+            {
+                System.out.println("Đã xóa " + cnt + " recent folder");
+            }
+            else
+            {
+                System.out.println("chưa đủ recent folder để xóa");
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
     public boolean removeFolder(String folderName) {
         try {
