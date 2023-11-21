@@ -28,6 +28,9 @@
     <stylesheets>
         <URL value="@../../css/folder.css"/>
     </stylesheets>
+    <stylesheets>
+        <URL value="@../../css/dialog.css"/>
+    </stylesheets>
     <VBox>
         <FlowPane fx:id="folderContainer" vgap="60" hgap="30" styleClass="container" VBox.vgrow="ALWAYS">
 <!--            <StackPane>-->
@@ -118,5 +121,18 @@
         <Label styleClass="newFolderText" text="New Folder"/>
         <TextField fx:id="inputForm" styleClass="inputForm" promptText="Name Folder"/>
         <Button fx:id="addFolderName" styleClass="addFolderName" text="Add"/>
+    </VBox>
+    <VBox fx:id="dialogWrapper" styleClass="dialogWrapper" prefHeight="780" prefWidth="1520" minWidth="1520"
+          minHeight="780" maxWidth="1520"
+          maxHeight="780" alignment="CENTER" translateY="-90" visible="false" disable="false">
+        <VBox alignment="CENTER" StackPane.alignment="CENTER" prefHeight="80" prefWidth="280" minWidth="280"
+              minHeight="80" maxWidth="280"
+              maxHeight="80" spacing="20" styleClass="dialogContainer">
+            <Label styleClass="dialogText" text="Do you want to delete?"></Label>
+            <HBox alignment="CENTER_RIGHT" spacing="20">
+                <Button fx:id="dialogOk" styleClass="dialogBtn" text="OK"/>
+                <Button fx:id="dialogCancel" styleClass="dialogBtn" text="Cancel"/>
+            </HBox>
+        </VBox>
     </VBox>
 </StackPane>

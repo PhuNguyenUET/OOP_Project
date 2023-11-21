@@ -81,6 +81,14 @@ public class FolderController {
 
     private ListReposity listReposity = new ListReposity();
 
+    @FXML
+    private VBox dialogWrapper;
+
+    @FXML
+    private Button dialogOk;
+    @FXML
+    private Button dialogCancel;
+
     public void initialize() {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
         PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
@@ -215,23 +223,25 @@ public class FolderController {
             containerStack.getChildren().addAll(containerVBox, changeContainer);
             folderContainer.getChildren().add(containerStack);
             containerVBox.setOnMouseClicked(e -> {
-                folderReposity.addRecentFolder(item.getId());
+                if (!item.getName().equals(folderReposity.getLastRecentFolderName(ScreenManager.getInstance().getUserId()))) {
+                    folderReposity.addRecentFolder(item.getId());
+                    folderReposity.removeRecentFolde(ScreenManager.getInstance().getUserId());
+                }
                 leanerScreenChanger.switchToList(item.getId());
             });
 
             deleteImg.setOnMouseClicked(e -> {
                 e.consume();
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Dialog");
-                alert.setContentText("Do you want to proceed?");
-
-                Optional<ButtonType> result = alert.showAndWait();
-
-                if (result.isPresent() && result.get() == ButtonType.OK) {
+                turnOnDialog();
+                dialogOk.setOnAction(event -> {
                     folderReposity.removeFolder(item.getId());
                     listReposity.removeAllListInFolder(item.getId());
                     folderContainerRender();
-                }
+                    turnOffDialog();
+                });
+                dialogCancel.setOnAction(event -> {
+                    turnOffDialog();
+                });
 //                folderReposity.removeFolder(item.getId());
 //                listReposity.removeAllListInFolder(item.getId());
 //                folderContainerRender();
@@ -268,6 +278,16 @@ public class FolderController {
             });
 
         }
+    }
+
+    public void turnOnDialog() {
+        dialogWrapper.setVisible(true);
+        dialogWrapper.setDisable(false);
+    }
+
+    public void turnOffDialog() {
+        dialogWrapper.setVisible(false);
+        dialogWrapper.setDisable(true);
     }
 }
 

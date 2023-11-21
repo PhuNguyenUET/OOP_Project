@@ -243,7 +243,17 @@ public class NavbarController implements Initializable {
     public void loggingOut() {
         long timeUsage = System.currentTimeMillis() - ScreenManager.getInstance().getLoginTime();
         double timeHour = timeUsage * 1.0 / (60 * 1000 * 1.0);
-        profileRepo.insertToSession(timeHour, ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
+        System.out.println("Thời gian phiên đăng nhập đến khi log out là : " + timeHour + " minutes");
+        if (ScreenManager.getInstance().getLoginDate() != null) {
+            if (profileRepo.checkDateIsExist(ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId())) {
+                double lastTime  = profileRepo.getRecentTimeUsageOfDate(ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
+                double newTime = lastTime + timeHour;
+                profileRepo.updateTimeForDate(newTime,ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
+            } else {
+                profileRepo.insertToSession(timeHour, ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
+            }
+        }
+        ScreenManager.getInstance().setLoginDate(null);
         ScreenManager.getInstance().switchToLogin();
     }
 

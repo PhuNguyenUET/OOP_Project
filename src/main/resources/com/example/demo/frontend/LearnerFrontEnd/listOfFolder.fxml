@@ -27,42 +27,45 @@
     <stylesheets>
         <URL value="@../../css/listOfFolder.css"/>
     </stylesheets>
+    <stylesheets>
+        <URL value="@../../css/dialog.css"/>
+    </stylesheets>
     <VBox styleClass="test" spacing="20">
         <HBox alignment="CENTER">
             <Button fx:id="folderBtn" text="Folder 1" styleClass="btn"/>
         </HBox>
         <HBox spacing="120" prefHeight="520" styleClass="contentContainer" alignment="CENTER">
             <VBox fx:id="ContainerLeft" prefWidth="636" styleClass="listContainer" alignment="CENTER" spacing="20">
-<!--                <StackPane>-->
-<!--                    <HBox alignment="CENTER">-->
-<!--                        <HBox alignment="CENTER">-->
-<!--                            <Button styleClass="listBtn" text="List1"/>-->
-<!--                        </HBox>-->
-<!--                    </HBox>-->
+                <!--                <StackPane>-->
+                <!--                    <HBox alignment="CENTER">-->
+                <!--                        <HBox alignment="CENTER">-->
+                <!--                            <Button styleClass="listBtn" text="List1"/>-->
+                <!--                        </HBox>-->
+                <!--                    </HBox>-->
 
-<!--                    <ImageView StackPane.alignment="CENTER_LEFT" translateX="90">-->
-<!--                        <image>-->
-<!--                            <Image url="@./assets/edit.png"/>-->
-<!--                        </image>-->
-<!--                    </ImageView>-->
+                <!--                    <ImageView StackPane.alignment="CENTER_LEFT" translateX="90">-->
+                <!--                        <image>-->
+                <!--                            <Image url="@./assets/edit.png"/>-->
+                <!--                        </image>-->
+                <!--                    </ImageView>-->
 
 
-<!--                    <ImageView StackPane.alignment="CENTER_RIGHT" translateX="-90">-->
-<!--                        <image>-->
-<!--                            <Image url="@./assets/delete.png"/>-->
-<!--                        </image>-->
-<!--                    </ImageView>-->
+                <!--                    <ImageView StackPane.alignment="CENTER_RIGHT" translateX="-90">-->
+                <!--                        <image>-->
+                <!--                            <Image url="@./assets/delete.png"/>-->
+                <!--                        </image>-->
+                <!--                    </ImageView>-->
 
-<!--                    <HBox visible="true" spacing="20" alignment="CENTER" styleClass="addFolder"-->
-<!--                          StackPane.alignment="CENTER_LEFT" translateY="0" translateX="-120"-->
-<!--                           maxWidth="300" maxHeight="90"  managed="true">-->
-<!--                        <TextField styleClass="inputForm" promptText="Name Folder"/>-->
-<!--                        <Button styleClass="addFolderName" text="Change"/>-->
-<!--                    </HBox>-->
+                <!--                    <HBox visible="true" spacing="20" alignment="CENTER" styleClass="addFolder"-->
+                <!--                          StackPane.alignment="CENTER_LEFT" translateY="0" translateX="-120"-->
+                <!--                           maxWidth="300" maxHeight="90"  managed="true">-->
+                <!--                        <TextField styleClass="inputForm" promptText="Name Folder"/>-->
+                <!--                        <Button styleClass="addFolderName" text="Change"/>-->
+                <!--                    </HBox>-->
 
-<!--                </StackPane>-->
+                <!--                </StackPane>-->
             </VBox>
-            <VBox fx:id="ContainerRight"  prefWidth="636" styleClass="listContainer" alignment="CENTER" spacing="20">
+            <VBox fx:id="ContainerRight" prefWidth="636" styleClass="listContainer" alignment="CENTER" spacing="20">
             </VBox>
         </HBox>
         <HBox alignment="CENTER_RIGHT">
@@ -96,4 +99,17 @@
             <Label fx:id="textMessageDes" text="You should check your password" styleClass="textMessageDes"></Label>
         </VBox>
     </HBox>
+    <VBox fx:id="dialogWrapper" styleClass="dialogWrapper" prefHeight="780" prefWidth="1520" minWidth="1520"
+          minHeight="780" maxWidth="1520"
+          maxHeight="780" alignment="CENTER" translateY="-90" visible="false" disable="false">
+        <VBox alignment="CENTER" StackPane.alignment="CENTER" prefHeight="80" prefWidth="280" minWidth="280"
+              minHeight="80" maxWidth="280"
+              maxHeight="80" spacing="20" styleClass="dialogContainer">
+            <Label styleClass="dialogText" text="Do you want to delete?"></Label>
+            <HBox alignment="CENTER_RIGHT" spacing="20">
+                <Button fx:id="dialogOk" styleClass="dialogBtn" text="OK"/>
+                <Button fx:id="dialogCancel" styleClass="dialogBtn" text="Cancel"/>
+            </HBox>
+        </VBox>
+    </VBox>
 </StackPane>

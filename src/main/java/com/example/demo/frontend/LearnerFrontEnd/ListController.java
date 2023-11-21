@@ -74,6 +74,14 @@ public class ListController {
     @FXML
     private Label textMessageDes;
 
+    @FXML
+    private VBox dialogWrapper;
+
+    @FXML
+    private Button dialogOk;
+    @FXML
+    private Button dialogCancel;
+
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
 
     private FolderReposity folderReposity = new FolderReposity();
@@ -83,6 +91,8 @@ public class ListController {
     private WordReposity wordReposity = new WordReposity();
     @FXML
     private LearnerScreenChanger learnerScreenChanger = new LearnerScreenChanger();
+
+
     public void initialize() {
         toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
 
@@ -119,8 +129,7 @@ public class ListController {
             if (listReposity.canAddNewListIntoFolder(ScreenManager.getInstance().getFolderId()) && !inputForm.getText().equals("") && !listReposity.listIsExist(ScreenManager.getInstance().getFolderId(), inputForm.getText().trim())) {
                 listReposity.addNewList(inputForm.getText().trim(), ScreenManager.getInstance().getFolderId());
                 listContainerRender();
-            }
-            else if(listReposity.listIsExist(ScreenManager.getInstance().getFolderId(), inputForm.getText().trim())){
+            } else if (listReposity.listIsExist(ScreenManager.getInstance().getFolderId(), inputForm.getText().trim())) {
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
                 textMessage.setText("List is exists");
@@ -129,8 +138,7 @@ public class ListController {
                 toastMesTransition.setToX(-28);
                 toastMesTransition.play();
                 pauseTransition.play();
-            }
-            else if (!inputForm.getText().equals("")) {
+            } else if (!inputForm.getText().equals("")) {
                 URL imageUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                 Image image = new Image(imageUrl.toString());
                 textMessage.setText("Limit List");
@@ -167,7 +175,7 @@ public class ListController {
         for (int i = 0; i < n; i++) {
             String name = listNameInFolder.get(i).getName();
             int id = listNameInFolder.get(i).getId();
-            System.out.println("ListId: "  + id + " Name: " + name);
+            System.out.println("ListId: " + id + " Name: " + name);
             StackPane containerStack = new StackPane();
             HBox containerBtn = new HBox();
             Button listBtn = new Button();
@@ -213,18 +221,18 @@ public class ListController {
                 learnerScreenChanger.switchToWord(id);
             });
 
-            deleteImg.setOnMouseClicked(e->{
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Dialog");
-                alert.setContentText("Do you want to proceed?");
-
-                Optional<ButtonType> result = alert.showAndWait();
-
-                if (result.isPresent() && result.get() == ButtonType.OK) {
+            deleteImg.setOnMouseClicked(e -> {
+                e.consume();
+                turnOnDialog();
+                dialogOk.setOnAction(event -> {
                     listReposity.removeListWithId(id);
                     wordReposity.removeAllListInFolder(id);
                     listContainerRender();
-                }
+                    turnOffDialog();
+                });
+                dialogCancel.setOnAction(event -> {
+                    turnOffDialog();
+                });
 //                listReposity.removeListWithId(id);
 //                wordReposity.removeAllListInFolder(id);
 //                listContainerRender();
@@ -240,9 +248,9 @@ public class ListController {
             });
 
             System.out.println(id);
-            changeBtn.setOnAction(e->{
+            changeBtn.setOnAction(e -> {
                 System.out.println(changeTextField.getText() + " " + id);
-                if(!listReposity.changeListName(id, changeTextField.getText().trim())){
+                if (!listReposity.changeListName(id, changeTextField.getText().trim())) {
                     toastMesTransition = new TranslateTransition(Duration.seconds(0.75), toastMes);
                     URL imgUrl = getClass().getResource("/com/example/demo/assets/cross.png");
                     Image image = new Image(imgUrl.toString());
@@ -252,9 +260,7 @@ public class ListController {
                     toastMesTransition.setToX(-28);
                     toastMesTransition.play();
                     pauseTransition.play();
-                }
-                else
-                {
+                } else {
                     listContainerRender();
                 }
             });
@@ -265,4 +271,15 @@ public class ListController {
             });
         }
     }
+
+    public void turnOnDialog() {
+        dialogWrapper.setVisible(true);
+        dialogWrapper.setDisable(false);
+    }
+
+    public void turnOffDialog() {
+        dialogWrapper.setVisible(false);
+        dialogWrapper.setDisable(true);
+    }
+
 }

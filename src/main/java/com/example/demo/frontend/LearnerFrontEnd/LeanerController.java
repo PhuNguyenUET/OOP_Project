@@ -211,8 +211,8 @@ public class LeanerController {
 
         recentWordRender();
 
-        detailBtn.setOnAction(e->{
-            ScreenManager.getInstance().switchToWordDisplay((StandardWord)getWordDetail());
+        detailBtn.setOnAction(e -> {
+            ScreenManager.getInstance().switchToWordDisplay((StandardWord) getWordDetail());
             ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getDictionary());
         });
     }
@@ -242,7 +242,10 @@ public class LeanerController {
             FolderContainer.getChildren().add(containerHbox);
 
             containerHbox.setOnMouseClicked(e -> {
-                folderReposity.addRecentFolder(item.getId());
+                if (!item.getName().equals(folderReposity.getLastRecentFolderName(ScreenManager.getInstance().getUserId()))) {
+                    folderReposity.addRecentFolder(item.getId());
+                    folderReposity.removeRecentFolde(ScreenManager.getInstance().getUserId());
+                }
                 learnerScreenChanger.switchToList(item.getId());
             });
 
@@ -251,7 +254,7 @@ public class LeanerController {
 
     public void recentWordRender() {
         List<Word> listWord = dictFuncToLearner.getRecentSearches();
-        int n=listWord.size();
+        int n = listWord.size();
         System.out.println("listWord has " + listWord.size() + " words");
         rencentContainer.getChildren().clear();
         for (int i = 0; i < n; i++) {
@@ -295,7 +298,7 @@ public class LeanerController {
             });
 
             container.setOnMouseClicked(e -> {
-                ScreenManager.getInstance().switchToWordDisplay((StandardWord)listWord.get(index));
+                ScreenManager.getInstance().switchToWordDisplay((StandardWord) listWord.get(index));
                 ScreenManager.getInstance().getNavbarController().handleActive(ScreenManager.getInstance().getNavbarController().getDictionary());
                 System.out.println("Chuyen huong");
             });
@@ -343,7 +346,11 @@ public class LeanerController {
             containerHBox.getChildren().add(containerVBox);
             twoFolderContainer.getChildren().add(containerHBox);
 
-            containerHBox.setOnMouseClicked(e->{
+            containerHBox.setOnMouseClicked(e -> {
+                if (!folder.getName().equals(folderReposity.getLastRecentFolderName(ScreenManager.getInstance().getUserId()))) {
+                    folderReposity.addRecentFolder(folder.getId());
+                    folderReposity.removeRecentFolde(ScreenManager.getInstance().getUserId());
+                }
                 learnerScreenChanger.switchToList(folder.getId());
             });
         }

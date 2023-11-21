@@ -96,6 +96,14 @@ public class WordController {
 
     private DictFuncToLearner dictFuncToLearner = new ConnectComponentDict();
 
+    @FXML
+    private VBox dialogWrapper;
+
+    @FXML
+    private Button dialogOk;
+    @FXML
+    private Button dialogCancel;
+
     public void initialize() {
         System.out.println(ScreenManager.getInstance().getListName());
 
@@ -370,19 +378,19 @@ public class WordController {
                 }
             });
 
-            definitionInput.setOnKeyPressed(e->{
+            definitionInput.setOnKeyPressed(e -> {
                 if (e.getCode() == KeyCode.ENTER) {
                     changeBtn.fire();
                 }
             });
 
-            wordInput.setOnKeyPressed(e->{
+            wordInput.setOnKeyPressed(e -> {
                 if (e.getCode() == KeyCode.ENTER) {
                     changeBtn.fire();
                 }
             });
 
-            typeInput.setOnKeyPressed(e->{
+            typeInput.setOnKeyPressed(e -> {
                 if (e.getCode() == KeyCode.ENTER) {
                     changeBtn.fire();
                 }
@@ -403,16 +411,16 @@ public class WordController {
             });
 
             imageViewDelete.setOnMouseClicked(e -> {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                alert.setTitle("Confirmation Dialog");
-                alert.setContentText("Do you want to proceed?");
-
-                Optional<ButtonType> result = alert.showAndWait();
-
-                if (result.isPresent() && result.get() == ButtonType.OK) {
+                e.consume();
+                turnOnDialog();
+                dialogOk.setOnAction(event -> {
                     wordReposity.removeWordWithId(id);
                     wordRender(ScreenManager.getInstance().getListId());
-                }
+                    turnOffDialog();
+                });
+                dialogCancel.setOnAction(event -> {
+                    turnOffDialog();
+                });
 //                wordReposity.removeWordWithId(id);
 //                wordRender(ScreenManager.getInstance().getListId());
             });
@@ -429,5 +437,15 @@ public class WordController {
         toastMesTransition.setToX(-28);
         toastMesTransition.play();
         pauseTransition.play();
+    }
+
+    public void turnOnDialog() {
+        dialogWrapper.setVisible(true);
+        dialogWrapper.setDisable(false);
+    }
+
+    public void turnOffDialog() {
+        dialogWrapper.setVisible(false);
+        dialogWrapper.setDisable(true);
     }
 }

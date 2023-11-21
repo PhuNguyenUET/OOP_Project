@@ -11,9 +11,18 @@
   <component name="ChangeListManager">
     <list default="true" id="add3ca6e-ed48-4264-92a2-4a1c1c25b0dc" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/Connect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/ProfileBackend/ProfileConection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/ProfileBackend/ProfileConection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/userDatabaseConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/userDatabaseConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/FolderReposity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/LearnerBackend/FolderReposity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/ProfileBackend/ProfileRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/ProfileBackend/ProfileRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/FolderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/ListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/navBarFrontEnd/NavbarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LearnerFrontEnd/folder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LearnerFrontEnd/folder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LearnerFrontEnd/wordOfList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/frontend/LearnerFrontEnd/wordOfList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +66,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/laptop/Desktop/OOP_Project/src/main/java/com/example/demo/frontend/CanvasFrontEnd&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laptop/Desktop/OOP_Project/src/main/resources/com/example/demo/music&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/laptop/Desktop/New folder (3)/OOP_Project&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2551724&quot;
@@ -188,12 +197,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/HelloApplication.java</url>
-          <line>32</line>
+          <line>22</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LearnerFrontEnd/LeanerController.java</url>
-          <line>245</line>
+          <line>248</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
