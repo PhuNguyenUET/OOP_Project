@@ -6,11 +6,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 public class GoogleTranslate {
     public static String translate(String langFrom, String langTo, String text) throws IOException {
         String urlStr = "https://script.google.com/macros/s/AKfycbxM4tUW72--uXKWjDEuS8XZRmRhoXIIhhr3KFwTYiNA_V867liXRI_UdhwZoRHAzjEk/exec" +
-                "?q=" + URLEncoder.encode(text, "UTF-8") +
+                "?q=" + URLEncoder.encode(text, StandardCharsets.UTF_8) +
                 "&target=" + langTo +
                 "&source=" + langFrom;
         URL url = new URL(urlStr);
@@ -22,7 +23,13 @@ public class GoogleTranslate {
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
         }
+
         in.close();
-        return response.toString();
+
+        String res = response.toString();
+        res = res.replace("&#39;", "'");
+        res = res.replace("&quot;", "\"");
+
+        return res;
     }
 }
