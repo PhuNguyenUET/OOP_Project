@@ -48,3 +48,4 @@ Educational games that allows for revision while having fun, too.
 ![Settings](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/3972bb98-314d-4ca2-bba0-b965a82d9d1b)
 
 ### Profile:
+![Profile](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/1ec60034-e3ff-4300-b13b-4d42e48859d3)
