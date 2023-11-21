@@ -5,6 +5,7 @@ import com.example.demo.backend.LearnerBackend.UserBackend;
 import com.example.demo.backend.ProfileBackend.ProfileConection;
 import com.example.demo.backend.ProfileBackend.ProfileRepo;
 import com.example.demo.backend.ProfileBackend.TimeUsage;
+import com.example.demo.frontend.SettingsFrontEnd.SettingsIntegration;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.ParallelTransition;
@@ -15,11 +16,14 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
+import java.net.URL;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
@@ -71,6 +75,8 @@ public class ProfileController {
 
     @FXML
     private Label streak;
+    @FXML
+    private ImageView avatar;
     private UserBackend userBackend = new UserBackend();
 
     private ProfileRepo profileRepo = new ProfileRepo();
@@ -117,6 +123,13 @@ public class ProfileController {
         String startDayOfMonth = getDayOfWeek(startDateOfMonth);
         int startColIndex = getStartColIndex(startDayOfMonth);
         calendarRender(startColIndex, 0, 30);
+
+        int currentProfileId = SettingsIntegration.Instance().getProfileID(ScreenManager.getInstance().getUserId());
+        String imgUrl = "/com/example/demo/assets/ProfilePicture/profile" + currentProfileId + ".jpg";
+        URL imageUrl = getClass().getResource(imgUrl);
+        Image image = new Image(imageUrl.toString(), 120, 120, false, false);
+        avatar.setPreserveRatio(false);
+        avatar.setImage(image);
     }
 
     private void handleChart(List<TimeUsage> timeUsages) {
