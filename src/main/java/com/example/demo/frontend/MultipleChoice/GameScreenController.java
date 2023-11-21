@@ -110,7 +110,7 @@ public class GameScreenController implements Initializable {
         for (int i = 0; i < buttonList.size(); i++) {
             if (i + 1 == correct) {
                 buttonList.get(i).getStyleClass().add("correctAnswerDisplay");
-                buttonList.get(i).setOpacity(0.5);
+                buttonList.get(i).setOpacity(1);
             }
         }
     }
