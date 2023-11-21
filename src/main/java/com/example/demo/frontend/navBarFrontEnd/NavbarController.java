@@ -225,7 +225,7 @@ public class NavbarController implements Initializable {
     }
 
     @FXML
-    public void displayPopUpWindow(MouseEvent event) {
+    public void displayPopUpWindow(Event event) {
         event.consume();
         updateProfileImage();
         welcomeLabel.setText("Welcome, " + SettingsIntegration.Instance().getName(ScreenManager.getInstance().getUserId()));

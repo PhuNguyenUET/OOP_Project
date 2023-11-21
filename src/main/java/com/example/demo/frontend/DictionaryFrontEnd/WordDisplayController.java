@@ -140,7 +140,7 @@ public class WordDisplayController implements Initializable {
     }
 
     @FXML
-    protected void clearPopups (MouseEvent event) {
+    protected void clearPopups (Event event) {
         suggestionBox.setVisible(false);
         popUpAddWindow.setDisable(true);
         popUpAddWindow.setVisible(false);

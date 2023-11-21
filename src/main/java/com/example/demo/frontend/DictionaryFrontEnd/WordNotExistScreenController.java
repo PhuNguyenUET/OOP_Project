@@ -1,6 +1,7 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -80,7 +81,7 @@ public class WordNotExistScreenController implements Initializable {
     }
 
     @FXML
-    protected void clearSuggestion (MouseEvent event) {
+    protected void clearSuggestion (Event event) {
         suggestionBox.setVisible(false);
     }
 

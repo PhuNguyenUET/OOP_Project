@@ -28,7 +28,7 @@ public class ResultController {
     }
 
     @FXML
-    public void changeToGameHome(MouseEvent event) {
+    public void changeToGameHome(Event event) {
         ScreenManager.getInstance().switchToGame();
     }
 }

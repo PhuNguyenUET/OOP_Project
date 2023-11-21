@@ -117,7 +117,7 @@ public class DictionaryHomeController implements Initializable {
     }
 
     @FXML
-    protected void clearSuggestion(MouseEvent event) {
+    protected void clearSuggestion(Event event) {
         suggestionBox.setVisible(false);
     }
 

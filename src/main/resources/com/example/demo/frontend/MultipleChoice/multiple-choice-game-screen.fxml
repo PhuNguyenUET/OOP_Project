@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" translateY="80" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.GameScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" translateY="54.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.GameScreenController">
    <stylesheets>
       <URL value="@../../css/multipleChoiceGame.css" />
    </stylesheets>
@@ -28,7 +28,7 @@
 <!--            </HBox>-->
             <Label fx:id="quesNumberLabel" alignment="CENTER" prefHeight="55.0" prefWidth="218.0" styleClass="questionNumber" text="Question 1">
                <VBox.margin>
-                  <Insets top="20.0" />
+                  <Insets top="45.0" />
                </VBox.margin>
             </Label>
             <ProgressBar fx:id="timer" prefHeight="20.0" prefWidth="1520.0" progress="1.0" styleClass="timerBar">

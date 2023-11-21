@@ -1,6 +1,7 @@
 package com.example.demo.frontend.SettingsFrontEnd;
 
 import com.example.demo.ScreenManager;
+import com.example.demo.frontend.Common.MusicManager;
 import com.example.demo.frontend.navBarFrontEnd.NavbarController;
 import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
@@ -64,10 +65,13 @@ public class SettingsTabController implements Initializable {
     @FXML
     HBox secondRow;
     @FXML
+    Button musicButton;
+    @FXML
     private TranslateTransition toastMesTransition;
     @FXML
     private PauseTransition pauseTransition;
     List<ImageView> profilePictures = new ArrayList<>();
+    boolean music = true;
 
     NavbarController navbarController;
 
@@ -181,6 +185,18 @@ public class SettingsTabController implements Initializable {
             displayMessagePane(true, "Success", result);
         } else {
             displayMessagePane(false, "Failed", result);
+        }
+    }
+
+    @FXML
+    public void turnOnOffMusic(Event event) {
+        music = !music;
+        if (music) {
+            musicButton.setText("Music: ON");
+            MusicManager.getInstance().play2("/com/example/demo/music/song.mp3");
+        } else {
+            musicButton.setText("Music: OFF");
+            MusicManager.getInstance().stop();
         }
     }
 
