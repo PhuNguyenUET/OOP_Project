@@ -52,4 +52,7 @@ module com.example.demo{
 
     opens com.example.demo.frontend.ProfileFrontEnd to javafx.fxml;
     exports com.example.demo.frontend.ProfileFrontEnd;
+
+    opens com.example.demo.frontend.CanvasFrontEnd to javafx.fxml;
+    exports com.example.demo.frontend.CanvasFrontEnd;
 }

@@ -1,16 +1,20 @@
 package com.example.demo.frontend.navBarFrontEnd;
 
+import com.example.demo.HelloApplication;
 import com.example.demo.ScreenManager;
 
 import com.example.demo.backend.ProfileBackend.ProfileConection;
 import com.example.demo.backend.ProfileBackend.ProfileRepo;
 import com.example.demo.frontend.SettingsFrontEnd.SettingsIntegration;
+import javafx.animation.AnimationTimer;
 import javafx.animation.TranslateTransition;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -18,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -28,6 +33,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class NavbarController implements Initializable {
@@ -89,6 +95,9 @@ public class NavbarController implements Initializable {
         return list;
     }
 
+    @FXML
+    private Canvas canvas;
+
     double DictionaryPos = 58;
 
     double LeanerPos = DictionaryPos + 170;
@@ -98,8 +107,12 @@ public class NavbarController implements Initializable {
     double GamePos = TranslatePos + 170;
 
     ProfileRepo profileRepo = new ProfileRepo();
-    public void initialize() {
 
+    private Canvas getCanvas() {
+        return this.canvas;
+    }
+
+    public void initialize() {
         Dictionary.setOnAction(e -> {
             handleActive(Dictionary);
             ScreenManager.getInstance().switchToDict();
@@ -127,7 +140,7 @@ public class NavbarController implements Initializable {
             movingRec.setVisible(true);
         });
 
-        profileChange.setOnMouseClicked(e->{
+        profileChange.setOnMouseClicked(e -> {
             ScreenManager.getInstance().switchToProfile();
             movingRec.setVisible(false);
         });
@@ -222,10 +235,11 @@ public class NavbarController implements Initializable {
     @FXML
     public void loggingOut() {
         long timeUsage = System.currentTimeMillis() - ScreenManager.getInstance().getLoginTime();
-        double timeHour = timeUsage * 1.0 / (60*1000*1.0);
-        profileRepo.insertToSession(timeHour,ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
+        double timeHour = timeUsage * 1.0 / (60 * 1000 * 1.0);
+        profileRepo.insertToSession(timeHour, ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
         ScreenManager.getInstance().switchToLogin();
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initialize();

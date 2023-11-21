@@ -135,15 +135,18 @@ public class ScreenManager {
         try {
             FXMLLoader learner = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/Learner.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
+            FXMLLoader canvas = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/CanvasFrontEnd/canvas.fxml"));
             StackPane navBarPane = navBar.load();
             StackPane screen = learner.load();
-            if (root.getChildren().size() >= 2) {
+            StackPane canvasPane = canvas.load();
+            if (root.getChildren().size() >= 3) {
                 root.getChildren().set(0, screen);
             } else {
                 root.getChildren().clear();
                 root.getChildren().add(screen);
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
+                root.getChildren().add(canvasPane);
             }
             navbarController.resetPopupWindow();
         } catch (IOException e) {

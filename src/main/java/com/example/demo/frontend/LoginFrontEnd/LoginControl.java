@@ -18,6 +18,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
@@ -65,6 +66,9 @@ public class LoginControl {
     @FXML
     private TextField password;
 
+    @FXML
+    private StackPane login;
+
     UserBackend userBackend = new UserBackend();
 
     ProfileRepo profileRepo = new ProfileRepo();
@@ -111,7 +115,7 @@ public class LoginControl {
             toastMesTransition.play();
         });
 
-        ScreenManager.getInstance().getScene().addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+        password.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 if (ScreenManager.getInstance().getRoot().getChildren().size() == 1) {
                     submitButton.fire();

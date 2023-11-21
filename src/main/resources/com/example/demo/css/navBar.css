@@ -65,3 +65,7 @@
     -fx-opacity: 0.85;
     -fx-cursor: hand;
 }
+
+.canvasTest{
+    -fx-background-color: red;
+}

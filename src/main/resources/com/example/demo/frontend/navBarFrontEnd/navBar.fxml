@@ -13,105 +13,123 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 
-<StackPane alignment="TOP_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.navBarFrontEnd.NavbarController">
+<?import javafx.scene.canvas.Canvas?>
+<StackPane alignment="TOP_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0"
+           xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.demo.frontend.navBarFrontEnd.NavbarController">
     <stylesheets>
-        <URL value="@../../css/navBar.css" />
+        <URL value="@../../css/navBar.css"/>
     </stylesheets>
     <children>
-      <HBox prefWidth="1524.0">
-         <children>
-            <StackPane styleClass="container">
-            
-                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0" prefWidth="757.0" styleClass="navBar" StackPane.alignment="TOP_LEFT">
-                    <HBox prefWidth="733.0" spacing="20">
-                        <VBox alignment="CENTER">
-                        <ImageView>
+        <HBox prefWidth="1524.0">
+            <children>
+                <StackPane styleClass="container">
+
+                    <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0"
+                          prefWidth="757.0" styleClass="navBar" StackPane.alignment="TOP_LEFT">
+                        <HBox prefWidth="733.0" spacing="20">
+                            <VBox alignment="CENTER">
+                                <ImageView>
+                                    <image>
+                                        <Image url="@../../assets/menu.png"/>
+                                    </image>
+                                </ImageView>
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Button fx:id="Dictionary" styleClass="navBarBtn" text="Dictionary"/>
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Button fx:id="Learner" styleClass="navBarBtn, active" text="Learner's Path"/>
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Button fx:id="Translate" styleClass="navBarBtn" text="Translate"/>
+                            </VBox>
+                            <VBox alignment="CENTER">
+                                <Button fx:id="Game" styleClass="navBarBtn" text="Game"/>
+                            </VBox>
+                            <VBox alignment="CENTER_RIGHT" translateX="930" StackPane.alignment="TOP_RIGHT"/>
+                        </HBox>
+                    </HBox>
+                    <Rectangle fx:id="movingRec" fill="#E8D8F4" height="2" styleClass="recMove" translateX="228"
+                               translateY="48" width="150" StackPane.alignment="TOP_LEFT"/>
+
+                </StackPane>
+                <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0"
+                      prefWidth="767.0" styleClass="navBar">
+                    <children>
+                        <Circle fx:id="profileButton" fill="WHITE" onMouseClicked="#displayPopUpWindow" radius="26.0"
+                                stroke="BLACK" strokeType="INSIDE" styleClass="profileBtn"/>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+        <VBox fx:id="popUpWindow" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+              minWidth="-Infinity" prefHeight="276.0" prefWidth="302.0" styleClass="popUpWindow" translateY="54.0"
+              visible="false">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="302.0" styleClass="functionBox">
+                    <children>
+                        <Circle fx:id="profilePictureDisplay" fill="WHITE" radius="26.0" stroke="BLACK"
+                                strokeType="INSIDE">
+                            <HBox.margin>
+                                <Insets left="20.0"/>
+                            </HBox.margin>
+                        </Circle>
+                        <Label fx:id="welcomeLabel" prefHeight="54.0" prefWidth="210.0" styleClass="welcomeLabel"
+                               text="Welcome" wrapText="true">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox fx:id="profileChange" alignment="CENTER" prefHeight="61.0" prefWidth="302.0">
+                    <children>
+                        <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../assets/menu.png" />
+                                <Image url="@../../assets/userlogo.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets right="23.0"/>
+                            </HBox.margin>
+                        </ImageView>
+                        <Label styleClass="functionDes" text="Profile" translateX="-13.0"/>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <styleClass>
+                        <String fx:value="functionBox"/>
+                        <String fx:value="functionChoice"/>
+                    </styleClass>
+                </HBox>
+                <HBox fx:id="settings" alignment="CENTER" layoutX="10.0" layoutY="71.0"
+                      onMouseClicked="#changeToSettings" prefHeight="61.0" prefWidth="302.0" spacing="10.0">
+                    <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../assets/settings.png"/>
                             </image>
                         </ImageView>
-                        </VBox>
-                        <VBox alignment="CENTER">
-                            <Button fx:id="Dictionary" styleClass="navBarBtn" text="Dictionary" />
-                        </VBox>
-                        <VBox alignment="CENTER">
-                            <Button fx:id="Learner" styleClass="navBarBtn, active" text="Learner's Path" />
-                        </VBox>
-                        <VBox alignment="CENTER">
-                            <Button fx:id="Translate" styleClass="navBarBtn" text="Translate" />
-                        </VBox>
-                        <VBox alignment="CENTER">
-                            <Button fx:id="Game" styleClass="navBarBtn" text="Game" />
-                        </VBox>
-                        <VBox alignment="CENTER_RIGHT" translateX="930" StackPane.alignment="TOP_RIGHT" />
-                    </HBox>
+                        <Label styleClass="functionDes" text="Settings"/>
+                    </children>
+                    <styleClass>
+                        <String fx:value="functionBox"/>
+                        <String fx:value="functionChoice"/>
+                    </styleClass>
                 </HBox>
-                <Rectangle fx:id="movingRec" fill="#E8D8F4" height="2" styleClass="recMove" translateX="228" translateY="48" width="150" StackPane.alignment="TOP_LEFT" />
-            
-            </StackPane>
-            <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="54.0" prefWidth="767.0" styleClass="navBar">
-               <children>
-                  <Circle fx:id="profileButton" fill="WHITE" onMouseClicked="#displayPopUpWindow" radius="26.0" stroke="BLACK" strokeType="INSIDE" styleClass="profileBtn" />
-               </children>
-            </HBox>
-         </children>
-      </HBox>
-      <VBox fx:id="popUpWindow" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="302.0" styleClass="popUpWindow" translateY="54.0" visible="false">
-         <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="302.0" styleClass="functionBox">
-               <children>
-                  <Circle fx:id="profilePictureDisplay" fill="WHITE" radius="26.0" stroke="BLACK" strokeType="INSIDE">
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </Circle>
-                  <Label fx:id="welcomeLabel" prefHeight="54.0" prefWidth="210.0" styleClass="welcomeLabel" text="Welcome" wrapText="true">
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin></Label>
-               </children></HBox>
-            <HBox fx:id="profileChange" alignment="CENTER" prefHeight="61.0" prefWidth="302.0">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/userlogo.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets right="23.0" />
-                     </HBox.margin>
-                  </ImageView>
-                  <Label styleClass="functionDes" text="Profile" translateX="-13.0" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <styleClass>
-                  <String fx:value="functionBox" />
-                  <String fx:value="functionChoice" />
-               </styleClass></HBox>
-            <HBox fx:id="settings" alignment="CENTER" layoutX="10.0" layoutY="71.0" onMouseClicked="#changeToSettings" prefHeight="61.0" prefWidth="302.0" spacing="10.0">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/settings.png" />
-                     </image>
-                  </ImageView>
-                  <Label styleClass="functionDes" text="Settings" />
-               </children>
-               <styleClass>
-                  <String fx:value="functionBox" />
-                  <String fx:value="functionChoice" />
-               </styleClass></HBox>
-            <HBox fx:id="logout" alignment="CENTER" layoutX="10.0" layoutY="132.0" onMouseClicked="#loggingOut" prefHeight="61.0" prefWidth="302.0" spacing="10.0" styleClass="functionChoice">
-               <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../assets/logout.png" />
-                     </image>
-                  </ImageView>
-                  <Label styleClass="functionDes" text="Log out" />
-               </children></HBox>
-         </children>
-      </VBox>
-   </children>
+                <HBox fx:id="logout" alignment="CENTER" layoutX="10.0" layoutY="132.0" onMouseClicked="#loggingOut"
+                      prefHeight="61.0" prefWidth="302.0" spacing="10.0" styleClass="functionChoice">
+                    <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../assets/logout.png"/>
+                            </image>
+                        </ImageView>
+                        <Label styleClass="functionDes" text="Log out"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
 </StackPane>
