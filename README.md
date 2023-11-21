@@ -49,3 +49,8 @@ Educational games that allows for revision while having fun, too.
 
 ### Profile:
 ![Profile](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/1ec60034-e3ff-4300-b13b-4d42e48859d3)
+
+### Special Christmas Event :)
+![Christmas-event](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/a058402d-a539-466a-a4c0-803336319b17)
+
+
