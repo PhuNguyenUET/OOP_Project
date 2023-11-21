@@ -20,11 +20,11 @@ public class Connect {
     }
 
     private static Connection connection;
-    private String DATABASE_URL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12661833";
+    private String DATABASE_URL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12663890";
 
-    private String user = "sql12661833";
+    private String user = "sql12663890";
 
-    private String password = "Siht7VcMkf";
+    private String password = "FqLUKwYHh1";
 
     public Connection connect() {
         if (connection == null) {
