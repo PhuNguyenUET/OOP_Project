@@ -73,5 +73,10 @@
             <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="93.0" prefWidth="844.0" styleClass="searchResultBox" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="63.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" rotate="31.0" translateX="-533.0" translateY="-340.0">
+         <image>
+            <Image url="@../../assets/christmas-hat.png" />
+         </image>
+      </ImageView>
    </children>
 </StackPane>
