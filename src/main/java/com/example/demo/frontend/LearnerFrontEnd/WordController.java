@@ -163,6 +163,14 @@ public class WordController {
             if (dictFuncToLearner.isWordInDict(engWord) && !wordReposity.wordIsExist(inputFormWord.getText().trim(), ScreenManager.getInstance().getListId())) {
                 Word word = dictFuncToLearner.getDetails(engWord);
                 wordReposity.addNewList(word.getWord(), word.getType().get(0), word.getDefinition().get(0), word.getPronunciation(), ScreenManager.getInstance().getListId());
+                int n = WordManager.getInstance().updateAndGetWordFromList(ScreenManager.getInstance().getListId()).size();
+                int cnt_page = 0;
+                if (n % 10 == 0) {
+                    cnt_page = n / 10;
+                } else {
+                    cnt_page = n / 10 + 1;
+                }
+                curPage = cnt_page - 1;
                 wordRender(ScreenManager.getInstance().getListId());
             } else {
                 messageRender("Can not add this word", "Please enter a word that does not contain capital letters");

@@ -28,7 +28,7 @@ public class ProfileRepo{
     {
         List<TimeUsage> timeUsages = new ArrayList<>();
         try{
-            String query = "SELECT date, SUM(time) AS total_time FROM session WHERE DATEDIFF(CURDATE(), date) <= 4 and userId = ? GROUP BY date";
+            String query = "SELECT date, SUM(time) AS total_time FROM session WHERE userId = ? GROUP BY date ORDER BY date DESC LIMIT 4";
             PreparedStatement preparedStatement = ProfileConection.getInstance().connect().prepareStatement(query);
             preparedStatement.setInt(1,userId);
             ResultSet dataFetch = preparedStatement.executeQuery();
@@ -71,5 +71,14 @@ public class ProfileRepo{
             e.printStackTrace();
         }
         return check;
+    }
+
+    public static void main(String[] args) {
+        ProfileRepo profileRepo = new ProfileRepo();
+        List<TimeUsage> list = profileRepo.getRecentTimeUsage(5);
+        for(TimeUsage timeUsage : list)
+        {
+            System.out.println(timeUsage.getDate() + "    " + timeUsage.getTime());
+        }
     }
 }

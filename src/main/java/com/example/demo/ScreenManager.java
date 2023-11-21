@@ -25,10 +25,10 @@ public class ScreenManager {
         this.navbarController = loader.getController();
     }
 
-    public NavbarController getNavbarController()
-    {
+    public NavbarController getNavbarController() {
         return this.navbarController;
     }
+
     private int folderId;
 
     private int listId;
@@ -100,6 +100,7 @@ public class ScreenManager {
     public Scene getScene() {
         return scene;
     }
+
     private ScreenManager() {
         root = new StackPane();
         root.setAlignment(Pos.TOP_CENTER);
@@ -154,12 +155,12 @@ public class ScreenManager {
         try {
             FXMLLoader dict = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/DictionaryFrontEnd/dictionary_home.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane navBarPane = navBar.load();
             StackPane dictScreen = dict.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, dictScreen);
             } else {
                 root.getChildren().clear();
+                StackPane navBarPane = navBar.load();
                 root.getChildren().add(dictScreen);
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
@@ -180,6 +181,7 @@ public class ScreenManager {
             e.printStackTrace();
         }
     }
+
     public void switchToList(int folderId) {
         try {
             FXMLLoader list = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/LearnerFrontEnd/listOfFolder.fxml"));
@@ -229,12 +231,12 @@ public class ScreenManager {
         try {
             FXMLLoader translate = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/Translator/translator.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane navBarPane = navBar.load();
             StackPane translateScreen = translate.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, translateScreen);
             } else {
                 root.getChildren().clear();
+                StackPane navBarPane = navBar.load();
                 root.getChildren().add(translateScreen);
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
@@ -249,12 +251,13 @@ public class ScreenManager {
         try {
             FXMLLoader dict = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/ProfileFrontEnd/profile.fxml"));
             FXMLLoader navBar = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/navBarFrontEnd/navBar.fxml"));
-            StackPane navBarPane = navBar.load();
+//            StackPane navBarPane = navBar.load();
             StackPane dictScreen = dict.load();
             if (root.getChildren().size() >= 2) {
                 root.getChildren().set(0, dictScreen);
             } else {
                 root.getChildren().clear();
+                StackPane navBarPane = navBar.load();
                 root.getChildren().add(dictScreen);
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);

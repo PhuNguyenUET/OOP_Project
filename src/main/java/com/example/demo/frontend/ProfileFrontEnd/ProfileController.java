@@ -130,11 +130,11 @@ public class ProfileController {
         }
         if (timeUsages.size() >= 3) {
             text3.setText(timeUsages.get(2).getDate());
-            rec3Height = timeUsages.get(1).getTime();
+            rec3Height = timeUsages.get(2).getTime();
         }
         if (timeUsages.size() >= 4) {
             text4.setText(timeUsages.get(3).getDate());
-            rec4Height = timeUsages.get(1).getTime();
+            rec4Height = timeUsages.get(3).getTime();
         }
     }
 
