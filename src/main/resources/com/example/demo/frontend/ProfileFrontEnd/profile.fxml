@@ -195,30 +195,30 @@
                 <HBox alignment="BOTTOM_CENTER" maxHeight="240" minHeight="240" prefHeight="240" spacing="45" styleClass="test">
                     <StackPane alignment="BOTTOM_CENTER">
                         <VBox alignment="BOTTOM_CENTER" spacing="15">
-                            <Label fx:id="data1" styleClass="data" text="60m" />
+                            <Label fx:id="data1" styleClass="data" />
                             <Rectangle fx:id="rec1" arcHeight="10.0" arcWidth="10.0" height="0" styleClass="rec1" width="40" />
-                            <Label fx:id="text1" styleClass="category" text=" Ngày 1" />
+                            <Label fx:id="text1" styleClass="category" />
                         </VBox>
                     </StackPane>
                     <StackPane alignment="BOTTOM_CENTER">
                         <VBox alignment="BOTTOM_CENTER" spacing="15">
-                            <Label fx:id="data2" styleClass="data" text="60m" />
+                            <Label fx:id="data2" styleClass="data" />
                             <Rectangle fx:id="rec2" arcHeight="10.0" arcWidth="10.0" height="0" styleClass="rec2" width="40" />
-                            <Label fx:id="text2" styleClass="category" text=" Ngày 2" />
+                            <Label fx:id="text2" styleClass="category" />
                         </VBox>
                     </StackPane>
                     <StackPane alignment="BOTTOM_CENTER">
                         <VBox alignment="BOTTOM_CENTER" spacing="15">
-                            <Label fx:id="data3" styleClass="data" text="60m" />
+                            <Label fx:id="data3" styleClass="data" />
                             <Rectangle fx:id="rec3" arcHeight="10.0" arcWidth="10.0" height="0" styleClass="rec3" width="40" />
-                            <Label fx:id="text3" styleClass="category" text=" Ngày 3 " />
+                            <Label fx:id="text3" styleClass="category" />
                         </VBox>
                     </StackPane>
                     <StackPane alignment="BOTTOM_CENTER">
                         <VBox alignment="BOTTOM_CENTER" spacing="15">
-                            <Label fx:id="data4" styleClass="data" text="60m" />
+                            <Label fx:id="data4" styleClass="data" />
                             <Rectangle fx:id="rec4" arcHeight="10.0" arcWidth="10.0" height="0" styleClass="rec4" width="40" />
-                            <Label fx:id="text4" styleClass="category" text=" Ngày 4" />
+                            <Label fx:id="text4" styleClass="category" />
                         </VBox>
                     </StackPane>
                 </HBox>

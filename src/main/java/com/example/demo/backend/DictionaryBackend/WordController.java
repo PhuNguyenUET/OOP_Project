@@ -23,7 +23,7 @@ public class WordController {
             }
         }
 
-        return dictionaryService.search(input);
+        return dictionaryService.search(input.toLowerCase());
     }
 
     public String transferWord (String input) {
@@ -36,7 +36,7 @@ public class WordController {
             }
         }
 
-        return dictionaryService.transferWord(input);
+        return dictionaryService.transferWord(input.toLowerCase());
     }
 
     public String getDailyNewWords() {
@@ -61,6 +61,6 @@ public class WordController {
             }
         }
 
-        return dictionaryService.checkWordExist(word);
+        return dictionaryService.checkWordExist(word.toLowerCase());
     }
 }

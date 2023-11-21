@@ -8,6 +8,7 @@ import java.net.URL;
 public class MusicManager {
     private static MusicManager _instance;
     private MediaPlayer mediaPlayer;
+    private boolean music = true;
 
     private String musicPathCurrent;
 
@@ -39,7 +40,9 @@ public class MusicManager {
         Media media = new Media(musicUrl.toExternalForm());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume(0.6);
-        mediaPlayer.play();
+        if(MusicManager.getInstance().getMusic()) {
+            mediaPlayer.play();
+        }
         setMusicPathCurrent(musicPath);
     }
 
@@ -53,7 +56,9 @@ public class MusicManager {
         Media media = new Media(musicUrl.toExternalForm());
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume(0.6);
-        mediaPlayer.play();
+        if(MusicManager.getInstance().getMusic()) {
+            mediaPlayer.play();
+        }
         setMusicPathCurrent(musicPath);
         mediaPlayer.setOnEndOfMedia(() -> mediaPlayer.seek(mediaPlayer.getStartTime()));
     }
@@ -70,6 +75,14 @@ public class MusicManager {
         if (mediaPlayer != null) {
             mediaPlayer.stop();
         }
+    }
+
+    public void turnMusic() {
+        music = !music;
+    }
+
+    public boolean getMusic() {
+        return music;
     }
 
 }

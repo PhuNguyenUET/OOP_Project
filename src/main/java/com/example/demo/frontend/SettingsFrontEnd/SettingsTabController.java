@@ -71,8 +71,6 @@ public class SettingsTabController implements Initializable {
     @FXML
     private PauseTransition pauseTransition;
     List<ImageView> profilePictures = new ArrayList<>();
-    boolean music = true;
-
     NavbarController navbarController;
 
     int currentProfileId = -1;
@@ -190,8 +188,8 @@ public class SettingsTabController implements Initializable {
 
     @FXML
     public void turnOnOffMusic(Event event) {
-        music = !music;
-        if (music) {
+        MusicManager.getInstance().turnMusic();
+        if (MusicManager.getInstance().getMusic()) {
             musicButton.setText("Music: ON");
             MusicManager.getInstance().play2("/com/example/demo/music/song.mp3");
         } else {
@@ -221,6 +219,11 @@ public class SettingsTabController implements Initializable {
         }
         for(int i = 11; i <= 20; i++) {
             secondRow.getChildren().add(profilePictures.get(i));
+        }
+        if (MusicManager.getInstance().getMusic()) {
+            musicButton.setText("Music: ON");
+        } else {
+            musicButton.setText("Music: OFF");
         }
     }
 }
