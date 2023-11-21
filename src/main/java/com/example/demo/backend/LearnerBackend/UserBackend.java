@@ -55,7 +55,7 @@ public class UserBackend {
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             preparedStatement.setInt(3, profilePictureId);
-            preparedStatement.setString(4, "Defaul tName");
+            preparedStatement.setString(4, "User");
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
