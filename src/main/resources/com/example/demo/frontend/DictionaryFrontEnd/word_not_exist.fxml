@@ -11,9 +11,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1223.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.WordNotExistScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" translateY="55" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.DictionaryFrontEnd.WordNotExistScreenController">
    <stylesheets>
       <URL value="@../../css/searchBar.css" />
       <URL value="@../../css/wordNotExist.css" />
@@ -21,57 +20,54 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <StackPane prefHeight="700.0" prefWidth="1223.0">
+            <StackPane prefHeight="780.0" prefWidth="1520.0">
                <children>
-                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="common">
+                  <VBox alignment="TOP_CENTER" onMouseClicked="#clearSuggestion" prefHeight="200.0" prefWidth="100.0" styleClass="common">
                      <children>
-                        <HBox maxWidth="-Infinity" prefHeight="55.0" prefWidth="1237.0">
+<!--                        <fx:include source="../navBarFrontEnd/navBar.fxml" />-->
+                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1520.0" styleClass="common">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />
-                              <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />
-                              <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="105.0" text="Translate" />
-                              <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" stroke="WHITE" strokeType="INSIDE" width="701.0" />
-                              <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="55.0" prefWidth="62.0" />
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="135.0" prefWidth="1240.0" styleClass="common">
-                           <children>
-                              <ImageView fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logoImage" fitHeight="92.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
-                                    <Insets left="70.0" />
+                                    <Insets left="160.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="730.0" promptText="Search your word here" styleClass="searchBar">
+                              <TextField fx:id="searchBar" onKeyPressed="#handleKey" onKeyTyped="#showSuggestions" onMouseClicked="#showSuggestions" prefHeight="49.0" prefWidth="844.0" promptText="Search your word here" styleClass="searchBar">
                                  <HBox.margin>
-                                    <Insets left="80.0" />
+                                    <Insets left="100.0" />
                                  </HBox.margin>
                                  <padding>
                                     <Insets left="15.0" />
                                  </padding>
                               </TextField>
                               <Button mnemonicParsing="false" onAction="#clearSearch" prefHeight="25.0" prefWidth="26.0" styleClass="xButton" text="X" fx:id="xButton" />
-                              <Button fx:id="searchButton" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0" styleClass="searchButton">
+                              <Button fx:id="searchButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goTo" prefHeight="52.0" prefWidth="54.0" styleClass="searchButton">
                                  <HBox.margin>
                                     <Insets left="20.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
                         </HBox>
-                        <ImageView fitHeight="90.0" fitWidth="267.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="102.0" fitWidth="360.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../assets/shrug.png" />
                            </image>
                            <VBox.margin>
                               <Insets top="65.0" />
                            </VBox.margin></ImageView>
-                        <Label alignment="CENTER" prefHeight="101.0" prefWidth="1255.0" styleClass="dontKnowLabel" text="Hmmm...Seems like we don't know this word either." />
-                        <Button mnemonicParsing="false" onAction="#back" prefHeight="41.0" prefWidth="91.0" styleClass="backButton" text="Back" />
+                        <Label alignment="CENTER" prefHeight="101.0" prefWidth="1506.0" styleClass="dontKnowLabel" text="Hmmm...Seems like we don't know this word either.">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin></Label>
+                        <Button mnemonicParsing="false" onAction="#back" prefHeight="58.0" prefWidth="117.0" styleClass="backButton" text="Back">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></Button>
                      </children>
                   </VBox>
                </children>
             </StackPane>
-            <VBox fx:id="suggestionBox" layoutX="247.0" layoutY="147.0" prefWidth="727.0" />
+            <VBox fx:id="suggestionBox" layoutX="357.0" layoutY="93.0" prefWidth="844.0" styleClass="searchResultBox" />
          </children>
       </AnchorPane>
    </children>

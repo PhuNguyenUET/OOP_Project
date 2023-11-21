@@ -1,4 +1,4 @@
-package com.example.demo.backend;
+package com.example.demo.backend.TranslateBackend;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class GoogleTranslate {
-    private static String translate(String langFrom, String langTo, String text) throws IOException {
+    public static String translate(String langFrom, String langTo, String text) throws IOException {
         String urlStr = "https://script.google.com/macros/s/AKfycbxM4tUW72--uXKWjDEuS8XZRmRhoXIIhhr3KFwTYiNA_V867liXRI_UdhwZoRHAzjEk/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +
@@ -25,16 +25,4 @@ public class GoogleTranslate {
         in.close();
         return response.toString();
     }
-
-    //Test o day nhe
-    //
-    //
-    //
-    // public static void main(String[] args) throws IOException{
-    //     //Nhap text can translate o day
-    //     String text = "Nếu các ngươi thành tâm muốn hỏi, thì bọn ta sẵn sàng trả lời";
-
-    //     //Dich tu viet-anh thi langFrom = vi, langTo = en, dich anh-viet thi nguoc lai
-    //     System.out.println(translate("vi", "en", text));
-    // }
 }

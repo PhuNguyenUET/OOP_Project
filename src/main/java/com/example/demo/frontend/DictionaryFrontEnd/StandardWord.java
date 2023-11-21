@@ -1,17 +1,26 @@
 package com.example.demo.frontend.DictionaryFrontEnd;
 
-import com.example.demo.backend.Common.Word;
+import com.example.demo.frontend.Common.Word;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StandardWord implements Word{
+public class StandardWord implements Word {
     private String word;
 
     private String pronunciation;
 
     private List<Explanation> explanations;
 
+    public List<String> getType()
+    {
+        if (explanations.isEmpty()) {
+            return new ArrayList<>();
+        }
+        List<String> res = new ArrayList<>();
+        res.add(explanations.get(0).getWord_type());
+        return res;
+    }
     public void setWord(String word) {
         this.word = word;
     }

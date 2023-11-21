@@ -1,0 +1,30 @@
+.container{
+    -fx-padding: 64 128 64 128;
+}
+
+.description{
+    -fx-padding: 32 0 0 0 ;
+    -fx-text-fill: #3177A4;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 42;
+    -fx-font-weight: bolder;
+}
+
+.choiceContainer{
+    -fx-background-radius: 20;
+    -fx-border: none;
+    -fx-background-color: #EBD8F4;
+}
+
+.choiceContainer:hover{
+    -fx-opacity: 0.9;
+    -fx-cursor: hand;
+}
+
+.text{
+    -fx-text-fill:#0069AC;
+    -fx-font-size: 24;
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: bolder;
+}
+

@@ -4,5 +4,7 @@ import java.util.List;
 
 public interface Word {
     public String getWord ();
-    public List<String> getDefinition ();
+    public List<String> getDefinition();
+    public String getPronunciation();
+    public List<String> getType();
 }

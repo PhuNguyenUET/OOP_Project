@@ -2,17 +2,22 @@
     -fx-background-color: #FFFFFF;
 }
 
+.scroll-pane > .viewport  {
+    -fx-background-color: #FFFFFF;
+    -background-radius: 20;
+}
+
 .wordLabel {
     -fx-font-family: 'Lexend';
     -fx-text-fill: #000000;
-    -fx-font-size: 30;
+    -fx-font-size: 37;
     -fx-font-weight: bolder;
 }
 
 .typeLabel {
     -fx-font-family: 'Lexend';
     -fx-text-fill: #A92424;
-    -fx-font-size: 14;
+    -fx-font-size: 16;
     -fx-font-style: italic;
     -fx-font-weight: lighter;
     -fx-padding: 20 0 0 25;
@@ -21,19 +26,30 @@
 .pronunciationLabel {
     -fx-font-family: 'Lexend';
     -fx-text-fill: #000000;
-    -fx-font-size: 15;
+    -fx-font-size: 17;
     -fx-font-style: italic;
     -fx-font-weight: lighter;
 }
 
 .addButton {
     -fx-font-family: 'Lexend';
-    -fx-font-size: 16;
+    -fx-font-size: 17;
     -fx-background-color: #158DDA;
     -fx-text-fill: #FFFFFF;
     -fx-text-alignment: center;
     -fx-alignment: center;
     -fx-background-radius: 50;
+}
+
+.selectLabel {
+    -fx-font-family: 'Lexend';
+     -fx-font-size: 17;
+     -fx-background-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+     -fx-text-alignment: center;
+     -fx-alignment: center;
+     -fx-background-radius: 50;
+     -fx-pref-width: 263;
+     -fx-pref-height: 40;
 }
 
 .wordBox {
@@ -49,7 +65,7 @@
 
 .definitionLabel {
     -fx-font-family: 'Lexend';
-    -fx-font-size: 18;
+    -fx-font-size: 22;
     -fx-text-fill: #000000;
     -fx-font-weight: bolder;
     -fx-padding: 10 0 0 25;
@@ -57,7 +73,25 @@
 
 .exampleLabel {
     -fx-font-family: 'Lexend';
-    -fx-font-size: 16;
+    -fx-font-size: 19;
     -fx-font-weight: lighter;
     -fx-padding: 10 0 0 40;
+}
+
+.selectPopUp {
+    -fx-border-width: 3px;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #FFFFFF;
+}
+
+.popUpWindow {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+}
+
+.button:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
 }

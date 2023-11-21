@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.example.demo.frontend.FlipGameFrontEnd.SelectGame"
+           translateY="60">
+
+    <stylesheets>
+        <URL value="@../../css/SelectGame.css"/>
+    </stylesheets>
+    <VBox styleClass="conatiner" spacing="80">
+        <HBox styleClass="description" alignment="CENTER">
+            <Label styleClass="description" text="PLEASE PICK YOUR NEXT SUFFERING"></Label>
+        </HBox>
+        <HBox spacing="120" alignment="CENTER">
+            <VBox fx:id="choice1" spacing="10" styleClass="choiceContainer" alignment="CENTER" minHeight="450" minWidth="450" >
+                <Label styleClass="text" text="Multiple choice"></Label>
+                <Label styleClass="text" text="( 1 player )"></Label>
+            </VBox>
+            <VBox fx:id="choice2" spacing="10" styleClass="choiceContainer" alignment="CENTER" minHeight="450" minWidth="450" >
+                <Label styleClass="text" text="Memory challenge"></Label>
+                <Label styleClass="text" text="( 2 players )"></Label>
+            </VBox>
+        </HBox>
+    </VBox>
+</StackPane>

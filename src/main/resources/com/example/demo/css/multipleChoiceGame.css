@@ -1,0 +1,66 @@
+.choiceButton {
+    -fx-background-color: transparent;
+    -fx-border-width: 3px;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 30;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 30;
+    -fx-font-style: italic;
+}
+
+.common {
+    -fx-background-color: #FFFFFF;
+}
+
+.questionNumber {
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: lighter;
+    -fx-font-size: 25;
+    -fx-background-color: #A3D9FC;
+    -fx-background-radius: 40;
+}
+
+.questionLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 20;
+}
+
+.difficultyTag {
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: lighter;
+    -fx-font-style: italic;
+    -fx-font-size: 16;
+}
+
+.correctAnswer {
+    -fx-background-color: #33cc33;
+    -fx-background-radius: 30;
+}
+
+.wrongAnswer {
+    -fx-background-color: #cc0000;
+    -fx-background-radius: 30;
+}
+
+.correctAnswerDisplay {
+    -fx-background-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-background-radius: 30;
+}
+
+.nextButton {
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: lighter;
+    -fx-font-size: 17;
+    -fx-background-color: #A3D9FC;
+    -fx-background-radius: 40;
+}
+
+.onHover {
+    -fx-background-color: #F1F1F0;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+}
+
+.timerBar > .bar {
+    -fx-background-color: linear-gradient(to right, #A3D9FC, #E8D8F4);
+}

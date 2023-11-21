@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -43,6 +44,7 @@ public class WordNotExistScreenController implements Initializable {
 
     public void setSearchBarController(SearchBarController searchBarController) {
         this.searchBarController = searchBarController;
+        searchBar.setText(searchBarController.getSearchField());
     }
 
     @FXML
@@ -74,7 +76,12 @@ public class WordNotExistScreenController implements Initializable {
 
     @FXML
     protected void back (ActionEvent event) throws IOException {
-        DictionarySceneChanger.Instance().switchToHomeScreen(event);
+        DictionarySceneChanger.Instance().switchToHomeScreen();
+    }
+
+    @FXML
+    protected void clearSuggestion (MouseEvent event) {
+        suggestionBox.setVisible(false);
     }
 
     @Override

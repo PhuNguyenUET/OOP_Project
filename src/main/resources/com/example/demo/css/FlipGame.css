@@ -1,0 +1,68 @@
+.name {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+.playerName {
+    -fx-font-family:'Lexend';
+    -fx-font-size:24;
+    -fx-text-fill: #000000;
+    -fx-font-weight:bolder;
+}
+
+.score{
+    -fx-font-family:'Lexend';
+    -fx-font-size:24;
+    -fx-text-fill: #000000;
+    -fx-font-weight:bolder;
+    -fx-background-color: #FFFFFF;
+    -fx-min-width: 100;
+    -fx-padding: 4 0 4 0;
+    -fx-background-radius: 50;
+
+}
+
+.container {
+    -fx-background-radius: 20;
+    -fx-border-radius : 20;
+}
+
+.imageCss{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.test{
+    -fx-background-color: #B5E2FF;
+    -fx-background-radius:20;
+}
+
+.btn{
+    -fx-min-width: 120;
+    -fx-background-color: #4DA5DD;
+    -fx-padding: 8 4 8 4;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16;
+     -fx-font-weight: bolder;
+     -fx-background-radius: 50;
+     -fx-bolder: none;
+}
+
+.textResult{
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 20;
+    -fx-text-fill: #3177A4;
+    -fx-font-weight: bolder;
+}
+
+.btn:hover{
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}
+
+.resultContainer{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20;
+}

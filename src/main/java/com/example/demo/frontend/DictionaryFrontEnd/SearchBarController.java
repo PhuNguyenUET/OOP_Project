@@ -10,17 +10,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class SearchBarController {
+public class SearchBarController {
     void searchForWord (Event event, String input) throws IOException {
         StandardWord word = DictionaryIntegration.Instance().transferTo(input);
         if (word == null) {
-            DictionarySceneChanger.Instance().switchToWordNotExistScreen(event, this);
+            DictionarySceneChanger.Instance().switchToWordNotExistScreen(this);
         } else {
-            DictionarySceneChanger.Instance().switchToWordDisplay(event, this, word);
+            DictionarySceneChanger.Instance().switchToWordDisplay(this, word);
         }
     }
 
-    private String searchField;
+    private String searchField = "";
 
     protected String getSearchField() {
         return searchField;

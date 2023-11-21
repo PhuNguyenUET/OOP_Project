@@ -1,0 +1,182 @@
+.navBar {
+    -fx-background-color:#4DA5DD;
+    -fx-max-height: 32;
+    -fx-padding : 12;
+}
+.navBarBtn {
+    -fx-background-color: transparent;
+    -fx-border: none;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size:16;
+    -fx-font-weight: normal;
+    -fx-min-width: 100;
+}
+
+.active {
+    -fx-font-weight:bold;
+}
+
+.libContainer{
+    -fx-max-width:180;
+    -fx-max-height:32;
+    -fx-background-color:#4DA5DD;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 20;
+}
+
+.libBtn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-border:none;
+}
+
+.rencentWordContainer {
+     -fx-border-width: 3px;
+     /*-fx-border-color: #4DA5DD;*/
+     -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+     -fx-border-radius: 20;
+     -fx-translate-x: 118 ;
+     /*-fx-border-image-slice: 1;*/
+}
+
+.Content {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-translate-x: 28;
+    -fx-translate-y: 16;
+}
+
+.wordContainer {
+    -fx-background-color:#DEF2FF;
+    -fx-padding: 16 0 16 16;
+    -fx-background-radius: 8;
+    -fx-max-width: 250;
+    -fx-min-width: 250;
+}
+
+.wordContainer:hover {
+    -fx-cursor:hand;
+    -fx-opacity: 0.8;
+}
+
+.engWord {
+    -fx-font-family: 'Lexend';
+    -fx-font-size:16;
+    -fx-text-fill: #000000;
+    -fx-font-weight:bolder;
+}
+
+.type {
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #A92424 ;
+    -fx-font-size: 12;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.pronunciation {
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #1E1E1E ;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.description {
+    -fx-font-family: 'Lexend';
+    -fx-text-fill: #000000 ;
+    -fx-font-style: italic;
+    -fx-font-weight: bolder;
+}
+
+.FolderContainer {
+    -fx-padding: 16;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-border-width: 3px;
+    -fx-min-width: 420;
+}
+
+.newWordContainer {
+    -fx-padding: 16;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+    -fx-border-width: 3px;
+    -fx-min-width: 724;
+}
+
+.detailBtn:hover{
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+    -fx-text-fill: rgba(0,0,0,0.8);
+}
+
+.word:hover{
+    -fx-opacity: 0.8;
+    -fx-cursor: hand;
+}
+
+.textHeading {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 18;
+    -fx-text-fill: #1E1E1E;
+    -fx-font-weight:bold;
+}
+
+.FolderNameContainer {
+    -fx-padding:2;
+}
+
+.FolderNameText {
+    -fx-text-fill: #474444;
+    -fx-font-size:14;
+    -fx-font-weight:bolder;
+}
+
+.word {
+    -fx-min-width: 420;
+    -fx-background-color: #DEF2FF;
+    -fx-background-radius: 20;
+    -fx-padding: 16 32 16 32;
+}
+
+.newWordContainHeading {
+    -fx-padding: 0 0 0 32;
+}
+
+.layoutConatiner {
+    -fx-border: none;
+         /*-fx-border-color: #4DA5DD;*/
+   /* -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;*/
+    -fx-translate-x: 118 ;
+         /*-fx-border-image-slice: 1;*/
+}
+
+/*
+.libContainer {
+    -fx-background-color:#FFFFFF;
+}
+*/
+
+.contentContainer {
+    -fx-background-color: #6DBFF3;
+}
+
+.contentName {
+    -fx-text-fill: #474444;
+    -fx-font-size: 12;
+}
+
+.recentFolderContainer:hover {
+    -fx-cursor:hand;
+    -fx-opacity: 0.75
+}
+
+
+.textBody{
+    -fx-font-family: 'Lexend';
+    -fx-font-weight: bolder;
+}

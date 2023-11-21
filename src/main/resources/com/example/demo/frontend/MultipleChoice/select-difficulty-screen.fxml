@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" translateY="80" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.frontend.MultipleChoice.SelectDifficultyController">
+   <stylesheets>
+      <URL value="@../../css/multipleChoiceSelectDifficulty.css" />
+   </stylesheets>
+   <children>
+      <VBox alignment="TOP_CENTER">
+         <children>
+<!--            <HBox maxWidth="-Infinity" prefHeight="60.0" prefWidth="1520.0">-->
+<!--               <children>-->
+<!--                  <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="118.0" text="Dictionary" />-->
+<!--                  <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="126.0" text="Learners' Path" />-->
+<!--                  <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="105.0" text="Translate" />-->
+<!--                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="111.0" text="Games" />-->
+<!--                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="60.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" />-->
+<!--                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="60.0" prefWidth="62.0" />-->
+<!--               </children>-->
+<!--            </HBox>-->
+            <Label alignment="CENTER" prefHeight="77.0" prefWidth="396.0" styleClass="difficultyLabel" text="Select your difficulty">
+               <VBox.margin>
+                  <Insets top="150.0" />
+               </VBox.margin></Label>
+            <Button fx:id="easyButton" alignment="CENTER" mnemonicParsing="false" onAction="#easyDifficulty" prefHeight="52.0" prefWidth="396.0" styleClass="difficultyButton" text="Easy">
+               <VBox.margin>
+                  <Insets top="70.0" />
+               </VBox.margin></Button>
+            <Button fx:id="mediumButton" alignment="CENTER" mnemonicParsing="false" onAction="#meidumDifficulty" prefWidth="396.0" styleClass="difficultyButton" text="Medium">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></Button>
+            <Button fx:id="hardButton" mnemonicParsing="false" onAction="#hardDifficulty" prefWidth="396.0" styleClass="difficultyButton" text="Hard">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

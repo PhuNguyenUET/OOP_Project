@@ -1,0 +1,50 @@
+.common {
+    -fx-background-color: #FFFFFF;
+}
+
+.scroll-pane > .viewport  { -fx-background-color: #FFFFFF; }
+
+.languageLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-background-color: #158DDA;
+    -fx-text-fill: #FFFFFF;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-background-radius: 50;
+}
+
+.translatorLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 34;
+    -fx-font-weight: bolder;
+}
+
+.descriptionLabel {
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 17;
+}
+
+.functionButton {
+    -fx-background-color: #A3D9FC;
+    -fx-background-radius: 50;
+    -fx-font-family: 'Lexend';
+    -fx-font-size: 14;
+    -fx-font-weight: lighter;
+}
+
+.functionButton:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.8;
+}
+
+.searchBox {
+    -fx-border-width: 3px;
+    -fx-border-color: linear-gradient(to bottom, #A3D9FC, #E8D8F4);
+    -fx-border-radius: 20;
+}
+
+.insideComponent {
+    -fx-border-color: transparent;
+    -fx-background-color: #FFFFFF;
+}
