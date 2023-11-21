@@ -113,7 +113,7 @@ public class DictionaryHomeController implements Initializable {
 
     @FXML
     protected void changeScreenToSettings(Event event) {
-        ScreenManager.getInstance().switchToSettings();
+        ScreenManager.getInstance().getNavbarController().changeToSettings();
     }
 
     @FXML
