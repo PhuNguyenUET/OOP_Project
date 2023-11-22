@@ -135,6 +135,11 @@ public class LoginControl {
                     ScreenManager.getInstance().setLoginTime(System.currentTimeMillis());
                     ScreenManager.getInstance().setLoginDate(java.time.LocalDate.now());
                     System.out.println("userId hiện tại là: " + ScreenManager.getInstance().getUserId());
+                    if (ScreenManager.getInstance().getLoginDate() != null) {
+                        if (!profileRepo.checkDateIsExist(ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId())) {
+                            profileRepo.insertToSession(0, ScreenManager.getInstance().getLoginDate(), ScreenManager.getInstance().getUserId());
+                        }
+                    }
                     if (!profileRepo.checkDateIsExist(java.time.LocalDate.now(), ScreenManager.getInstance().getUserId())) {
                         if (userBackend.checkYesterdayLogin(connection, ScreenManager.getInstance().getUserId())) {
                             int lastStreak = userBackend.getStreak(connection, ScreenManager.getInstance().getUserId());
