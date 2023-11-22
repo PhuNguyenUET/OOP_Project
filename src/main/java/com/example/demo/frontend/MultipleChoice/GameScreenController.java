@@ -1,5 +1,6 @@
 package com.example.demo.frontend.MultipleChoice;
 
+import com.example.demo.frontend.Common.MusicManager;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -119,8 +120,10 @@ public class GameScreenController implements Initializable {
         boolean check = game.checkAnswer(currentChoice);
         scoreLabel.setText("Score: " + game.getScore());
         if (check) {
+            MusicManager.getInstance().playCorrect();
             button.getStyleClass().add("correctAnswer");
         } else {
+            MusicManager.getInstance().playWrong();
             button.getStyleClass().add("wrongAnswer");
             showAnswer();
         }
@@ -154,6 +157,7 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button1Handler() {
         currentChoice = 1;
+        MusicManager.getInstance().playClick();
         for (Button b : buttonList) {
             b.setDisable(true);
             b.setOpacity(0.5);
@@ -166,6 +170,7 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button2Handler(Event event) {
         currentChoice = 2;
+        MusicManager.getInstance().playClick();
         for (Button b : buttonList) {
             b.setDisable(true);
             b.setOpacity(0.5);
@@ -178,6 +183,7 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button3Handler(Event event) {
         currentChoice = 3;
+        MusicManager.getInstance().playClick();
         for (Button b : buttonList) {
             b.setDisable(true);
             b.setOpacity(0.5);
@@ -190,6 +196,7 @@ public class GameScreenController implements Initializable {
     @FXML
     public void button4Handler(Event event) {
         currentChoice = 4;
+        MusicManager.getInstance().playClick();
         for (Button b : buttonList) {
             b.setDisable(true);
             b.setOpacity(0.5);

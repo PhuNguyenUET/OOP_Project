@@ -21,9 +21,9 @@ public class MusicManager {
     private Media mediaCorrect;
 
     private MusicManager() {
-        URL musicWrong = getClass().getResource("/com/example/demo/wrong.mp3");
-        URL musicCorrect = getClass().getResource("/com/example/demo/correct.mp3");
-        URL musicClick = getClass().getResource("/com/example/demo/click.mp3");
+        URL musicWrong = getClass().getResource("/com/example/demo/music/wrong.mp3");
+        URL musicCorrect = getClass().getResource("/com/example/demo/music/correct.mp3");
+        URL musicClick = getClass().getResource("/com/example/demo/music/click.mp3");
         mediaClick = new Media(musicClick.toExternalForm());
         mediaWrong = new Media(musicWrong.toExternalForm());
         mediaCorrect = new Media(musicCorrect.toExternalForm());
