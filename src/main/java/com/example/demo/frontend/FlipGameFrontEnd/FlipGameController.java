@@ -2,6 +2,7 @@ package com.example.demo.frontend.FlipGameFrontEnd;
 
 import com.example.demo.ScreenManager;
 import com.example.demo.backend.FlipGameBackend.FlipGameService;
+import com.example.demo.frontend.Common.MusicManager;
 import javafx.animation.Animation;
 import javafx.animation.FadeTransition;
 import javafx.animation.RotateTransition;
@@ -260,6 +261,7 @@ public class FlipGameController {
                 String resul1 = getStringFromStackPane(st);
                 String result2 = getStringFromStackPane(st2);
                 if (resul1.equals(result2)) {
+                    MusicManager.getInstance().playCorrect();
                     if (player1GetScore) {
                         player1.setScore(player1.getScore() + 10);
                     } else {

@@ -10,14 +10,6 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     ProfileRepo profileRepo = new ProfileRepo();
 
-//    private static final int WIDTH = 1520;
-//    private static final int HEIGHT = 780;
-//    private static final int NUM_SNOWFLAKES = 100;
-//
-//    private Canvas canvas;
-//    private GraphicsContext gc;
-//    private Snowflake[] snowflakes;
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         ScreenManager.getInstance().setStage(primaryStage);
@@ -38,7 +30,6 @@ public class HelloApplication extends Application {
                 }
             }
         });
-//        System.out.println((System.currentTimeMillis() - ScreenManager.getInstance().getLoginTime())/60000);
         primaryStage.show();
     }
 

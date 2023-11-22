@@ -26,6 +26,12 @@ public class Connect {
 
     private String password = "FqLUKwYHh1";
 
+    private String SUB_DATABASE_URL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12663993";
+
+    private String subUser = "sql12663993";
+
+    private String subPassword = "QKvwS3h8s3";
+
     public Connection connect() {
         if (connection == null) {
             try {
@@ -34,7 +40,16 @@ public class Connect {
             } catch (SQLException e) {
                 System.err.println("Error connecting to SQLite database.");
                 e.printStackTrace();
+                try{
+                    connection = DriverManager.getConnection(SUB_DATABASE_URL, subUser, subPassword);
+                }
+                catch (SQLException en)
+                {
+                    System.err.println("Error connecting to SQLite database.");
+                    e.printStackTrace();
+                }
             }
+
         }
         return connection;
     }
