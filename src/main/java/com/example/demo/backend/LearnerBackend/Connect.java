@@ -19,7 +19,7 @@ public class Connect {
         return _instance;
     }
 
-    private static Connection connection;
+    private Connection connection;
     private String DATABASE_URL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12663890";
 
     private String user = "sql12663890";
