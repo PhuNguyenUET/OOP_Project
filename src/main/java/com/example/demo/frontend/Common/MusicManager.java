@@ -22,7 +22,7 @@ public class MusicManager {
 
     private MusicManager() {
         URL musicWrong = getClass().getResource("/com/example/demo/music/wrong.mp3");
-        URL musicCorrect = getClass().getResource("/com/example/demo/music/correct.mp3");
+        URL musicCorrect = getClass().getResource("/com/example/demo/music/right.mp3");
         URL musicClick = getClass().getResource("/com/example/demo/music/click.mp3");
         mediaClick = new Media(musicClick.toExternalForm());
         mediaWrong = new Media(musicWrong.toExternalForm());
