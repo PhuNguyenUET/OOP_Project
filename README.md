@@ -22,6 +22,7 @@ An educational application that supports language learners in the acquisition of
   - After that, extract the .zip file and click on run.bat to start experiencing the application.
   ![Screenshot (640)](https://github.com/PhuNguyenUET/OOP_Project/assets/124753460/1dbfd6dd-7759-4ab7-b62f-d34ad074e591)
 - Linux:
+  In general, implementations on Linux is rather similar to Windows, however, you would need to install packages to support reading mp3 files (ffplay for ubuntu) and you would sometimes be required to manually unpack the library, so using this application on Linux operating systems is generally not recommended. Sorry for any inconvenience this may have caused.
   
 ## Features:
 ### Login & Sign-up:
