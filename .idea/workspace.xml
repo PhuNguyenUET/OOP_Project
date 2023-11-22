@@ -10,10 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="add3ca6e-ed48-4264-92a2-4a1c1c25b0dc" name="Changes" comment="merge">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/frontend/LoginFrontEnd/LoginControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/Dictionary.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/ProfileBackend/ProfileRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/backend/ProfileBackend/ProfileRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/navBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo/css/navBar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -51,7 +51,7 @@
     -fx-font-family: 'Lexend';
      -fx-font-size: 19;
      -fx-font-weight: bolder;
-     -fx-background-color: #FFFFFF;
+     -fx-background-color: transparent;
      -fx-text-alignment: center;
      -fx-alignment: center;
 }

@@ -1,5 +1,7 @@
 package com.example.demo.backend.ProfileBackend;
 
+import com.example.demo.backend.LearnerBackend.Connect;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +14,7 @@ public class ProfileRepo {
     public void insertToSession(double time, LocalDate date, int userId) {
         try {
             String sql = "INSERT INTO session (date, time, userId) VALUES (?, ?, ?)";
-            PreparedStatement preparedStatement = ProfileConection.getInstance().connect().prepareStatement(sql);
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(sql);
             preparedStatement.setDouble(2, time);
             preparedStatement.setDate(1, java.sql.Date.valueOf(date));
             preparedStatement.setInt(3, userId);
@@ -27,7 +29,7 @@ public class ProfileRepo {
 
         try {
 
-            Connection connection = ProfileConection.getInstance().connect();
+            Connection connection = Connect.getInstance().connect();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setDouble(1, time);
             preparedStatement.setDate(2, java.sql.Date.valueOf(date));
@@ -51,7 +53,7 @@ public class ProfileRepo {
         List<TimeUsage> timeUsages = new ArrayList<>();
         try {
             String query = "SELECT date, SUM(time) AS total_time FROM session WHERE userId = ? GROUP BY date ORDER BY date DESC LIMIT 4";
-            PreparedStatement preparedStatement = ProfileConection.getInstance().connect().prepareStatement(query);
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
             preparedStatement.setInt(1, userId);
             ResultSet dataFetch = preparedStatement.executeQuery();
             while (dataFetch.next()) {
@@ -69,7 +71,7 @@ public class ProfileRepo {
         double res = -1;
         try {
             String query = "SELECT time AS total_time FROM session WHERE date = ? and userId = ?";
-            PreparedStatement preparedStatement = ProfileConection.getInstance().connect().prepareStatement(query);
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
             preparedStatement.setDate(1,java.sql.Date.valueOf(date));
             preparedStatement.setInt(2, userId);
             ResultSet dataFetch = preparedStatement.executeQuery();
@@ -86,7 +88,7 @@ public class ProfileRepo {
         boolean check = false;
         try {
             String query = "SELECT COUNT(*) count FROM session WHERE date = ? AND userId = ?";
-            PreparedStatement preparedStatement = ProfileConection.getInstance().connect().prepareStatement(query);
+            PreparedStatement preparedStatement = Connect.getInstance().connect().prepareStatement(query);
             preparedStatement.setDate(1, java.sql.Date.valueOf(date));
             preparedStatement.setInt(2, userId);
             ResultSet resultSet = preparedStatement.executeQuery();
