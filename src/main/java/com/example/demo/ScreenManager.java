@@ -5,11 +5,13 @@ import com.example.demo.frontend.DictionaryFrontEnd.StandardWord;
 import com.example.demo.frontend.DictionaryFrontEnd.DictionarySceneChanger;
 import com.example.demo.frontend.SettingsFrontEnd.SettingsTabController;
 import com.example.demo.frontend.navBarFrontEnd.NavbarController;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -148,6 +150,7 @@ public class ScreenManager {
                 setNavbarController(navBar);
                 root.getChildren().add(canvasPane);
             }
+            applyFadeInEffect((StackPane) root.getChildren().get(0));
             navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
@@ -168,6 +171,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            applyFadeInEffect((StackPane) root.getChildren().get(0));
             navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
@@ -224,6 +228,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            applyFadeInEffect((StackPane) root.getChildren().get(0));
             navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
@@ -244,6 +249,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            applyFadeInEffect((StackPane) root.getChildren().get(0));
             navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
@@ -265,6 +271,7 @@ public class ScreenManager {
                 root.getChildren().add(navBarPane);
                 setNavbarController(navBar);
             }
+            applyFadeInEffect((StackPane) root.getChildren().get(0));
             navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
@@ -299,9 +306,25 @@ public class ScreenManager {
                 SettingsTabController stc = settings.getController();
                 stc.setNavbarController(navbarController);
             }
+            applyFadeInEffect((StackPane) root.getChildren().get(0));
             navbarController.resetPopupWindow();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void applyFadeInEffect(StackPane stackPane) {
+        // Tạo một FadeTransition để thực hiện hiệu ứng mờ dần trong `durationSeconds` giây
+        FadeTransition fadeInTransition = new FadeTransition(Duration.seconds(1), stackPane);
+        fadeInTransition.setFromValue(0.0); // Độ trong suốt ban đầu
+        fadeInTransition.setToValue(1.0);   // Độ trong suốt cuối cùng
+
+        // Xử lý sự kiện khi kết thúc hiệu ứng
+        fadeInTransition.setOnFinished(event -> {
+            stackPane.setVisible(true); // Ẩn StackPane sau khi biến mất
+        });
+
+        // Bắt đầu hiệu ứng
+        fadeInTransition.play();
     }
 }
