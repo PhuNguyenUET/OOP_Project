@@ -36,6 +36,7 @@ public class GameScreenChanger {
 
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
         root.getChildren().set(0, screen);
+        ScreenManager.getInstance().applyFadeInEffect((StackPane) root.getChildren().get(0));
         ScreenManager.getInstance().getNavbarController().resetPopupWindow();
 //        stage.show();
     }
@@ -49,6 +50,7 @@ public class GameScreenChanger {
 
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
         root.getChildren().set(0, screen);
+        ScreenManager.getInstance().applyFadeInEffect((StackPane) root.getChildren().get(0));
         ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 
@@ -61,6 +63,7 @@ public class GameScreenChanger {
 
         StackPane root = (StackPane) ScreenManager.getInstance().getRoot();
         root.getChildren().set(0, screen);
+        ScreenManager.getInstance().applyFadeInEffect((StackPane) root.getChildren().get(0));
         ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 }

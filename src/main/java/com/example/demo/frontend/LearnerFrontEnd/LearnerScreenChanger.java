@@ -14,6 +14,7 @@ public class LearnerScreenChanger {
             StackPane screen = folder.load();
             StackPane navBarPane = navBar.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, screen);
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,6 +28,7 @@ public class LearnerScreenChanger {
             StackPane screen = list.load();
             StackPane navBarPane = navBar.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, screen);
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,6 +42,7 @@ public class LearnerScreenChanger {
             StackPane screen = listWord.load();
             StackPane navBarPane = navBar.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, screen);
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
