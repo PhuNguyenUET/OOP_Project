@@ -16,6 +16,11 @@ An educational application that supports language learners in the acquisition of
 - Nguyen Huu Phu (22021138) - Team leader: Design project structures via C4 Model, take responsibilities for tab Dictionary, Translate, Multiple Choice, Settings and some other minor functions
 - Ngo Thanh Minh (22021131): Take responsibilities for tab Login, Learners' path, Flip game, Profile, Navigation Bar and some other minor functions
 - Luong Ngoc Tuan (22021146): Manage databases, search and add information to databases, draw UML Diagaram, testing and reporting bugs
+## Implementations:
+- Window:
+  First, you need to install the jdk.msi file
+  After that, extract the .zip file and click on run.bat to start experiencing the application.
+  ![Screenshot (640)](https://github.com/PhuNguyenUET/OOP_Project/assets/124753460/1dbfd6dd-7759-4ab7-b62f-d34ad074e591)
 ## Features:
 ### Login & Sign-up:
 ![Login](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/185dbfd7-6aed-431b-9049-c987fcef4d56)
