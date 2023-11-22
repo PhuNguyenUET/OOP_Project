@@ -9,7 +9,7 @@ public class MusicManager {
     private static MusicManager _instance;
     private MediaPlayer mediaPlayer;
 
-    private MediaPlayer mediaPlayer2;
+    private MediaPlayer mediaPlayer3;
     private boolean music = true;
 
     private String musicPathCurrent;
@@ -92,21 +92,21 @@ public class MusicManager {
     }
 
     public void playClick(){
-        mediaPlayer2 = new MediaPlayer(mediaClick);
+        MediaPlayer mediaPlayer2 = new MediaPlayer(mediaClick);
         mediaPlayer2.setVolume(0.8);
         mediaPlayer2.play();
     }
 
     public void playWrong(){
-        mediaPlayer2 = new MediaPlayer(mediaWrong);
-        mediaPlayer2.setVolume(0.8);
-        mediaPlayer2.play();
+        mediaPlayer3 = new MediaPlayer(mediaWrong);
+        mediaPlayer3.setVolume(0.8);
+        mediaPlayer3.play();
     }
 
     public void playCorrect(){
-        mediaPlayer2 = new MediaPlayer(mediaCorrect);
-        mediaPlayer2.setVolume(0.8);
-        mediaPlayer2.play();
+        mediaPlayer3 = new MediaPlayer(mediaCorrect);
+        mediaPlayer3.setVolume(0.8);
+        mediaPlayer3.play();
     }
 
     public void turnMusic() {
