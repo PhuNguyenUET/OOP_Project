@@ -21,7 +21,7 @@ public class TranslatorController implements Initializable {
     @FXML
     TextArea sourceField;
     @FXML
-    Label targetField;
+    TextArea targetField;
     @FXML
     Label sourceLabel;
     @FXML
