@@ -5,7 +5,7 @@ An educational application that supports language learners in the acquisition of
 - Business logic: Single user: Log in, sign up; dictionary, create and manage folders and lists of words; translate texts; educational games; profile (learning time and streaks); settings (change username, avatar, password)
 ## Tech Stack:
 - Language: Java
-- Database: Sqlite, MySQl Server
+- Database: Sqlite, MySQL Server
 - Backend: JDBC, Jackson, Google Translate API, FreeTTS
 - Frontend: JavaFX, Jackson
 - Build tool: maven
@@ -23,7 +23,9 @@ An educational application that supports language learners in the acquisition of
   ![Screenshot (640)](https://github.com/PhuNguyenUET/OOP_Project/assets/124753460/1dbfd6dd-7759-4ab7-b62f-d34ad074e591)
 - Linux:
   In general, implementations on Linux is rather similar to Windows, however, you would need to install packages to support reading mp3 files (ffplay for ubuntu) and you would sometimes be required to manually unpack the library, so using this application on Linux operating systems is generally not recommended. Sorry for any inconvenience this may have caused.
-  
+### UML Diagram:
+![class_diagram](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/269d24eb-6c09-44f6-b082-bd91eb5ad71c)
+
 ## Features:
 ### Video demo
 [Demo](https://drive.google.com/file/d/1lbWtM1D_ZM1wMCHzWK2195tkuV0f6_-X/view?usp=drive_link)
