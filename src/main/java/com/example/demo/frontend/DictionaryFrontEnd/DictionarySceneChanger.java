@@ -36,6 +36,7 @@ public class DictionarySceneChanger {
         StackPane root = ScreenManager.getInstance().getRoot();
 
         root.getChildren().set(0, screen);
+        ScreenManager.getInstance().applyFadeInEffect((StackPane) root.getChildren().get(0));
         ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 
@@ -48,6 +49,7 @@ public class DictionarySceneChanger {
 
         StackPane root = ScreenManager.getInstance().getRoot();
         root.getChildren().set(0, screen);
+        ScreenManager.getInstance().applyFadeInEffect((StackPane) root.getChildren().get(0));
         ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 
@@ -67,6 +69,7 @@ public class DictionarySceneChanger {
         StackPane root = ScreenManager.getInstance().getRoot();
 
         root.getChildren().set(0, screen);
+        ScreenManager.getInstance().applyFadeInEffect((StackPane) root.getChildren().get(0));
         ScreenManager.getInstance().getNavbarController().resetPopupWindow();
     }
 }

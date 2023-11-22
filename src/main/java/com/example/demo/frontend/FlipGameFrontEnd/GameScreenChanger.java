@@ -58,7 +58,7 @@ public class GameScreenChanger {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/MultipleChoice/select-difficulty-screen.fxml"));
             StackPane gameScreen = game.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
-
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -70,7 +70,7 @@ public class GameScreenChanger {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/InfoOfPlayer.fxml"));
             StackPane gameScreen = game.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
-
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -82,6 +82,7 @@ public class GameScreenChanger {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/SelectTopic.fxml"));
             StackPane gameScreen = game.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -94,7 +95,7 @@ public class GameScreenChanger {
             FXMLLoader game = new FXMLLoader(getClass().getResource("/com/example/demo/frontend/FlipGameFrontEnd/FlipGame.fxml"));
             StackPane gameScreen = game.load();
             ScreenManager.getInstance().getRoot().getChildren().set(0, gameScreen);
-
+            ScreenManager.getInstance().applyFadeInEffect((StackPane) ScreenManager.getInstance().getRoot().getChildren().get(0));
         } catch (IOException e) {
             e.printStackTrace();
         }
