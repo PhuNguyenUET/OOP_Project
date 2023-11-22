@@ -25,6 +25,8 @@ An educational application that supports language learners in the acquisition of
   In general, implementations on Linux is rather similar to Windows, however, you would need to install packages to support reading mp3 files (ffplay for ubuntu) and you would sometimes be required to manually unpack the library, so using this application on Linux operating systems is generally not recommended. Sorry for any inconvenience this may have caused.
   
 ## Features:
+### Video demo
+![Demo](https://drive.google.com/file/d/1lbWtM1D_ZM1wMCHzWK2195tkuV0f6_-X/view?usp=drive_link)
 ### Login & Sign-up:
 ![Login](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/185dbfd7-6aed-431b-9049-c987fcef4d56)
 ### Learners' Path:
