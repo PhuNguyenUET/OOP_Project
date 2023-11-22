@@ -26,7 +26,7 @@ An educational application that supports language learners in the acquisition of
   
 ## Features:
 ### Video demo
-![Demo](https://drive.google.com/file/d/1lbWtM1D_ZM1wMCHzWK2195tkuV0f6_-X/view?usp=drive_link)
+[Demo](https://drive.google.com/file/d/1lbWtM1D_ZM1wMCHzWK2195tkuV0f6_-X/view?usp=drive_link)
 ### Login & Sign-up:
 ![Login](https://github.com/PhuNguyenUET/OOP_Project/assets/115403554/185dbfd7-6aed-431b-9049-c987fcef4d56)
 ### Learners' Path:
