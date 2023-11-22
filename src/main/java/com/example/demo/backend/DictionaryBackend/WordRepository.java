@@ -73,6 +73,9 @@ class WordRepository {
             if (word.isEmpty()) {
                 return null;
             }
+            if (explanations.isEmpty()) {
+                explanations.add(new Explanation.ExplanationBuilder("").setWordType("").build());
+            }
             return new StandardWord(word, pronunciation, explanations);
         } catch (SQLException | IOException e) {
             e.printStackTrace();
